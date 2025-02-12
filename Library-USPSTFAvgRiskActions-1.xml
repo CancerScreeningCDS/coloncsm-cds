@@ -1,0 +1,561 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library xmlns="urn:hl7-org:elm:r1" xmlns:t="urn:hl7-org:elm-types:r1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:fhir="http://hl7.org/fhir" xmlns:qdm43="urn:healthit-gov:qdm:v4_3" xmlns:qdm53="urn:healthit-gov:qdm:v5_3" xmlns:a="urn:hl7-org:cql-annotations:r1" localId="0">
+   <annotation translatorVersion="3.11.0" translatorOptions="EnableAnnotations,EnableLocators,DisableListDemotion,DisableListPromotion" signatureLevel="Overloads" xsi:type="a:CqlToElmInfo"/>
+   <annotation xsi:type="a:Annotation">
+      <a:s r="268">
+         <a:s>library USPSTFAvgRiskActions version '1.0.0'</a:s>
+      </a:s>
+   </annotation>
+   <identifier id="USPSTFAvgRiskActions" system="http://cancerscreeningcds.github.io/crcsm-cds" version="1.0.0"/>
+   <schemaIdentifier id="urn:hl7-org:elm" version="r1"/>
+   <usings>
+      <def localId="1" localIdentifier="System" uri="urn:hl7-org:elm-types:r1"/>
+      <def localId="206" locator="3:1-3:26" localIdentifier="FHIR" uri="http://hl7.org/fhir" version="4.0.1">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="206">
+               <a:s>using </a:s>
+               <a:s>
+                  <a:s>FHIR</a:s>
+               </a:s>
+               <a:s> version '4.0.1'</a:s>
+            </a:s>
+         </annotation>
+      </def>
+   </usings>
+   <includes>
+      <def localId="207" locator="4:1-4:55" localIdentifier="FHIRHelpers" path="http://cancerscreeningcds.github.io/crcsm-cds/FHIRHelpers" version="4.0.1">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="207">
+               <a:s>include </a:s>
+               <a:s>
+                  <a:s>FHIRHelpers</a:s>
+               </a:s>
+               <a:s>  version '4.0.1' called FHIRHelpers</a:s>
+            </a:s>
+         </annotation>
+      </def>
+      <def localId="208" locator="5:1-5:56" localIdentifier="DataElements" path="http://cancerscreeningcds.github.io/crcsm-cds/DataElements" version="1.0.0">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="208">
+               <a:s>include </a:s>
+               <a:s>
+                  <a:s>DataElements</a:s>
+               </a:s>
+               <a:s> version '1.0.0' called DataElements</a:s>
+            </a:s>
+         </annotation>
+      </def>
+      <def localId="209" locator="6:1-6:72" localIdentifier="CRCSMCommonFunctions" path="http://cancerscreeningcds.github.io/crcsm-cds/CRCSMCommonFunctions" version="1.0.0">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="209">
+               <a:s>include </a:s>
+               <a:s>
+                  <a:s>CRCSMCommonFunctions</a:s>
+               </a:s>
+               <a:s> version '1.0.0' called CRCSMCommonFunctions</a:s>
+            </a:s>
+         </annotation>
+      </def>
+      <def localId="210" locator="7:1-7:72" localIdentifier="DetermineNextDueDate" path="http://cancerscreeningcds.github.io/crcsm-cds/DetermineNextDueDate" version="1.0.0">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="210">
+               <a:s>include </a:s>
+               <a:s>
+                  <a:s>DetermineNextDueDate</a:s>
+               </a:s>
+               <a:s> version '1.0.0' called DetermineNextDueDate</a:s>
+            </a:s>
+         </annotation>
+      </def>
+   </includes>
+   <codeSystems>
+      <def localId="211" locator="9:1-9:115" name="ActCode" id="http://cancerscreeningcds.github.io/crcsm-cds/CodeSystem/plan-definition-action-code-system" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="211">
+               <a:s>codesystem &quot;ActCode&quot;: 'http://cancerscreeningcds.github.io/crcsm-cds/CodeSystem/plan-definition-action-code-system'</a:s>
+            </a:s>
+         </annotation>
+      </def>
+      <def localId="212" locator="10:1-10:125" name="ReasonCode" id="http://cancerscreeningcds.github.io/crcsm-cds/CodeSystem/plan-definition-action-reason-code-system" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="212">
+               <a:s>codesystem &quot;ReasonCode&quot;: 'http://cancerscreeningcds.github.io/crcsm-cds/CodeSystem/plan-definition-action-reason-code-system'</a:s>
+            </a:s>
+         </annotation>
+      </def>
+   </codeSystems>
+   <codes>
+      <def localId="213" locator="14:1-14:125" name="Start screening at 45 years old" id="startscreeningat45yearsold" display="Start screening at 45 years old" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="213">
+               <a:s>// Act Codes
+// code &quot;avg risk screening&quot;: 'avgriskscreening' from &quot;ActCode&quot; display 'Average risk screening'
+code &quot;Start screening at 45 years old&quot;: 'startscreeningat45yearsold' from </a:s>
+               <a:s r="214">
+                  <a:s>&quot;ActCode&quot;</a:s>
+               </a:s>
+               <a:s> display 'Start screening at 45 years old'</a:s>
+            </a:s>
+         </annotation>
+         <codeSystem localId="214" locator="14:75-14:83" name="ActCode"/>
+      </def>
+      <def localId="215" locator="15:1-15:81" name="Start screening" id="startscreening" display="Start screening" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="215">
+               <a:s>code &quot;Start screening&quot;: 'startscreening' from </a:s>
+               <a:s r="216">
+                  <a:s>&quot;ActCode&quot;</a:s>
+               </a:s>
+               <a:s> display 'Start screening'</a:s>
+            </a:s>
+         </annotation>
+         <codeSystem localId="216" locator="15:47-15:55" name="ActCode"/>
+      </def>
+      <def localId="217" locator="16:1-16:113" name="Continue routine screening" id="continueroutinescreening" display="Continue routine screening" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="217">
+               <a:s>code &quot;Continue routine screening&quot;: 'continueroutinescreening' from </a:s>
+               <a:s r="218">
+                  <a:s>&quot;ActCode&quot;</a:s>
+               </a:s>
+               <a:s> display 'Continue routine screening'</a:s>
+            </a:s>
+         </annotation>
+         <codeSystem localId="218" locator="16:68-16:76" name="ActCode"/>
+      </def>
+      <def localId="219" locator="20:1-20:95" name="USPSTF average risk" id="USPSTFaveragerisk" display="USPSTF average risk" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="219">
+               <a:s>// TODO: Consider attributing a reason code to each action
+// Reason Codes
+code &quot;USPSTF average risk&quot;: 'USPSTFaveragerisk' from </a:s>
+               <a:s r="220">
+                  <a:s>&quot;ReasonCode&quot;</a:s>
+               </a:s>
+               <a:s> display 'USPSTF average risk'</a:s>
+            </a:s>
+         </annotation>
+         <codeSystem localId="220" locator="20:54-20:65" name="ReasonCode"/>
+      </def>
+   </codes>
+   <contexts>
+      <def localId="224" locator="22:1-22:15" name="Patient"/>
+   </contexts>
+   <statements>
+      <def localId="222" locator="22:1-22:15" name="Patient" context="Patient">
+         <expression localId="223" xsi:type="SingletonFrom">
+            <operand localId="221" locator="22:1-22:15" dataType="fhir:Patient" templateId="http://hl7.org/fhir/StructureDefinition/Patient" xsi:type="Retrieve"/>
+         </expression>
+      </def>
+      <def localId="226" locator="39:1-40:30" name="DueDateWhenPatientIs45" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="226">
+               <a:s>// define avg_risk_screening:
+//   {
+// 		code: &quot;avg risk screening&quot;,
+//     timingTiming: {
+//       event: {},
+//       repeat: {
+//         frequency: 1,
+//         period: 1.0,
+//         periodUnit: 'a'
+//       }
+//     }
+// 	}   
+
+// CALCULATE DUE DATES
+
+define &quot;DueDateWhenPatientIs45&quot;:
+  </a:s>
+               <a:s r="227">
+                  <a:s r="229">
+                     <a:s r="228">
+                        <a:s>Patient</a:s>
+                     </a:s>
+                     <a:s>.</a:s>
+                     <a:s r="229">
+                        <a:s>birthDate</a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s> + </a:s>
+                  <a:s r="230">
+                     <a:s>45 years</a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="227" locator="40:3-40:30" xsi:type="Add">
+            <signature localId="232" name="t:Date" xsi:type="NamedTypeSpecifier"/>
+            <signature localId="233" name="t:Quantity" xsi:type="NamedTypeSpecifier"/>
+            <operand localId="231" name="ToDate" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+               <operand localId="229" locator="40:3-40:19" path="birthDate" xsi:type="Property">
+                  <source localId="228" locator="40:3-40:9" name="Patient" xsi:type="ExpressionRef"/>
+               </operand>
+            </operand>
+            <operand localId="230" locator="40:23-40:30" value="45" unit="years" xsi:type="Quantity"/>
+         </expression>
+      </def>
+      <def localId="235" locator="42:1-43:7" name="DueDateNow" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="235">
+               <a:s>define &quot;DueDateNow&quot;:
+  </a:s>
+               <a:s r="238">
+                  <a:s>Now()</a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="238" locator="43:3-43:7" xsi:type="Now"/>
+      </def>
+      <def localId="240" locator="45:1-46:50" name="NextDueDate" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="240">
+               <a:s>define &quot;NextDueDate&quot;:
+  </a:s>
+               <a:s r="242">
+                  <a:s r="241">
+                     <a:s>DetermineNextDueDate</a:s>
+                  </a:s>
+                  <a:s>.</a:s>
+                  <a:s r="242">
+                     <a:s>&quot;flow-DetermineNextDueDate&quot;</a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="242" locator="46:3-46:50" name="flow-DetermineNextDueDate" libraryName="DetermineNextDueDate" xsi:type="ExpressionRef"/>
+      </def>
+      <def localId="244" locator="53:1-65:3" name="act-RecommendStartScreeningAt45" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="244">
+               <a:s>// ACTIONS
+
+// TODO: Use only timingTiming within Actions, since only one action.timing[x] element is allowed in a Request Group.
+// We should consider removing timingAge.
+
+define &quot;act-RecommendStartScreeningAt45&quot;:
+  // CRCSMCommonFunctions.SetRecommendation(avg_risk_screening.code, &quot;USPSTF average risk&quot;, 
+  //   CRCSMCommonFunctions.SourceDocumentationUSPSTF, 
+  //   {value: 45.0, code: 'a'}, {}, avg_risk_screening.timingTiming.repeat)
+  </a:s>
+               <a:s r="245">
+                  <a:s>{
+		</a:s>
+                  <a:s>
+                     <a:s>code: </a:s>
+                     <a:s r="246">
+                        <a:s>&quot;Start screening at 45 years old&quot;</a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s>,
+    </a:s>
+                  <a:s>
+                     <a:s>reason: </a:s>
+                     <a:s r="247">
+                        <a:s>&quot;USPSTF average risk&quot;</a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s>,
+    </a:s>
+                  <a:s>
+                     <a:s>documentation: </a:s>
+                     <a:s r="249">
+                        <a:s r="248">
+                           <a:s>CRCSMCommonFunctions</a:s>
+                        </a:s>
+                        <a:s>.</a:s>
+                        <a:s r="249">
+                           <a:s>SourceDocumentationUSPSTF</a:s>
+                        </a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s>,
+    </a:s>
+                  <a:s>
+                     <a:s>timingAge: </a:s>
+                     <a:s r="250">
+                        <a:s>{</a:s>
+                        <a:s>
+                           <a:s r="251">value: 45.0</a:s>
+                        </a:s>
+                        <a:s>, </a:s>
+                        <a:s>
+                           <a:s>code: </a:s>
+                           <a:s r="252">
+                              <a:s>'a'</a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s>}</a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s>,
+    </a:s>
+                  <a:s>
+                     <a:s>timingTiming: </a:s>
+                     <a:s r="253">
+                        <a:s>{
+      </a:s>
+                        <a:s>
+                           <a:s>event: </a:s>
+                           <a:s r="254">
+                              <a:s>&quot;DueDateWhenPatientIs45&quot;</a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s>
+    }</a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s>
+  }</a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="245" locator="57:3-65:3" xsi:type="Tuple">
+            <element name="code">
+               <value localId="246" locator="58:9-58:41" name="Start screening at 45 years old" xsi:type="CodeRef"/>
+            </element>
+            <element name="reason">
+               <value localId="247" locator="59:13-59:33" name="USPSTF average risk" xsi:type="CodeRef"/>
+            </element>
+            <element name="documentation">
+               <value localId="249" locator="60:20-60:65" name="SourceDocumentationUSPSTF" libraryName="CRCSMCommonFunctions" xsi:type="ExpressionRef"/>
+            </element>
+            <element name="timingAge">
+               <value localId="250" locator="61:16-61:39" xsi:type="Tuple">
+                  <element name="value">
+                     <value localId="251" locator="61:24-61:27" valueType="t:Decimal" value="45.0" xsi:type="Literal"/>
+                  </element>
+                  <element name="code">
+                     <value localId="252" locator="61:36-61:38" valueType="t:String" value="a" xsi:type="Literal"/>
+                  </element>
+               </value>
+            </element>
+            <element name="timingTiming">
+               <value localId="253" locator="62:19-64:5" xsi:type="Tuple">
+                  <element name="event">
+                     <value localId="254" locator="63:14-63:37" name="DueDateWhenPatientIs45" xsi:type="ExpressionRef"/>
+                  </element>
+               </value>
+            </element>
+         </expression>
+      </def>
+      <def localId="256" locator="67:1-79:3" name="act-updateDueDateNow" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="256">
+               <a:s>define &quot;act-updateDueDateNow&quot;:
+  // CRCSMCommonFunctions.SetRecommendation(avg_risk_screening.code, &quot;USPSTF average risk&quot;, 
+  //   CRCSMCommonFunctions.SourceDocumentationUSPSTF, 
+  //   {value: AgeInYears() * 1.0, code: 'a'}, null, avg_risk_screening.timingTiming.repeat)
+  </a:s>
+               <a:s r="257">
+                  <a:s>{
+		</a:s>
+                  <a:s>
+                     <a:s>code: </a:s>
+                     <a:s r="258">
+                        <a:s>&quot;Start screening&quot;</a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s>,
+    </a:s>
+                  <a:s>
+                     <a:s>reason: </a:s>
+                     <a:s r="259">
+                        <a:s>&quot;USPSTF average risk&quot;</a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s>,
+    </a:s>
+                  <a:s>
+                     <a:s>documentation: </a:s>
+                     <a:s r="261">
+                        <a:s r="260">
+                           <a:s>CRCSMCommonFunctions</a:s>
+                        </a:s>
+                        <a:s>.</a:s>
+                        <a:s r="261">
+                           <a:s>SourceDocumentationUSPSTF</a:s>
+                        </a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s>,
+    </a:s>
+                  <a:s>
+                     <a:s>timingAge: </a:s>
+                     <a:s r="262">
+                        <a:s>{</a:s>
+                        <a:s>
+                           <a:s r="263">value: 45.0</a:s>
+                        </a:s>
+                        <a:s>, </a:s>
+                        <a:s>
+                           <a:s>code: </a:s>
+                           <a:s r="264">
+                              <a:s>'a'</a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s>}</a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s>,
+    </a:s>
+                  <a:s>
+                     <a:s>timingTiming: </a:s>
+                     <a:s r="265">
+                        <a:s>{
+      </a:s>
+                        <a:s>
+                           <a:s>event: </a:s>
+                           <a:s r="266">
+                              <a:s>&quot;DueDateNow&quot;</a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s>
+    }</a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s>
+  }</a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="257" locator="71:3-79:3" xsi:type="Tuple">
+            <element name="code">
+               <value localId="258" locator="72:9-72:25" name="Start screening" xsi:type="CodeRef"/>
+            </element>
+            <element name="reason">
+               <value localId="259" locator="73:13-73:33" name="USPSTF average risk" xsi:type="CodeRef"/>
+            </element>
+            <element name="documentation">
+               <value localId="261" locator="74:20-74:65" name="SourceDocumentationUSPSTF" libraryName="CRCSMCommonFunctions" xsi:type="ExpressionRef"/>
+            </element>
+            <element name="timingAge">
+               <value localId="262" locator="75:16-75:39" xsi:type="Tuple">
+                  <element name="value">
+                     <value localId="263" locator="75:24-75:27" valueType="t:Decimal" value="45.0" xsi:type="Literal"/>
+                  </element>
+                  <element name="code">
+                     <value localId="264" locator="75:36-75:38" valueType="t:String" value="a" xsi:type="Literal"/>
+                  </element>
+               </value>
+            </element>
+            <element name="timingTiming">
+               <value localId="265" locator="76:19-78:5" xsi:type="Tuple">
+                  <element name="event">
+                     <value localId="266" locator="77:14-77:25" name="DueDateNow" xsi:type="ExpressionRef"/>
+                  </element>
+               </value>
+            </element>
+         </expression>
+      </def>
+      <def localId="268" locator="81:1-93:3" name="act-determineDueDate" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="268">
+               <a:s>define &quot;act-determineDueDate&quot;:
+  // CRCSMCommonFunctions.SetRecommendation(avg_risk_screening.code, &quot;USPSTF average risk&quot;, 
+  //   CRCSMCommonFunctions.SourceDocumentationUSPSTF, 
+  //   {value: AgeInYears() * 1.0, code: 'a'}, null, avg_risk_screening.timingTiming.repeat) 
+  </a:s>
+               <a:s r="269">
+                  <a:s>{
+		</a:s>
+                  <a:s>
+                     <a:s>code: </a:s>
+                     <a:s r="270">
+                        <a:s>&quot;Continue routine screening&quot;</a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s>,
+    </a:s>
+                  <a:s>
+                     <a:s>reason: </a:s>
+                     <a:s r="271">
+                        <a:s>&quot;USPSTF average risk&quot;</a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s>,
+    </a:s>
+                  <a:s>
+                     <a:s>documentation: </a:s>
+                     <a:s r="273">
+                        <a:s r="272">
+                           <a:s>CRCSMCommonFunctions</a:s>
+                        </a:s>
+                        <a:s>.</a:s>
+                        <a:s r="273">
+                           <a:s>SourceDocumentationUSPSTF</a:s>
+                        </a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s>,
+    </a:s>
+                  <a:s>
+                     <a:s>timingAge: </a:s>
+                     <a:s r="274">
+                        <a:s>{</a:s>
+                        <a:s>
+                           <a:s r="275">value: 45.0</a:s>
+                        </a:s>
+                        <a:s>, </a:s>
+                        <a:s>
+                           <a:s>code: </a:s>
+                           <a:s r="276">
+                              <a:s>'a'</a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s>}</a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s>,
+    </a:s>
+                  <a:s>
+                     <a:s>timingTiming: </a:s>
+                     <a:s r="277">
+                        <a:s>{
+      </a:s>
+                        <a:s>
+                           <a:s>event: </a:s>
+                           <a:s r="278">
+                              <a:s>&quot;NextDueDate&quot;</a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s>
+    }</a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s>
+  }</a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="269" locator="85:3-93:3" xsi:type="Tuple">
+            <element name="code">
+               <value localId="270" locator="86:9-86:36" name="Continue routine screening" xsi:type="CodeRef"/>
+            </element>
+            <element name="reason">
+               <value localId="271" locator="87:13-87:33" name="USPSTF average risk" xsi:type="CodeRef"/>
+            </element>
+            <element name="documentation">
+               <value localId="273" locator="88:20-88:65" name="SourceDocumentationUSPSTF" libraryName="CRCSMCommonFunctions" xsi:type="ExpressionRef"/>
+            </element>
+            <element name="timingAge">
+               <value localId="274" locator="89:16-89:39" xsi:type="Tuple">
+                  <element name="value">
+                     <value localId="275" locator="89:24-89:27" valueType="t:Decimal" value="45.0" xsi:type="Literal"/>
+                  </element>
+                  <element name="code">
+                     <value localId="276" locator="89:36-89:38" valueType="t:String" value="a" xsi:type="Literal"/>
+                  </element>
+               </value>
+            </element>
+            <element name="timingTiming">
+               <value localId="277" locator="90:19-92:5" xsi:type="Tuple">
+                  <element name="event">
+                     <value localId="278" locator="91:14-91:26" name="NextDueDate" xsi:type="ExpressionRef"/>
+                  </element>
+               </value>
+            </element>
+         </expression>
+      </def>
+   </statements>
+</library>

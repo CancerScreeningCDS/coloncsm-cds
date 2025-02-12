@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Bundle xmlns="http://hl7.org/fhir">
+  <id value="inc-AgeAtLeast18_error"/>
+  <type value="collection"/>
+  <entry>
+    <resource>
+      <Patient>
+        <id value="5c0552e5-8332-4e2d-b1fa-338cd18791f8"/>
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="Patient_5c0552e5-8332-4e2d-b1fa-338cd18791f8"> </a><p class="res-header-id"><b>Generated Narrative: Patient 5c0552e5-8332-4e2d-b1fa-338cd18791f8</b></p><a name="5c0552e5-8332-4e2d-b1fa-338cd18791f8"> </a><a name="hc5c0552e5-8332-4e2d-b1fa-338cd18791f8"> </a><a name="5c0552e5-8332-4e2d-b1fa-338cd18791f8-en-US"> </a><p style="border: 1px #661aff solid; background-color: #e6e6ff; padding: 10px;">Joanne Smith  Female, DoB Unknown</p><hr/></div>
+        </text>
+        <name>
+          <family value="Smith"/>
+          <given value="Joanne"/>
+        </name>
+        <gender value="female"/>
+      </Patient>
+    </resource>
+  </entry>
+</Bundle>

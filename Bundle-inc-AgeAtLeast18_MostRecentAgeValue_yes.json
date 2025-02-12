@@ -1,0 +1,72 @@
+{
+  "resourceType" : "Bundle",
+  "id" : "inc-AgeAtLeast18_MostRecentAgeValue_yes",
+  "type" : "collection",
+  "entry" : [{
+    "resource" : {
+      "resourceType" : "Patient",
+      "id" : "0ad1f800-0ab1-41d0-a493-0cf2c58ae7d9",
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Patient_0ad1f800-0ab1-41d0-a493-0cf2c58ae7d9\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Patient 0ad1f800-0ab1-41d0-a493-0cf2c58ae7d9</b></p><a name=\"0ad1f800-0ab1-41d0-a493-0cf2c58ae7d9\"> </a><a name=\"hc0ad1f800-0ab1-41d0-a493-0cf2c58ae7d9\"> </a><a name=\"0ad1f800-0ab1-41d0-a493-0cf2c58ae7d9-en-US\"> </a><p style=\"border: 1px #661aff solid; background-color: #e6e6ff; padding: 10px;\">Joanne Smith  Female, DoB Unknown</p><hr/></div>"
+      },
+      "name" : [{
+        "family" : "Smith",
+        "given" : ["Joanne"]
+      }],
+      "gender" : "female"
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "Observation",
+      "id" : "0f56a4c9-1a47-4ac1-bb7b-6f1525e61a9b",
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Observation_0f56a4c9-1a47-4ac1-bb7b-6f1525e61a9b\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Observation 0f56a4c9-1a47-4ac1-bb7b-6f1525e61a9b</b></p><a name=\"0f56a4c9-1a47-4ac1-bb7b-6f1525e61a9b\"> </a><a name=\"hc0f56a4c9-1a47-4ac1-bb7b-6f1525e61a9b\"> </a><a name=\"0f56a4c9-1a47-4ac1-bb7b-6f1525e61a9b-en-US\"> </a><p><b>status</b>: Final</p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 30525-0}\">Age</span></p><p><b>subject</b>: <a href=\"Bundle-inc-AgeAtLeast18_MostRecentAgeValue_yes.html#Patient_0ad1f800-0ab1-41d0-a493-0cf2c58ae7d9\">Bundle: type = collection</a></p><p><b>effective</b>: 2024-12-10 00:00:00+0000</p><p><b>value</b>: 18 years</p></div>"
+      },
+      "status" : "final",
+      "code" : {
+        "coding" : [{
+          "system" : "http://loinc.org",
+          "code" : "30525-0",
+          "display" : "Age"
+        }]
+      },
+      "subject" : {
+        "reference" : "Patient/0ad1f800-0ab1-41d0-a493-0cf2c58ae7d9"
+      },
+      "effectiveDateTime" : "2024-12-10T00:00:00.0Z",
+      "valueQuantity" : {
+        "value" : 18,
+        "unit" : "years"
+      }
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "Observation",
+      "id" : "d91a24c1-e47f-42ac-8dc7-01c7426b829b",
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Observation_d91a24c1-e47f-42ac-8dc7-01c7426b829b\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Observation d91a24c1-e47f-42ac-8dc7-01c7426b829b</b></p><a name=\"d91a24c1-e47f-42ac-8dc7-01c7426b829b\"> </a><a name=\"hcd91a24c1-e47f-42ac-8dc7-01c7426b829b\"> </a><a name=\"d91a24c1-e47f-42ac-8dc7-01c7426b829b-en-US\"> </a><p><b>status</b>: Final</p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 30525-0}\">Age</span></p><p><b>subject</b>: <a href=\"Bundle-inc-AgeAtLeast18_MostRecentAgeValue_yes.html#Patient_0ad1f800-0ab1-41d0-a493-0cf2c58ae7d9\">Bundle: type = collection</a></p><p><b>effective</b>: 2023-12-10 00:00:00+0000</p><p><b>value</b>: 17 years</p></div>"
+      },
+      "status" : "final",
+      "code" : {
+        "coding" : [{
+          "system" : "http://loinc.org",
+          "code" : "30525-0",
+          "display" : "Age"
+        }]
+      },
+      "subject" : {
+        "reference" : "Patient/0ad1f800-0ab1-41d0-a493-0cf2c58ae7d9"
+      },
+      "effectiveDateTime" : "2023-12-10T00:00:00.0Z",
+      "valueQuantity" : {
+        "value" : 17,
+        "unit" : "years"
+      }
+    }
+  }]
+}

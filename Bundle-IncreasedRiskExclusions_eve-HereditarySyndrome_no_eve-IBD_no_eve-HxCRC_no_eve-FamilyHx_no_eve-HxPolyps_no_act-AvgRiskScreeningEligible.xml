@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Bundle xmlns="http://hl7.org/fhir">
+  <id value="IncreasedRiskExclusions_eve-HereditarySyndrome_no_eve-IBD_no_eve-HxCRC_no_eve-FamilyHx_no_eve-HxPolyps_no_act-AvgRiskScreeningEligible"/>
+  <type value="collection"/>
+  <entry>
+    <fullUrl value="http://cancerscreeningcds.github.io/crcsm-cds/CarePlan/11"/>
+    <resource>
+      <CarePlan>
+        <id value="11"/>
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="CarePlan_11"> </a><p class="res-header-id"><b>Generated Narrative: CarePlan 11</b></p><a name="11"> </a><a name="hc11"> </a><a name="11-en-US"> </a><p><b>instantiatesCanonical</b>: <a href="PlanDefinition-flow-IncreasedRiskExclusions.html">Increased Risk Exclusions</a></p><p><b>status</b>: Draft</p><p><b>intent</b>: Proposal</p><p><b>subject</b>: <a href="Patient/2c5ab896-3093-4a4d-88af-974e72bbc223">Joanne Smith</a></p><h3>Activities</h3><table class="grid"><tr><td style="display: none">-</td><td><b>Reference</b></td></tr><tr><td style="display: none">*</td><td><a href="Bundle-IncreasedRiskExclusions_eve-HereditarySyndrome_no_eve-IBD_no_eve-HxCRC_no_eve-FamilyHx_no_eve-HxPolyps_no_act-AvgRiskScreeningEligible.html#RequestGroup_12">Bundle: type = collection</a></td></tr></table></div>
+        </text>
+        <instantiatesCanonical value="http://cancerscreeningcds.github.io/crcsm-cds/PlanDefinition/flow-IncreasedRiskExclusions"/>
+        <status value="draft"/>
+        <intent value="proposal"/>
+        <subject>
+          <reference value="Patient/2c5ab896-3093-4a4d-88af-974e72bbc223"/>
+          <display value="Joanne Smith"/>
+        </subject>
+        <activity>
+          <reference>
+            <reference value="RequestGroup/12"/>
+          </reference>
+        </activity>
+      </CarePlan>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="http://cancerscreeningcds.github.io/crcsm-cds/RequestGroup/12"/>
+    <resource>
+      <RequestGroup>
+        <id value="12"/>
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="RequestGroup_12"> </a><p class="res-header-id"><b>Generated Narrative: RequestGroup 12</b></p><a name="12"> </a><a name="hc12"> </a><a name="12-en-US"> </a><p><b>instantiatesCanonical</b>: <a href="PlanDefinition-flow-IncreasedRiskExclusions.html">Increased Risk Exclusions</a></p><p><b>status</b>: Draft</p><p><b>intent</b>: Proposal</p><p><b>subject</b>: <a href="Patient/2c5ab896-3093-4a4d-88af-974e72bbc223">Joanne Smith</a></p></div>
+        </text>
+        <instantiatesCanonical value="http://cancerscreeningcds.github.io/crcsm-cds/PlanDefinition/flow-IncreasedRiskExclusions"/>
+        <status value="draft"/>
+        <intent value="proposal"/>
+        <subject>
+          <reference value="Patient/2c5ab896-3093-4a4d-88af-974e72bbc223"/>
+          <display value="Joanne Smith"/>
+        </subject>
+      </RequestGroup>
+    </resource>
+  </entry>
+</Bundle>

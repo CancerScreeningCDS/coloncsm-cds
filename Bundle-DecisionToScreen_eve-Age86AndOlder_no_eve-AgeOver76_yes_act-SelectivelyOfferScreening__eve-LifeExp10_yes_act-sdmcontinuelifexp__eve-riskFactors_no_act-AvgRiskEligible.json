@@ -1,0 +1,46 @@
+{
+  "resourceType" : "Bundle",
+  "id" : "DecisionToScreen_eve-Age86AndOlder_no_eve-AgeOver76_yes_act-SelectivelyOfferScreening__eve-LifeExp10_yes_act-sdmcontinuelifexp__eve-riskFactors_no_act-AvgRiskEligible",
+  "type" : "collection",
+  "entry" : [{
+    "fullUrl" : "http://cancerscreeningcds.github.io/crcsm-cds/CarePlan/7",
+    "resource" : {
+      "resourceType" : "CarePlan",
+      "id" : "7",
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"CarePlan_7\"> </a><p class=\"res-header-id\"><b>Generated Narrative: CarePlan 7</b></p><a name=\"7\"> </a><a name=\"hc7\"> </a><a name=\"7-en-US\"> </a><p><b>instantiatesCanonical</b>: <a href=\"PlanDefinition-flow-DecisionToScreen.html\">Decision to Screen</a></p><p><b>status</b>: Draft</p><p><b>intent</b>: Proposal</p><p><b>subject</b>: <a href=\"Patient/2ce2835c-ed05-444e-b829-b2bcfdd0d901\">Joanne Smith</a></p><h3>Activities</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Reference</b></td></tr><tr><td style=\"display: none\">*</td><td><a href=\"Bundle-DecisionToScreen_eve-Age86AndOlder_no_eve-AgeOver76_yes_act-SelectivelyOfferScreening__eve-LifeExp10_yes_act-sdmcontinuelifexp__eve-riskFactors_no_act-AvgRiskEligible.html#RequestGroup_8\">Bundle: type = collection</a></td></tr></table></div>"
+      },
+      "instantiatesCanonical" : ["http://cancerscreeningcds.github.io/crcsm-cds/PlanDefinition/flow-DecisionToScreen"],
+      "status" : "draft",
+      "intent" : "proposal",
+      "subject" : {
+        "reference" : "Patient/2ce2835c-ed05-444e-b829-b2bcfdd0d901",
+        "display" : "Joanne Smith"
+      },
+      "activity" : [{
+        "reference" : {
+          "reference" : "RequestGroup/8"
+        }
+      }]
+    }
+  },
+  {
+    "fullUrl" : "http://cancerscreeningcds.github.io/crcsm-cds/RequestGroup/8",
+    "resource" : {
+      "resourceType" : "RequestGroup",
+      "id" : "8",
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"RequestGroup_8\"> </a><p class=\"res-header-id\"><b>Generated Narrative: RequestGroup 8</b></p><a name=\"8\"> </a><a name=\"hc8\"> </a><a name=\"8-en-US\"> </a><p><b>instantiatesCanonical</b>: <a href=\"PlanDefinition-flow-DecisionToScreen.html\">Decision to Screen</a></p><p><b>status</b>: Draft</p><p><b>intent</b>: Proposal</p><p><b>subject</b>: <a href=\"Patient/2ce2835c-ed05-444e-b829-b2bcfdd0d901\">Joanne Smith</a></p></div>"
+      },
+      "instantiatesCanonical" : ["http://cancerscreeningcds.github.io/crcsm-cds/PlanDefinition/flow-DecisionToScreen"],
+      "status" : "draft",
+      "intent" : "proposal",
+      "subject" : {
+        "reference" : "Patient/2ce2835c-ed05-444e-b829-b2bcfdd0d901",
+        "display" : "Joanne Smith"
+      }
+    }
+  }]
+}

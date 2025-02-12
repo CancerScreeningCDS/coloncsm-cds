@@ -1,0 +1,21 @@
+{
+  "resourceType" : "Bundle",
+  "id" : "eve-Age86AndOlder_no_eve-AgeOver76_yes_act-SelectivelyOfferScreening__eve-LifeExp10_no_eve-riskFactors_no_act-AvgRiskEligible",
+  "type" : "collection",
+  "entry" : [{
+    "resource" : {
+      "resourceType" : "Patient",
+      "id" : "40d9d13f-60c8-4500-b7aa-1e9e74d0e4fb",
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Patient_40d9d13f-60c8-4500-b7aa-1e9e74d0e4fb\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Patient 40d9d13f-60c8-4500-b7aa-1e9e74d0e4fb</b></p><a name=\"40d9d13f-60c8-4500-b7aa-1e9e74d0e4fb\"> </a><a name=\"hc40d9d13f-60c8-4500-b7aa-1e9e74d0e4fb\"> </a><a name=\"40d9d13f-60c8-4500-b7aa-1e9e74d0e4fb-en-US\"> </a><p style=\"border: 1px #661aff solid; background-color: #e6e6ff; padding: 10px;\">Joanne Smith  Female, DoB: 1944-01-01</p><hr/></div>"
+      },
+      "name" : [{
+        "family" : "Smith",
+        "given" : ["Joanne"]
+      }],
+      "gender" : "female",
+      "birthDate" : "1944-01-01"
+    }
+  }]
+}

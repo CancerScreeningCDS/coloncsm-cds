@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Bundle xmlns="http://hl7.org/fhir">
+  <id value="eve-Age86AndOlder_no_eve-AgeOver76_yes_act-SelectivelyOfferScreening__eve-LifeExp10_yes_act-sdmcontinuelifexp__eve-riskFactors_no_act-AvgRiskEligible"/>
+  <type value="collection"/>
+  <entry>
+    <resource>
+      <Patient>
+        <id value="6c5024d2-db2e-4573-b8a2-32fc6d043b93"/>
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="Patient_6c5024d2-db2e-4573-b8a2-32fc6d043b93"> </a><p class="res-header-id"><b>Generated Narrative: Patient 6c5024d2-db2e-4573-b8a2-32fc6d043b93</b></p><a name="6c5024d2-db2e-4573-b8a2-32fc6d043b93"> </a><a name="hc6c5024d2-db2e-4573-b8a2-32fc6d043b93"> </a><a name="6c5024d2-db2e-4573-b8a2-32fc6d043b93-en-US"> </a><p style="border: 1px #661aff solid; background-color: #e6e6ff; padding: 10px;">Joanne Smith  Female, DoB: 1944-01-01</p><hr/></div>
+        </text>
+        <name>
+          <family value="Smith"/>
+          <given value="Joanne"/>
+        </name>
+        <gender value="female"/>
+        <birthDate value="1944-01-01"/>
+      </Patient>
+    </resource>
+  </entry>
+  <entry>
+    <resource>
+      <Observation>
+        <id value="d641ddc4-2485-46c6-af9f-a67c81219968"/>
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="Observation_d641ddc4-2485-46c6-af9f-a67c81219968"> </a><p class="res-header-id"><b>Generated Narrative: Observation d641ddc4-2485-46c6-af9f-a67c81219968</b></p><a name="d641ddc4-2485-46c6-af9f-a67c81219968"> </a><a name="hcd641ddc4-2485-46c6-af9f-a67c81219968"> </a><a name="d641ddc4-2485-46c6-af9f-a67c81219968-en-US"> </a><p><b>status</b>: Final</p><p><b>code</b>: <span title="Codes:{http://cancerscreeningcds.github.io/crcsm-cds/CodeSystem/screening-observation-code-system ReducedLifeExpectancyIndicator}">Reduced life expectancy indicator</span></p><p><b>subject</b>: <a href="Bundle-eve-Age86AndOlder_no_eve-AgeOver76_yes_act-SelectivelyOfferScreening__eve-LifeExp10_yes_act-sdmcontinuelifexp__eve-riskFactors_no_act-AvgRiskEligible.html#Patient_6c5024d2-db2e-4573-b8a2-32fc6d043b93">Bundle: type = collection</a></p><p><b>effective</b>: 2024-12-10 00:00:00+0000</p><p><b>value</b>: true</p></div>
+        </text>
+        <status value="final"/>
+        <code>
+          <coding>
+            <system value="http://cancerscreeningcds.github.io/crcsm-cds/CodeSystem/screening-observation-code-system"/>
+            <code value="ReducedLifeExpectancyIndicator"/>
+            <display value="Reduced life expectancy indicator"/>
+          </coding>
+        </code>
+        <subject>
+          <reference value="Patient/6c5024d2-db2e-4573-b8a2-32fc6d043b93"/>
+        </subject>
+        <effectiveDateTime value="2024-12-10T00:00:00.0Z"/>
+        <valueBoolean value="true"/>
+      </Observation>
+    </resource>
+  </entry>
+</Bundle>

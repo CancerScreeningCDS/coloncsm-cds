@@ -1,0 +1,20 @@
+{
+  "resourceType" : "Bundle",
+  "id" : "inc-AgeAtLeast18_error",
+  "type" : "collection",
+  "entry" : [{
+    "resource" : {
+      "resourceType" : "Patient",
+      "id" : "5c0552e5-8332-4e2d-b1fa-338cd18791f8",
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Patient_5c0552e5-8332-4e2d-b1fa-338cd18791f8\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Patient 5c0552e5-8332-4e2d-b1fa-338cd18791f8</b></p><a name=\"5c0552e5-8332-4e2d-b1fa-338cd18791f8\"> </a><a name=\"hc5c0552e5-8332-4e2d-b1fa-338cd18791f8\"> </a><a name=\"5c0552e5-8332-4e2d-b1fa-338cd18791f8-en-US\"> </a><p style=\"border: 1px #661aff solid; background-color: #e6e6ff; padding: 10px;\">Joanne Smith  Female, DoB Unknown</p><hr/></div>"
+      },
+      "name" : [{
+        "family" : "Smith",
+        "given" : ["Joanne"]
+      }],
+      "gender" : "female"
+    }
+  }]
+}

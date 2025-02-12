@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Bundle xmlns="http://hl7.org/fhir">
+  <id value="ScreeningEligible_inc-AgeAtLeast18_yes"/>
+  <type value="collection"/>
+  <entry>
+    <fullUrl value="http://cancerscreeningcds.github.io/crcsm-cds/CarePlan/37"/>
+    <resource>
+      <CarePlan>
+        <id value="37"/>
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="CarePlan_37"> </a><p class="res-header-id"><b>Generated Narrative: CarePlan 37</b></p><a name="37"> </a><a name="hc37"> </a><a name="37-en-US"> </a><p><b>instantiatesCanonical</b>: <a href="PlanDefinition-flow-ScreeningEligible.html">Screening Eligible</a></p><p><b>status</b>: Draft</p><p><b>intent</b>: Proposal</p><p><b>subject</b>: <a href="Patient/13145d6a-85a1-4ee5-9ae2-5238c0c1b7b8">Joanne Smith</a></p><h3>Activities</h3><table class="grid"><tr><td style="display: none">-</td><td><b>Reference</b></td></tr><tr><td style="display: none">*</td><td><a href="Bundle-ScreeningEligible_inc-AgeAtLeast18_yes.html#RequestGroup_38">Bundle: type = collection</a></td></tr></table></div>
+        </text>
+        <instantiatesCanonical value="http://cancerscreeningcds.github.io/crcsm-cds/PlanDefinition/flow-ScreeningEligible"/>
+        <status value="draft"/>
+        <intent value="proposal"/>
+        <subject>
+          <reference value="Patient/13145d6a-85a1-4ee5-9ae2-5238c0c1b7b8"/>
+          <display value="Joanne Smith"/>
+        </subject>
+        <activity>
+          <reference>
+            <reference value="RequestGroup/38"/>
+          </reference>
+        </activity>
+      </CarePlan>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="http://cancerscreeningcds.github.io/crcsm-cds/RequestGroup/38"/>
+    <resource>
+      <RequestGroup>
+        <id value="38"/>
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="RequestGroup_38"> </a><p class="res-header-id"><b>Generated Narrative: RequestGroup 38</b></p><a name="38"> </a><a name="hc38"> </a><a name="38-en-US"> </a><p><b>instantiatesCanonical</b>: <a href="PlanDefinition-flow-ScreeningEligible.html">Screening Eligible</a></p><p><b>status</b>: Draft</p><p><b>intent</b>: Proposal</p><p><b>subject</b>: <a href="Patient/13145d6a-85a1-4ee5-9ae2-5238c0c1b7b8">Joanne Smith</a></p></div>
+        </text>
+        <instantiatesCanonical value="http://cancerscreeningcds.github.io/crcsm-cds/PlanDefinition/flow-ScreeningEligible"/>
+        <status value="draft"/>
+        <intent value="proposal"/>
+        <subject>
+          <reference value="Patient/13145d6a-85a1-4ee5-9ae2-5238c0c1b7b8"/>
+          <display value="Joanne Smith"/>
+        </subject>
+      </RequestGroup>
+    </resource>
+  </entry>
+</Bundle>

@@ -1,0 +1,3644 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library xmlns="urn:hl7-org:elm:r1" xmlns:t="urn:hl7-org:elm-types:r1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:fhir="http://hl7.org/fhir" xmlns:qdm43="urn:healthit-gov:qdm:v4_3" xmlns:qdm53="urn:healthit-gov:qdm:v5_3" xmlns:a="urn:hl7-org:cql-annotations:r1" localId="0">
+   <annotation translatorVersion="3.11.0" translatorOptions="EnableAnnotations,EnableLocators,DisableListDemotion,DisableListPromotion" signatureLevel="Overloads" xsi:type="a:CqlToElmInfo"/>
+   <annotation xsi:type="a:Annotation">
+      <a:s r="1475">
+         <a:s>library CRCSMCommonFunctions version '1.0.0'</a:s>
+      </a:s>
+   </annotation>
+   <identifier id="CRCSMCommonFunctions" system="http://cancerscreeningcds.github.io/crcsm-cds" version="1.0.0"/>
+   <schemaIdentifier id="urn:hl7-org:elm" version="r1"/>
+   <usings>
+      <def localId="1" localIdentifier="System" uri="urn:hl7-org:elm-types:r1"/>
+      <def localId="206" locator="3:1-3:26" localIdentifier="FHIR" uri="http://hl7.org/fhir" version="4.0.1">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="206">
+               <a:s>using </a:s>
+               <a:s>
+                  <a:s>FHIR</a:s>
+               </a:s>
+               <a:s> version '4.0.1'</a:s>
+            </a:s>
+         </annotation>
+      </def>
+   </usings>
+   <includes>
+      <def localId="207" locator="5:1-5:63" localIdentifier="C3F" path="http://cancerscreeningcds.github.io/crcsm-cds/CDSConnectCommonsforFHIRv401" version="1.0.0">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="207">
+               <a:s>include </a:s>
+               <a:s>
+                  <a:s>CDSConnectCommonsforFHIRv401</a:s>
+               </a:s>
+               <a:s> version '1.0.0' called C3F</a:s>
+            </a:s>
+         </annotation>
+      </def>
+      <def localId="208" locator="6:1-6:54" localIdentifier="FHIRHelpers" path="http://cancerscreeningcds.github.io/crcsm-cds/FHIRHelpers" version="4.0.1">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="208">
+               <a:s>include </a:s>
+               <a:s>
+                  <a:s>FHIRHelpers</a:s>
+               </a:s>
+               <a:s> version '4.0.1' called FHIRHelpers</a:s>
+            </a:s>
+         </annotation>
+      </def>
+      <def localId="209" locator="7:1-7:68" localIdentifier="CSMCommonFunctions" path="http://cancerscreeningcds.github.io/crcsm-cds/CSMCommonFunctions" version="1.0.0">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="209">
+               <a:s>include </a:s>
+               <a:s>
+                  <a:s>CSMCommonFunctions</a:s>
+               </a:s>
+               <a:s> version '1.0.0' called CSMCommonFunctions</a:s>
+            </a:s>
+         </annotation>
+      </def>
+   </includes>
+   <parameters>
+      <def localId="220" locator="19:1-19:59" name="OverdueDefault" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="220">
+               <a:s>// TODO: move parameters to DataElements.cql
+// TODO: check overdue default against TEP input
+parameter &quot;OverdueDefault&quot; </a:s>
+               <a:s r="222">
+                  <a:s>System.Quantity</a:s>
+               </a:s>
+               <a:s> default </a:s>
+               <a:s r="221">
+                  <a:s>6 months</a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <default localId="221" locator="19:52-19:59" value="6" unit="months" xsi:type="Quantity"/>
+         <parameterTypeSpecifier localId="222" locator="19:28-19:42" name="t:Quantity" xsi:type="NamedTypeSpecifier"/>
+      </def>
+      <def localId="223" locator="20:1-20:55" name="DueDefault" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="223">
+               <a:s>parameter &quot;DueDefault&quot; </a:s>
+               <a:s r="225">
+                  <a:s>System.Quantity</a:s>
+               </a:s>
+               <a:s> default </a:s>
+               <a:s r="224">
+                  <a:s>3 months</a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <default localId="224" locator="20:48-20:55" value="3" unit="months" xsi:type="Quantity"/>
+         <parameterTypeSpecifier localId="225" locator="20:24-20:38" name="t:Quantity" xsi:type="NamedTypeSpecifier"/>
+      </def>
+   </parameters>
+   <codeSystems>
+      <def localId="210" locator="9:1-9:113" name="FlagCode" id="http://cancerscreeningcds.github.io/crcsm-cds/CodeSystem/recommendation-flag-code-system" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="210">
+               <a:s>codesystem &quot;FlagCode&quot;: 'http://cancerscreeningcds.github.io/crcsm-cds/CodeSystem/recommendation-flag-code-system'</a:s>
+            </a:s>
+         </annotation>
+      </def>
+      <def localId="217" locator="14:1-14:95" name="cpg-activity-type-cs" id="http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type-cs" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="217">
+               <a:s>codesystem &quot;cpg-activity-type-cs&quot;: 'http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type-cs'</a:s>
+            </a:s>
+         </annotation>
+      </def>
+   </codeSystems>
+   <codes>
+      <def localId="211" locator="11:1-11:60" name="OVERDUE" id="overdue" display="Overdue" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="211">
+               <a:s>code &quot;OVERDUE&quot; : 'overdue' from </a:s>
+               <a:s r="212">
+                  <a:s>&quot;FlagCode&quot;</a:s>
+               </a:s>
+               <a:s> display 'Overdue'</a:s>
+            </a:s>
+         </annotation>
+         <codeSystem localId="212" locator="11:33-11:42" name="FlagCode"/>
+      </def>
+      <def localId="213" locator="12:1-12:48" name="DUE" id="due" display="Due" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="213">
+               <a:s>code &quot;DUE&quot; : 'due' from </a:s>
+               <a:s r="214">
+                  <a:s>&quot;FlagCode&quot;</a:s>
+               </a:s>
+               <a:s> display 'Due'</a:s>
+            </a:s>
+         </annotation>
+         <codeSystem localId="214" locator="12:25-12:34" name="FlagCode"/>
+      </def>
+      <def localId="215" locator="13:1-13:60" name="NOT DUE" id="not-due" display="Not due" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="215">
+               <a:s>code &quot;NOT DUE&quot; : 'not-due' from </a:s>
+               <a:s r="216">
+                  <a:s>&quot;FlagCode&quot;</a:s>
+               </a:s>
+               <a:s> display 'Not due'</a:s>
+            </a:s>
+         </annotation>
+         <codeSystem localId="216" locator="13:33-13:42" name="FlagCode"/>
+      </def>
+      <def localId="218" locator="15:1-15:104" name="Record an inference" id="record-inference" display="Record an inference" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="218">
+               <a:s>code &quot;Record an inference&quot;: 'record-inference' from </a:s>
+               <a:s r="219">
+                  <a:s>&quot;cpg-activity-type-cs&quot;</a:s>
+               </a:s>
+               <a:s> display 'Record an inference'</a:s>
+            </a:s>
+         </annotation>
+         <codeSystem localId="219" locator="15:53-15:74" name="cpg-activity-type-cs"/>
+      </def>
+   </codes>
+   <contexts>
+      <def localId="229" locator="22:1-22:15" name="Patient"/>
+   </contexts>
+   <statements>
+      <def localId="227" locator="22:1-22:15" name="Patient" context="Patient">
+         <expression localId="228" xsi:type="SingletonFrom">
+            <operand localId="226" locator="22:1-22:15" dataType="fhir:Patient" templateId="http://hl7.org/fhir/StructureDefinition/Patient" xsi:type="Retrieve"/>
+         </expression>
+      </def>
+      <def localId="231" locator="28:1-31:3" name="SourceDocumentationACS" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="231">
+               <a:s>//------------------------------------------------------------------------------
+// Recommendation model
+//------------------------------------------------------------------------------
+
+define SourceDocumentationACS:
+  </a:s>
+               <a:s r="232">
+                  <a:s>{
+    </a:s>
+                  <a:s>
+                     <a:s>label: </a:s>
+                     <a:s r="233">
+                        <a:s>'ACS'</a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s>
+  }</a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="232" locator="29:3-31:3" xsi:type="Tuple">
+            <element name="label">
+               <value localId="233" locator="30:12-30:16" valueType="t:String" value="ACS" xsi:type="Literal"/>
+            </element>
+         </expression>
+      </def>
+      <def localId="235" locator="33:1-36:3" name="SourceDocumentationUSPSTF" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="235">
+               <a:s>define SourceDocumentationUSPSTF:
+  </a:s>
+               <a:s r="236">
+                  <a:s>{
+    </a:s>
+                  <a:s>
+                     <a:s>label: </a:s>
+                     <a:s r="237">
+                        <a:s>'USPSTF'</a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s>
+  }</a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="236" locator="34:3-36:3" xsi:type="Tuple">
+            <element name="label">
+               <value localId="237" locator="35:12-35:19" valueType="t:String" value="USPSTF" xsi:type="Literal"/>
+            </element>
+         </expression>
+      </def>
+      <def localId="239" locator="38:1-41:3" name="SourceDocumentationUSMSTF" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="239">
+               <a:s>define SourceDocumentationUSMSTF:
+  </a:s>
+               <a:s r="240">
+                  <a:s>{
+    </a:s>
+                  <a:s>
+                     <a:s>label: </a:s>
+                     <a:s r="241">
+                        <a:s>'USMSTF'</a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s>
+  }</a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="240" locator="39:3-41:3" xsi:type="Tuple">
+            <element name="label">
+               <value localId="241" locator="40:12-40:19" valueType="t:String" value="USMSTF" xsi:type="Literal"/>
+            </element>
+         </expression>
+      </def>
+      <def localId="243" locator="43:1-46:3" name="SourceDocumentationOther" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="243">
+               <a:s>define SourceDocumentationOther:
+  </a:s>
+               <a:s r="244">
+                  <a:s>{
+    </a:s>
+                  <a:s>
+                     <a:s>label: </a:s>
+                     <a:s r="245">
+                        <a:s>'Other'</a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s>
+  }</a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="244" locator="44:3-46:3" xsi:type="Tuple">
+            <element name="label">
+               <value localId="245" locator="45:12-45:18" valueType="t:String" value="Other" xsi:type="Literal"/>
+            </element>
+         </expression>
+      </def>
+      <def localId="246" locator="48:1-74:3" name="SetRecommendation" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="246">
+               <a:s>define function SetRecommendation(          
+    code System.Code,
+    reason System.Code,
+    documentation Tuple{label System.String},
+    timingAge Tuple{value Decimal, code String},
+    event List&lt;System.String>,
+    repeat Tuple{frequency System.Integer,period System.Decimal,periodUnit System.String}) 
+    returns Tuple {code System.Code,reason System.Code,documentation Tuple{label System.String},timingAge Tuple{value Decimal, code String},
+      timingTiming Tuple{event List&lt;System.String>,repeat Tuple{boundsPeriod Tuple{start System.String},frequency System.Integer,period System.Decimal,periodUnit System.String}}}: 
+  </a:s>
+               <a:s r="304">
+                  <a:s r="304">
+                     <a:s>Tuple {
+    </a:s>
+                     <a:s>
+                        <a:s>code: </a:s>
+                        <a:s r="305">
+                           <a:s>code</a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s>,
+    </a:s>
+                     <a:s>
+                        <a:s>reason: </a:s>
+                        <a:s r="306">
+                           <a:s>reason</a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s>,
+    </a:s>
+                     <a:s>
+                        <a:s>documentation: </a:s>
+                        <a:s r="307">
+                           <a:s>documentation</a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s>,
+    </a:s>
+                     <a:s>
+                        <a:s>timingAge: </a:s>
+                        <a:s r="308">
+                           <a:s>timingAge</a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s>,
+    </a:s>
+                     <a:s>
+                        <a:s>timingTiming: </a:s>
+                        <a:s r="309">
+                           <a:s>{
+      </a:s>
+                           <a:s>
+                              <a:s>event: </a:s>
+                              <a:s r="310">
+                                 <a:s>(</a:s>
+                                 <a:s r="310">
+                                    <a:s>if </a:s>
+                                    <a:s r="311">
+                                       <a:s>exists </a:s>
+                                       <a:s r="312">
+                                          <a:s>event</a:s>
+                                       </a:s>
+                                    </a:s>
+                                    <a:s> then </a:s>
+                                    <a:s r="313">
+                                       <a:s>event</a:s>
+                                    </a:s>
+                                    <a:s> else 
+        </a:s>
+                                    <a:s r="314">
+                                       <a:s>{</a:s>
+                                       <a:s r="609">
+                                          <a:s>ToString(</a:s>
+                                          <a:s r="358">
+                                             <a:s>CalculateNextDueByCodeAndInterval(</a:s>
+                                             <a:s r="319">
+                                                <a:s>ToConcept(</a:s>
+                                                <a:s r="315">
+                                                   <a:s>code</a:s>
+                                                </a:s>
+                                                <a:s>)</a:s>
+                                             </a:s>
+                                             <a:s>, </a:s>
+                                             <a:s r="329">
+                                                <a:s>CalculateStartDateByAge(</a:s>
+                                                <a:s r="321">
+                                                   <a:s>timingAge</a:s>
+                                                </a:s>
+                                                <a:s>)</a:s>
+                                             </a:s>
+                                             <a:s>, </a:s>
+                                             <a:s r="344">
+                                                <a:s>repeat</a:s>
+                                             </a:s>
+                                             <a:s>)</a:s>
+                                          </a:s>
+                                          <a:s>)</a:s>
+                                       </a:s>
+                                       <a:s>}</a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s>)</a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s>,
+      </a:s>
+                           <a:s>
+                              <a:s>repeat: </a:s>
+                              <a:s r="611">
+                                 <a:s>{
+        </a:s>
+                                 <a:s>
+                                    <a:s>boundsPeriod: </a:s>
+                                    <a:s r="612">
+                                       <a:s>{
+          </a:s>
+                                       <a:s>
+                                          <a:s>start: </a:s>
+                                          <a:s r="613">
+                                             <a:s>if </a:s>
+                                             <a:s r="616">
+                                                <a:s r="614">
+                                                   <a:s>timingAge</a:s>
+                                                </a:s>
+                                                <a:s> is not null</a:s>
+                                             </a:s>
+                                             <a:s> then </a:s>
+                                             <a:s r="622">
+                                                <a:s>ToString(</a:s>
+                                                <a:s r="618">
+                                                   <a:s>CalculateStartDateByAge(</a:s>
+                                                   <a:s r="617">
+                                                      <a:s>timingAge</a:s>
+                                                   </a:s>
+                                                   <a:s>)</a:s>
+                                                </a:s>
+                                                <a:s>)</a:s>
+                                             </a:s>
+                                             <a:s r="624"> else null</a:s>
+                                          </a:s>
+                                       </a:s>
+                                       <a:s>
+        }</a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s>,
+        </a:s>
+                                 <a:s>
+                                    <a:s>frequency: </a:s>
+                                    <a:s r="627">
+                                       <a:s r="626">
+                                          <a:s>repeat</a:s>
+                                       </a:s>
+                                       <a:s>.</a:s>
+                                       <a:s r="627">
+                                          <a:s>frequency</a:s>
+                                       </a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s>,
+        </a:s>
+                                 <a:s>
+                                    <a:s>period: </a:s>
+                                    <a:s r="629">
+                                       <a:s r="628">
+                                          <a:s>repeat</a:s>
+                                       </a:s>
+                                       <a:s>.</a:s>
+                                       <a:s r="629">
+                                          <a:s>period</a:s>
+                                       </a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s>,
+        </a:s>
+                                 <a:s>
+                                    <a:s>periodUnit: </a:s>
+                                    <a:s r="631">
+                                       <a:s r="630">
+                                          <a:s>repeat</a:s>
+                                       </a:s>
+                                       <a:s>.</a:s>
+                                       <a:s r="631">
+                                          <a:s>periodUnit</a:s>
+                                       </a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s>
+      }</a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s>
+    }</a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s>
+  }</a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="304" locator="57:3-74:3" xsi:type="Tuple">
+            <element name="code">
+               <value localId="305" locator="58:11-58:14" name="code" xsi:type="OperandRef"/>
+            </element>
+            <element name="reason">
+               <value localId="306" locator="59:13-59:18" name="reason" xsi:type="OperandRef"/>
+            </element>
+            <element name="documentation">
+               <value localId="307" locator="60:20-60:32" name="documentation" xsi:type="OperandRef"/>
+            </element>
+            <element name="timingAge">
+               <value localId="308" locator="61:16-61:24" name="timingAge" xsi:type="OperandRef"/>
+            </element>
+            <element name="timingTiming">
+               <value localId="309" locator="62:19-73:5" xsi:type="Tuple">
+                  <element name="event">
+                     <value localId="310" locator="63:14-64:115" xsi:type="If">
+                        <condition localId="311" locator="63:18-63:29" xsi:type="Exists">
+                           <operand localId="312" locator="63:25-63:29" name="event" xsi:type="OperandRef"/>
+                        </condition>
+                        <then localId="313" locator="63:36-63:40" name="event" xsi:type="OperandRef"/>
+                        <else localId="314" locator="64:9-64:114" xsi:type="List">
+                           <element localId="609" locator="64:10-64:113" xsi:type="ToString">
+                              <signature localId="610" name="t:DateTime" xsi:type="NamedTypeSpecifier"/>
+                              <operand localId="358" locator="64:19-64:112" name="CalculateNextDueByCodeAndInterval" xsi:type="FunctionRef">
+                                 <operand localId="319" locator="64:53-64:67" xsi:type="ToConcept">
+                                    <signature localId="320" name="t:Code" xsi:type="NamedTypeSpecifier"/>
+                                    <operand localId="315" locator="64:63-64:66" name="code" xsi:type="OperandRef"/>
+                                 </operand>
+                                 <operand localId="360" xsi:type="ToDateTime">
+                                    <signature localId="361" name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                                    <operand localId="329" locator="64:70-64:103" name="CalculateStartDateByAge" xsi:type="FunctionRef">
+                                       <operand localId="321" locator="64:94-64:102" name="timingAge" xsi:type="OperandRef"/>
+                                    </operand>
+                                 </operand>
+                                 <operand localId="344" locator="64:106-64:111" name="repeat" xsi:type="OperandRef"/>
+                              </operand>
+                           </element>
+                        </else>
+                     </value>
+                  </element>
+                  <element name="repeat">
+                     <value localId="611" locator="65:15-72:7" xsi:type="Tuple">
+                        <element name="boundsPeriod">
+                           <value localId="612" locator="66:23-68:9" xsi:type="Tuple">
+                              <element name="start">
+                                 <value localId="613" locator="67:18-67:101" xsi:type="If">
+                                    <condition localId="616" locator="67:21-67:41" xsi:type="Not">
+                                       <operand localId="615" locator="67:21-67:41" xsi:type="IsNull">
+                                          <operand localId="614" locator="67:21-67:29" name="timingAge" xsi:type="OperandRef"/>
+                                       </operand>
+                                    </condition>
+                                    <then localId="622" locator="67:48-67:91" xsi:type="ToString">
+                                       <signature localId="623" name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                                       <operand localId="618" locator="67:57-67:90" name="CalculateStartDateByAge" xsi:type="FunctionRef">
+                                          <operand localId="617" locator="67:81-67:89" name="timingAge" xsi:type="OperandRef"/>
+                                       </operand>
+                                    </then>
+                                    <else localId="625" asType="t:String" xsi:type="As">
+                                       <operand localId="624" locator="67:98-67:101" xsi:type="Null"/>
+                                    </else>
+                                 </value>
+                              </element>
+                           </value>
+                        </element>
+                        <element name="frequency">
+                           <value localId="627" locator="69:20-69:35" path="frequency" xsi:type="Property">
+                              <source localId="626" locator="69:20-69:25" name="repeat" xsi:type="OperandRef"/>
+                           </value>
+                        </element>
+                        <element name="period">
+                           <value localId="629" locator="70:17-70:29" path="period" xsi:type="Property">
+                              <source localId="628" locator="70:17-70:22" name="repeat" xsi:type="OperandRef"/>
+                           </value>
+                        </element>
+                        <element name="periodUnit">
+                           <value localId="631" locator="71:21-71:37" path="periodUnit" xsi:type="Property">
+                              <source localId="630" locator="71:21-71:26" name="repeat" xsi:type="OperandRef"/>
+                           </value>
+                        </element>
+                     </value>
+                  </element>
+               </value>
+            </element>
+         </expression>
+         <operand localId="248" name="code">
+            <operandTypeSpecifier localId="247" locator="49:10-49:20" name="t:Code" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+         <operand localId="250" name="reason">
+            <operandTypeSpecifier localId="249" locator="50:12-50:22" name="t:Code" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+         <operand localId="254" name="documentation">
+            <operandTypeSpecifier localId="251" locator="51:19-51:44" xsi:type="TupleTypeSpecifier">
+               <element localId="252" locator="51:25-51:43" name="label">
+                  <elementType localId="253" locator="51:31-51:43" name="t:String" xsi:type="NamedTypeSpecifier"/>
+               </element>
+            </operandTypeSpecifier>
+         </operand>
+         <operand localId="260" name="timingAge">
+            <operandTypeSpecifier localId="255" locator="52:15-52:47" xsi:type="TupleTypeSpecifier">
+               <element localId="256" locator="52:21-52:33" name="value">
+                  <elementType localId="257" locator="52:27-52:33" name="t:Decimal" xsi:type="NamedTypeSpecifier"/>
+               </element>
+               <element localId="258" locator="52:36-52:46" name="code">
+                  <elementType localId="259" locator="52:41-52:46" name="t:String" xsi:type="NamedTypeSpecifier"/>
+               </element>
+            </operandTypeSpecifier>
+         </operand>
+         <operand localId="263" name="event">
+            <operandTypeSpecifier localId="261" locator="53:11-53:29" xsi:type="ListTypeSpecifier">
+               <elementType localId="262" locator="53:16-53:28" name="t:String" xsi:type="NamedTypeSpecifier"/>
+            </operandTypeSpecifier>
+         </operand>
+         <operand localId="271" name="repeat">
+            <operandTypeSpecifier localId="264" locator="54:12-54:89" xsi:type="TupleTypeSpecifier">
+               <element localId="265" locator="54:18-54:41" name="frequency">
+                  <elementType localId="266" locator="54:28-54:41" name="t:Integer" xsi:type="NamedTypeSpecifier"/>
+               </element>
+               <element localId="267" locator="54:43-54:63" name="period">
+                  <elementType localId="268" locator="54:50-54:63" name="t:Decimal" xsi:type="NamedTypeSpecifier"/>
+               </element>
+               <element localId="269" locator="54:65-54:88" name="periodUnit">
+                  <elementType localId="270" locator="54:76-54:88" name="t:String" xsi:type="NamedTypeSpecifier"/>
+               </element>
+            </operandTypeSpecifier>
+         </operand>
+      </def>
+      <def localId="322" locator="76:1-77:113" name="CalculateStartDateByAge" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="322">
+               <a:s>define function CalculateStartDateByAge(timingAge Tuple{value Decimal, code String}): 
+  </a:s>
+               <a:s r="632">
+                  <a:s r="632">
+                     <a:s r="634">
+                        <a:s r="633">
+                           <a:s>Patient</a:s>
+                        </a:s>
+                        <a:s>.</a:s>
+                        <a:s r="634">
+                           <a:s>birthDate</a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s> + </a:s>
+                     <a:s r="635">
+                        <a:s>System.Quantity{</a:s>
+                        <a:s>
+                           <a:s>value: </a:s>
+                           <a:s r="638">
+                              <a:s>(</a:s>
+                              <a:s r="638">
+                                 <a:s r="637">
+                                    <a:s>timingAge</a:s>
+                                 </a:s>
+                                 <a:s>.</a:s>
+                                 <a:s r="638">
+                                    <a:s>value</a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s>)</a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s>, </a:s>
+                        <a:s>
+                           <a:s>unit: </a:s>
+                           <a:s r="642">
+                              <a:s r="639">
+                                 <a:s>FHIRHelpers</a:s>
+                              </a:s>
+                              <a:s>.</a:s>
+                              <a:s r="642">
+                                 <a:s>ToCalendarUnit(</a:s>
+                                 <a:s r="641">
+                                    <a:s r="640">
+                                       <a:s>timingAge</a:s>
+                                    </a:s>
+                                    <a:s>.</a:s>
+                                    <a:s r="641">
+                                       <a:s>code</a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s>)</a:s>
+                              </a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s>}</a:s>
+                     </a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="632" locator="77:3-77:113" xsi:type="Add">
+            <signature localId="644" name="t:Date" xsi:type="NamedTypeSpecifier"/>
+            <signature localId="645" name="t:Quantity" xsi:type="NamedTypeSpecifier"/>
+            <operand localId="643" name="ToDate" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+               <operand localId="634" locator="77:3-77:19" path="birthDate" xsi:type="Property">
+                  <source localId="633" locator="77:3-77:9" name="Patient" xsi:type="ExpressionRef"/>
+               </operand>
+            </operand>
+            <operand localId="635" locator="77:23-77:113" classType="t:Quantity" xsi:type="Instance">
+               <element name="value">
+                  <value localId="638" locator="77:46-77:62" path="value" xsi:type="Property">
+                     <source localId="637" locator="77:47-77:55" name="timingAge" xsi:type="OperandRef"/>
+                  </value>
+               </element>
+               <element name="unit">
+                  <value localId="642" locator="77:71-77:112" name="ToCalendarUnit" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                     <operand localId="641" locator="77:98-77:111" path="code" xsi:type="Property">
+                        <source localId="640" locator="77:98-77:106" name="timingAge" xsi:type="OperandRef"/>
+                     </operand>
+                  </value>
+               </element>
+            </operand>
+         </expression>
+         <operand localId="328" name="timingAge">
+            <operandTypeSpecifier localId="323" locator="76:51-76:83" xsi:type="TupleTypeSpecifier">
+               <element localId="324" locator="76:57-76:69" name="value">
+                  <elementType localId="325" locator="76:63-76:69" name="t:Decimal" xsi:type="NamedTypeSpecifier"/>
+               </element>
+               <element localId="326" locator="76:72-76:82" name="code">
+                  <elementType localId="327" locator="76:77-76:82" name="t:String" xsi:type="NamedTypeSpecifier"/>
+               </element>
+            </operandTypeSpecifier>
+         </operand>
+      </def>
+      <def localId="345" locator="90:1-124:7" name="CalculateNextDueByCodeAndInterval" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="345">
+               <a:s>//------------------------------------------------------------------------------
+// Calculated next due date
+//------------------------------------------------------------------------------
+//  +startDate, +repeat, +lastreport = use startDate if > lastreport else lastreport + repeat
+//  +startDate, +repeat, -lastreport = use startDate
+//  +startDate, -repeat, +lastreport = use startDate if > lastreport else no prediction (non-repeating and ?completed)
+//  +startDate, -repeat, -lastreport = use startDate
+//  -startDate, +repeat, +lastreport = use lastreport + repeat
+//  -startDate, +repeat, -lastreport = use today
+//  -startDate, -repeat, +lastreport = no prediction (non-repeating and ?completed)
+//  -startDate, -repeat, -lastreport = use today
+define function CalculateNextDueByCodeAndInterval(code Concept, 
+    startDate DateTime,
+    repeat Tuple{frequency System.Integer,period System.Decimal,periodUnit System.String}):
+  </a:s>
+               <a:s r="811">
+                  <a:s r="811">
+                     <a:s>
+                        <a:s r="646">
+                           <a:s r="647">
+                              <a:s>
+                                 <a:s>code</a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s> C</a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s>
+  //TODO: add last report lookup from observation for cases where report itself is not transmitted, only documented in a flowsheet
+  </a:s>
+                     <a:s>
+                        <a:s>let </a:s>
+                        <a:s r="648">
+                           <a:s>lastReport: </a:s>
+                           <a:s r="650">
+                              <a:s>MostRecentDiagnosticReportByCode(</a:s>
+                              <a:s r="649">
+                                 <a:s>C</a:s>
+                              </a:s>
+                              <a:s>)</a:s>
+                           </a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s>
+  </a:s>
+                     <a:s r="651">
+                        <a:s>return
+    </a:s>
+                        <a:s r="652">
+                           <a:s>case
+      // +startDate, +repeat, +lastReport
+      </a:s>
+                           <a:s r="653">
+                              <a:s>when </a:s>
+                              <a:s r="654">
+                                 <a:s r="655">
+                                    <a:s r="658">
+                                       <a:s r="656">
+                                          <a:s>startDate</a:s>
+                                       </a:s>
+                                       <a:s> is not null</a:s>
+                                    </a:s>
+                                    <a:s> and </a:s>
+                                    <a:s r="660">
+                                       <a:s>RepeatIsValid(</a:s>
+                                       <a:s r="659">
+                                          <a:s>repeat</a:s>
+                                       </a:s>
+                                       <a:s>)</a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s> and </a:s>
+                                 <a:s r="663">
+                                    <a:s r="661">
+                                       <a:s>lastReport</a:s>
+                                    </a:s>
+                                    <a:s> is not null</a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s> then
+        </a:s>
+                              <a:s r="664">
+                                 <a:s>if </a:s>
+                                 <a:s r="665">
+                                    <a:s r="666">
+                                       <a:s>startDate</a:s>
+                                    </a:s>
+                                    <a:s> > </a:s>
+                                    <a:s r="667">
+                                       <a:s r="671">
+                                          <a:s r="668">
+                                             <a:s>FHIRHelpers</a:s>
+                                          </a:s>
+                                          <a:s>.</a:s>
+                                          <a:s r="671">
+                                             <a:s>ToDateTime(</a:s>
+                                             <a:s r="670">
+                                                <a:s r="669">
+                                                   <a:s>lastReport</a:s>
+                                                </a:s>
+                                                <a:s>.</a:s>
+                                                <a:s r="670">
+                                                   <a:s>effective</a:s>
+                                                </a:s>
+                                             </a:s>
+                                             <a:s>)</a:s>
+                                          </a:s>
+                                       </a:s>
+                                       <a:s> as </a:s>
+                                       <a:s r="674">
+                                          <a:s>DateTime</a:s>
+                                       </a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s> then </a:s>
+                                 <a:s r="677">
+                                    <a:s>startDate</a:s>
+                                 </a:s>
+                                 <a:s> 
+        else </a:s>
+                                 <a:s r="678">
+                                    <a:s>date from </a:s>
+                                    <a:s r="688">
+                                       <a:s>AddIntervalToDateTime(</a:s>
+                                       <a:s r="679">
+                                          <a:s r="683">
+                                             <a:s r="680">
+                                                <a:s>FHIRHelpers</a:s>
+                                             </a:s>
+                                             <a:s>.</a:s>
+                                             <a:s r="683">
+                                                <a:s>ToDateTime(</a:s>
+                                                <a:s r="682">
+                                                   <a:s r="681">
+                                                      <a:s>lastReport</a:s>
+                                                   </a:s>
+                                                   <a:s>.</a:s>
+                                                   <a:s r="682">
+                                                      <a:s>effective</a:s>
+                                                   </a:s>
+                                                </a:s>
+                                                <a:s>)</a:s>
+                                             </a:s>
+                                          </a:s>
+                                          <a:s> as </a:s>
+                                          <a:s r="686">
+                                             <a:s>DateTime</a:s>
+                                          </a:s>
+                                       </a:s>
+                                       <a:s>, </a:s>
+                                       <a:s r="687">
+                                          <a:s>repeat</a:s>
+                                       </a:s>
+                                       <a:s>)</a:s>
+                                    </a:s>
+                                 </a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s>
+      // +startDate, +repeat, -lastReport
+      </a:s>
+                           <a:s r="692">
+                              <a:s>when </a:s>
+                              <a:s r="693">
+                                 <a:s r="694">
+                                    <a:s r="697">
+                                       <a:s r="695">
+                                          <a:s>startDate</a:s>
+                                       </a:s>
+                                       <a:s> is not null</a:s>
+                                    </a:s>
+                                    <a:s> and </a:s>
+                                    <a:s r="699">
+                                       <a:s>RepeatIsValid(</a:s>
+                                       <a:s r="698">
+                                          <a:s>repeat</a:s>
+                                       </a:s>
+                                       <a:s>)</a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s> and </a:s>
+                                 <a:s r="701">
+                                    <a:s r="700">
+                                       <a:s>lastReport</a:s>
+                                    </a:s>
+                                    <a:s> is null</a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s> then
+        </a:s>
+                              <a:s r="702">
+                                 <a:s>startDate</a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s>
+      // +startDate, -repeat, +lastReport
+      </a:s>
+                           <a:s r="703">
+                              <a:s>when </a:s>
+                              <a:s r="704">
+                                 <a:s r="705">
+                                    <a:s r="708">
+                                       <a:s r="706">
+                                          <a:s>startDate</a:s>
+                                       </a:s>
+                                       <a:s> is not null</a:s>
+                                    </a:s>
+                                    <a:s> and </a:s>
+                                    <a:s r="710">
+                                       <a:s r="709">
+                                          <a:s>repeat</a:s>
+                                       </a:s>
+                                       <a:s> is null</a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s> and </a:s>
+                                 <a:s r="713">
+                                    <a:s r="711">
+                                       <a:s>lastReport</a:s>
+                                    </a:s>
+                                    <a:s> is not null</a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s> then
+        </a:s>
+                              <a:s r="714">
+                                 <a:s>if </a:s>
+                                 <a:s r="715">
+                                    <a:s r="716">
+                                       <a:s>startDate</a:s>
+                                    </a:s>
+                                    <a:s> > </a:s>
+                                    <a:s r="717">
+                                       <a:s r="721">
+                                          <a:s r="718">
+                                             <a:s>FHIRHelpers</a:s>
+                                          </a:s>
+                                          <a:s>.</a:s>
+                                          <a:s r="721">
+                                             <a:s>ToDateTime(</a:s>
+                                             <a:s r="720">
+                                                <a:s r="719">
+                                                   <a:s>lastReport</a:s>
+                                                </a:s>
+                                                <a:s>.</a:s>
+                                                <a:s r="720">
+                                                   <a:s>effective</a:s>
+                                                </a:s>
+                                             </a:s>
+                                             <a:s>)</a:s>
+                                          </a:s>
+                                       </a:s>
+                                       <a:s> as </a:s>
+                                       <a:s r="724">
+                                          <a:s>DateTime</a:s>
+                                       </a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s> then </a:s>
+                                 <a:s r="727">
+                                    <a:s>startDate</a:s>
+                                 </a:s>
+                                 <a:s r="728"> else null</a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s>
+      // +startDate, -repeat, -lastReport
+      </a:s>
+                           <a:s r="730">
+                              <a:s>when </a:s>
+                              <a:s r="731">
+                                 <a:s r="732">
+                                    <a:s r="735">
+                                       <a:s r="733">
+                                          <a:s>startDate</a:s>
+                                       </a:s>
+                                       <a:s> is not null</a:s>
+                                    </a:s>
+                                    <a:s> and </a:s>
+                                    <a:s r="737">
+                                       <a:s r="736">
+                                          <a:s>repeat</a:s>
+                                       </a:s>
+                                       <a:s> is null</a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s> and </a:s>
+                                 <a:s r="739">
+                                    <a:s r="738">
+                                       <a:s>lastReport</a:s>
+                                    </a:s>
+                                    <a:s> is null</a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s> then
+        </a:s>
+                              <a:s r="740">
+                                 <a:s>startDate</a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s>
+      // -startDate, +repeat, +lastReport
+      </a:s>
+                           <a:s r="741">
+                              <a:s>when </a:s>
+                              <a:s r="742">
+                                 <a:s r="743">
+                                    <a:s r="745">
+                                       <a:s r="744">
+                                          <a:s>startDate</a:s>
+                                       </a:s>
+                                       <a:s> is null</a:s>
+                                    </a:s>
+                                    <a:s> and </a:s>
+                                    <a:s r="747">
+                                       <a:s>RepeatIsValid(</a:s>
+                                       <a:s r="746">
+                                          <a:s>repeat</a:s>
+                                       </a:s>
+                                       <a:s>)</a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s> and </a:s>
+                                 <a:s r="750">
+                                    <a:s r="748">
+                                       <a:s>lastReport</a:s>
+                                    </a:s>
+                                    <a:s> is not null</a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s> then
+        </a:s>
+                              <a:s r="751">
+                                 <a:s>date from </a:s>
+                                 <a:s r="761">
+                                    <a:s>AddIntervalToDateTime(</a:s>
+                                    <a:s r="752">
+                                       <a:s r="756">
+                                          <a:s r="753">
+                                             <a:s>FHIRHelpers</a:s>
+                                          </a:s>
+                                          <a:s>.</a:s>
+                                          <a:s r="756">
+                                             <a:s>ToDateTime(</a:s>
+                                             <a:s r="755">
+                                                <a:s r="754">
+                                                   <a:s>lastReport</a:s>
+                                                </a:s>
+                                                <a:s>.</a:s>
+                                                <a:s r="755">
+                                                   <a:s>effective</a:s>
+                                                </a:s>
+                                             </a:s>
+                                             <a:s>)</a:s>
+                                          </a:s>
+                                       </a:s>
+                                       <a:s> as </a:s>
+                                       <a:s r="759">
+                                          <a:s>DateTime</a:s>
+                                       </a:s>
+                                    </a:s>
+                                    <a:s>, </a:s>
+                                    <a:s r="760">
+                                       <a:s>repeat</a:s>
+                                    </a:s>
+                                    <a:s>)</a:s>
+                                 </a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s>
+      // -startDate, +repeat, -lastReport
+      </a:s>
+                           <a:s r="762">
+                              <a:s>when </a:s>
+                              <a:s r="763">
+                                 <a:s r="764">
+                                    <a:s r="766">
+                                       <a:s r="765">
+                                          <a:s>startDate</a:s>
+                                       </a:s>
+                                       <a:s> is null</a:s>
+                                    </a:s>
+                                    <a:s> and </a:s>
+                                    <a:s r="768">
+                                       <a:s>RepeatIsValid(</a:s>
+                                       <a:s r="767">
+                                          <a:s>repeat</a:s>
+                                       </a:s>
+                                       <a:s>)</a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s> and </a:s>
+                                 <a:s r="770">
+                                    <a:s r="769">
+                                       <a:s>lastReport</a:s>
+                                    </a:s>
+                                    <a:s> is null</a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s> then
+        </a:s>
+                              <a:s r="773">
+                                 <a:s>Today()</a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s>
+      // -startDate, -repeat, +lastReport
+      </a:s>
+                           <a:s r="774">
+                              <a:s>when </a:s>
+                              <a:s r="775">
+                                 <a:s r="776">
+                                    <a:s r="778">
+                                       <a:s r="777">
+                                          <a:s>startDate</a:s>
+                                       </a:s>
+                                       <a:s> is null</a:s>
+                                    </a:s>
+                                    <a:s> and </a:s>
+                                    <a:s r="781">
+                                       <a:s r="780">
+                                          <a:s>RepeatIsValid(</a:s>
+                                          <a:s r="779">
+                                             <a:s>repeat</a:s>
+                                          </a:s>
+                                          <a:s>)</a:s>
+                                       </a:s>
+                                       <a:s> is false</a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s> and </a:s>
+                                 <a:s r="784">
+                                    <a:s r="782">
+                                       <a:s>lastReport</a:s>
+                                    </a:s>
+                                    <a:s> is not null</a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s r="785"> then
+        null</a:s>
+                           </a:s>
+                           <a:s>
+      // -startDate, -repeat, -lastReport
+      </a:s>
+                           <a:s r="786">
+                              <a:s>when </a:s>
+                              <a:s r="787">
+                                 <a:s r="788">
+                                    <a:s r="790">
+                                       <a:s r="789">
+                                          <a:s>startDate</a:s>
+                                       </a:s>
+                                       <a:s> is null</a:s>
+                                    </a:s>
+                                    <a:s> and </a:s>
+                                    <a:s r="793">
+                                       <a:s r="792">
+                                          <a:s>RepeatIsValid(</a:s>
+                                          <a:s r="791">
+                                             <a:s>repeat</a:s>
+                                          </a:s>
+                                          <a:s>)</a:s>
+                                       </a:s>
+                                       <a:s> is false</a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s> and </a:s>
+                                 <a:s r="795">
+                                    <a:s r="794">
+                                       <a:s>lastReport</a:s>
+                                    </a:s>
+                                    <a:s> is null</a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s> then
+        </a:s>
+                              <a:s r="798">
+                                 <a:s>Today()</a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s r="799">
+      else null  
+    end</a:s>
+                        </a:s>
+                     </a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="811" locator="93:3-124:7" xsi:type="Query">
+            <source localId="646" locator="93:3-93:8" alias="C">
+               <expression localId="647" locator="93:3-93:6" name="code" xsi:type="OperandRef"/>
+            </source>
+            <let localId="648" locator="95:7-95:53" identifier="lastReport">
+               <expression localId="650" locator="95:19-95:53" name="MostRecentDiagnosticReportByCode" xsi:type="FunctionRef">
+                  <operand localId="649" locator="95:52" name="C" xsi:type="AliasRef"/>
+               </expression>
+            </let>
+            <return localId="651" locator="96:3-124:7">
+               <expression localId="652" locator="97:5-124:7" xsi:type="Case">
+                  <caseItem localId="653" locator="99:7-101:110">
+                     <when localId="654" locator="99:12-99:85" xsi:type="And">
+                        <operand localId="655" locator="99:12-99:58" xsi:type="And">
+                           <operand localId="658" locator="99:12-99:32" xsi:type="Not">
+                              <operand localId="657" locator="99:12-99:32" xsi:type="IsNull">
+                                 <operand localId="656" locator="99:12-99:20" name="startDate" xsi:type="OperandRef"/>
+                              </operand>
+                           </operand>
+                           <operand localId="660" locator="99:38-99:58" name="RepeatIsValid" xsi:type="FunctionRef">
+                              <operand localId="659" locator="99:52-99:57" name="repeat" xsi:type="OperandRef"/>
+                           </operand>
+                        </operand>
+                        <operand localId="663" locator="99:64-99:85" xsi:type="Not">
+                           <operand localId="662" locator="99:64-99:85" xsi:type="IsNull">
+                              <operand localId="661" locator="99:64-99:73" name="lastReport" xsi:type="QueryLetRef"/>
+                           </operand>
+                        </operand>
+                     </when>
+                     <then localId="664" locator="100:9-101:110" xsi:type="If">
+                        <condition localId="665" locator="100:12-100:79" xsi:type="Greater">
+                           <signature localId="675" name="t:DateTime" xsi:type="NamedTypeSpecifier"/>
+                           <signature localId="676" name="t:DateTime" xsi:type="NamedTypeSpecifier"/>
+                           <operand localId="666" locator="100:12-100:20" name="startDate" xsi:type="OperandRef"/>
+                           <operand localId="667" locator="100:24-100:79" strict="false" xsi:type="As">
+                              <operand localId="671" locator="100:24-100:67" name="ToDateTime" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                 <signature localId="673" name="fhir:dateTime" xsi:type="NamedTypeSpecifier"/>
+                                 <operand localId="672" asType="fhir:dateTime" xsi:type="As">
+                                    <operand localId="670" locator="100:47-100:66" path="effective" xsi:type="Property">
+                                       <source localId="669" locator="100:47-100:56" name="lastReport" xsi:type="QueryLetRef"/>
+                                    </operand>
+                                 </operand>
+                              </operand>
+                              <asTypeSpecifier localId="674" locator="100:72-100:79" name="t:DateTime" xsi:type="NamedTypeSpecifier"/>
+                           </operand>
+                        </condition>
+                        <then localId="677" locator="100:86-100:94" name="startDate" xsi:type="OperandRef"/>
+                        <else localId="690" xsi:type="ToDateTime">
+                           <signature localId="691" name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                           <operand localId="678" locator="101:14-101:110" xsi:type="DateFrom">
+                              <operand localId="688" locator="101:24-101:110" name="AddIntervalToDateTime" xsi:type="FunctionRef">
+                                 <operand localId="679" locator="101:46-101:101" strict="false" xsi:type="As">
+                                    <operand localId="683" locator="101:46-101:89" name="ToDateTime" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                       <signature localId="685" name="fhir:dateTime" xsi:type="NamedTypeSpecifier"/>
+                                       <operand localId="684" asType="fhir:dateTime" xsi:type="As">
+                                          <operand localId="682" locator="101:69-101:88" path="effective" xsi:type="Property">
+                                             <source localId="681" locator="101:69-101:78" name="lastReport" xsi:type="QueryLetRef"/>
+                                          </operand>
+                                       </operand>
+                                    </operand>
+                                    <asTypeSpecifier localId="686" locator="101:94-101:101" name="t:DateTime" xsi:type="NamedTypeSpecifier"/>
+                                 </operand>
+                                 <operand localId="687" locator="101:104-101:109" name="repeat" xsi:type="OperandRef"/>
+                              </operand>
+                           </operand>
+                        </else>
+                     </then>
+                  </caseItem>
+                  <caseItem localId="692" locator="103:7-104:17">
+                     <when localId="693" locator="103:12-103:81" xsi:type="And">
+                        <operand localId="694" locator="103:12-103:58" xsi:type="And">
+                           <operand localId="697" locator="103:12-103:32" xsi:type="Not">
+                              <operand localId="696" locator="103:12-103:32" xsi:type="IsNull">
+                                 <operand localId="695" locator="103:12-103:20" name="startDate" xsi:type="OperandRef"/>
+                              </operand>
+                           </operand>
+                           <operand localId="699" locator="103:38-103:58" name="RepeatIsValid" xsi:type="FunctionRef">
+                              <operand localId="698" locator="103:52-103:57" name="repeat" xsi:type="OperandRef"/>
+                           </operand>
+                        </operand>
+                        <operand localId="701" locator="103:64-103:81" xsi:type="IsNull">
+                           <operand localId="700" locator="103:64-103:73" name="lastReport" xsi:type="QueryLetRef"/>
+                        </operand>
+                     </when>
+                     <then localId="702" locator="104:9-104:17" name="startDate" xsi:type="OperandRef"/>
+                  </caseItem>
+                  <caseItem localId="703" locator="106:7-107:104">
+                     <when localId="704" locator="106:12-106:78" xsi:type="And">
+                        <operand localId="705" locator="106:12-106:51" xsi:type="And">
+                           <operand localId="708" locator="106:12-106:32" xsi:type="Not">
+                              <operand localId="707" locator="106:12-106:32" xsi:type="IsNull">
+                                 <operand localId="706" locator="106:12-106:20" name="startDate" xsi:type="OperandRef"/>
+                              </operand>
+                           </operand>
+                           <operand localId="710" locator="106:38-106:51" xsi:type="IsNull">
+                              <operand localId="709" locator="106:38-106:43" name="repeat" xsi:type="OperandRef"/>
+                           </operand>
+                        </operand>
+                        <operand localId="713" locator="106:57-106:78" xsi:type="Not">
+                           <operand localId="712" locator="106:57-106:78" xsi:type="IsNull">
+                              <operand localId="711" locator="106:57-106:66" name="lastReport" xsi:type="QueryLetRef"/>
+                           </operand>
+                        </operand>
+                     </when>
+                     <then localId="714" locator="107:9-107:104" xsi:type="If">
+                        <condition localId="715" locator="107:12-107:79" xsi:type="Greater">
+                           <signature localId="725" name="t:DateTime" xsi:type="NamedTypeSpecifier"/>
+                           <signature localId="726" name="t:DateTime" xsi:type="NamedTypeSpecifier"/>
+                           <operand localId="716" locator="107:12-107:20" name="startDate" xsi:type="OperandRef"/>
+                           <operand localId="717" locator="107:24-107:79" strict="false" xsi:type="As">
+                              <operand localId="721" locator="107:24-107:67" name="ToDateTime" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                 <signature localId="723" name="fhir:dateTime" xsi:type="NamedTypeSpecifier"/>
+                                 <operand localId="722" asType="fhir:dateTime" xsi:type="As">
+                                    <operand localId="720" locator="107:47-107:66" path="effective" xsi:type="Property">
+                                       <source localId="719" locator="107:47-107:56" name="lastReport" xsi:type="QueryLetRef"/>
+                                    </operand>
+                                 </operand>
+                              </operand>
+                              <asTypeSpecifier localId="724" locator="107:72-107:79" name="t:DateTime" xsi:type="NamedTypeSpecifier"/>
+                           </operand>
+                        </condition>
+                        <then localId="727" locator="107:86-107:94" name="startDate" xsi:type="OperandRef"/>
+                        <else localId="729" asType="t:DateTime" xsi:type="As">
+                           <operand localId="728" locator="107:101-107:104" xsi:type="Null"/>
+                        </else>
+                     </then>
+                  </caseItem>
+                  <caseItem localId="730" locator="109:7-110:17">
+                     <when localId="731" locator="109:12-109:74" xsi:type="And">
+                        <operand localId="732" locator="109:12-109:51" xsi:type="And">
+                           <operand localId="735" locator="109:12-109:32" xsi:type="Not">
+                              <operand localId="734" locator="109:12-109:32" xsi:type="IsNull">
+                                 <operand localId="733" locator="109:12-109:20" name="startDate" xsi:type="OperandRef"/>
+                              </operand>
+                           </operand>
+                           <operand localId="737" locator="109:38-109:51" xsi:type="IsNull">
+                              <operand localId="736" locator="109:38-109:43" name="repeat" xsi:type="OperandRef"/>
+                           </operand>
+                        </operand>
+                        <operand localId="739" locator="109:57-109:74" xsi:type="IsNull">
+                           <operand localId="738" locator="109:57-109:66" name="lastReport" xsi:type="QueryLetRef"/>
+                        </operand>
+                     </when>
+                     <then localId="740" locator="110:9-110:17" name="startDate" xsi:type="OperandRef"/>
+                  </caseItem>
+                  <caseItem localId="741" locator="112:7-113:105">
+                     <when localId="742" locator="112:12-112:81" xsi:type="And">
+                        <operand localId="743" locator="112:12-112:54" xsi:type="And">
+                           <operand localId="745" locator="112:12-112:28" xsi:type="IsNull">
+                              <operand localId="744" locator="112:12-112:20" name="startDate" xsi:type="OperandRef"/>
+                           </operand>
+                           <operand localId="747" locator="112:34-112:54" name="RepeatIsValid" xsi:type="FunctionRef">
+                              <operand localId="746" locator="112:48-112:53" name="repeat" xsi:type="OperandRef"/>
+                           </operand>
+                        </operand>
+                        <operand localId="750" locator="112:60-112:81" xsi:type="Not">
+                           <operand localId="749" locator="112:60-112:81" xsi:type="IsNull">
+                              <operand localId="748" locator="112:60-112:69" name="lastReport" xsi:type="QueryLetRef"/>
+                           </operand>
+                        </operand>
+                     </when>
+                     <then localId="801" xsi:type="ToDateTime">
+                        <signature localId="802" name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                        <operand localId="751" locator="113:9-113:105" xsi:type="DateFrom">
+                           <operand localId="761" locator="113:19-113:105" name="AddIntervalToDateTime" xsi:type="FunctionRef">
+                              <operand localId="752" locator="113:41-113:96" strict="false" xsi:type="As">
+                                 <operand localId="756" locator="113:41-113:84" name="ToDateTime" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                    <signature localId="758" name="fhir:dateTime" xsi:type="NamedTypeSpecifier"/>
+                                    <operand localId="757" asType="fhir:dateTime" xsi:type="As">
+                                       <operand localId="755" locator="113:64-113:83" path="effective" xsi:type="Property">
+                                          <source localId="754" locator="113:64-113:73" name="lastReport" xsi:type="QueryLetRef"/>
+                                       </operand>
+                                    </operand>
+                                 </operand>
+                                 <asTypeSpecifier localId="759" locator="113:89-113:96" name="t:DateTime" xsi:type="NamedTypeSpecifier"/>
+                              </operand>
+                              <operand localId="760" locator="113:99-113:104" name="repeat" xsi:type="OperandRef"/>
+                           </operand>
+                        </operand>
+                     </then>
+                  </caseItem>
+                  <caseItem localId="762" locator="115:7-116:15">
+                     <when localId="763" locator="115:12-115:77" xsi:type="And">
+                        <operand localId="764" locator="115:12-115:54" xsi:type="And">
+                           <operand localId="766" locator="115:12-115:28" xsi:type="IsNull">
+                              <operand localId="765" locator="115:12-115:20" name="startDate" xsi:type="OperandRef"/>
+                           </operand>
+                           <operand localId="768" locator="115:34-115:54" name="RepeatIsValid" xsi:type="FunctionRef">
+                              <operand localId="767" locator="115:48-115:53" name="repeat" xsi:type="OperandRef"/>
+                           </operand>
+                        </operand>
+                        <operand localId="770" locator="115:60-115:77" xsi:type="IsNull">
+                           <operand localId="769" locator="115:60-115:69" name="lastReport" xsi:type="QueryLetRef"/>
+                        </operand>
+                     </when>
+                     <then localId="804" xsi:type="ToDateTime">
+                        <signature localId="805" name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                        <operand localId="773" locator="116:9-116:15" xsi:type="Today"/>
+                     </then>
+                  </caseItem>
+                  <caseItem localId="774" locator="118:7-119:12">
+                     <when localId="775" locator="118:12-118:90" xsi:type="And">
+                        <operand localId="776" locator="118:12-118:63" xsi:type="And">
+                           <operand localId="778" locator="118:12-118:28" xsi:type="IsNull">
+                              <operand localId="777" locator="118:12-118:20" name="startDate" xsi:type="OperandRef"/>
+                           </operand>
+                           <operand localId="781" locator="118:34-118:63" xsi:type="IsFalse">
+                              <operand localId="780" locator="118:34-118:54" name="RepeatIsValid" xsi:type="FunctionRef">
+                                 <operand localId="779" locator="118:48-118:53" name="repeat" xsi:type="OperandRef"/>
+                              </operand>
+                           </operand>
+                        </operand>
+                        <operand localId="784" locator="118:69-118:90" xsi:type="Not">
+                           <operand localId="783" locator="118:69-118:90" xsi:type="IsNull">
+                              <operand localId="782" locator="118:69-118:78" name="lastReport" xsi:type="QueryLetRef"/>
+                           </operand>
+                        </operand>
+                     </when>
+                     <then localId="806" asType="t:DateTime" xsi:type="As">
+                        <operand localId="785" locator="119:9-119:12" xsi:type="Null"/>
+                     </then>
+                  </caseItem>
+                  <caseItem localId="786" locator="121:7-122:15">
+                     <when localId="787" locator="121:12-121:86" xsi:type="And">
+                        <operand localId="788" locator="121:12-121:63" xsi:type="And">
+                           <operand localId="790" locator="121:12-121:28" xsi:type="IsNull">
+                              <operand localId="789" locator="121:12-121:20" name="startDate" xsi:type="OperandRef"/>
+                           </operand>
+                           <operand localId="793" locator="121:34-121:63" xsi:type="IsFalse">
+                              <operand localId="792" locator="121:34-121:54" name="RepeatIsValid" xsi:type="FunctionRef">
+                                 <operand localId="791" locator="121:48-121:53" name="repeat" xsi:type="OperandRef"/>
+                              </operand>
+                           </operand>
+                        </operand>
+                        <operand localId="795" locator="121:69-121:86" xsi:type="IsNull">
+                           <operand localId="794" locator="121:69-121:78" name="lastReport" xsi:type="QueryLetRef"/>
+                        </operand>
+                     </when>
+                     <then localId="808" xsi:type="ToDateTime">
+                        <signature localId="809" name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                        <operand localId="798" locator="122:9-122:15" xsi:type="Today"/>
+                     </then>
+                  </caseItem>
+                  <else localId="810" asType="t:DateTime" xsi:type="As">
+                     <operand localId="799" locator="123:12-123:15" xsi:type="Null"/>
+                  </else>
+               </expression>
+            </return>
+         </expression>
+         <operand localId="347" name="code">
+            <operandTypeSpecifier localId="346" locator="90:56-90:62" name="t:Concept" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+         <operand localId="349" name="startDate">
+            <operandTypeSpecifier localId="348" locator="91:15-91:22" name="t:DateTime" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+         <operand localId="357" name="repeat">
+            <operandTypeSpecifier localId="350" locator="92:12-92:89" xsi:type="TupleTypeSpecifier">
+               <element localId="351" locator="92:18-92:41" name="frequency">
+                  <elementType localId="352" locator="92:28-92:41" name="t:Integer" xsi:type="NamedTypeSpecifier"/>
+               </element>
+               <element localId="353" locator="92:43-92:63" name="period">
+                  <elementType localId="354" locator="92:50-92:63" name="t:Decimal" xsi:type="NamedTypeSpecifier"/>
+               </element>
+               <element localId="355" locator="92:65-92:88" name="periodUnit">
+                  <elementType localId="356" locator="92:76-92:88" name="t:String" xsi:type="NamedTypeSpecifier"/>
+               </element>
+            </operandTypeSpecifier>
+         </operand>
+      </def>
+      <def localId="366" locator="196:1-197:78" name="MostRecentDiagnosticReportByCode" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="366">
+               <a:s>//------------------------------------------------------------------------------
+// Diagnostic Report Functions
+//------------------------------------------------------------------------------
+
+define function MostRecentDiagnosticReportByCode(code Concept):
+  </a:s>
+               <a:s r="1305">
+                  <a:s r="1305">
+                     <a:s r="1302">
+                        <a:s>CSMCommonFunctions</a:s>
+                     </a:s>
+                     <a:s>.</a:s>
+                     <a:s r="1305">
+                        <a:s>MostRecentDiagnosticReport(</a:s>
+                        <a:s r="1304">
+                           <a:s>DiagnosticReportsByCode(</a:s>
+                           <a:s r="1303">
+                              <a:s>code</a:s>
+                           </a:s>
+                           <a:s>)</a:s>
+                        </a:s>
+                        <a:s>)</a:s>
+                     </a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="1305" locator="197:3-197:78" name="MostRecentDiagnosticReport" libraryName="CSMCommonFunctions" xsi:type="FunctionRef">
+            <operand localId="1304" locator="197:49-197:77" name="DiagnosticReportsByCode" xsi:type="FunctionRef">
+               <operand localId="1303" locator="197:73-197:76" name="code" xsi:type="OperandRef"/>
+            </operand>
+         </expression>
+         <operand localId="368" name="code">
+            <operandTypeSpecifier localId="367" locator="196:55-196:61" name="t:Concept" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def localId="372" locator="203:1-205:26" name="DiagnosticReportsByCode" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="372">
+               <a:s>//TODO: determine if we need to look for non-test result, like specialty referral
+define function DiagnosticReportsByCode(concept Concept):
+  </a:s>
+               <a:s r="1334">
+                  <a:s r="1334">
+                     <a:s>
+                        <a:s r="1325">
+                           <a:s r="1326">
+                              <a:s r="1326">
+                                 <a:s>[DiagnosticReport]</a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s> R</a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s>
+    </a:s>
+                     <a:s r="1327">
+                        <a:s>where </a:s>
+                        <a:s r="1327">
+                           <a:s r="1329">
+                              <a:s r="1328">
+                                 <a:s>R</a:s>
+                              </a:s>
+                              <a:s>.</a:s>
+                              <a:s r="1329">
+                                 <a:s>code</a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s> ~ </a:s>
+                           <a:s r="1330">
+                              <a:s>concept</a:s>
+                           </a:s>
+                        </a:s>
+                     </a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="1334" locator="204:3-205:26" xsi:type="Query">
+            <source localId="1325" locator="204:3-204:22" alias="R">
+               <expression localId="1326" locator="204:3-204:20" dataType="fhir:DiagnosticReport" templateId="http://hl7.org/fhir/StructureDefinition/DiagnosticReport" xsi:type="Retrieve"/>
+            </source>
+            <where localId="1327" locator="205:5-205:26" xsi:type="Equivalent">
+               <signature localId="1332" name="t:Concept" xsi:type="NamedTypeSpecifier"/>
+               <signature localId="1333" name="t:Concept" xsi:type="NamedTypeSpecifier"/>
+               <operand localId="1331" name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                  <operand localId="1329" locator="205:11-205:16" path="code" scope="R" xsi:type="Property"/>
+               </operand>
+               <operand localId="1330" locator="205:20-205:26" name="concept" xsi:type="OperandRef"/>
+            </where>
+         </expression>
+         <operand localId="374" name="concept">
+            <operandTypeSpecifier localId="373" locator="203:49-203:55" name="t:Concept" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def localId="396" locator="126:1-127:94" name="RepeatIsValid" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="396">
+               <a:s>define function RepeatIsValid(repeat Tuple{frequency System.Integer,period System.Decimal,periodUnit System.String}):
+  </a:s>
+               <a:s r="812">
+                  <a:s r="812">
+                     <a:s r="813">
+                        <a:s r="817">
+                           <a:s r="815">
+                              <a:s r="814">
+                                 <a:s>repeat</a:s>
+                              </a:s>
+                              <a:s>.</a:s>
+                              <a:s r="815">
+                                 <a:s>frequency</a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s> is not null</a:s>
+                        </a:s>
+                        <a:s> and </a:s>
+                        <a:s r="821">
+                           <a:s r="819">
+                              <a:s r="818">
+                                 <a:s>repeat</a:s>
+                              </a:s>
+                              <a:s>.</a:s>
+                              <a:s r="819">
+                                 <a:s>period</a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s> is not null</a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s> and </a:s>
+                     <a:s r="825">
+                        <a:s r="823">
+                           <a:s r="822">
+                              <a:s>repeat</a:s>
+                           </a:s>
+                           <a:s>.</a:s>
+                           <a:s r="823">
+                              <a:s>periodUnit</a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s> is not null</a:s>
+                     </a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="812" locator="127:3-127:94" xsi:type="And">
+            <operand localId="813" locator="127:3-127:60" xsi:type="And">
+               <operand localId="817" locator="127:3-127:30" xsi:type="Not">
+                  <operand localId="816" locator="127:3-127:30" xsi:type="IsNull">
+                     <operand localId="815" locator="127:3-127:18" path="frequency" xsi:type="Property">
+                        <source localId="814" locator="127:3-127:8" name="repeat" xsi:type="OperandRef"/>
+                     </operand>
+                  </operand>
+               </operand>
+               <operand localId="821" locator="127:36-127:60" xsi:type="Not">
+                  <operand localId="820" locator="127:36-127:60" xsi:type="IsNull">
+                     <operand localId="819" locator="127:36-127:48" path="period" xsi:type="Property">
+                        <source localId="818" locator="127:36-127:41" name="repeat" xsi:type="OperandRef"/>
+                     </operand>
+                  </operand>
+               </operand>
+            </operand>
+            <operand localId="825" locator="127:66-127:94" xsi:type="Not">
+               <operand localId="824" locator="127:66-127:94" xsi:type="IsNull">
+                  <operand localId="823" locator="127:66-127:82" path="periodUnit" xsi:type="Property">
+                     <source localId="822" locator="127:66-127:71" name="repeat" xsi:type="OperandRef"/>
+                  </operand>
+               </operand>
+            </operand>
+         </expression>
+         <operand localId="404" name="repeat">
+            <operandTypeSpecifier localId="397" locator="126:38-126:115" xsi:type="TupleTypeSpecifier">
+               <element localId="398" locator="126:44-126:67" name="frequency">
+                  <elementType localId="399" locator="126:54-126:67" name="t:Integer" xsi:type="NamedTypeSpecifier"/>
+               </element>
+               <element localId="400" locator="126:69-126:89" name="period">
+                  <elementType localId="401" locator="126:76-126:89" name="t:Decimal" xsi:type="NamedTypeSpecifier"/>
+               </element>
+               <element localId="402" locator="126:91-126:114" name="periodUnit">
+                  <elementType localId="403" locator="126:102-126:114" name="t:String" xsi:type="NamedTypeSpecifier"/>
+               </element>
+            </operandTypeSpecifier>
+         </operand>
+      </def>
+      <def localId="447" locator="129:1-134:3" name="AddIntervalToDateTime" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="447">
+               <a:s>define function AddIntervalToDateTime(startDateTime System.DateTime, 
+    repeat Tuple{frequency System.Integer,period System.Decimal,periodUnit System.String}):
+  </a:s>
+               <a:s r="826">
+                  <a:s r="826">
+                     <a:s r="827">
+                        <a:s>startDateTime</a:s>
+                     </a:s>
+                     <a:s> + </a:s>
+                     <a:s r="828">
+                        <a:s>System.Quantity {
+    </a:s>
+                        <a:s>
+                           <a:s>value: </a:s>
+                           <a:s r="830">
+                              <a:s r="831">
+                                 <a:s>(</a:s>
+                                 <a:s r="831">
+                                    <a:s r="833">
+                                       <a:s r="832">
+                                          <a:s>repeat</a:s>
+                                       </a:s>
+                                       <a:s>.</a:s>
+                                       <a:s r="833">
+                                          <a:s>frequency</a:s>
+                                       </a:s>
+                                    </a:s>
+                                    <a:s> * </a:s>
+                                    <a:s r="835">
+                                       <a:s r="834">
+                                          <a:s>repeat</a:s>
+                                       </a:s>
+                                       <a:s>.</a:s>
+                                       <a:s r="835">
+                                          <a:s>period</a:s>
+                                       </a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s>)</a:s>
+                              </a:s>
+                              <a:s r="841"> * 1.0</a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s>,
+    </a:s>
+                        <a:s>
+                           <a:s>unit: </a:s>
+                           <a:s r="847">
+                              <a:s r="844">
+                                 <a:s>FHIRHelpers</a:s>
+                              </a:s>
+                              <a:s>.</a:s>
+                              <a:s r="847">
+                                 <a:s>ToCalendarUnit(</a:s>
+                                 <a:s r="846">
+                                    <a:s r="845">
+                                       <a:s>repeat</a:s>
+                                    </a:s>
+                                    <a:s>.</a:s>
+                                    <a:s r="846">
+                                       <a:s>periodUnit</a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s>)</a:s>
+                              </a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s>
+  }</a:s>
+                     </a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="826" locator="131:3-134:3" xsi:type="Add">
+            <signature localId="848" name="t:DateTime" xsi:type="NamedTypeSpecifier"/>
+            <signature localId="849" name="t:Quantity" xsi:type="NamedTypeSpecifier"/>
+            <operand localId="827" locator="131:3-131:15" name="startDateTime" xsi:type="OperandRef"/>
+            <operand localId="828" locator="131:19-134:3" classType="t:Quantity" xsi:type="Instance">
+               <element name="value">
+                  <value localId="830" locator="132:12-132:51" xsi:type="Multiply">
+                     <signature localId="842" name="t:Decimal" xsi:type="NamedTypeSpecifier"/>
+                     <signature localId="843" name="t:Decimal" xsi:type="NamedTypeSpecifier"/>
+                     <operand localId="831" locator="132:12-132:45" xsi:type="Multiply">
+                        <signature localId="839" name="t:Decimal" xsi:type="NamedTypeSpecifier"/>
+                        <signature localId="840" name="t:Decimal" xsi:type="NamedTypeSpecifier"/>
+                        <operand localId="837" xsi:type="ToDecimal">
+                           <signature localId="838" name="t:Integer" xsi:type="NamedTypeSpecifier"/>
+                           <operand localId="833" locator="132:13-132:28" path="frequency" xsi:type="Property">
+                              <source localId="832" locator="132:13-132:18" name="repeat" xsi:type="OperandRef"/>
+                           </operand>
+                        </operand>
+                        <operand localId="835" locator="132:32-132:44" path="period" xsi:type="Property">
+                           <source localId="834" locator="132:32-132:37" name="repeat" xsi:type="OperandRef"/>
+                        </operand>
+                     </operand>
+                     <operand localId="841" locator="132:49-132:51" valueType="t:Decimal" value="1.0" xsi:type="Literal"/>
+                  </value>
+               </element>
+               <element name="unit">
+                  <value localId="847" locator="133:11-133:55" name="ToCalendarUnit" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                     <operand localId="846" locator="133:38-133:54" path="periodUnit" xsi:type="Property">
+                        <source localId="845" locator="133:38-133:43" name="repeat" xsi:type="OperandRef"/>
+                     </operand>
+                  </value>
+               </element>
+            </operand>
+         </expression>
+         <operand localId="449" name="startDateTime">
+            <operandTypeSpecifier localId="448" locator="129:53-129:67" name="t:DateTime" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+         <operand localId="457" name="repeat">
+            <operandTypeSpecifier localId="450" locator="130:12-130:89" xsi:type="TupleTypeSpecifier">
+               <element localId="451" locator="130:18-130:41" name="frequency">
+                  <elementType localId="452" locator="130:28-130:41" name="t:Integer" xsi:type="NamedTypeSpecifier"/>
+               </element>
+               <element localId="453" locator="130:43-130:63" name="period">
+                  <elementType localId="454" locator="130:50-130:63" name="t:Decimal" xsi:type="NamedTypeSpecifier"/>
+               </element>
+               <element localId="455" locator="130:65-130:88" name="periodUnit">
+                  <elementType localId="456" locator="130:76-130:88" name="t:String" xsi:type="NamedTypeSpecifier"/>
+               </element>
+            </operandTypeSpecifier>
+         </operand>
+      </def>
+      <def localId="850" locator="140:1-153:5" name="EvaluateInterval" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="850">
+               <a:s>//------------------------------------------------------------------------------
+// scheduled frequency
+//------------------------------------------------------------------------------
+
+define function EvaluateInterval(repeat Choice&lt;FHIR.Timing.Repeat, Tuple{frequency System.Integer,period System.Decimal,periodUnit System.String}>):
+  </a:s>
+               <a:s r="861">
+                  <a:s r="861">
+                     <a:s>case
+    </a:s>
+                     <a:s r="862">
+                        <a:s>when </a:s>
+                        <a:s r="875">
+                           <a:s>IntervalIsUnknown(</a:s>
+                           <a:s r="863">
+                              <a:s>repeat</a:s>
+                           </a:s>
+                           <a:s>)</a:s>
+                        </a:s>
+                        <a:s>
+      then </a:s>
+                        <a:s r="885">
+                           <a:s>'Unknown'</a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s>
+    </a:s>
+                     <a:s r="886">
+                        <a:s>when </a:s>
+                        <a:s r="899">
+                           <a:s>IntervalIsAnnual(</a:s>
+                           <a:s r="887">
+                              <a:s>repeat</a:s>
+                           </a:s>
+                           <a:s>)</a:s>
+                        </a:s>
+                        <a:s>
+      then </a:s>
+                        <a:s r="929">
+                           <a:s>'Annual'</a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s>
+    </a:s>
+                     <a:s r="930">
+                        <a:s>when </a:s>
+                        <a:s r="943">
+                           <a:s>IntervalIs3Years(</a:s>
+                           <a:s r="931">
+                              <a:s>repeat</a:s>
+                           </a:s>
+                           <a:s>)</a:s>
+                        </a:s>
+                        <a:s>
+      then </a:s>
+                        <a:s r="973">
+                           <a:s>'3 years'</a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s>
+    </a:s>
+                     <a:s r="974">
+                        <a:s>when </a:s>
+                        <a:s r="987">
+                           <a:s>IntervalIs5Years(</a:s>
+                           <a:s r="975">
+                              <a:s>repeat</a:s>
+                           </a:s>
+                           <a:s>)</a:s>
+                        </a:s>
+                        <a:s>
+      then </a:s>
+                        <a:s r="1017">
+                           <a:s>'5 years'</a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s>
+    </a:s>
+                     <a:s r="1018">
+                        <a:s>when </a:s>
+                        <a:s r="1031">
+                           <a:s>IntervalIs10Years(</a:s>
+                           <a:s r="1019">
+                              <a:s>repeat</a:s>
+                           </a:s>
+                           <a:s>)</a:s>
+                        </a:s>
+                        <a:s>
+      then </a:s>
+                        <a:s r="1061">
+                           <a:s>'10 years'</a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s>
+    else </a:s>
+                     <a:s r="1062">
+                        <a:s>'Other'</a:s>
+                     </a:s>
+                     <a:s>
+  end</a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="861" locator="141:3-153:5" xsi:type="Case">
+            <caseItem localId="862" locator="142:5-143:20">
+               <when localId="875" locator="142:10-142:34" name="IntervalIsUnknown" xsi:type="FunctionRef">
+                  <operand localId="863" locator="142:28-142:33" name="repeat" xsi:type="OperandRef"/>
+               </when>
+               <then localId="885" locator="143:12-143:20" valueType="t:String" value="Unknown" xsi:type="Literal"/>
+            </caseItem>
+            <caseItem localId="886" locator="144:5-145:19">
+               <when localId="899" locator="144:10-144:33" name="IntervalIsAnnual" xsi:type="FunctionRef">
+                  <operand localId="887" locator="144:27-144:32" name="repeat" xsi:type="OperandRef"/>
+               </when>
+               <then localId="929" locator="145:12-145:19" valueType="t:String" value="Annual" xsi:type="Literal"/>
+            </caseItem>
+            <caseItem localId="930" locator="146:5-147:20">
+               <when localId="943" locator="146:10-146:33" name="IntervalIs3Years" xsi:type="FunctionRef">
+                  <operand localId="931" locator="146:27-146:32" name="repeat" xsi:type="OperandRef"/>
+               </when>
+               <then localId="973" locator="147:12-147:20" valueType="t:String" value="3 years" xsi:type="Literal"/>
+            </caseItem>
+            <caseItem localId="974" locator="148:5-149:20">
+               <when localId="987" locator="148:10-148:33" name="IntervalIs5Years" xsi:type="FunctionRef">
+                  <operand localId="975" locator="148:27-148:32" name="repeat" xsi:type="OperandRef"/>
+               </when>
+               <then localId="1017" locator="149:12-149:20" valueType="t:String" value="5 years" xsi:type="Literal"/>
+            </caseItem>
+            <caseItem localId="1018" locator="150:5-151:21">
+               <when localId="1031" locator="150:10-150:34" name="IntervalIs10Years" xsi:type="FunctionRef">
+                  <operand localId="1019" locator="150:28-150:33" name="repeat" xsi:type="OperandRef"/>
+               </when>
+               <then localId="1061" locator="151:12-151:21" valueType="t:String" value="10 years" xsi:type="Literal"/>
+            </caseItem>
+            <else localId="1062" locator="152:10-152:16" valueType="t:String" value="Other" xsi:type="Literal"/>
+         </expression>
+         <operand localId="860" name="repeat">
+            <operandTypeSpecifier localId="859" locator="140:41-140:146" xsi:type="ChoiceTypeSpecifier">
+               <choice localId="851" locator="140:48-140:65" name="fhir:Timing.Repeat" xsi:type="NamedTypeSpecifier"/>
+               <choice localId="852" locator="140:68-140:145" xsi:type="TupleTypeSpecifier">
+                  <element localId="853" locator="140:74-140:97" name="frequency">
+                     <elementType localId="854" locator="140:84-140:97" name="t:Integer" xsi:type="NamedTypeSpecifier"/>
+                  </element>
+                  <element localId="855" locator="140:99-140:119" name="period">
+                     <elementType localId="856" locator="140:106-140:119" name="t:Decimal" xsi:type="NamedTypeSpecifier"/>
+                  </element>
+                  <element localId="857" locator="140:121-140:144" name="periodUnit">
+                     <elementType localId="858" locator="140:132-140:144" name="t:String" xsi:type="NamedTypeSpecifier"/>
+                  </element>
+               </choice>
+            </operandTypeSpecifier>
+         </operand>
+      </def>
+      <def localId="864" locator="171:2-173:22" name="IntervalIsUnknown" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="864">
+               <a:s>define function IntervalIsUnknown(repeat Choice&lt;FHIR.Timing.Repeat, Tuple{frequency System.Integer,period System.Decimal,periodUnit System.String}>):
+  </a:s>
+               <a:s r="1179">
+                  <a:s r="1179">
+                     <a:s>if </a:s>
+                     <a:s r="1180">
+                        <a:s r="1182">
+                           <a:s r="1181">
+                              <a:s>repeat</a:s>
+                           </a:s>
+                           <a:s> is null</a:s>
+                        </a:s>
+                        <a:s> or </a:s>
+                        <a:s r="1185">
+                           <a:s r="1184">
+                              <a:s r="1183">
+                                 <a:s>repeat</a:s>
+                              </a:s>
+                              <a:s>.</a:s>
+                              <a:s r="1184">
+                                 <a:s>frequency</a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s> is null</a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s r="1186">
+  then true else false</a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="1179" locator="172:3-173:22" xsi:type="If">
+            <condition localId="1180" locator="172:6-172:47" xsi:type="Or">
+               <operand localId="1182" locator="172:6-172:19" xsi:type="IsNull">
+                  <operand localId="1181" locator="172:6-172:11" name="repeat" xsi:type="OperandRef"/>
+               </operand>
+               <operand localId="1185" locator="172:24-172:47" xsi:type="IsNull">
+                  <operand localId="1184" locator="172:24-172:39" path="frequency" xsi:type="Property">
+                     <source localId="1183" locator="172:24-172:29" name="repeat" xsi:type="OperandRef"/>
+                  </operand>
+               </operand>
+            </condition>
+            <then localId="1186" locator="173:8-173:11" valueType="t:Boolean" value="true" xsi:type="Literal"/>
+            <else localId="1187" locator="173:18-173:22" valueType="t:Boolean" value="false" xsi:type="Literal"/>
+         </expression>
+         <operand localId="874" name="repeat">
+            <operandTypeSpecifier localId="873" locator="171:43-171:148" xsi:type="ChoiceTypeSpecifier">
+               <choice localId="865" locator="171:50-171:67" name="fhir:Timing.Repeat" xsi:type="NamedTypeSpecifier"/>
+               <choice localId="866" locator="171:70-171:147" xsi:type="TupleTypeSpecifier">
+                  <element localId="867" locator="171:76-171:99" name="frequency">
+                     <elementType localId="868" locator="171:86-171:99" name="t:Integer" xsi:type="NamedTypeSpecifier"/>
+                  </element>
+                  <element localId="869" locator="171:101-171:121" name="period">
+                     <elementType localId="870" locator="171:108-171:121" name="t:Decimal" xsi:type="NamedTypeSpecifier"/>
+                  </element>
+                  <element localId="871" locator="171:123-171:146" name="periodUnit">
+                     <elementType localId="872" locator="171:134-171:146" name="t:String" xsi:type="NamedTypeSpecifier"/>
+                  </element>
+               </choice>
+            </operandTypeSpecifier>
+         </operand>
+      </def>
+      <def localId="888" locator="155:1-157:22" name="IntervalIsAnnual" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="888">
+               <a:s>define function IntervalIsAnnual(repeat Choice&lt;FHIR.Timing.Repeat, Tuple{frequency System.Integer,period System.Decimal,periodUnit System.String}>):
+  </a:s>
+               <a:s r="1063">
+                  <a:s r="1063">
+                     <a:s>if </a:s>
+                     <a:s r="1064">
+                        <a:s r="1065">
+                           <a:s r="1066">
+                              <a:s r="1069">
+                                 <a:s r="1068">
+                                    <a:s r="1067">
+                                       <a:s>repeat</a:s>
+                                    </a:s>
+                                    <a:s>.</a:s>
+                                    <a:s r="1068">
+                                       <a:s>frequency</a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s>.</a:s>
+                                 <a:s r="1069">
+                                    <a:s>value</a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s r="1070"> = 1</a:s>
+                           </a:s>
+                           <a:s> and </a:s>
+                           <a:s r="1073">
+                              <a:s r="1076">
+                                 <a:s r="1075">
+                                    <a:s r="1074">
+                                       <a:s>repeat</a:s>
+                                    </a:s>
+                                    <a:s>.</a:s>
+                                    <a:s r="1075">
+                                       <a:s>period</a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s>.</a:s>
+                                 <a:s r="1076">
+                                    <a:s>value</a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s r="1077"> = 1</a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s> and </a:s>
+                        <a:s r="1083">
+                           <a:s r="1086">
+                              <a:s r="1085">
+                                 <a:s r="1084">
+                                    <a:s>repeat</a:s>
+                                 </a:s>
+                                 <a:s>.</a:s>
+                                 <a:s r="1085">
+                                    <a:s>periodUnit</a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s>.</a:s>
+                              <a:s r="1086">
+                                 <a:s>value</a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s> = </a:s>
+                           <a:s r="1087">
+                              <a:s>'a'</a:s>
+                           </a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s r="1090"> 
+  then true else false</a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="1063" locator="156:3-157:22" xsi:type="If">
+            <condition localId="1064" locator="156:6-156:93" xsi:type="And">
+               <operand localId="1065" locator="156:6-156:59" xsi:type="And">
+                  <operand localId="1066" locator="156:6-156:31" xsi:type="Equal">
+                     <signature localId="1071" name="t:Integer" xsi:type="NamedTypeSpecifier"/>
+                     <signature localId="1072" name="t:Integer" xsi:type="NamedTypeSpecifier"/>
+                     <operand localId="1069" locator="156:6-156:27" path="value" xsi:type="Property">
+                        <source localId="1068" locator="156:6-156:21" path="frequency" xsi:type="Property">
+                           <source localId="1067" locator="156:6-156:11" name="repeat" xsi:type="OperandRef"/>
+                        </source>
+                     </operand>
+                     <operand localId="1070" locator="156:31" valueType="t:Integer" value="1" xsi:type="Literal"/>
+                  </operand>
+                  <operand localId="1073" locator="156:37-156:59" xsi:type="Equal">
+                     <signature localId="1081" name="t:Decimal" xsi:type="NamedTypeSpecifier"/>
+                     <signature localId="1082" name="t:Decimal" xsi:type="NamedTypeSpecifier"/>
+                     <operand localId="1076" locator="156:37-156:55" path="value" xsi:type="Property">
+                        <source localId="1075" locator="156:37-156:49" path="period" xsi:type="Property">
+                           <source localId="1074" locator="156:37-156:42" name="repeat" xsi:type="OperandRef"/>
+                        </source>
+                     </operand>
+                     <operand localId="1079" xsi:type="ToDecimal">
+                        <signature localId="1080" name="t:Integer" xsi:type="NamedTypeSpecifier"/>
+                        <operand localId="1077" locator="156:59" valueType="t:Integer" value="1" xsi:type="Literal"/>
+                     </operand>
+                  </operand>
+               </operand>
+               <operand localId="1083" locator="156:65-156:93" xsi:type="Equal">
+                  <signature localId="1088" name="t:String" xsi:type="NamedTypeSpecifier"/>
+                  <signature localId="1089" name="t:String" xsi:type="NamedTypeSpecifier"/>
+                  <operand localId="1086" locator="156:65-156:87" path="value" xsi:type="Property">
+                     <source localId="1085" locator="156:65-156:81" path="periodUnit" xsi:type="Property">
+                        <source localId="1084" locator="156:65-156:70" name="repeat" xsi:type="OperandRef"/>
+                     </source>
+                  </operand>
+                  <operand localId="1087" locator="156:91-156:93" valueType="t:String" value="a" xsi:type="Literal"/>
+               </operand>
+            </condition>
+            <then localId="1090" locator="157:8-157:11" valueType="t:Boolean" value="true" xsi:type="Literal"/>
+            <else localId="1091" locator="157:18-157:22" valueType="t:Boolean" value="false" xsi:type="Literal"/>
+         </expression>
+         <operand localId="898" name="repeat">
+            <operandTypeSpecifier localId="897" locator="155:41-155:146" xsi:type="ChoiceTypeSpecifier">
+               <choice localId="889" locator="155:48-155:65" name="fhir:Timing.Repeat" xsi:type="NamedTypeSpecifier"/>
+               <choice localId="890" locator="155:68-155:145" xsi:type="TupleTypeSpecifier">
+                  <element localId="891" locator="155:74-155:97" name="frequency">
+                     <elementType localId="892" locator="155:84-155:97" name="t:Integer" xsi:type="NamedTypeSpecifier"/>
+                  </element>
+                  <element localId="893" locator="155:99-155:119" name="period">
+                     <elementType localId="894" locator="155:106-155:119" name="t:Decimal" xsi:type="NamedTypeSpecifier"/>
+                  </element>
+                  <element localId="895" locator="155:121-155:144" name="periodUnit">
+                     <elementType localId="896" locator="155:132-155:144" name="t:String" xsi:type="NamedTypeSpecifier"/>
+                  </element>
+               </choice>
+            </operandTypeSpecifier>
+         </operand>
+      </def>
+      <def localId="932" locator="159:1-161:22" name="IntervalIs3Years" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="932">
+               <a:s>define function IntervalIs3Years(repeat Choice&lt;FHIR.Timing.Repeat, Tuple{frequency System.Integer,period System.Decimal,periodUnit System.String}>):
+  </a:s>
+               <a:s r="1092">
+                  <a:s r="1092">
+                     <a:s>if </a:s>
+                     <a:s r="1093">
+                        <a:s r="1094">
+                           <a:s r="1095">
+                              <a:s r="1098">
+                                 <a:s r="1097">
+                                    <a:s r="1096">
+                                       <a:s>repeat</a:s>
+                                    </a:s>
+                                    <a:s>.</a:s>
+                                    <a:s r="1097">
+                                       <a:s>frequency</a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s>.</a:s>
+                                 <a:s r="1098">
+                                    <a:s>value</a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s r="1099"> = 1</a:s>
+                           </a:s>
+                           <a:s> and </a:s>
+                           <a:s r="1102">
+                              <a:s r="1105">
+                                 <a:s r="1104">
+                                    <a:s r="1103">
+                                       <a:s>repeat</a:s>
+                                    </a:s>
+                                    <a:s>.</a:s>
+                                    <a:s r="1104">
+                                       <a:s>period</a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s>.</a:s>
+                                 <a:s r="1105">
+                                    <a:s>value</a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s r="1106"> = 3</a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s> and </a:s>
+                        <a:s r="1112">
+                           <a:s r="1115">
+                              <a:s r="1114">
+                                 <a:s r="1113">
+                                    <a:s>repeat</a:s>
+                                 </a:s>
+                                 <a:s>.</a:s>
+                                 <a:s r="1114">
+                                    <a:s>periodUnit</a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s>.</a:s>
+                              <a:s r="1115">
+                                 <a:s>value</a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s> = </a:s>
+                           <a:s r="1116">
+                              <a:s>'a'</a:s>
+                           </a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s r="1119"> 
+  then true else false</a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="1092" locator="160:3-161:22" xsi:type="If">
+            <condition localId="1093" locator="160:6-160:93" xsi:type="And">
+               <operand localId="1094" locator="160:6-160:59" xsi:type="And">
+                  <operand localId="1095" locator="160:6-160:31" xsi:type="Equal">
+                     <signature localId="1100" name="t:Integer" xsi:type="NamedTypeSpecifier"/>
+                     <signature localId="1101" name="t:Integer" xsi:type="NamedTypeSpecifier"/>
+                     <operand localId="1098" locator="160:6-160:27" path="value" xsi:type="Property">
+                        <source localId="1097" locator="160:6-160:21" path="frequency" xsi:type="Property">
+                           <source localId="1096" locator="160:6-160:11" name="repeat" xsi:type="OperandRef"/>
+                        </source>
+                     </operand>
+                     <operand localId="1099" locator="160:31" valueType="t:Integer" value="1" xsi:type="Literal"/>
+                  </operand>
+                  <operand localId="1102" locator="160:37-160:59" xsi:type="Equal">
+                     <signature localId="1110" name="t:Decimal" xsi:type="NamedTypeSpecifier"/>
+                     <signature localId="1111" name="t:Decimal" xsi:type="NamedTypeSpecifier"/>
+                     <operand localId="1105" locator="160:37-160:55" path="value" xsi:type="Property">
+                        <source localId="1104" locator="160:37-160:49" path="period" xsi:type="Property">
+                           <source localId="1103" locator="160:37-160:42" name="repeat" xsi:type="OperandRef"/>
+                        </source>
+                     </operand>
+                     <operand localId="1108" xsi:type="ToDecimal">
+                        <signature localId="1109" name="t:Integer" xsi:type="NamedTypeSpecifier"/>
+                        <operand localId="1106" locator="160:59" valueType="t:Integer" value="3" xsi:type="Literal"/>
+                     </operand>
+                  </operand>
+               </operand>
+               <operand localId="1112" locator="160:65-160:93" xsi:type="Equal">
+                  <signature localId="1117" name="t:String" xsi:type="NamedTypeSpecifier"/>
+                  <signature localId="1118" name="t:String" xsi:type="NamedTypeSpecifier"/>
+                  <operand localId="1115" locator="160:65-160:87" path="value" xsi:type="Property">
+                     <source localId="1114" locator="160:65-160:81" path="periodUnit" xsi:type="Property">
+                        <source localId="1113" locator="160:65-160:70" name="repeat" xsi:type="OperandRef"/>
+                     </source>
+                  </operand>
+                  <operand localId="1116" locator="160:91-160:93" valueType="t:String" value="a" xsi:type="Literal"/>
+               </operand>
+            </condition>
+            <then localId="1119" locator="161:8-161:11" valueType="t:Boolean" value="true" xsi:type="Literal"/>
+            <else localId="1120" locator="161:18-161:22" valueType="t:Boolean" value="false" xsi:type="Literal"/>
+         </expression>
+         <operand localId="942" name="repeat">
+            <operandTypeSpecifier localId="941" locator="159:41-159:146" xsi:type="ChoiceTypeSpecifier">
+               <choice localId="933" locator="159:48-159:65" name="fhir:Timing.Repeat" xsi:type="NamedTypeSpecifier"/>
+               <choice localId="934" locator="159:68-159:145" xsi:type="TupleTypeSpecifier">
+                  <element localId="935" locator="159:74-159:97" name="frequency">
+                     <elementType localId="936" locator="159:84-159:97" name="t:Integer" xsi:type="NamedTypeSpecifier"/>
+                  </element>
+                  <element localId="937" locator="159:99-159:119" name="period">
+                     <elementType localId="938" locator="159:106-159:119" name="t:Decimal" xsi:type="NamedTypeSpecifier"/>
+                  </element>
+                  <element localId="939" locator="159:121-159:144" name="periodUnit">
+                     <elementType localId="940" locator="159:132-159:144" name="t:String" xsi:type="NamedTypeSpecifier"/>
+                  </element>
+               </choice>
+            </operandTypeSpecifier>
+         </operand>
+      </def>
+      <def localId="976" locator="163:1-165:22" name="IntervalIs5Years" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="976">
+               <a:s>define function IntervalIs5Years(repeat Choice&lt;FHIR.Timing.Repeat, Tuple{frequency System.Integer,period System.Decimal,periodUnit System.String}>):
+  </a:s>
+               <a:s r="1121">
+                  <a:s r="1121">
+                     <a:s>if </a:s>
+                     <a:s r="1122">
+                        <a:s r="1123">
+                           <a:s r="1124">
+                              <a:s r="1127">
+                                 <a:s r="1126">
+                                    <a:s r="1125">
+                                       <a:s>repeat</a:s>
+                                    </a:s>
+                                    <a:s>.</a:s>
+                                    <a:s r="1126">
+                                       <a:s>frequency</a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s>.</a:s>
+                                 <a:s r="1127">
+                                    <a:s>value</a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s r="1128"> = 1</a:s>
+                           </a:s>
+                           <a:s> and </a:s>
+                           <a:s r="1131">
+                              <a:s r="1134">
+                                 <a:s r="1133">
+                                    <a:s r="1132">
+                                       <a:s>repeat</a:s>
+                                    </a:s>
+                                    <a:s>.</a:s>
+                                    <a:s r="1133">
+                                       <a:s>period</a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s>.</a:s>
+                                 <a:s r="1134">
+                                    <a:s>value</a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s r="1135"> = 5</a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s> and </a:s>
+                        <a:s r="1141">
+                           <a:s r="1144">
+                              <a:s r="1143">
+                                 <a:s r="1142">
+                                    <a:s>repeat</a:s>
+                                 </a:s>
+                                 <a:s>.</a:s>
+                                 <a:s r="1143">
+                                    <a:s>periodUnit</a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s>.</a:s>
+                              <a:s r="1144">
+                                 <a:s>value</a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s> = </a:s>
+                           <a:s r="1145">
+                              <a:s>'a'</a:s>
+                           </a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s r="1148"> 
+  then true else false</a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="1121" locator="164:3-165:22" xsi:type="If">
+            <condition localId="1122" locator="164:6-164:93" xsi:type="And">
+               <operand localId="1123" locator="164:6-164:59" xsi:type="And">
+                  <operand localId="1124" locator="164:6-164:31" xsi:type="Equal">
+                     <signature localId="1129" name="t:Integer" xsi:type="NamedTypeSpecifier"/>
+                     <signature localId="1130" name="t:Integer" xsi:type="NamedTypeSpecifier"/>
+                     <operand localId="1127" locator="164:6-164:27" path="value" xsi:type="Property">
+                        <source localId="1126" locator="164:6-164:21" path="frequency" xsi:type="Property">
+                           <source localId="1125" locator="164:6-164:11" name="repeat" xsi:type="OperandRef"/>
+                        </source>
+                     </operand>
+                     <operand localId="1128" locator="164:31" valueType="t:Integer" value="1" xsi:type="Literal"/>
+                  </operand>
+                  <operand localId="1131" locator="164:37-164:59" xsi:type="Equal">
+                     <signature localId="1139" name="t:Decimal" xsi:type="NamedTypeSpecifier"/>
+                     <signature localId="1140" name="t:Decimal" xsi:type="NamedTypeSpecifier"/>
+                     <operand localId="1134" locator="164:37-164:55" path="value" xsi:type="Property">
+                        <source localId="1133" locator="164:37-164:49" path="period" xsi:type="Property">
+                           <source localId="1132" locator="164:37-164:42" name="repeat" xsi:type="OperandRef"/>
+                        </source>
+                     </operand>
+                     <operand localId="1137" xsi:type="ToDecimal">
+                        <signature localId="1138" name="t:Integer" xsi:type="NamedTypeSpecifier"/>
+                        <operand localId="1135" locator="164:59" valueType="t:Integer" value="5" xsi:type="Literal"/>
+                     </operand>
+                  </operand>
+               </operand>
+               <operand localId="1141" locator="164:65-164:93" xsi:type="Equal">
+                  <signature localId="1146" name="t:String" xsi:type="NamedTypeSpecifier"/>
+                  <signature localId="1147" name="t:String" xsi:type="NamedTypeSpecifier"/>
+                  <operand localId="1144" locator="164:65-164:87" path="value" xsi:type="Property">
+                     <source localId="1143" locator="164:65-164:81" path="periodUnit" xsi:type="Property">
+                        <source localId="1142" locator="164:65-164:70" name="repeat" xsi:type="OperandRef"/>
+                     </source>
+                  </operand>
+                  <operand localId="1145" locator="164:91-164:93" valueType="t:String" value="a" xsi:type="Literal"/>
+               </operand>
+            </condition>
+            <then localId="1148" locator="165:8-165:11" valueType="t:Boolean" value="true" xsi:type="Literal"/>
+            <else localId="1149" locator="165:18-165:22" valueType="t:Boolean" value="false" xsi:type="Literal"/>
+         </expression>
+         <operand localId="986" name="repeat">
+            <operandTypeSpecifier localId="985" locator="163:41-163:146" xsi:type="ChoiceTypeSpecifier">
+               <choice localId="977" locator="163:48-163:65" name="fhir:Timing.Repeat" xsi:type="NamedTypeSpecifier"/>
+               <choice localId="978" locator="163:68-163:145" xsi:type="TupleTypeSpecifier">
+                  <element localId="979" locator="163:74-163:97" name="frequency">
+                     <elementType localId="980" locator="163:84-163:97" name="t:Integer" xsi:type="NamedTypeSpecifier"/>
+                  </element>
+                  <element localId="981" locator="163:99-163:119" name="period">
+                     <elementType localId="982" locator="163:106-163:119" name="t:Decimal" xsi:type="NamedTypeSpecifier"/>
+                  </element>
+                  <element localId="983" locator="163:121-163:144" name="periodUnit">
+                     <elementType localId="984" locator="163:132-163:144" name="t:String" xsi:type="NamedTypeSpecifier"/>
+                  </element>
+               </choice>
+            </operandTypeSpecifier>
+         </operand>
+      </def>
+      <def localId="1020" locator="167:1-169:22" name="IntervalIs10Years" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="1020">
+               <a:s>define function IntervalIs10Years(repeat Choice&lt;FHIR.Timing.Repeat, Tuple{frequency System.Integer,period System.Decimal,periodUnit System.String}>):
+  </a:s>
+               <a:s r="1150">
+                  <a:s r="1150">
+                     <a:s>if </a:s>
+                     <a:s r="1151">
+                        <a:s r="1152">
+                           <a:s r="1153">
+                              <a:s r="1156">
+                                 <a:s r="1155">
+                                    <a:s r="1154">
+                                       <a:s>repeat</a:s>
+                                    </a:s>
+                                    <a:s>.</a:s>
+                                    <a:s r="1155">
+                                       <a:s>frequency</a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s>.</a:s>
+                                 <a:s r="1156">
+                                    <a:s>value</a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s r="1157"> = 1</a:s>
+                           </a:s>
+                           <a:s> and </a:s>
+                           <a:s r="1160">
+                              <a:s r="1163">
+                                 <a:s r="1162">
+                                    <a:s r="1161">
+                                       <a:s>repeat</a:s>
+                                    </a:s>
+                                    <a:s>.</a:s>
+                                    <a:s r="1162">
+                                       <a:s>period</a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s>.</a:s>
+                                 <a:s r="1163">
+                                    <a:s>value</a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s r="1164"> = 10</a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s> and </a:s>
+                        <a:s r="1170">
+                           <a:s r="1173">
+                              <a:s r="1172">
+                                 <a:s r="1171">
+                                    <a:s>repeat</a:s>
+                                 </a:s>
+                                 <a:s>.</a:s>
+                                 <a:s r="1172">
+                                    <a:s>periodUnit</a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s>.</a:s>
+                              <a:s r="1173">
+                                 <a:s>value</a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s> = </a:s>
+                           <a:s r="1174">
+                              <a:s>'a'</a:s>
+                           </a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s r="1177"> 
+  then true else false</a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="1150" locator="168:3-169:22" xsi:type="If">
+            <condition localId="1151" locator="168:6-168:94" xsi:type="And">
+               <operand localId="1152" locator="168:6-168:60" xsi:type="And">
+                  <operand localId="1153" locator="168:6-168:31" xsi:type="Equal">
+                     <signature localId="1158" name="t:Integer" xsi:type="NamedTypeSpecifier"/>
+                     <signature localId="1159" name="t:Integer" xsi:type="NamedTypeSpecifier"/>
+                     <operand localId="1156" locator="168:6-168:27" path="value" xsi:type="Property">
+                        <source localId="1155" locator="168:6-168:21" path="frequency" xsi:type="Property">
+                           <source localId="1154" locator="168:6-168:11" name="repeat" xsi:type="OperandRef"/>
+                        </source>
+                     </operand>
+                     <operand localId="1157" locator="168:31" valueType="t:Integer" value="1" xsi:type="Literal"/>
+                  </operand>
+                  <operand localId="1160" locator="168:37-168:60" xsi:type="Equal">
+                     <signature localId="1168" name="t:Decimal" xsi:type="NamedTypeSpecifier"/>
+                     <signature localId="1169" name="t:Decimal" xsi:type="NamedTypeSpecifier"/>
+                     <operand localId="1163" locator="168:37-168:55" path="value" xsi:type="Property">
+                        <source localId="1162" locator="168:37-168:49" path="period" xsi:type="Property">
+                           <source localId="1161" locator="168:37-168:42" name="repeat" xsi:type="OperandRef"/>
+                        </source>
+                     </operand>
+                     <operand localId="1166" xsi:type="ToDecimal">
+                        <signature localId="1167" name="t:Integer" xsi:type="NamedTypeSpecifier"/>
+                        <operand localId="1164" locator="168:59-168:60" valueType="t:Integer" value="10" xsi:type="Literal"/>
+                     </operand>
+                  </operand>
+               </operand>
+               <operand localId="1170" locator="168:66-168:94" xsi:type="Equal">
+                  <signature localId="1175" name="t:String" xsi:type="NamedTypeSpecifier"/>
+                  <signature localId="1176" name="t:String" xsi:type="NamedTypeSpecifier"/>
+                  <operand localId="1173" locator="168:66-168:88" path="value" xsi:type="Property">
+                     <source localId="1172" locator="168:66-168:82" path="periodUnit" xsi:type="Property">
+                        <source localId="1171" locator="168:66-168:71" name="repeat" xsi:type="OperandRef"/>
+                     </source>
+                  </operand>
+                  <operand localId="1174" locator="168:92-168:94" valueType="t:String" value="a" xsi:type="Literal"/>
+               </operand>
+            </condition>
+            <then localId="1177" locator="169:8-169:11" valueType="t:Boolean" value="true" xsi:type="Literal"/>
+            <else localId="1178" locator="169:18-169:22" valueType="t:Boolean" value="false" xsi:type="Literal"/>
+         </expression>
+         <operand localId="1030" name="repeat">
+            <operandTypeSpecifier localId="1029" locator="167:42-167:147" xsi:type="ChoiceTypeSpecifier">
+               <choice localId="1021" locator="167:49-167:66" name="fhir:Timing.Repeat" xsi:type="NamedTypeSpecifier"/>
+               <choice localId="1022" locator="167:69-167:146" xsi:type="TupleTypeSpecifier">
+                  <element localId="1023" locator="167:75-167:98" name="frequency">
+                     <elementType localId="1024" locator="167:85-167:98" name="t:Integer" xsi:type="NamedTypeSpecifier"/>
+                  </element>
+                  <element localId="1025" locator="167:100-167:120" name="period">
+                     <elementType localId="1026" locator="167:107-167:120" name="t:Decimal" xsi:type="NamedTypeSpecifier"/>
+                  </element>
+                  <element localId="1027" locator="167:122-167:145" name="periodUnit">
+                     <elementType localId="1028" locator="167:133-167:145" name="t:String" xsi:type="NamedTypeSpecifier"/>
+                  </element>
+               </choice>
+            </operandTypeSpecifier>
+         </operand>
+      </def>
+      <def localId="1188" locator="180:1-182:34" name="EvaluateFlag" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="1188">
+               <a:s>//------------------------------------------------------------------------------
+// flag due/overdue
+//------------------------------------------------------------------------------
+
+//TODO: use grace periods should be function arguments
+define function EvaluateFlag(repeat Choice&lt;FHIR.Timing.Repeat, Tuple{frequency System.Integer,period System.Decimal,periodUnit System.String}>, 
+    nextDueDate DateTime):
+  </a:s>
+               <a:s r="1205">
+                  <a:s r="1205">
+                     <a:s>EvaluateFlagDefault(</a:s>
+                     <a:s r="1201">
+                        <a:s>nextDueDate</a:s>
+                     </a:s>
+                     <a:s>)</a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="1205" locator="182:3-182:34" name="EvaluateFlagDefault" xsi:type="FunctionRef">
+            <operand localId="1201" locator="182:23-182:33" name="nextDueDate" xsi:type="OperandRef"/>
+         </expression>
+         <operand localId="1198" name="repeat">
+            <operandTypeSpecifier localId="1197" locator="180:37-180:142" xsi:type="ChoiceTypeSpecifier">
+               <choice localId="1189" locator="180:44-180:61" name="fhir:Timing.Repeat" xsi:type="NamedTypeSpecifier"/>
+               <choice localId="1190" locator="180:64-180:141" xsi:type="TupleTypeSpecifier">
+                  <element localId="1191" locator="180:70-180:93" name="frequency">
+                     <elementType localId="1192" locator="180:80-180:93" name="t:Integer" xsi:type="NamedTypeSpecifier"/>
+                  </element>
+                  <element localId="1193" locator="180:95-180:115" name="period">
+                     <elementType localId="1194" locator="180:102-180:115" name="t:Decimal" xsi:type="NamedTypeSpecifier"/>
+                  </element>
+                  <element localId="1195" locator="180:117-180:140" name="periodUnit">
+                     <elementType localId="1196" locator="180:128-180:140" name="t:String" xsi:type="NamedTypeSpecifier"/>
+                  </element>
+               </choice>
+            </operandTypeSpecifier>
+         </operand>
+         <operand localId="1200" name="nextDueDate">
+            <operandTypeSpecifier localId="1199" locator="181:17-181:24" name="t:DateTime" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def localId="1202" locator="184:1-190:13" name="EvaluateFlagDefault" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="1202">
+               <a:s>define function EvaluateFlagDefault(nextDueDate DateTime):
+  </a:s>
+               <a:s r="1254">
+                  <a:s r="1254">
+                     <a:s>if </a:s>
+                     <a:s r="1255">
+                        <a:s r="1256">
+                           <a:s>nextDueDate</a:s>
+                        </a:s>
+                        <a:s> &lt; </a:s>
+                        <a:s r="1257">
+                           <a:s r="1260">
+                              <a:s>Today()</a:s>
+                           </a:s>
+                           <a:s> - </a:s>
+                           <a:s r="1261">
+                              <a:s>(</a:s>
+                              <a:s r="1261">
+                                 <a:s>OverdueDefault</a:s>
+                              </a:s>
+                              <a:s>)</a:s>
+                           </a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s> then
+    </a:s>
+                     <a:s r="1269">
+                        <a:s>&quot;OVERDUE&quot;</a:s>
+                     </a:s>
+                     <a:s>
+  else </a:s>
+                     <a:s r="1270">
+                        <a:s>if </a:s>
+                        <a:s r="1271">
+                           <a:s r="1272">
+                              <a:s r="1273">
+                                 <a:s>nextDueDate</a:s>
+                              </a:s>
+                              <a:s> &lt;= </a:s>
+                              <a:s r="1274">
+                                 <a:s r="1277">
+                                    <a:s>Today()</a:s>
+                                 </a:s>
+                                 <a:s> + </a:s>
+                                 <a:s r="1278">
+                                    <a:s>(</a:s>
+                                    <a:s r="1278">
+                                       <a:s>DueDefault</a:s>
+                                    </a:s>
+                                    <a:s>)</a:s>
+                                 </a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s> and </a:s>
+                           <a:s r="1286">
+                              <a:s r="1287">
+                                 <a:s>nextDueDate</a:s>
+                              </a:s>
+                              <a:s> >= </a:s>
+                              <a:s r="1288">
+                                 <a:s r="1291">
+                                    <a:s>Today()</a:s>
+                                 </a:s>
+                                 <a:s> - </a:s>
+                                 <a:s r="1292">
+                                    <a:s>(</a:s>
+                                    <a:s r="1292">
+                                       <a:s>OverdueDefault</a:s>
+                                    </a:s>
+                                    <a:s>)</a:s>
+                                 </a:s>
+                              </a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s> then
+    </a:s>
+                        <a:s r="1300">
+                           <a:s>&quot;DUE&quot;</a:s>
+                        </a:s>
+                        <a:s>
+  else
+    </a:s>
+                        <a:s r="1301">
+                           <a:s>&quot;NOT DUE&quot;</a:s>
+                        </a:s>
+                     </a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="1254" locator="185:3-190:13" xsi:type="If">
+            <condition localId="1255" locator="185:6-185:45" xsi:type="Less">
+               <signature localId="1267" name="t:DateTime" xsi:type="NamedTypeSpecifier"/>
+               <signature localId="1268" name="t:DateTime" xsi:type="NamedTypeSpecifier"/>
+               <operand localId="1256" locator="185:6-185:16" name="nextDueDate" xsi:type="OperandRef"/>
+               <operand localId="1265" xsi:type="ToDateTime">
+                  <signature localId="1266" name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                  <operand localId="1257" locator="185:20-185:45" xsi:type="Subtract">
+                     <signature localId="1262" name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                     <signature localId="1263" name="t:Quantity" xsi:type="NamedTypeSpecifier"/>
+                     <operand localId="1260" locator="185:20-185:26" xsi:type="Today"/>
+                     <operand localId="1261" locator="185:30-185:45" name="OverdueDefault" xsi:type="ParameterRef"/>
+                  </operand>
+               </operand>
+            </condition>
+            <then localId="1269" locator="186:5-186:13" name="OVERDUE" xsi:type="CodeRef"/>
+            <else localId="1270" locator="187:8-190:13" xsi:type="If">
+               <condition localId="1271" locator="187:11-187:93" xsi:type="And">
+                  <operand localId="1272" locator="187:11-187:47" xsi:type="LessOrEqual">
+                     <signature localId="1284" name="t:DateTime" xsi:type="NamedTypeSpecifier"/>
+                     <signature localId="1285" name="t:DateTime" xsi:type="NamedTypeSpecifier"/>
+                     <operand localId="1273" locator="187:11-187:21" name="nextDueDate" xsi:type="OperandRef"/>
+                     <operand localId="1282" xsi:type="ToDateTime">
+                        <signature localId="1283" name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                        <operand localId="1274" locator="187:26-187:47" xsi:type="Add">
+                           <signature localId="1279" name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                           <signature localId="1280" name="t:Quantity" xsi:type="NamedTypeSpecifier"/>
+                           <operand localId="1277" locator="187:26-187:32" xsi:type="Today"/>
+                           <operand localId="1278" locator="187:36-187:47" name="DueDefault" xsi:type="ParameterRef"/>
+                        </operand>
+                     </operand>
+                  </operand>
+                  <operand localId="1286" locator="187:53-187:93" xsi:type="GreaterOrEqual">
+                     <signature localId="1298" name="t:DateTime" xsi:type="NamedTypeSpecifier"/>
+                     <signature localId="1299" name="t:DateTime" xsi:type="NamedTypeSpecifier"/>
+                     <operand localId="1287" locator="187:53-187:63" name="nextDueDate" xsi:type="OperandRef"/>
+                     <operand localId="1296" xsi:type="ToDateTime">
+                        <signature localId="1297" name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                        <operand localId="1288" locator="187:68-187:93" xsi:type="Subtract">
+                           <signature localId="1293" name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                           <signature localId="1294" name="t:Quantity" xsi:type="NamedTypeSpecifier"/>
+                           <operand localId="1291" locator="187:68-187:74" xsi:type="Today"/>
+                           <operand localId="1292" locator="187:78-187:93" name="OverdueDefault" xsi:type="ParameterRef"/>
+                        </operand>
+                     </operand>
+                  </operand>
+               </condition>
+               <then localId="1300" locator="188:5-188:9" name="DUE" xsi:type="CodeRef"/>
+               <else localId="1301" locator="190:5-190:13" name="NOT DUE" xsi:type="CodeRef"/>
+            </else>
+         </expression>
+         <operand localId="1204" name="nextDueDate">
+            <operandTypeSpecifier localId="1203" locator="184:49-184:56" name="t:DateTime" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def localId="1306" locator="199:1-200:74" name="MostRecentDiagnosticReportByVS" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="1306">
+               <a:s>define function MostRecentDiagnosticReportByVS(vs System.ValueSet):
+  </a:s>
+               <a:s r="1324">
+                  <a:s r="1324">
+                     <a:s r="1309">
+                        <a:s>CSMCommonFunctions</a:s>
+                     </a:s>
+                     <a:s>.</a:s>
+                     <a:s r="1324">
+                        <a:s>MostRecentDiagnosticReport(</a:s>
+                        <a:s r="1314">
+                           <a:s>DiagnosticReportsByVS(</a:s>
+                           <a:s r="1310">
+                              <a:s>vs</a:s>
+                           </a:s>
+                           <a:s>)</a:s>
+                        </a:s>
+                        <a:s>)</a:s>
+                     </a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="1324" locator="200:3-200:74" name="MostRecentDiagnosticReport" libraryName="CSMCommonFunctions" xsi:type="FunctionRef">
+            <operand localId="1314" locator="200:49-200:73" name="DiagnosticReportsByVS" xsi:type="FunctionRef">
+               <operand localId="1310" locator="200:71-200:72" name="vs" xsi:type="OperandRef"/>
+            </operand>
+         </expression>
+         <operand localId="1308" name="vs">
+            <operandTypeSpecifier localId="1307" locator="199:51-199:65" name="t:ValueSet" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def localId="1311" locator="207:1-208:26" name="DiagnosticReportsByVS" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="1311">
+               <a:s>define function DiagnosticReportsByVS(vs System.ValueSet):
+  </a:s>
+               <a:s r="1343">
+                  <a:s r="1343">
+                     <a:s>
+                        <a:s r="1335">
+                           <a:s r="1338">
+                              <a:s r="1338">
+                                 <a:s>[DiagnosticReport: </a:s>
+                                 <a:s>
+                                    <a:s>vs</a:s>
+                                 </a:s>
+                                 <a:s>]</a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s> R</a:s>
+                        </a:s>
+                     </a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="1343" locator="208:3-208:26" xsi:type="Query">
+            <source localId="1335" locator="208:3-208:26" alias="R">
+               <expression localId="1338" locator="208:3-208:24" dataType="fhir:DiagnosticReport" templateId="http://hl7.org/fhir/StructureDefinition/DiagnosticReport" codeProperty="code" codeComparator="in" xsi:type="Retrieve"/>
+            </source>
+         </expression>
+         <operand localId="1313" name="vs">
+            <operandTypeSpecifier localId="1312" locator="207:42-207:56" name="t:ValueSet" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def localId="1344" locator="211:1-217:3" name="CompletedDiagnosticReportsByLookback" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="1344">
+               <a:s>// Returns list of completed diagnostic reports matching code in a given lookback period
+define function CompletedDiagnosticReportsByLookback(term Concept, lookback System.Quantity):
+  </a:s>
+               <a:s r="1358">
+                  <a:s r="1358">
+                     <a:s r="1349">
+                        <a:s>CSMCommonFunctions</a:s>
+                     </a:s>
+                     <a:s>.</a:s>
+                     <a:s r="1358">
+                        <a:s>CompletedDiagnosticReport(
+    </a:s>
+                        <a:s r="1354">
+                           <a:s r="1350">
+                              <a:s>CSMCommonFunctions</a:s>
+                           </a:s>
+                           <a:s>.</a:s>
+                           <a:s r="1354">
+                              <a:s>LookBack(
+      </a:s>
+                              <a:s r="1352">
+                                 <a:s>DiagnosticReportsByCode(</a:s>
+                                 <a:s r="1351">
+                                    <a:s>term</a:s>
+                                 </a:s>
+                                 <a:s>)</a:s>
+                              </a:s>
+                              <a:s>,
+    </a:s>
+                              <a:s r="1353">
+                                 <a:s>lookback</a:s>
+                              </a:s>
+                              <a:s>
+    )</a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s>
+  )</a:s>
+                     </a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="1358" locator="212:3-217:3" name="CompletedDiagnosticReport" libraryName="CSMCommonFunctions" xsi:type="FunctionRef">
+            <operand localId="1354" locator="213:5-216:5" name="LookBack" libraryName="CSMCommonFunctions" xsi:type="FunctionRef">
+               <signature localId="1355" xsi:type="ListTypeSpecifier">
+                  <elementType localId="1356" name="fhir:DiagnosticReport" xsi:type="NamedTypeSpecifier"/>
+               </signature>
+               <signature localId="1357" name="t:Quantity" xsi:type="NamedTypeSpecifier"/>
+               <operand localId="1352" locator="214:7-214:35" name="DiagnosticReportsByCode" xsi:type="FunctionRef">
+                  <operand localId="1351" locator="214:31-214:34" name="term" xsi:type="OperandRef"/>
+               </operand>
+               <operand localId="1353" locator="215:5-215:12" name="lookback" xsi:type="OperandRef"/>
+            </operand>
+         </expression>
+         <operand localId="1346" name="term">
+            <operandTypeSpecifier localId="1345" locator="211:59-211:65" name="t:Concept" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+         <operand localId="1348" name="lookback">
+            <operandTypeSpecifier localId="1347" locator="211:77-211:91" name="t:Quantity" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def localId="1359" locator="220:1-226:3" name="CompletedDiagnosticReportsByLookback" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="1359">
+               <a:s>// Returns list of completed diagnostic reports matching value set in a given lookback period
+define function CompletedDiagnosticReportsByLookback(vs System.ValueSet, lookback System.Quantity):
+  </a:s>
+               <a:s r="1373">
+                  <a:s r="1373">
+                     <a:s r="1364">
+                        <a:s>CSMCommonFunctions</a:s>
+                     </a:s>
+                     <a:s>.</a:s>
+                     <a:s r="1373">
+                        <a:s>CompletedDiagnosticReport(
+    </a:s>
+                        <a:s r="1369">
+                           <a:s r="1365">
+                              <a:s>CSMCommonFunctions</a:s>
+                           </a:s>
+                           <a:s>.</a:s>
+                           <a:s r="1369">
+                              <a:s>LookBack(
+      </a:s>
+                              <a:s r="1367">
+                                 <a:s>DiagnosticReportsByVS(</a:s>
+                                 <a:s r="1366">
+                                    <a:s>vs</a:s>
+                                 </a:s>
+                                 <a:s>)</a:s>
+                              </a:s>
+                              <a:s>,
+    </a:s>
+                              <a:s r="1368">
+                                 <a:s>lookback</a:s>
+                              </a:s>
+                              <a:s>
+    )</a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s>
+  )</a:s>
+                     </a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="1373" locator="221:3-226:3" name="CompletedDiagnosticReport" libraryName="CSMCommonFunctions" xsi:type="FunctionRef">
+            <operand localId="1369" locator="222:5-225:5" name="LookBack" libraryName="CSMCommonFunctions" xsi:type="FunctionRef">
+               <signature localId="1370" xsi:type="ListTypeSpecifier">
+                  <elementType localId="1371" name="fhir:DiagnosticReport" xsi:type="NamedTypeSpecifier"/>
+               </signature>
+               <signature localId="1372" name="t:Quantity" xsi:type="NamedTypeSpecifier"/>
+               <operand localId="1367" locator="223:7-223:31" name="DiagnosticReportsByVS" xsi:type="FunctionRef">
+                  <operand localId="1366" locator="223:29-223:30" name="vs" xsi:type="OperandRef"/>
+               </operand>
+               <operand localId="1368" locator="224:5-224:12" name="lookback" xsi:type="OperandRef"/>
+            </operand>
+         </expression>
+         <operand localId="1361" name="vs">
+            <operandTypeSpecifier localId="1360" locator="220:57-220:71" name="t:ValueSet" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+         <operand localId="1363" name="lookback">
+            <operandTypeSpecifier localId="1362" locator="220:83-220:97" name="t:Quantity" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def localId="1374" locator="239:1-245:3" name="VerifiedObservations" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="1374">
+               <a:s>//define function DiagnosticReportResultsByModality(DiagnosticReportList List&lt;FHIR.DiagnosticReport>, ObsList List&lt;FHIR.Observation>, modality System.ValueSet, result System.ValueSet):
+//  DiagnosticReportList D
+//    where
+//      D.code in modality
+//  and AnyTrue(CollateConclusionCodes(D, ObsList) C return C in result)
+
+//------------------------------------------------------------------------------
+// Observation Functions
+//------------------------------------------------------------------------------
+
+// Returns list of verified observations matching a direct reference code in a given lookback period
+define function VerifiedObservations(term Concept, lookback System.Quantity):
+  </a:s>
+               <a:s r="1393">
+                  <a:s r="1393">
+                     <a:s r="1379">
+                        <a:s>C3F</a:s>
+                     </a:s>
+                     <a:s>.</a:s>
+                     <a:s r="1393">
+                        <a:s>Verified(
+    </a:s>
+                        <a:s r="1392">
+                           <a:s r="1380">
+                              <a:s>C3F</a:s>
+                           </a:s>
+                           <a:s>.</a:s>
+                           <a:s r="1392">
+                              <a:s>ObservationLookBack(
+      </a:s>
+                              <a:s r="1390">
+                                 <a:s>
+                                    <a:s r="1381">
+                                       <a:s r="1382">
+                                          <a:s r="1382">
+                                             <a:s>[Observation]</a:s>
+                                          </a:s>
+                                       </a:s>
+                                       <a:s> O</a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s> </a:s>
+                                 <a:s r="1383">
+                                    <a:s>where </a:s>
+                                    <a:s r="1383">
+                                       <a:s r="1385">
+                                          <a:s r="1384">
+                                             <a:s>O</a:s>
+                                          </a:s>
+                                          <a:s>.</a:s>
+                                          <a:s r="1385">
+                                             <a:s>code</a:s>
+                                          </a:s>
+                                       </a:s>
+                                       <a:s> ~ </a:s>
+                                       <a:s r="1386">
+                                          <a:s>term</a:s>
+                                       </a:s>
+                                    </a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s>,
+    </a:s>
+                              <a:s r="1391">
+                                 <a:s>lookback</a:s>
+                              </a:s>
+                              <a:s>
+    )</a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s>
+  )</a:s>
+                     </a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="1393" locator="240:3-245:3" name="Verified" libraryName="C3F" xsi:type="FunctionRef">
+            <operand localId="1392" locator="241:5-244:5" name="ObservationLookBack" libraryName="C3F" xsi:type="FunctionRef">
+               <operand localId="1390" locator="242:7-242:41" xsi:type="Query">
+                  <source localId="1381" locator="242:7-242:21" alias="O">
+                     <expression localId="1382" locator="242:7-242:19" dataType="fhir:Observation" templateId="http://hl7.org/fhir/StructureDefinition/Observation" xsi:type="Retrieve"/>
+                  </source>
+                  <where localId="1383" locator="242:23-242:41" xsi:type="Equivalent">
+                     <signature localId="1388" name="t:Concept" xsi:type="NamedTypeSpecifier"/>
+                     <signature localId="1389" name="t:Concept" xsi:type="NamedTypeSpecifier"/>
+                     <operand localId="1387" name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                        <operand localId="1385" locator="242:29-242:34" path="code" scope="O" xsi:type="Property"/>
+                     </operand>
+                     <operand localId="1386" locator="242:38-242:41" name="term" xsi:type="OperandRef"/>
+                  </where>
+               </operand>
+               <operand localId="1391" locator="243:5-243:12" name="lookback" xsi:type="OperandRef"/>
+            </operand>
+         </expression>
+         <operand localId="1376" name="term">
+            <operandTypeSpecifier localId="1375" locator="239:43-239:49" name="t:Concept" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+         <operand localId="1378" name="lookback">
+            <operandTypeSpecifier localId="1377" locator="239:61-239:75" name="t:Quantity" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def localId="1394" locator="248:1-254:5" name="VerifiedObservations" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="1394">
+               <a:s>// Returns list of verified observations matching a value set in a given lookback period
+define function VerifiedObservations(vs System.ValueSet, lookback System.Quantity):
+    </a:s>
+               <a:s r="1410">
+                  <a:s r="1410">
+                     <a:s r="1399">
+                        <a:s>C3F</a:s>
+                     </a:s>
+                     <a:s>.</a:s>
+                     <a:s r="1410">
+                        <a:s>Verified(
+      </a:s>
+                        <a:s r="1409">
+                           <a:s r="1400">
+                              <a:s>C3F</a:s>
+                           </a:s>
+                           <a:s>.</a:s>
+                           <a:s r="1409">
+                              <a:s>ObservationLookBack(
+        </a:s>
+                              <a:s r="1403">
+                                 <a:s>[Observation: </a:s>
+                                 <a:s>
+                                    <a:s>vs</a:s>
+                                 </a:s>
+                                 <a:s>]</a:s>
+                              </a:s>
+                              <a:s>,
+      </a:s>
+                              <a:s r="1408">
+                                 <a:s>lookback</a:s>
+                              </a:s>
+                              <a:s>
+      )</a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s>
+    )</a:s>
+                     </a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="1410" locator="249:5-254:5" name="Verified" libraryName="C3F" xsi:type="FunctionRef">
+            <operand localId="1409" locator="250:7-253:7" name="ObservationLookBack" libraryName="C3F" xsi:type="FunctionRef">
+               <operand localId="1403" locator="251:9-251:25" dataType="fhir:Observation" templateId="http://hl7.org/fhir/StructureDefinition/Observation" codeProperty="code" codeComparator="in" xsi:type="Retrieve"/>
+               <operand localId="1408" locator="252:7-252:14" name="lookback" xsi:type="OperandRef"/>
+            </operand>
+         </expression>
+         <operand localId="1396" name="vs">
+            <operandTypeSpecifier localId="1395" locator="248:41-248:55" name="t:ValueSet" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+         <operand localId="1398" name="lookback">
+            <operandTypeSpecifier localId="1397" locator="248:67-248:81" name="t:Quantity" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def localId="1411" locator="262:1-265:99" name="ActiveServiceRequestOrders" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="1411">
+               <a:s>//------------------------------------------------------------------------------
+// Service Request Functions
+//------------------------------------------------------------------------------
+
+//TODO: need for direct reference code?
+define function ActiveServiceRequestOrders(vs System.ValueSet):
+  </a:s>
+               <a:s r="1441">
+                  <a:s r="1441">
+                     <a:s>
+                        <a:s r="1414">
+                           <a:s r="1417">
+                              <a:s r="1417">
+                                 <a:s>[ServiceRequest: </a:s>
+                                 <a:s>
+                                    <a:s>vs</a:s>
+                                 </a:s>
+                                 <a:s>]</a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s> O</a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s>
+      </a:s>
+                     <a:s r="1422">
+                        <a:s>where </a:s>
+                        <a:s r="1422">
+                           <a:s r="1427">
+                              <a:s r="1424">
+                                 <a:s r="1423">
+                                    <a:s>O</a:s>
+                                 </a:s>
+                                 <a:s>.</a:s>
+                                 <a:s r="1424">
+                                    <a:s>status</a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s> in </a:s>
+                              <a:s r="1425">
+                                 <a:s>{</a:s>
+                                 <a:s r="1426">
+                                    <a:s>'active'</a:s>
+                                 </a:s>
+                                 <a:s>}</a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s>
+      and </a:s>
+                           <a:s r="1438">
+                              <a:s r="1431">
+                                 <a:s r="1430">
+                                    <a:s>O</a:s>
+                                 </a:s>
+                                 <a:s>.</a:s>
+                                 <a:s r="1431">
+                                    <a:s>intent</a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s> in </a:s>
+                              <a:s r="1432">
+                                 <a:s>{</a:s>
+                                 <a:s r="1433">
+                                    <a:s>'order'</a:s>
+                                 </a:s>
+                                 <a:s>, </a:s>
+                                 <a:s r="1434">
+                                    <a:s>'original-order'</a:s>
+                                 </a:s>
+                                 <a:s>, </a:s>
+                                 <a:s r="1435">
+                                    <a:s>'reflex-order'</a:s>
+                                 </a:s>
+                                 <a:s>, </a:s>
+                                 <a:s r="1436">
+                                    <a:s>'filler-order'</a:s>
+                                 </a:s>
+                                 <a:s>, </a:s>
+                                 <a:s r="1437">
+                                    <a:s>'instance-order'</a:s>
+                                 </a:s>
+                                 <a:s>}</a:s>
+                              </a:s>
+                           </a:s>
+                        </a:s>
+                     </a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="1441" locator="263:3-265:99" xsi:type="Query">
+            <source localId="1414" locator="263:3-263:24" alias="O">
+               <expression localId="1417" locator="263:3-263:22" dataType="fhir:ServiceRequest" templateId="http://hl7.org/fhir/StructureDefinition/ServiceRequest" codeProperty="code" codeComparator="in" xsi:type="Retrieve"/>
+            </source>
+            <where localId="1422" locator="264:7-265:99" xsi:type="And">
+               <operand localId="1427" locator="264:13-264:34" xsi:type="In">
+                  <operand localId="1428" name="ToString" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                     <signature localId="1429" name="fhir:ServiceRequestStatus" xsi:type="NamedTypeSpecifier"/>
+                     <operand localId="1424" locator="264:13-264:20" path="status" scope="O" xsi:type="Property"/>
+                  </operand>
+                  <operand localId="1425" locator="264:25-264:34" xsi:type="List">
+                     <element localId="1426" locator="264:26-264:33" valueType="t:String" value="active" xsi:type="Literal"/>
+                  </operand>
+               </operand>
+               <operand localId="1438" locator="265:11-265:99" xsi:type="In">
+                  <operand localId="1439" name="ToString" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                     <signature localId="1440" name="fhir:ServiceRequestIntent" xsi:type="NamedTypeSpecifier"/>
+                     <operand localId="1431" locator="265:11-265:18" path="intent" scope="O" xsi:type="Property"/>
+                  </operand>
+                  <operand localId="1432" locator="265:23-265:99" xsi:type="List">
+                     <element localId="1433" locator="265:24-265:30" valueType="t:String" value="order" xsi:type="Literal"/>
+                     <element localId="1434" locator="265:33-265:48" valueType="t:String" value="original-order" xsi:type="Literal"/>
+                     <element localId="1435" locator="265:51-265:64" valueType="t:String" value="reflex-order" xsi:type="Literal"/>
+                     <element localId="1436" locator="265:67-265:80" valueType="t:String" value="filler-order" xsi:type="Literal"/>
+                     <element localId="1437" locator="265:83-265:98" valueType="t:String" value="instance-order" xsi:type="Literal"/>
+                  </operand>
+               </operand>
+            </where>
+         </expression>
+         <operand localId="1413" name="vs">
+            <operandTypeSpecifier localId="1412" locator="262:47-262:61" name="t:ValueSet" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def localId="1442" locator="277:1-281:37" name="CollateConclusionCodes" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="1442">
+               <a:s>//------------------------------------------------------------------------------
+// Diagnostic report results
+//------------------------------------------------------------------------------
+// Aggregate result codes -
+//  DiagnosticReport.conclusionCode[]
+//  Observatio.value where DiagnosticReport.result[].reference = Observation
+//  Observatio.value where Observation.basedOn = DiagnosticReport.basedOn (request)
+
+// if a DiagnosticReport.code has target code, then call original CollateConclusionCodes
+// if a DiagnosticReport.code does not have target code, then return values from matched Observations
+define function CollateConclusionCodes(D DiagnosticReport, ObsList List&lt;Observation>, code System.Code):
+  </a:s>
+               <a:s r="1450">
+                  <a:s r="1450">
+                     <a:s>if </a:s>
+                     <a:s r="1451">
+                        <a:s r="1455">
+                           <a:s r="1452">
+                              <a:s>FHIRHelpers</a:s>
+                           </a:s>
+                           <a:s>.</a:s>
+                           <a:s r="1455">
+                              <a:s>ToConcept(</a:s>
+                              <a:s r="1454">
+                                 <a:s r="1453">
+                                    <a:s>D</a:s>
+                                 </a:s>
+                                 <a:s>.</a:s>
+                                 <a:s r="1454">
+                                    <a:s>code</a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s>)</a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s> ~ </a:s>
+                        <a:s r="1456">
+                           <a:s>code</a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s> then
+    </a:s>
+                     <a:s r="1470">
+                        <a:s>CollateConclusionCodes(</a:s>
+                        <a:s r="1462">
+                           <a:s>D</a:s>
+                        </a:s>
+                        <a:s>, </a:s>
+                        <a:s r="1463">
+                           <a:s>ObsList</a:s>
+                        </a:s>
+                        <a:s>)</a:s>
+                     </a:s>
+                     <a:s>
+  else
+    </a:s>
+                     <a:s r="1549">
+                        <a:s>ValuesFromObservation(</a:s>
+                        <a:s r="1547">
+                           <a:s>D</a:s>
+                        </a:s>
+                        <a:s>, </a:s>
+                        <a:s r="1548">
+                           <a:s>ObsList</a:s>
+                        </a:s>
+                        <a:s>)</a:s>
+                     </a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="1450" locator="278:3-281:37" xsi:type="If">
+            <condition localId="1451" locator="278:6-278:41" xsi:type="Equivalent">
+               <signature localId="1460" name="t:Concept" xsi:type="NamedTypeSpecifier"/>
+               <signature localId="1461" name="t:Concept" xsi:type="NamedTypeSpecifier"/>
+               <operand localId="1455" locator="278:6-278:34" name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                  <operand localId="1454" locator="278:28-278:33" path="code" xsi:type="Property">
+                     <source localId="1453" locator="278:28" name="D" xsi:type="OperandRef"/>
+                  </operand>
+               </operand>
+               <operand localId="1458" xsi:type="ToConcept">
+                  <signature localId="1459" name="t:Code" xsi:type="NamedTypeSpecifier"/>
+                  <operand localId="1456" locator="278:38-278:41" name="code" xsi:type="OperandRef"/>
+               </operand>
+            </condition>
+            <then localId="1470" locator="279:5-279:38" name="CollateConclusionCodes" xsi:type="FunctionRef">
+               <operand localId="1462" locator="279:28" name="D" xsi:type="OperandRef"/>
+               <operand localId="1463" locator="279:31-279:37" name="ObsList" xsi:type="OperandRef"/>
+            </then>
+            <else localId="1549" locator="281:5-281:37" name="ValuesFromObservation" xsi:type="FunctionRef">
+               <operand localId="1547" locator="281:27" name="D" xsi:type="OperandRef"/>
+               <operand localId="1548" locator="281:30-281:36" name="ObsList" xsi:type="OperandRef"/>
+            </else>
+         </expression>
+         <operand localId="1444" name="D">
+            <operandTypeSpecifier localId="1443" locator="277:42-277:57" name="fhir:DiagnosticReport" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+         <operand localId="1447" name="ObsList">
+            <operandTypeSpecifier localId="1445" locator="277:68-277:84" xsi:type="ListTypeSpecifier">
+               <elementType localId="1446" locator="277:73-277:83" name="fhir:Observation" xsi:type="NamedTypeSpecifier"/>
+            </operandTypeSpecifier>
+         </operand>
+         <operand localId="1449" name="code">
+            <operandTypeSpecifier localId="1448" locator="277:92-277:102" name="t:Code" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def localId="1464" locator="283:1-285:35" name="CollateConclusionCodes" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="1464">
+               <a:s>define function CollateConclusionCodes(D DiagnosticReport, ObsList List&lt;Observation>):
+  </a:s>
+               <a:s r="1555">
+                  <a:s r="1555">
+                     <a:s r="1551">
+                        <a:s r="1550">
+                           <a:s>D</a:s>
+                        </a:s>
+                        <a:s>.</a:s>
+                        <a:s r="1551">
+                           <a:s>conclusionCode</a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s> union
+  </a:s>
+                     <a:s r="1554">
+                        <a:s>ValuesFromObservation(</a:s>
+                        <a:s r="1552">
+                           <a:s>D</a:s>
+                        </a:s>
+                        <a:s>, </a:s>
+                        <a:s r="1553">
+                           <a:s>ObsList</a:s>
+                        </a:s>
+                        <a:s>)</a:s>
+                     </a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="1555" locator="284:3-285:35" xsi:type="Union">
+            <operand localId="1551" locator="284:3-284:18" path="conclusionCode" xsi:type="Property">
+               <source localId="1550" locator="284:3" name="D" xsi:type="OperandRef"/>
+            </operand>
+            <operand localId="1554" locator="285:3-285:35" name="ValuesFromObservation" xsi:type="FunctionRef">
+               <operand localId="1552" locator="285:25" name="D" xsi:type="OperandRef"/>
+               <operand localId="1553" locator="285:28-285:34" name="ObsList" xsi:type="OperandRef"/>
+            </operand>
+         </expression>
+         <operand localId="1466" name="D">
+            <operandTypeSpecifier localId="1465" locator="283:42-283:57" name="fhir:DiagnosticReport" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+         <operand localId="1469" name="ObsList">
+            <operandTypeSpecifier localId="1467" locator="283:68-283:84" xsi:type="ListTypeSpecifier">
+               <elementType localId="1468" locator="283:73-283:83" name="fhir:Observation" xsi:type="NamedTypeSpecifier"/>
+            </operandTypeSpecifier>
+         </operand>
+      </def>
+      <def localId="1475" locator="287:1-292:40" name="ValuesFromObservation" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="1475">
+               <a:s>define function ValuesFromObservation(D DiagnosticReport, ObsList List&lt;Observation>):
+  </a:s>
+               <a:s r="1619">
+                  <a:s r="1619">
+                     <a:s>
+                        <a:s r="1556">
+                           <a:s r="1557">
+                              <a:s>(</a:s>
+                              <a:s r="1557">
+                                 <a:s>ObsList</a:s>
+                              </a:s>
+                              <a:s>)</a:s>
+                           </a:s>
+                           <a:s> O</a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s>
+  </a:s>
+                     <a:s r="1558">
+                        <a:s>where
+    </a:s>
+                        <a:s r="1558">
+                           <a:s r="1587">
+                              <a:s>Exists( </a:s>
+                              <a:s r="1582">
+                                 <a:s>
+                                    <a:s r="1559">
+                                       <a:s r="1561">
+                                          <a:s>(</a:s>
+                                          <a:s r="1561">
+                                             <a:s r="1560">
+                                                <a:s>D</a:s>
+                                             </a:s>
+                                             <a:s>.</a:s>
+                                             <a:s r="1561">
+                                                <a:s>result</a:s>
+                                             </a:s>
+                                          </a:s>
+                                          <a:s> )</a:s>
+                                       </a:s>
+                                       <a:s> R</a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s> </a:s>
+                                 <a:s r="1562">
+                                    <a:s>where </a:s>
+                                    <a:s r="1562">
+                                       <a:s r="1575">
+                                          <a:s>Last(</a:s>
+                                          <a:s r="1570">
+                                             <a:s>Split(</a:s>
+                                             <a:s r="1564">
+                                                <a:s r="1563">
+                                                   <a:s>R</a:s>
+                                                </a:s>
+                                                <a:s>.</a:s>
+                                                <a:s r="1564">
+                                                   <a:s>reference</a:s>
+                                                </a:s>
+                                             </a:s>
+                                             <a:s>,</a:s>
+                                             <a:s r="1565">
+                                                <a:s>'/'</a:s>
+                                             </a:s>
+                                             <a:s>)</a:s>
+                                          </a:s>
+                                          <a:s>)</a:s>
+                                       </a:s>
+                                       <a:s> =  </a:s>
+                                       <a:s r="1577">
+                                          <a:s r="1576">
+                                             <a:s>O</a:s>
+                                          </a:s>
+                                          <a:s>.</a:s>
+                                          <a:s r="1577">
+                                             <a:s>id</a:s>
+                                          </a:s>
+                                       </a:s>
+                                    </a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s> )</a:s>
+                           </a:s>
+                           <a:s> or
+    </a:s>
+                           <a:s r="1611">
+                              <a:s>Exists( </a:s>
+                              <a:s r="1606">
+                                 <a:s>
+                                    <a:s r="1590">
+                                       <a:s r="1592">
+                                          <a:s>(</a:s>
+                                          <a:s r="1592">
+                                             <a:s r="1591">
+                                                <a:s>O</a:s>
+                                             </a:s>
+                                             <a:s>.</a:s>
+                                             <a:s r="1592">
+                                                <a:s>basedOn</a:s>
+                                             </a:s>
+                                          </a:s>
+                                          <a:s>)</a:s>
+                                       </a:s>
+                                       <a:s> oB</a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s> </a:s>
+                                 <a:s r="1605">
+                                    <a:s>where </a:s>
+                                    <a:s r="1605">
+                                       <a:s>AnyTrue(</a:s>
+                                       <a:s r="1602">
+                                          <a:s>
+                                             <a:s r="1593">
+                                                <a:s r="1595">
+                                                   <a:s>(</a:s>
+                                                   <a:s r="1595">
+                                                      <a:s r="1594">
+                                                         <a:s>D</a:s>
+                                                      </a:s>
+                                                      <a:s>.</a:s>
+                                                      <a:s r="1595">
+                                                         <a:s>basedOn</a:s>
+                                                      </a:s>
+                                                   </a:s>
+                                                   <a:s>)</a:s>
+                                                </a:s>
+                                                <a:s> dB</a:s>
+                                             </a:s>
+                                          </a:s>
+                                          <a:s> </a:s>
+                                          <a:s r="1596">
+                                             <a:s>return </a:s>
+                                             <a:s r="1597">
+                                                <a:s r="1598">
+                                                   <a:s>dB</a:s>
+                                                </a:s>
+                                                <a:s> = </a:s>
+                                                <a:s r="1599">
+                                                   <a:s>oB</a:s>
+                                                </a:s>
+                                             </a:s>
+                                          </a:s>
+                                       </a:s>
+                                       <a:s> )</a:s>
+                                    </a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s> )</a:s>
+                           </a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s>
+  </a:s>
+                     <a:s r="1614">
+                        <a:s>return </a:s>
+                        <a:s r="1615">
+                           <a:s r="1617">
+                              <a:s r="1616">
+                                 <a:s>O</a:s>
+                              </a:s>
+                              <a:s>.</a:s>
+                              <a:s r="1617">
+                                 <a:s>value</a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s> as </a:s>
+                           <a:s r="1618">
+                              <a:s>FHIR.CodeableConcept</a:s>
+                           </a:s>
+                        </a:s>
+                     </a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="1619" locator="288:3-292:40" xsi:type="Query">
+            <source localId="1556" locator="288:3-288:13" alias="O">
+               <expression localId="1557" locator="288:3-288:11" name="ObsList" xsi:type="OperandRef"/>
+            </source>
+            <where localId="1558" locator="289:3-291:74" xsi:type="Or">
+               <operand localId="1587" locator="290:5-290:70" xsi:type="Exists">
+                  <signature localId="1588" xsi:type="ListTypeSpecifier">
+                     <elementType localId="1589" name="fhir:Reference" xsi:type="NamedTypeSpecifier"/>
+                  </signature>
+                  <operand localId="1582" locator="290:13-290:68" xsi:type="Query">
+                     <source localId="1559" locator="290:13-290:25" alias="R">
+                        <expression localId="1561" locator="290:13-290:23" path="result" xsi:type="Property">
+                           <source localId="1560" locator="290:14" name="D" xsi:type="OperandRef"/>
+                        </expression>
+                     </source>
+                     <where localId="1562" locator="290:27-290:68" xsi:type="Equal">
+                        <signature localId="1580" name="t:String" xsi:type="NamedTypeSpecifier"/>
+                        <signature localId="1581" name="t:String" xsi:type="NamedTypeSpecifier"/>
+                        <operand localId="1575" locator="290:33-290:60" xsi:type="Last">
+                           <source localId="1570" locator="290:38-290:59" xsi:type="Split">
+                              <stringToSplit localId="1571" name="ToString" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                 <signature localId="1572" name="fhir:string" xsi:type="NamedTypeSpecifier"/>
+                                 <operand localId="1564" locator="290:44-290:54" path="reference" scope="R" xsi:type="Property"/>
+                              </stringToSplit>
+                              <separator localId="1565" locator="290:56-290:58" valueType="t:String" value="/" xsi:type="Literal"/>
+                           </source>
+                        </operand>
+                        <operand localId="1578" name="ToString" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                           <signature localId="1579" name="fhir:string" xsi:type="NamedTypeSpecifier"/>
+                           <operand localId="1577" locator="290:65-290:68" path="id" scope="O" xsi:type="Property"/>
+                        </operand>
+                     </where>
+                  </operand>
+               </operand>
+               <operand localId="1611" locator="291:5-291:74" xsi:type="Exists">
+                  <signature localId="1612" xsi:type="ListTypeSpecifier">
+                     <elementType localId="1613" name="fhir:Reference" xsi:type="NamedTypeSpecifier"/>
+                  </signature>
+                  <operand localId="1606" locator="291:13-291:72" xsi:type="Query">
+                     <source localId="1590" locator="291:13-291:26" alias="oB">
+                        <expression localId="1592" locator="291:13-291:23" path="basedOn" scope="O" xsi:type="Property"/>
+                     </source>
+                     <where localId="1605" locator="291:28-291:72" xsi:type="AnyTrue">
+                        <source localId="1602" locator="291:42-291:70" xsi:type="Query">
+                           <source localId="1593" locator="291:42-291:55" alias="dB">
+                              <expression localId="1595" locator="291:42-291:52" path="basedOn" xsi:type="Property">
+                                 <source localId="1594" locator="291:43" name="D" xsi:type="OperandRef"/>
+                              </expression>
+                           </source>
+                           <return localId="1596" locator="291:57-291:70">
+                              <expression localId="1597" locator="291:64-291:70" xsi:type="Equal">
+                                 <signature localId="1600" name="fhir:Reference" xsi:type="NamedTypeSpecifier"/>
+                                 <signature localId="1601" name="fhir:Reference" xsi:type="NamedTypeSpecifier"/>
+                                 <operand localId="1598" locator="291:64-291:65" name="dB" xsi:type="AliasRef"/>
+                                 <operand localId="1599" locator="291:69-291:70" name="oB" xsi:type="AliasRef"/>
+                              </expression>
+                           </return>
+                        </source>
+                     </where>
+                  </operand>
+               </operand>
+            </where>
+            <return localId="1614" locator="292:3-292:40">
+               <expression localId="1615" locator="292:10-292:40" strict="false" xsi:type="As">
+                  <operand localId="1617" locator="292:10-292:16" path="value" scope="O" xsi:type="Property"/>
+                  <asTypeSpecifier localId="1618" locator="292:21-292:40" name="fhir:CodeableConcept" xsi:type="NamedTypeSpecifier"/>
+               </expression>
+            </return>
+         </expression>
+         <operand localId="1477" name="D">
+            <operandTypeSpecifier localId="1476" locator="287:41-287:56" name="fhir:DiagnosticReport" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+         <operand localId="1480" name="ObsList">
+            <operandTypeSpecifier localId="1478" locator="287:67-287:83" xsi:type="ListTypeSpecifier">
+               <elementType localId="1479" locator="287:72-287:82" name="fhir:Observation" xsi:type="NamedTypeSpecifier"/>
+            </operandTypeSpecifier>
+         </operand>
+      </def>
+   </statements>
+</library>

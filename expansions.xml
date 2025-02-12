@@ -1,0 +1,430 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Bundle xmlns="http://hl7.org/fhir">
+  <id value="26eaff13-4a73-4358-8112-f1a0816cb0df"/>
+  <meta>
+    <lastUpdated value="2025-02-12T14:54:26.794+00:00"/>
+  </meta>
+  <type value="collection"/>
+  <entry>
+    <fullUrl value="http://cancerscreeningcds.github.io/crcsm-cds/ValueSet/plan-definition-action-codes"/>
+    <resource>
+      <ValueSet>
+        <text>
+          <status value="generated"/>
+          <div xmlns="http://www.w3.org/1999/xhtml">
+            <p class="res-header-id">
+              <b>Generated Narrative: ValueSet </b>
+            </p>
+            <p style="border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px">Expansion done internally based on 
+              <a href="CodeSystem-plan-definition-action-code-system.html">codesystem Plan Definition Action Code System v0.1.0 (CodeSystem)</a>
+            </p>
+            <p>This value set contains 10 concepts</p>
+            <table class="codes">
+              <tr>
+                <td style="white-space:nowrap">
+                  <b>Code</b>
+                </td>
+                <td>
+                  <b>System</b>
+                </td>
+                <td>
+                  <b>Display</b>
+                </td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="x-http://cancerscreeningcds.github.io/crcsm-cds/CodeSystem/plan-definition-action-code-system-eligible"> </a>  
+                  <a href="CodeSystem-plan-definition-action-code-system.html#plan-definition-action-code-system-eligible">eligible</a>
+                </td>
+                <td>http://cancerscreeningcds.github.io/crcsm-cds/CodeSystem/plan-definition-action-code-system</td>
+                <td>Eligible for screening</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="x-http://cancerscreeningcds.github.io/crcsm-cds/CodeSystem/plan-definition-action-code-system-noteligible"> </a>  
+                  <a href="CodeSystem-plan-definition-action-code-system.html#plan-definition-action-code-system-noteligible">noteligible</a>
+                </td>
+                <td>http://cancerscreeningcds.github.io/crcsm-cds/CodeSystem/plan-definition-action-code-system</td>
+                <td>Not eligible for screening</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="x-http://cancerscreeningcds.github.io/crcsm-cds/CodeSystem/plan-definition-action-code-system-error"> </a>  
+                  <a href="CodeSystem-plan-definition-action-code-system.html#plan-definition-action-code-system-error">error</a>
+                </td>
+                <td>http://cancerscreeningcds.github.io/crcsm-cds/CodeSystem/plan-definition-action-code-system</td>
+                <td>An error occurred</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="x-http://cancerscreeningcds.github.io/crcsm-cds/CodeSystem/plan-definition-action-code-system-sdmcontinue"> </a>  
+                  <a href="CodeSystem-plan-definition-action-code-system.html#plan-definition-action-code-system-sdmcontinue">sdmcontinue</a>
+                </td>
+                <td>http://cancerscreeningcds.github.io/crcsm-cds/CodeSystem/plan-definition-action-code-system</td>
+                <td>Shared decision making to continue screening</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="x-http://cancerscreeningcds.github.io/crcsm-cds/CodeSystem/plan-definition-action-code-system-stopscreen"> </a>  
+                  <a href="CodeSystem-plan-definition-action-code-system.html#plan-definition-action-code-system-stopscreen">stopscreen</a>
+                </td>
+                <td>http://cancerscreeningcds.github.io/crcsm-cds/CodeSystem/plan-definition-action-code-system</td>
+                <td>Recommendation to stop screening</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="x-http://cancerscreeningcds.github.io/crcsm-cds/CodeSystem/plan-definition-action-code-system-startscreeningat45yearsold"> </a>  
+                  <a href="CodeSystem-plan-definition-action-code-system.html#plan-definition-action-code-system-startscreeningat45yearsold">startscreeningat45yearsold</a>
+                </td>
+                <td>http://cancerscreeningcds.github.io/crcsm-cds/CodeSystem/plan-definition-action-code-system</td>
+                <td>Start screening at 45 years old</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="x-http://cancerscreeningcds.github.io/crcsm-cds/CodeSystem/plan-definition-action-code-system-startscreening"> </a>  
+                  <a href="CodeSystem-plan-definition-action-code-system.html#plan-definition-action-code-system-startscreening">startscreening</a>
+                </td>
+                <td>http://cancerscreeningcds.github.io/crcsm-cds/CodeSystem/plan-definition-action-code-system</td>
+                <td>Start screening</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="x-http://cancerscreeningcds.github.io/crcsm-cds/CodeSystem/plan-definition-action-code-system-continueroutinescreening"> </a>  
+                  <a href="CodeSystem-plan-definition-action-code-system.html#plan-definition-action-code-system-continueroutinescreening">continueroutinescreening</a>
+                </td>
+                <td>http://cancerscreeningcds.github.io/crcsm-cds/CodeSystem/plan-definition-action-code-system</td>
+                <td>Continue routine screening</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="x-http://cancerscreeningcds.github.io/crcsm-cds/CodeSystem/plan-definition-action-code-system-continueroutinescreeninghighqualitytest"> </a>  
+                  <a href="CodeSystem-plan-definition-action-code-system.html#plan-definition-action-code-system-continueroutinescreeninghighqualitytest">continueroutinescreeninghighqualitytest</a>
+                </td>
+                <td>http://cancerscreeningcds.github.io/crcsm-cds/CodeSystem/plan-definition-action-code-system</td>
+                <td>Continue routine screening if high-quality test</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="x-http://cancerscreeningcds.github.io/crcsm-cds/CodeSystem/plan-definition-action-code-system-orderfollowupcolonoscopy"> </a>  
+                  <a href="CodeSystem-plan-definition-action-code-system.html#plan-definition-action-code-system-orderfollowupcolonoscopy">orderfollowupcolonoscopy</a>
+                </td>
+                <td>http://cancerscreeningcds.github.io/crcsm-cds/CodeSystem/plan-definition-action-code-system</td>
+                <td>Order follow-up colonoscopy</td>
+              </tr>
+            </table>
+          </div>
+        </text>
+        <url value="http://cancerscreeningcds.github.io/crcsm-cds/ValueSet/plan-definition-action-codes"/>
+        <version value="0.1.0"/>
+        <name value="PlanDefinitionActionCodes"/>
+        <title value="Plan Definition Action Codes"/>
+        <status value="draft"/>
+        <experimental value="true"/>
+        <date value="2025-02-12T14:53:40+00:00"/>
+        <expansion>
+          <identifier value="urn:uuid:267971ff-73f4-48ff-a64e-e3936ddb6353"/>
+          <timestamp value="2025-02-12T14:55:04+00:00"/>
+          <total value="10"/>
+          <offset value="0"/>
+          <parameter>
+            <name value="count"/>
+            <valueInteger value="1000"/>
+          </parameter>
+          <parameter>
+            <name value="offset"/>
+            <valueInteger value="0"/>
+          </parameter>
+          <parameter>
+            <name value="excludeNested"/>
+            <valueBoolean value="false"/>
+          </parameter>
+          <parameter>
+            <name value="used-codesystem"/>
+            <valueUri value="http://cancerscreeningcds.github.io/crcsm-cds/CodeSystem/plan-definition-action-code-system|0.1.0"/>
+          </parameter>
+          <contains>
+            <system value="http://cancerscreeningcds.github.io/crcsm-cds/CodeSystem/plan-definition-action-code-system"/>
+            <code value="eligible"/>
+            <display value="Eligible for screening"/>
+          </contains>
+          <contains>
+            <system value="http://cancerscreeningcds.github.io/crcsm-cds/CodeSystem/plan-definition-action-code-system"/>
+            <code value="noteligible"/>
+            <display value="Not eligible for screening"/>
+          </contains>
+          <contains>
+            <system value="http://cancerscreeningcds.github.io/crcsm-cds/CodeSystem/plan-definition-action-code-system"/>
+            <code value="error"/>
+            <display value="An error occurred"/>
+          </contains>
+          <contains>
+            <system value="http://cancerscreeningcds.github.io/crcsm-cds/CodeSystem/plan-definition-action-code-system"/>
+            <code value="sdmcontinue"/>
+            <display value="Shared decision making to continue screening"/>
+          </contains>
+          <contains>
+            <system value="http://cancerscreeningcds.github.io/crcsm-cds/CodeSystem/plan-definition-action-code-system"/>
+            <code value="stopscreen"/>
+            <display value="Recommendation to stop screening"/>
+          </contains>
+          <contains>
+            <system value="http://cancerscreeningcds.github.io/crcsm-cds/CodeSystem/plan-definition-action-code-system"/>
+            <code value="startscreeningat45yearsold"/>
+            <display value="Start screening at 45 years old"/>
+          </contains>
+          <contains>
+            <system value="http://cancerscreeningcds.github.io/crcsm-cds/CodeSystem/plan-definition-action-code-system"/>
+            <code value="startscreening"/>
+            <display value="Start screening"/>
+          </contains>
+          <contains>
+            <system value="http://cancerscreeningcds.github.io/crcsm-cds/CodeSystem/plan-definition-action-code-system"/>
+            <code value="continueroutinescreening"/>
+            <display value="Continue routine screening"/>
+          </contains>
+          <contains>
+            <system value="http://cancerscreeningcds.github.io/crcsm-cds/CodeSystem/plan-definition-action-code-system"/>
+            <code value="continueroutinescreeninghighqualitytest"/>
+            <display value="Continue routine screening if high-quality test"/>
+          </contains>
+          <contains>
+            <system value="http://cancerscreeningcds.github.io/crcsm-cds/CodeSystem/plan-definition-action-code-system"/>
+            <code value="orderfollowupcolonoscopy"/>
+            <display value="Order follow-up colonoscopy"/>
+          </contains>
+        </expansion>
+      </ValueSet>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="http://cancerscreeningcds.github.io/crcsm-cds/ValueSet/plan-definition-action-reason-codes"/>
+    <resource>
+      <ValueSet>
+        <text>
+          <status value="generated"/>
+          <div xmlns="http://www.w3.org/1999/xhtml">
+            <p class="res-header-id">
+              <b>Generated Narrative: ValueSet </b>
+            </p>
+            <p style="border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px">Expansion done internally based on 
+              <a href="CodeSystem-plan-definition-action-reason-code-system.html">codesystem Plan Definition Action Reason Code System v0.1.0 (CodeSystem)</a>
+            </p>
+            <p>This value set contains 13 concepts</p>
+            <table class="codes">
+              <tr>
+                <td style="white-space:nowrap">
+                  <b>Code</b>
+                </td>
+                <td>
+                  <b>System</b>
+                </td>
+                <td>
+                  <b>Display</b>
+                </td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="x-http://cancerscreeningcds.github.io/crcsm-cds/CodeSystem/plan-definition-action-reason-code-system-eligibleforscreening"> </a>  
+                  <a href="CodeSystem-plan-definition-action-reason-code-system.html#plan-definition-action-reason-code-system-eligibleforscreening">eligibleforscreening</a>
+                </td>
+                <td>http://cancerscreeningcds.github.io/crcsm-cds/CodeSystem/plan-definition-action-reason-code-system</td>
+                <td>Eligible for screening</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="x-http://cancerscreeningcds.github.io/crcsm-cds/CodeSystem/plan-definition-action-reason-code-system-missingageorbirthdate"> </a>  
+                  <a href="CodeSystem-plan-definition-action-reason-code-system.html#plan-definition-action-reason-code-system-missingageorbirthdate">missingageorbirthdate</a>
+                </td>
+                <td>http://cancerscreeningcds.github.io/crcsm-cds/CodeSystem/plan-definition-action-reason-code-system</td>
+                <td>Missing patient age in years or birth date</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="x-http://cancerscreeningcds.github.io/crcsm-cds/CodeSystem/plan-definition-action-reason-code-system-currentcolorectalcancer"> </a>  
+                  <a href="CodeSystem-plan-definition-action-reason-code-system.html#plan-definition-action-reason-code-system-currentcolorectalcancer">currentcolorectalcancer</a>
+                </td>
+                <td>http://cancerscreeningcds.github.io/crcsm-cds/CodeSystem/plan-definition-action-reason-code-system</td>
+                <td>Current colorectal cancer</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="x-http://cancerscreeningcds.github.io/crcsm-cds/CodeSystem/plan-definition-action-reason-code-system-totalcolectomy"> </a>  
+                  <a href="CodeSystem-plan-definition-action-reason-code-system.html#plan-definition-action-reason-code-system-totalcolectomy">totalcolectomy</a>
+                </td>
+                <td>http://cancerscreeningcds.github.io/crcsm-cds/CodeSystem/plan-definition-action-reason-code-system</td>
+                <td>Total colectomy</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="x-http://cancerscreeningcds.github.io/crcsm-cds/CodeSystem/plan-definition-action-reason-code-system-diagtesting"> </a>  
+                  <a href="CodeSystem-plan-definition-action-reason-code-system.html#plan-definition-action-reason-code-system-diagtesting">diagtesting</a>
+                </td>
+                <td>http://cancerscreeningcds.github.io/crcsm-cds/CodeSystem/plan-definition-action-reason-code-system</td>
+                <td>Diagnostic testing</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="x-http://cancerscreeningcds.github.io/crcsm-cds/CodeSystem/plan-definition-action-reason-code-system-ageover86"> </a>  
+                  <a href="CodeSystem-plan-definition-action-reason-code-system.html#plan-definition-action-reason-code-system-ageover86">ageover86</a>
+                </td>
+                <td>http://cancerscreeningcds.github.io/crcsm-cds/CodeSystem/plan-definition-action-reason-code-system</td>
+                <td>Age over 86 years</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="x-http://cancerscreeningcds.github.io/crcsm-cds/CodeSystem/plan-definition-action-reason-code-system-lifeexp"> </a>  
+                  <a href="CodeSystem-plan-definition-action-reason-code-system.html#plan-definition-action-reason-code-system-lifeexp">lifeexp</a>
+                </td>
+                <td>http://cancerscreeningcds.github.io/crcsm-cds/CodeSystem/plan-definition-action-reason-code-system</td>
+                <td>Reduced life expectancy indicator</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="x-http://cancerscreeningcds.github.io/crcsm-cds/CodeSystem/plan-definition-action-reason-code-system-age76to86"> </a>  
+                  <a href="CodeSystem-plan-definition-action-reason-code-system.html#plan-definition-action-reason-code-system-age76to86">age76to86</a>
+                </td>
+                <td>http://cancerscreeningcds.github.io/crcsm-cds/CodeSystem/plan-definition-action-reason-code-system</td>
+                <td>Age 76 to 86 years</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="x-http://cancerscreeningcds.github.io/crcsm-cds/CodeSystem/plan-definition-action-reason-code-system-USPSTFaveragerisk"> </a>  
+                  <a href="CodeSystem-plan-definition-action-reason-code-system.html#plan-definition-action-reason-code-system-USPSTFaveragerisk">USPSTFaveragerisk</a>
+                </td>
+                <td>http://cancerscreeningcds.github.io/crcsm-cds/CodeSystem/plan-definition-action-reason-code-system</td>
+                <td>USPSTF average risk</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="x-http://cancerscreeningcds.github.io/crcsm-cds/CodeSystem/plan-definition-action-reason-code-system-negativescreening"> </a>  
+                  <a href="CodeSystem-plan-definition-action-reason-code-system.html#plan-definition-action-reason-code-system-negativescreening">negativescreening</a>
+                </td>
+                <td>http://cancerscreeningcds.github.io/crcsm-cds/CodeSystem/plan-definition-action-reason-code-system</td>
+                <td>Non-colonoscopy colorectal cancer screening negative</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="x-http://cancerscreeningcds.github.io/crcsm-cds/CodeSystem/plan-definition-action-reason-code-system-negativehighqualityscreening"> </a>  
+                  <a href="CodeSystem-plan-definition-action-reason-code-system.html#plan-definition-action-reason-code-system-negativehighqualityscreening">negativehighqualityscreening</a>
+                </td>
+                <td>http://cancerscreeningcds.github.io/crcsm-cds/CodeSystem/plan-definition-action-reason-code-system</td>
+                <td>Negative or normal non-colonoscopy test with high-quality exam</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="x-http://cancerscreeningcds.github.io/crcsm-cds/CodeSystem/plan-definition-action-reason-code-system-inconclusivescreening"> </a>  
+                  <a href="CodeSystem-plan-definition-action-reason-code-system.html#plan-definition-action-reason-code-system-inconclusivescreening">inconclusivescreening</a>
+                </td>
+                <td>http://cancerscreeningcds.github.io/crcsm-cds/CodeSystem/plan-definition-action-reason-code-system</td>
+                <td>Inconclusive non-colonoscopy screening</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="x-http://cancerscreeningcds.github.io/crcsm-cds/CodeSystem/plan-definition-action-reason-code-system-positiveabnormalscreening"> </a>  
+                  <a href="CodeSystem-plan-definition-action-reason-code-system.html#plan-definition-action-reason-code-system-positiveabnormalscreening">positiveabnormalscreening</a>
+                </td>
+                <td>http://cancerscreeningcds.github.io/crcsm-cds/CodeSystem/plan-definition-action-reason-code-system</td>
+                <td>Positive or abnormal non-colonoscopy screening</td>
+              </tr>
+            </table>
+          </div>
+        </text>
+        <url value="http://cancerscreeningcds.github.io/crcsm-cds/ValueSet/plan-definition-action-reason-codes"/>
+        <version value="0.1.0"/>
+        <name value="PlanDefinitionActionReasonCodes"/>
+        <title value="Plan Definition Action Reason Codes"/>
+        <status value="draft"/>
+        <experimental value="true"/>
+        <date value="2025-02-12T14:53:40+00:00"/>
+        <expansion>
+          <identifier value="urn:uuid:a6ed28f7-970a-4a34-98f3-a5bd7889f2b7"/>
+          <timestamp value="2025-02-12T14:55:04+00:00"/>
+          <total value="13"/>
+          <offset value="0"/>
+          <parameter>
+            <name value="count"/>
+            <valueInteger value="1000"/>
+          </parameter>
+          <parameter>
+            <name value="offset"/>
+            <valueInteger value="0"/>
+          </parameter>
+          <parameter>
+            <name value="excludeNested"/>
+            <valueBoolean value="false"/>
+          </parameter>
+          <parameter>
+            <name value="used-codesystem"/>
+            <valueUri value="http://cancerscreeningcds.github.io/crcsm-cds/CodeSystem/plan-definition-action-reason-code-system|0.1.0"/>
+          </parameter>
+          <contains>
+            <system value="http://cancerscreeningcds.github.io/crcsm-cds/CodeSystem/plan-definition-action-reason-code-system"/>
+            <code value="eligibleforscreening"/>
+            <display value="Eligible for screening"/>
+          </contains>
+          <contains>
+            <system value="http://cancerscreeningcds.github.io/crcsm-cds/CodeSystem/plan-definition-action-reason-code-system"/>
+            <code value="missingageorbirthdate"/>
+            <display value="Missing patient age in years or birth date"/>
+          </contains>
+          <contains>
+            <system value="http://cancerscreeningcds.github.io/crcsm-cds/CodeSystem/plan-definition-action-reason-code-system"/>
+            <code value="currentcolorectalcancer"/>
+            <display value="Current colorectal cancer"/>
+          </contains>
+          <contains>
+            <system value="http://cancerscreeningcds.github.io/crcsm-cds/CodeSystem/plan-definition-action-reason-code-system"/>
+            <code value="totalcolectomy"/>
+            <display value="Total colectomy"/>
+          </contains>
+          <contains>
+            <system value="http://cancerscreeningcds.github.io/crcsm-cds/CodeSystem/plan-definition-action-reason-code-system"/>
+            <code value="diagtesting"/>
+            <display value="Diagnostic testing"/>
+          </contains>
+          <contains>
+            <system value="http://cancerscreeningcds.github.io/crcsm-cds/CodeSystem/plan-definition-action-reason-code-system"/>
+            <code value="ageover86"/>
+            <display value="Age over 86 years"/>
+          </contains>
+          <contains>
+            <system value="http://cancerscreeningcds.github.io/crcsm-cds/CodeSystem/plan-definition-action-reason-code-system"/>
+            <code value="lifeexp"/>
+            <display value="Reduced life expectancy indicator"/>
+          </contains>
+          <contains>
+            <system value="http://cancerscreeningcds.github.io/crcsm-cds/CodeSystem/plan-definition-action-reason-code-system"/>
+            <code value="age76to86"/>
+            <display value="Age 76 to 86 years"/>
+          </contains>
+          <contains>
+            <system value="http://cancerscreeningcds.github.io/crcsm-cds/CodeSystem/plan-definition-action-reason-code-system"/>
+            <code value="USPSTFaveragerisk"/>
+            <display value="USPSTF average risk"/>
+          </contains>
+          <contains>
+            <system value="http://cancerscreeningcds.github.io/crcsm-cds/CodeSystem/plan-definition-action-reason-code-system"/>
+            <code value="negativescreening"/>
+            <display value="Non-colonoscopy colorectal cancer screening negative"/>
+          </contains>
+          <contains>
+            <system value="http://cancerscreeningcds.github.io/crcsm-cds/CodeSystem/plan-definition-action-reason-code-system"/>
+            <code value="negativehighqualityscreening"/>
+            <display value="Negative or normal non-colonoscopy test with high-quality exam"/>
+          </contains>
+          <contains>
+            <system value="http://cancerscreeningcds.github.io/crcsm-cds/CodeSystem/plan-definition-action-reason-code-system"/>
+            <code value="inconclusivescreening"/>
+            <display value="Inconclusive non-colonoscopy screening"/>
+          </contains>
+          <contains>
+            <system value="http://cancerscreeningcds.github.io/crcsm-cds/CodeSystem/plan-definition-action-reason-code-system"/>
+            <code value="positiveabnormalscreening"/>
+            <display value="Positive or abnormal non-colonoscopy screening"/>
+          </contains>
+        </expansion>
+      </ValueSet>
+    </resource>
+  </entry>
+</Bundle>

@@ -1,0 +1,21 @@
+{
+  "resourceType" : "Bundle",
+  "id" : "inc-AgeAtLeast18_no",
+  "type" : "collection",
+  "entry" : [{
+    "resource" : {
+      "resourceType" : "Patient",
+      "id" : "9ef43806-ae80-4213-aad8-e12e9bb9bc4d",
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Patient_9ef43806-ae80-4213-aad8-e12e9bb9bc4d\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Patient 9ef43806-ae80-4213-aad8-e12e9bb9bc4d</b></p><a name=\"9ef43806-ae80-4213-aad8-e12e9bb9bc4d\"> </a><a name=\"hc9ef43806-ae80-4213-aad8-e12e9bb9bc4d\"> </a><a name=\"9ef43806-ae80-4213-aad8-e12e9bb9bc4d-en-US\"> </a><p style=\"border: 1px #661aff solid; background-color: #e6e6ff; padding: 10px;\">Joanne Smith  Female, DoB: 2024-01-01</p><hr/></div>"
+      },
+      "name" : [{
+        "family" : "Smith",
+        "given" : ["Joanne"]
+      }],
+      "gender" : "female",
+      "birthDate" : "2024-01-01"
+    }
+  }]
+}

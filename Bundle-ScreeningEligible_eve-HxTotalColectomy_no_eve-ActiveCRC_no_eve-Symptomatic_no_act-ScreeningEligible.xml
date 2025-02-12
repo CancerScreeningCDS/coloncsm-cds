@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Bundle xmlns="http://hl7.org/fhir">
+  <id value="ScreeningEligible_eve-HxTotalColectomy_no_eve-ActiveCRC_no_eve-Symptomatic_no_act-ScreeningEligible"/>
+  <type value="collection"/>
+  <entry>
+    <fullUrl value="http://cancerscreeningcds.github.io/crcsm-cds/CarePlan/23"/>
+    <resource>
+      <CarePlan>
+        <id value="23"/>
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="CarePlan_23"> </a><p class="res-header-id"><b>Generated Narrative: CarePlan 23</b></p><a name="23"> </a><a name="hc23"> </a><a name="23-en-US"> </a><p><b>instantiatesCanonical</b>: <a href="PlanDefinition-flow-ScreeningEligible.html">Screening Eligible</a></p><p><b>status</b>: Draft</p><p><b>intent</b>: Proposal</p><p><b>subject</b>: <a href="Patient/9c4d9605-066a-4537-b148-8b9cd5fce8ac">Joanne Smith</a></p><h3>Activities</h3><table class="grid"><tr><td style="display: none">-</td><td><b>Reference</b></td></tr><tr><td style="display: none">*</td><td><a href="Bundle-ScreeningEligible_eve-HxTotalColectomy_no_eve-ActiveCRC_no_eve-Symptomatic_no_act-ScreeningEligible.html#RequestGroup_24">Bundle: type = collection</a></td></tr></table></div>
+        </text>
+        <instantiatesCanonical value="http://cancerscreeningcds.github.io/crcsm-cds/PlanDefinition/flow-ScreeningEligible"/>
+        <status value="draft"/>
+        <intent value="proposal"/>
+        <subject>
+          <reference value="Patient/9c4d9605-066a-4537-b148-8b9cd5fce8ac"/>
+          <display value="Joanne Smith"/>
+        </subject>
+        <activity>
+          <reference>
+            <reference value="RequestGroup/24"/>
+          </reference>
+        </activity>
+      </CarePlan>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="http://cancerscreeningcds.github.io/crcsm-cds/RequestGroup/24"/>
+    <resource>
+      <RequestGroup>
+        <id value="24"/>
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="RequestGroup_24"> </a><p class="res-header-id"><b>Generated Narrative: RequestGroup 24</b></p><a name="24"> </a><a name="hc24"> </a><a name="24-en-US"> </a><p><b>instantiatesCanonical</b>: <a href="PlanDefinition-flow-ScreeningEligible.html">Screening Eligible</a></p><p><b>status</b>: Draft</p><p><b>intent</b>: Proposal</p><p><b>subject</b>: <a href="Patient/9c4d9605-066a-4537-b148-8b9cd5fce8ac">Joanne Smith</a></p></div>
+        </text>
+        <instantiatesCanonical value="http://cancerscreeningcds.github.io/crcsm-cds/PlanDefinition/flow-ScreeningEligible"/>
+        <status value="draft"/>
+        <intent value="proposal"/>
+        <subject>
+          <reference value="Patient/9c4d9605-066a-4537-b148-8b9cd5fce8ac"/>
+          <display value="Joanne Smith"/>
+        </subject>
+      </RequestGroup>
+    </resource>
+  </entry>
+</Bundle>

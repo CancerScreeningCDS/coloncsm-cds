@@ -1,0 +1,46 @@
+{
+  "resourceType" : "Bundle",
+  "id" : "ScreeningEligible_eve-HxTotalColectomy_no_eve-ActiveCRC_yes_end-1",
+  "type" : "collection",
+  "entry" : [{
+    "fullUrl" : "http://cancerscreeningcds.github.io/crcsm-cds/CarePlan/27",
+    "resource" : {
+      "resourceType" : "CarePlan",
+      "id" : "27",
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"CarePlan_27\"> </a><p class=\"res-header-id\"><b>Generated Narrative: CarePlan 27</b></p><a name=\"27\"> </a><a name=\"hc27\"> </a><a name=\"27-en-US\"> </a><p><b>instantiatesCanonical</b>: <a href=\"PlanDefinition-flow-ScreeningEligible.html\">Screening Eligible</a></p><p><b>status</b>: Draft</p><p><b>intent</b>: Proposal</p><p><b>subject</b>: <a href=\"Patient/f6e11b4a-0e24-4ba9-8a44-3388ee8b45c4\">Joanne Smith</a></p><h3>Activities</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Reference</b></td></tr><tr><td style=\"display: none\">*</td><td><a href=\"Bundle-ScreeningEligible_eve-HxTotalColectomy_no_eve-ActiveCRC_yes_end-1.html#RequestGroup_28\">Bundle: type = collection</a></td></tr></table></div>"
+      },
+      "instantiatesCanonical" : ["http://cancerscreeningcds.github.io/crcsm-cds/PlanDefinition/flow-ScreeningEligible"],
+      "status" : "draft",
+      "intent" : "proposal",
+      "subject" : {
+        "reference" : "Patient/f6e11b4a-0e24-4ba9-8a44-3388ee8b45c4",
+        "display" : "Joanne Smith"
+      },
+      "activity" : [{
+        "reference" : {
+          "reference" : "RequestGroup/28"
+        }
+      }]
+    }
+  },
+  {
+    "fullUrl" : "http://cancerscreeningcds.github.io/crcsm-cds/RequestGroup/28",
+    "resource" : {
+      "resourceType" : "RequestGroup",
+      "id" : "28",
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"RequestGroup_28\"> </a><p class=\"res-header-id\"><b>Generated Narrative: RequestGroup 28</b></p><a name=\"28\"> </a><a name=\"hc28\"> </a><a name=\"28-en-US\"> </a><p><b>instantiatesCanonical</b>: <a href=\"PlanDefinition-flow-ScreeningEligible.html\">Screening Eligible</a></p><p><b>status</b>: Draft</p><p><b>intent</b>: Proposal</p><p><b>subject</b>: <a href=\"Patient/f6e11b4a-0e24-4ba9-8a44-3388ee8b45c4\">Joanne Smith</a></p></div>"
+      },
+      "instantiatesCanonical" : ["http://cancerscreeningcds.github.io/crcsm-cds/PlanDefinition/flow-ScreeningEligible"],
+      "status" : "draft",
+      "intent" : "proposal",
+      "subject" : {
+        "reference" : "Patient/f6e11b4a-0e24-4ba9-8a44-3388ee8b45c4",
+        "display" : "Joanne Smith"
+      }
+    }
+  }]
+}

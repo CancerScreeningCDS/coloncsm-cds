@@ -1,0 +1,801 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Library xmlns="http://hl7.org/fhir">
+  <id value="ScreeningEligibleEvents"/>
+  <text>
+    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml">
+<div>
+    <table class="grid dict">
+        
+        
+
+        
+        
+        <tr>
+            <th scope="row"><b>Id: </b></th>
+            <td style="padding-left: 4px;">ScreeningEligibleEvents</td>
+        </tr>
+        
+
+        
+        
+        <tr>
+            <th scope="row"><b>Version: </b></th>
+            <td style="padding-left: 4px;">0.1.0</td>
+        </tr>
+        
+
+        
+        <tr>
+            <th scope="row"><b>Url: </b></th>
+            <td style="padding-left: 4px;"><a href="Library-ScreeningEligibleEvents.html">ScreeningEligibleEvents</a></td>
+        </tr>
+        
+
+        
+
+        
+
+        
+        <tr>
+            <th scope="row"><b>Status: </b></th>
+            <td style="padding-left: 4px;">draft</td>
+        </tr>
+        
+
+        
+
+        
+        <tr>
+            <th scope="row"><b>Type: </b></th>
+            <td style="padding-left: 4px;">
+                
+                    
+                        
+                        <p style="margin-bottom: 5px;">
+                            <b>system: </b> <span><a href="http://terminology.hl7.org/6.2.0/CodeSystem-library-type.html">http://terminology.hl7.org/CodeSystem/library-type</a></span>
+                        </p>
+                        
+                        
+                        <p style="margin-bottom: 5px;">
+                            <b>code: </b> <span>logic-library</span>
+                        </p>
+                        
+                        
+                    
+                
+                
+            </td>
+        </tr>
+        
+
+        
+
+        
+        <tr>
+            <th scope="row"><b>Date: </b></th>
+            <td style="padding-left: 4px;">2025-02-12 14:53:40+0000</td>
+        </tr>
+        
+
+        
+        <tr>
+            <th scope="row"><b>Publisher: </b></th>
+            <td style="padding-left: 4px;">MITRE</td>
+        </tr>
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        <tr>
+            <th scope="row"><b>Related Artifacts: </b></th>
+            <td style="padding-left: 4px;">
+                
+                
+                
+                <p><b>Dependencies</b></p>
+                <ul>
+                  
+                    <li><code>http://fhir.org/guides/cqf/common/Library/FHIR-ModelInfo|4.0.1</code></li>
+                  
+                    <li><code>http://cancerscreeningcds.github.io/crcsm-cds/Library/FHIRHelpers|4.0.1</code></li>
+                  
+                    <li><code>http://cancerscreeningcds.github.io/crcsm-cds/Library/DataElements|1.0.0</code></li>
+                  
+                    <li><code>http://cancerscreeningcds.github.io/crcsm-cds/Library/CDSConnectCommonsforFHIRv401|1.0.0</code></li>
+                  
+                    <li><code>http://cancerscreeningcds.github.io/crcsm-cds/Library/CSMCommonFunctions|1.0.0</code></li>
+                  
+                    <li><a href="http://terminology.hl7.org/6.2.0/CodeSystem-condition-ver-status.html">ConditionVerificationStatus</a></li>
+                  
+                    <li><a href="http://terminology.hl7.org/6.2.0/CodeSystem-condition-clinical.html">Condition Clinical Status Codes</a></li>
+                  
+                    <li><a href="CodeSystem-screening-observation-code-system.html">Screening Observation Code System</a></li>
+                  
+                    <li><code>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.198.12.1019</code></li>
+                  
+                    <li><code>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.108.12.1001</code></li>
+                  
+                    <li><code>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1032.336</code></li>
+                  
+                    <li><code>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1032.330</code></li>
+                  
+                </ul>
+                
+                
+                
+                
+                
+            </td>
+        </tr>
+        
+
+        
+        <tr>
+          <th scope="row"><b>Parameters: </b></th>
+          <td style="padding-left: 4px;">
+            <table class="grid-dict">
+              <tr><th><b>Name</b></th><th><b>Type</b></th><th><b>Min</b></th><th><b>Max</b></th><th><b>In/Out</b></th></tr>
+              
+                <tr><th>ObservationLookbackPeriod</th><th>Quantity</th><th>0</th><th>1</th><th>In</th></tr>
+              
+                <tr><th>encounter</th><th>string</th><th>0</th><th>1</th><th>In</th></tr>
+              
+                <tr><th>SymptomaticLookBack</th><th>Quantity</th><th>0</th><th>1</th><th>In</th></tr>
+              
+                <tr><th>Patient</th><th>Patient</th><th>0</th><th>1</th><th>Out</th></tr>
+              
+                <tr><th>eve-HxTotalColectomy</th><th>boolean</th><th>0</th><th>1</th><th>Out</th></tr>
+              
+                <tr><th>eve-ActiveCRC</th><th>boolean</th><th>0</th><th>1</th><th>Out</th></tr>
+              
+                <tr><th>eve-Symptomatic</th><th>boolean</th><th>0</th><th>1</th><th>Out</th></tr>
+              
+            </table>
+          </td>
+        </tr>
+        
+
+        
+        <tr>
+          <th scope="row"><b>Data Requirements:</b></th>
+          <td style="padding-left: 4px;">
+            <table class="grid-dict">
+              <tr><th><b>Type</b></th><th><b>Profile</b></th><th><b>MS</b></th><th><b>Code Filter</b></th></tr>
+              
+                <tr>
+                  <th>Patient</th>
+                  <th>http://hl7.org/fhir/StructureDefinition/Patient</th>
+                  <th/>
+                  <th>
+                    
+                  </th>
+                </tr>
+              
+                <tr>
+                  <th>Procedure</th>
+                  <th>http://hl7.org/fhir/StructureDefinition/Procedure</th>
+                  <th>;;;</th>
+                  <th>
+                    
+                      <b>code filter: </b>
+                      
+                      <br/>
+                      
+                      
+                      <span style="padding-left: 4px;">
+                          <b>path: </b><span>code</span>
+                      </span>
+                      
+                      <br/>
+                      
+                      
+                      
+                      <span style="padding-left: 4px;">
+                          <b>value set: </b><span>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.198.12.1019</span>
+                      </span>
+                      
+                      
+                    
+                  </th>
+                </tr>
+              
+                <tr>
+                  <th>Condition</th>
+                  <th>http://hl7.org/fhir/StructureDefinition/Condition</th>
+                  <th>;;;;</th>
+                  <th>
+                    
+                      <b>code filter: </b>
+                      
+                      <br/>
+                      
+                      
+                      <span style="padding-left: 4px;">
+                          <b>path: </b><span>code</span>
+                      </span>
+                      
+                      <br/>
+                      
+                      
+                      
+                      <span style="padding-left: 4px;">
+                          <b>value set: </b><span>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.108.12.1001</span>
+                      </span>
+                      
+                      
+                    
+                  </th>
+                </tr>
+              
+                <tr>
+                  <th>Condition</th>
+                  <th>http://hl7.org/fhir/StructureDefinition/Condition</th>
+                  <th>;;;;</th>
+                  <th>
+                    
+                      <b>code filter: </b>
+                      
+                      <br/>
+                      
+                      
+                      <span style="padding-left: 4px;">
+                          <b>path: </b><span>code</span>
+                      </span>
+                      
+                      <br/>
+                      
+                      
+                      
+                      <span style="padding-left: 4px;">
+                          <b>value set: </b><span>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1032.336</span>
+                      </span>
+                      
+                      
+                    
+                  </th>
+                </tr>
+              
+                <tr>
+                  <th>Condition</th>
+                  <th>http://hl7.org/fhir/StructureDefinition/Condition</th>
+                  <th>;;;;</th>
+                  <th>
+                    
+                      <b>code filter: </b>
+                      
+                      <br/>
+                      
+                      
+                      <span style="padding-left: 4px;">
+                          <b>path: </b><span>code</span>
+                      </span>
+                      
+                      <br/>
+                      
+                      
+                      
+                      <span style="padding-left: 4px;">
+                          <b>value set: </b><span>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1032.330</span>
+                      </span>
+                      
+                      
+                    
+                  </th>
+                </tr>
+              
+                <tr>
+                  <th>Condition</th>
+                  <th>http://hl7.org/fhir/StructureDefinition/Condition</th>
+                  <th>;;;;;</th>
+                  <th>
+                    
+                      <b>code filter: </b>
+                      
+                      <br/>
+                      
+                      
+                      <span style="padding-left: 4px;">
+                          <b>path: </b><span>code</span>
+                      </span>
+                      
+                      <br/>
+                      
+                      
+                      
+                      <span style="padding-left: 4px;">
+                          <b>value set: </b><span>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.108.12.1001</span>
+                      </span>
+                      
+                      
+                    
+                      <b>code filter: </b>
+                      
+                      <br/>
+                      
+                      
+                      <span style="padding-left: 4px;">
+                          <b>path: </b><span>clinicalStatus</span>
+                      </span>
+                      
+                      
+                      
+                      
+                    
+                      <b>code filter: </b>
+                      
+                      <br/>
+                      
+                      
+                      <span style="padding-left: 4px;">
+                          <b>path: </b><span>clinicalStatus</span>
+                      </span>
+                      
+                      
+                      
+                      
+                    
+                      <b>code filter: </b>
+                      
+                      <br/>
+                      
+                      
+                      <span style="padding-left: 4px;">
+                          <b>path: </b><span>clinicalStatus</span>
+                      </span>
+                      
+                      
+                      
+                      
+                    
+                  </th>
+                </tr>
+              
+                <tr>
+                  <th>Observation</th>
+                  <th>http://hl7.org/fhir/StructureDefinition/Observation</th>
+                  <th>;;;;;</th>
+                  <th>
+                    
+                      <b>code filter: </b>
+                      
+                      <br/>
+                      
+                      
+                      <span style="padding-left: 4px;">
+                          <b>path: </b><span>code</span>
+                      </span>
+                      
+                      <br/>
+                      
+                      
+                      
+                      
+                          
+                          <p style="margin-bottom: 5px;">
+                              <b>system: </b> <span><a href="CodeSystem-screening-observation-code-system.html">http://cancerscreeningcds.github.io/crcsm-cds/CodeSystem/screening-observation-code-system</a></span>
+                          </p>
+                          
+                          
+                          <p style="margin-bottom: 5px;">
+                              <b>code: </b> <span>ColorectalSymptoms</span>
+                          </p>
+                          
+                          
+                          <p style="margin-bottom: 5px;">
+                              <b>display: </b> <span>New or worsening colorectal symptoms</span>
+                          </p>
+                          
+                      
+                    
+                  </th>
+                </tr>
+              
+                <tr>
+                  <th>Encounter</th>
+                  <th>http://hl7.org/fhir/StructureDefinition/Encounter</th>
+                  <th>;;;;</th>
+                  <th>
+                    
+                  </th>
+                </tr>
+              
+            </table>
+          </td>
+        </tr>
+        
+
+        
+        
+        <tr>
+          <td colspan="2">
+            <table>
+              <tr><th><a id="cql-content"><b>Content: </b></a> text/cql</th></tr>
+              <tr><td><pre><code class="language-cql">library ScreeningEligibleEvents version '1.0.0'
+
+using FHIR version '4.0.1'
+include FHIRHelpers  version '4.0.1' called FHIRHelpers
+
+include DataElements version '1.0.0' called DataElements
+
+context Patient
+
+define &quot;eve-HxTotalColectomy&quot;:
+  DataElements.&quot;de-TotalColectomy&quot;
+
+define &quot;eve-ActiveCRC&quot;:
+  DataElements.&quot;de-CurrentCRC&quot;
+
+define &quot;eve-Symptomatic&quot;:
+  DataElements.&quot;de-ColorectalSignsSymptoms&quot;
+
+</code></pre></td></tr>
+            </table>
+          </td>
+        </tr>
+        
+        
+        
+        
+        
+        <tr>
+          <td colspan="2">
+            <table>
+              <tr><th><b>Content: </b> application/elm+xml</th></tr>
+              <tr><td><pre><code>Encoded data (6896 characters)</code></pre></td></tr>
+            </table>
+          </td>
+        </tr>
+        
+        
+        
+        
+        <tr>
+          <td colspan="2">
+            <table>
+              <tr><th><b>Content: </b> application/elm+json</th></tr>
+              <tr><td><pre><code>Encoded data (10868 characters)</code></pre></td></tr>
+            </table>
+          </td>
+        </tr>
+        
+        
+    </table>
+</div>
+</div>
+  </text>
+  <contained>
+    <Parameters>
+      <id value="options"/>
+      <parameter>
+        <name value="translatorVersion"/>
+        <valueString value="3.11.0"/>
+      </parameter>
+      <parameter>
+        <name value="option"/>
+        <valueString value="EnableAnnotations"/>
+      </parameter>
+      <parameter>
+        <name value="option"/>
+        <valueString value="EnableLocators"/>
+      </parameter>
+      <parameter>
+        <name value="option"/>
+        <valueString value="DisableListDemotion"/>
+      </parameter>
+      <parameter>
+        <name value="option"/>
+        <valueString value="DisableListPromotion"/>
+      </parameter>
+      <parameter>
+        <name value="format"/>
+        <valueString value="XML"/>
+      </parameter>
+      <parameter>
+        <name value="format"/>
+        <valueString value="JSON"/>
+      </parameter>
+      <parameter>
+        <name value="analyzeDataRequirements"/>
+        <valueBoolean value="true"/>
+      </parameter>
+      <parameter>
+        <name value="collapseDataRequirements"/>
+        <valueBoolean value="true"/>
+      </parameter>
+      <parameter>
+        <name value="compatibilityLevel"/>
+        <valueString value="1.5"/>
+      </parameter>
+      <parameter>
+        <name value="enableCqlOnly"/>
+        <valueBoolean value="false"/>
+      </parameter>
+      <parameter>
+        <name value="errorLevel"/>
+        <valueString value="Error"/>
+      </parameter>
+      <parameter>
+        <name value="signatureLevel"/>
+        <valueString value="Overloads"/>
+      </parameter>
+      <parameter>
+        <name value="validateUnits"/>
+        <valueBoolean value="false"/>
+      </parameter>
+      <parameter>
+        <name value="verifyOnly"/>
+        <valueBoolean value="true"/>
+      </parameter>
+    </Parameters>
+  </contained>
+  <extension url="http://hl7.org/fhir/StructureDefinition/cqf-cqlOptions">
+    <valueReference>
+      <reference value="#options"/>
+    </valueReference>
+  </extension>
+  <extension url="http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-softwaresystem">
+    <valueReference>
+      <reference value="Device/cqf-tooling"/>
+    </valueReference>
+  </extension>
+  <url value="http://cancerscreeningcds.github.io/crcsm-cds/Library/ScreeningEligibleEvents"/>
+  <version value="0.1.0"/>
+  <name value="ScreeningEligibleEvents"/>
+  <status value="draft"/>
+  <type>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/library-type"/>
+      <code value="logic-library"/>
+    </coding>
+  </type>
+  <date value="2025-02-12T14:53:40+00:00"/>
+  <publisher value="MITRE"/>
+  <contact>
+    <name value="MITRE"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://www.mitre.org/"/>
+    </telecom>
+  </contact>
+  <relatedArtifact>
+    <type value="depends-on"/>
+    <display value="FHIR model information"/>
+    <resource value="http://fhir.org/guides/cqf/common/Library/FHIR-ModelInfo|4.0.1"/>
+  </relatedArtifact>
+  <relatedArtifact>
+    <type value="depends-on"/>
+    <display value="Library FHIRHelpers"/>
+    <resource value="http://cancerscreeningcds.github.io/crcsm-cds/Library/FHIRHelpers|4.0.1"/>
+  </relatedArtifact>
+  <relatedArtifact>
+    <type value="depends-on"/>
+    <display value="Library DataElements"/>
+    <resource value="http://cancerscreeningcds.github.io/crcsm-cds/Library/DataElements|1.0.0"/>
+  </relatedArtifact>
+  <relatedArtifact>
+    <type value="depends-on"/>
+    <display value="Library C3F"/>
+    <resource value="http://cancerscreeningcds.github.io/crcsm-cds/Library/CDSConnectCommonsforFHIRv401|1.0.0"/>
+  </relatedArtifact>
+  <relatedArtifact>
+    <type value="depends-on"/>
+    <display value="Library Common"/>
+    <resource value="http://cancerscreeningcds.github.io/crcsm-cds/Library/CSMCommonFunctions|1.0.0"/>
+  </relatedArtifact>
+  <relatedArtifact>
+    <type value="depends-on"/>
+    <display value="Code system CONDVERSTATUS"/>
+    <resource value="http://terminology.hl7.org/CodeSystem/condition-ver-status"/>
+  </relatedArtifact>
+  <relatedArtifact>
+    <type value="depends-on"/>
+    <display value="Code system CONDCLINSTATUS"/>
+    <resource value="http://terminology.hl7.org/CodeSystem/condition-clinical"/>
+  </relatedArtifact>
+  <relatedArtifact>
+    <type value="depends-on"/>
+    <display value="Code system LOCAL"/>
+    <resource value="http://cancerscreeningcds.github.io/crcsm-cds/CodeSystem/screening-observation-code-system"/>
+  </relatedArtifact>
+  <relatedArtifact>
+    <type value="depends-on"/>
+    <display value="Value set TOTAL COLECTOMY PROCEDURE"/>
+    <resource value="http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.198.12.1019"/>
+  </relatedArtifact>
+  <relatedArtifact>
+    <type value="depends-on"/>
+    <display value="Value set COLORECTAL CANCER"/>
+    <resource value="http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.108.12.1001"/>
+  </relatedArtifact>
+  <relatedArtifact>
+    <type value="depends-on"/>
+    <display value="Value set Non Bleeding Colorectal Cancer Signs and Symptoms"/>
+    <resource value="http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1032.336"/>
+  </relatedArtifact>
+  <relatedArtifact>
+    <type value="depends-on"/>
+    <display value="Value set Blood in Stool"/>
+    <resource value="http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1032.330"/>
+  </relatedArtifact>
+  <parameter>
+    <name value="ObservationLookbackPeriod"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="1"/>
+    <type value="Quantity"/>
+  </parameter>
+  <parameter>
+    <name value="encounter"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="1"/>
+    <type value="string"/>
+  </parameter>
+  <parameter>
+    <name value="SymptomaticLookBack"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="1"/>
+    <type value="Quantity"/>
+  </parameter>
+  <parameter>
+    <name value="Patient"/>
+    <use value="out"/>
+    <min value="0"/>
+    <max value="1"/>
+    <type value="Patient"/>
+  </parameter>
+  <parameter>
+    <name value="eve-HxTotalColectomy"/>
+    <use value="out"/>
+    <min value="0"/>
+    <max value="1"/>
+    <type value="boolean"/>
+  </parameter>
+  <parameter>
+    <name value="eve-ActiveCRC"/>
+    <use value="out"/>
+    <min value="0"/>
+    <max value="1"/>
+    <type value="boolean"/>
+  </parameter>
+  <parameter>
+    <name value="eve-Symptomatic"/>
+    <use value="out"/>
+    <min value="0"/>
+    <max value="1"/>
+    <type value="boolean"/>
+  </parameter>
+  <dataRequirement>
+    <type value="Patient"/>
+    <profile value="http://hl7.org/fhir/StructureDefinition/Patient"/>
+  </dataRequirement>
+  <dataRequirement>
+    <type value="Procedure"/>
+    <profile value="http://hl7.org/fhir/StructureDefinition/Procedure"/>
+    <mustSupport value="code"/>
+    <mustSupport value="status"/>
+    <mustSupport value="status.value"/>
+    <codeFilter>
+      <path value="code"/>
+      <valueSet value="http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.198.12.1019"/>
+    </codeFilter>
+  </dataRequirement>
+  <dataRequirement>
+    <type value="Condition"/>
+    <profile value="http://hl7.org/fhir/StructureDefinition/Condition"/>
+    <mustSupport value="code"/>
+    <mustSupport value="verificationStatus"/>
+    <mustSupport value="encounter"/>
+    <mustSupport value="encounter.reference"/>
+    <codeFilter>
+      <path value="code"/>
+      <valueSet value="http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.108.12.1001"/>
+    </codeFilter>
+  </dataRequirement>
+  <dataRequirement>
+    <type value="Condition"/>
+    <profile value="http://hl7.org/fhir/StructureDefinition/Condition"/>
+    <mustSupport value="code"/>
+    <mustSupport value="verificationStatus"/>
+    <mustSupport value="encounter"/>
+    <mustSupport value="encounter.reference"/>
+    <codeFilter>
+      <path value="code"/>
+      <valueSet value="http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1032.336"/>
+    </codeFilter>
+  </dataRequirement>
+  <dataRequirement>
+    <type value="Condition"/>
+    <profile value="http://hl7.org/fhir/StructureDefinition/Condition"/>
+    <mustSupport value="code"/>
+    <mustSupport value="verificationStatus"/>
+    <mustSupport value="encounter"/>
+    <mustSupport value="encounter.reference"/>
+    <codeFilter>
+      <path value="code"/>
+      <valueSet value="http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1032.330"/>
+    </codeFilter>
+  </dataRequirement>
+  <dataRequirement>
+    <type value="Condition"/>
+    <profile value="http://hl7.org/fhir/StructureDefinition/Condition"/>
+    <mustSupport value="code"/>
+    <mustSupport value="clinicalStatus"/>
+    <mustSupport value="verificationStatus"/>
+    <mustSupport value="encounter"/>
+    <mustSupport value="encounter.reference"/>
+    <codeFilter>
+      <path value="code"/>
+      <valueSet value="http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.108.12.1001"/>
+    </codeFilter>
+    <codeFilter>
+      <path value="clinicalStatus"/>
+    </codeFilter>
+    <codeFilter>
+      <path value="clinicalStatus"/>
+    </codeFilter>
+    <codeFilter>
+      <path value="clinicalStatus"/>
+    </codeFilter>
+  </dataRequirement>
+  <dataRequirement>
+    <type value="Observation"/>
+    <profile value="http://hl7.org/fhir/StructureDefinition/Observation"/>
+    <mustSupport value="code"/>
+    <mustSupport value="effective"/>
+    <mustSupport value="effective.value"/>
+    <mustSupport value="issued"/>
+    <mustSupport value="issued.value"/>
+    <codeFilter>
+      <path value="code"/>
+      <code>
+        <system value="http://cancerscreeningcds.github.io/crcsm-cds/CodeSystem/screening-observation-code-system"/>
+        <code value="ColorectalSymptoms"/>
+        <display value="New or worsening colorectal symptoms"/>
+      </code>
+    </codeFilter>
+  </dataRequirement>
+  <dataRequirement>
+    <type value="Encounter"/>
+    <profile value="http://hl7.org/fhir/StructureDefinition/Encounter"/>
+    <mustSupport value="reasonCode"/>
+    <mustSupport value="status"/>
+    <mustSupport value="status.value"/>
+    <mustSupport value="id"/>
+  </dataRequirement>
+  <content>
+    <contentType value="text/cql"/>
+    <data value="bGlicmFyeSBTY3JlZW5pbmdFbGlnaWJsZUV2ZW50cyB2ZXJzaW9uICcxLjAuMCcKCnVzaW5nIEZISVIgdmVyc2lvbiAnNC4wLjEnCmluY2x1ZGUgRkhJUkhlbHBlcnMgIHZlcnNpb24gJzQuMC4xJyBjYWxsZWQgRkhJUkhlbHBlcnMKCmluY2x1ZGUgRGF0YUVsZW1lbnRzIHZlcnNpb24gJzEuMC4wJyBjYWxsZWQgRGF0YUVsZW1lbnRzCgpjb250ZXh0IFBhdGllbnQKCmRlZmluZSAiZXZlLUh4VG90YWxDb2xlY3RvbXkiOgogIERhdGFFbGVtZW50cy4iZGUtVG90YWxDb2xlY3RvbXkiCgpkZWZpbmUgImV2ZS1BY3RpdmVDUkMiOgogIERhdGFFbGVtZW50cy4iZGUtQ3VycmVudENSQyIKCmRlZmluZSAiZXZlLVN5bXB0b21hdGljIjoKICBEYXRhRWxlbWVudHMuImRlLUNvbG9yZWN0YWxTaWduc1N5bXB0b21zIgoK"/>
+  </content>
+  <content>
+    <contentType value="application/elm+xml"/>
+    <data value="PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4NCjxsaWJyYXJ5IHhtbG5zPSJ1cm46aGw3LW9yZzplbG06cjEiIHhtbG5zOnQ9InVybjpobDctb3JnOmVsbS10eXBlczpyMSIgeG1sbnM6eHNpPSJodHRwOi8vd3d3LnczLm9yZy8yMDAxL1hNTFNjaGVtYS1pbnN0YW5jZSIgeG1sbnM6eHNkPSJodHRwOi8vd3d3LnczLm9yZy8yMDAxL1hNTFNjaGVtYSIgeG1sbnM6Zmhpcj0iaHR0cDovL2hsNy5vcmcvZmhpciIgeG1sbnM6cWRtNDM9InVybjpoZWFsdGhpdC1nb3Y6cWRtOnY0XzMiIHhtbG5zOnFkbTUzPSJ1cm46aGVhbHRoaXQtZ292OnFkbTp2NV8zIiB4bWxuczphPSJ1cm46aGw3LW9yZzpjcWwtYW5ub3RhdGlvbnM6cjEiIGxvY2FsSWQ9IjAiPg0KICAgPGFubm90YXRpb24gdHJhbnNsYXRvclZlcnNpb249IjMuMTEuMCIgdHJhbnNsYXRvck9wdGlvbnM9IkVuYWJsZUFubm90YXRpb25zLEVuYWJsZUxvY2F0b3JzLERpc2FibGVMaXN0RGVtb3Rpb24sRGlzYWJsZUxpc3RQcm9tb3Rpb24iIHNpZ25hdHVyZUxldmVsPSJPdmVybG9hZHMiIHhzaTp0eXBlPSJhOkNxbFRvRWxtSW5mbyIvPg0KICAgPGFubm90YXRpb24geHNpOnR5cGU9ImE6QW5ub3RhdGlvbiI+DQogICAgICA8YTpzIHI9IjIyMiI+DQogICAgICAgICA8YTpzPmxpYnJhcnkgU2NyZWVuaW5nRWxpZ2libGVFdmVudHMgdmVyc2lvbiAnMS4wLjAnPC9hOnM+DQogICAgICA8L2E6cz4NCiAgIDwvYW5ub3RhdGlvbj4NCiAgIDxpZGVudGlmaWVyIGlkPSJTY3JlZW5pbmdFbGlnaWJsZUV2ZW50cyIgc3lzdGVtPSJodHRwOi8vY2FuY2Vyc2NyZWVuaW5nY2RzLmdpdGh1Yi5pby9jcmNzbS1jZHMiIHZlcnNpb249IjEuMC4wIi8+DQogICA8c2NoZW1hSWRlbnRpZmllciBpZD0idXJuOmhsNy1vcmc6ZWxtIiB2ZXJzaW9uPSJyMSIvPg0KICAgPHVzaW5ncz4NCiAgICAgIDxkZWYgbG9jYWxJZD0iMSIgbG9jYWxJZGVudGlmaWVyPSJTeXN0ZW0iIHVyaT0idXJuOmhsNy1vcmc6ZWxtLXR5cGVzOnIxIi8+DQogICAgICA8ZGVmIGxvY2FsSWQ9IjIwNiIgbG9jYXRvcj0iMzoxLTM6MjYiIGxvY2FsSWRlbnRpZmllcj0iRkhJUiIgdXJpPSJodHRwOi8vaGw3Lm9yZy9maGlyIiB2ZXJzaW9uPSI0LjAuMSI+DQogICAgICAgICA8YW5ub3RhdGlvbiB4c2k6dHlwZT0iYTpBbm5vdGF0aW9uIj4NCiAgICAgICAgICAgIDxhOnMgcj0iMjA2Ij4NCiAgICAgICAgICAgICAgIDxhOnM+dXNpbmcgPC9hOnM+DQogICAgICAgICAgICAgICA8YTpzPg0KICAgICAgICAgICAgICAgICAgPGE6cz5GSElSPC9hOnM+DQogICAgICAgICAgICAgICA8L2E6cz4NCiAgICAgICAgICAgICAgIDxhOnM+IHZlcnNpb24gJzQuMC4xJzwvYTpzPg0KICAgICAgICAgICAgPC9hOnM+DQogICAgICAgICA8L2Fubm90YXRpb24+DQogICAgICA8L2RlZj4NCiAgIDwvdXNpbmdzPg0KICAgPGluY2x1ZGVzPg0KICAgICAgPGRlZiBsb2NhbElkPSIyMDciIGxvY2F0b3I9IjQ6MS00OjU1IiBsb2NhbElkZW50aWZpZXI9IkZISVJIZWxwZXJzIiBwYXRoPSJodHRwOi8vY2FuY2Vyc2NyZWVuaW5nY2RzLmdpdGh1Yi5pby9jcmNzbS1jZHMvRkhJUkhlbHBlcnMiIHZlcnNpb249IjQuMC4xIj4NCiAgICAgICAgIDxhbm5vdGF0aW9uIHhzaTp0eXBlPSJhOkFubm90YXRpb24iPg0KICAgICAgICAgICAgPGE6cyByPSIyMDciPg0KICAgICAgICAgICAgICAgPGE6cz5pbmNsdWRlIDwvYTpzPg0KICAgICAgICAgICAgICAgPGE6cz4NCiAgICAgICAgICAgICAgICAgIDxhOnM+RkhJUkhlbHBlcnM8L2E6cz4NCiAgICAgICAgICAgICAgIDwvYTpzPg0KICAgICAgICAgICAgICAgPGE6cz4gIHZlcnNpb24gJzQuMC4xJyBjYWxsZWQgRkhJUkhlbHBlcnM8L2E6cz4NCiAgICAgICAgICAgIDwvYTpzPg0KICAgICAgICAgPC9hbm5vdGF0aW9uPg0KICAgICAgPC9kZWY+DQogICAgICA8ZGVmIGxvY2FsSWQ9IjIwOCIgbG9jYXRvcj0iNjoxLTY6NTYiIGxvY2FsSWRlbnRpZmllcj0iRGF0YUVsZW1lbnRzIiBwYXRoPSJodHRwOi8vY2FuY2Vyc2NyZWVuaW5nY2RzLmdpdGh1Yi5pby9jcmNzbS1jZHMvRGF0YUVsZW1lbnRzIiB2ZXJzaW9uPSIxLjAuMCI+DQogICAgICAgICA8YW5ub3RhdGlvbiB4c2k6dHlwZT0iYTpBbm5vdGF0aW9uIj4NCiAgICAgICAgICAgIDxhOnMgcj0iMjA4Ij4NCiAgICAgICAgICAgICAgIDxhOnM+aW5jbHVkZSA8L2E6cz4NCiAgICAgICAgICAgICAgIDxhOnM+DQogICAgICAgICAgICAgICAgICA8YTpzPkRhdGFFbGVtZW50czwvYTpzPg0KICAgICAgICAgICAgICAgPC9hOnM+DQogICAgICAgICAgICAgICA8YTpzPiB2ZXJzaW9uICcxLjAuMCcgY2FsbGVkIERhdGFFbGVtZW50czwvYTpzPg0KICAgICAgICAgICAgPC9hOnM+DQogICAgICAgICA8L2Fubm90YXRpb24+DQogICAgICA8L2RlZj4NCiAgIDwvaW5jbHVkZXM+DQogICA8Y29udGV4dHM+DQogICAgICA8ZGVmIGxvY2FsSWQ9IjIxMiIgbG9jYXRvcj0iODoxLTg6MTUiIG5hbWU9IlBhdGllbnQiLz4NCiAgIDwvY29udGV4dHM+DQogICA8c3RhdGVtZW50cz4NCiAgICAgIDxkZWYgbG9jYWxJZD0iMjEwIiBsb2NhdG9yPSI4OjEtODoxNSIgbmFtZT0iUGF0aWVudCIgY29udGV4dD0iUGF0aWVudCI+DQogICAgICAgICA8ZXhwcmVzc2lvbiBsb2NhbElkPSIyMTEiIHhzaTp0eXBlPSJTaW5nbGV0b25Gcm9tIj4NCiAgICAgICAgICAgIDxvcGVyYW5kIGxvY2FsSWQ9IjIwOSIgbG9jYXRvcj0iODoxLTg6MTUiIGRhdGFUeXBlPSJmaGlyOlBhdGllbnQiIHRlbXBsYXRlSWQ9Imh0dHA6Ly9obDcub3JnL2ZoaXIvU3RydWN0dXJlRGVmaW5pdGlvbi9QYXRpZW50IiB4c2k6dHlwZT0iUmV0cmlldmUiLz4NCiAgICAgICAgIDwvZXhwcmVzc2lvbj4NCiAgICAgIDwvZGVmPg0KICAgICAgPGRlZiBsb2NhbElkPSIyMTQiIGxvY2F0b3I9IjEwOjEtMTE6MzQiIG5hbWU9ImV2ZS1IeFRvdGFsQ29sZWN0b215IiBjb250ZXh0PSJQYXRpZW50IiBhY2Nlc3NMZXZlbD0iUHVibGljIj4NCiAgICAgICAgIDxhbm5vdGF0aW9uIHhzaTp0eXBlPSJhOkFubm90YXRpb24iPg0KICAgICAgICAgICAgPGE6cyByPSIyMTQiPg0KICAgICAgICAgICAgICAgPGE6cz5kZWZpbmUgJnF1b3Q7ZXZlLUh4VG90YWxDb2xlY3RvbXkmcXVvdDs6CiAgPC9hOnM+DQogICAgICAgICAgICAgICA8YTpzIHI9IjIxNiI+DQogICAgICAgICAgICAgICAgICA8YTpzIHI9IjIxNSI+DQogICAgICAgICAgICAgICAgICAgICA8YTpzPkRhdGFFbGVtZW50czwvYTpzPg0KICAgICAgICAgICAgICAgICAgPC9hOnM+DQogICAgICAgICAgICAgICAgICA8YTpzPi48L2E6cz4NCiAgICAgICAgICAgICAgICAgIDxhOnMgcj0iMjE2Ij4NCiAgICAgICAgICAgICAgICAgICAgIDxhOnM+JnF1b3Q7ZGUtVG90YWxDb2xlY3RvbXkmcXVvdDs8L2E6cz4NCiAgICAgICAgICAgICAgICAgIDwvYTpzPg0KICAgICAgICAgICAgICAgPC9hOnM+DQogICAgICAgICAgICA8L2E6cz4NCiAgICAgICAgIDwvYW5ub3RhdGlvbj4NCiAgICAgICAgIDxleHByZXNzaW9uIGxvY2FsSWQ9IjIxNiIgbG9jYXRvcj0iMTE6My0xMTozNCIgbmFtZT0iZGUtVG90YWxDb2xlY3RvbXkiIGxpYnJhcnlOYW1lPSJEYXRhRWxlbWVudHMiIHhzaTp0eXBlPSJFeHByZXNzaW9uUmVmIi8+DQogICAgICA8L2RlZj4NCiAgICAgIDxkZWYgbG9jYWxJZD0iMjE4IiBsb2NhdG9yPSIxMzoxLTE0OjMwIiBuYW1lPSJldmUtQWN0aXZlQ1JDIiBjb250ZXh0PSJQYXRpZW50IiBhY2Nlc3NMZXZlbD0iUHVibGljIj4NCiAgICAgICAgIDxhbm5vdGF0aW9uIHhzaTp0eXBlPSJhOkFubm90YXRpb24iPg0KICAgICAgICAgICAgPGE6cyByPSIyMTgiPg0KICAgICAgICAgICAgICAgPGE6cz5kZWZpbmUgJnF1b3Q7ZXZlLUFjdGl2ZUNSQyZxdW90OzoKICA8L2E6cz4NCiAgICAgICAgICAgICAgIDxhOnMgcj0iMjIwIj4NCiAgICAgICAgICAgICAgICAgIDxhOnMgcj0iMjE5Ij4NCiAgICAgICAgICAgICAgICAgICAgIDxhOnM+RGF0YUVsZW1lbnRzPC9hOnM+DQogICAgICAgICAgICAgICAgICA8L2E6cz4NCiAgICAgICAgICAgICAgICAgIDxhOnM+LjwvYTpzPg0KICAgICAgICAgICAgICAgICAgPGE6cyByPSIyMjAiPg0KICAgICAgICAgICAgICAgICAgICAgPGE6cz4mcXVvdDtkZS1DdXJyZW50Q1JDJnF1b3Q7PC9hOnM+DQogICAgICAgICAgICAgICAgICA8L2E6cz4NCiAgICAgICAgICAgICAgIDwvYTpzPg0KICAgICAgICAgICAgPC9hOnM+DQogICAgICAgICA8L2Fubm90YXRpb24+DQogICAgICAgICA8ZXhwcmVzc2lvbiBsb2NhbElkPSIyMjAiIGxvY2F0b3I9IjE0OjMtMTQ6MzAiIG5hbWU9ImRlLUN1cnJlbnRDUkMiIGxpYnJhcnlOYW1lPSJEYXRhRWxlbWVudHMiIHhzaTp0eXBlPSJFeHByZXNzaW9uUmVmIi8+DQogICAgICA8L2RlZj4NCiAgICAgIDxkZWYgbG9jYWxJZD0iMjIyIiBsb2NhdG9yPSIxNjoxLTE3OjQzIiBuYW1lPSJldmUtU3ltcHRvbWF0aWMiIGNvbnRleHQ9IlBhdGllbnQiIGFjY2Vzc0xldmVsPSJQdWJsaWMiPg0KICAgICAgICAgPGFubm90YXRpb24geHNpOnR5cGU9ImE6QW5ub3RhdGlvbiI+DQogICAgICAgICAgICA8YTpzIHI9IjIyMiI+DQogICAgICAgICAgICAgICA8YTpzPmRlZmluZSAmcXVvdDtldmUtU3ltcHRvbWF0aWMmcXVvdDs6CiAgPC9hOnM+DQogICAgICAgICAgICAgICA8YTpzIHI9IjIyNCI+DQogICAgICAgICAgICAgICAgICA8YTpzIHI9IjIyMyI+DQogICAgICAgICAgICAgICAgICAgICA8YTpzPkRhdGFFbGVtZW50czwvYTpzPg0KICAgICAgICAgICAgICAgICAgPC9hOnM+DQogICAgICAgICAgICAgICAgICA8YTpzPi48L2E6cz4NCiAgICAgICAgICAgICAgICAgIDxhOnMgcj0iMjI0Ij4NCiAgICAgICAgICAgICAgICAgICAgIDxhOnM+JnF1b3Q7ZGUtQ29sb3JlY3RhbFNpZ25zU3ltcHRvbXMmcXVvdDs8L2E6cz4NCiAgICAgICAgICAgICAgICAgIDwvYTpzPg0KICAgICAgICAgICAgICAgPC9hOnM+DQogICAgICAgICAgICA8L2E6cz4NCiAgICAgICAgIDwvYW5ub3RhdGlvbj4NCiAgICAgICAgIDxleHByZXNzaW9uIGxvY2FsSWQ9IjIyNCIgbG9jYXRvcj0iMTc6My0xNzo0MyIgbmFtZT0iZGUtQ29sb3JlY3RhbFNpZ25zU3ltcHRvbXMiIGxpYnJhcnlOYW1lPSJEYXRhRWxlbWVudHMiIHhzaTp0eXBlPSJFeHByZXNzaW9uUmVmIi8+DQogICAgICA8L2RlZj4NCiAgIDwvc3RhdGVtZW50cz4NCjwvbGlicmFyeT4NCg=="/>
+  </content>
+  <content>
+    <contentType value="application/elm+json"/>
+    <data value="ew0KICAgImxpYnJhcnkiIDogew0KICAgICAgImxvY2FsSWQiIDogIjAiLA0KICAgICAgImFubm90YXRpb24iIDogWyB7DQogICAgICAgICAidHJhbnNsYXRvclZlcnNpb24iIDogIjMuMTEuMCIsDQogICAgICAgICAidHJhbnNsYXRvck9wdGlvbnMiIDogIkVuYWJsZUFubm90YXRpb25zLEVuYWJsZUxvY2F0b3JzLERpc2FibGVMaXN0RGVtb3Rpb24sRGlzYWJsZUxpc3RQcm9tb3Rpb24iLA0KICAgICAgICAgInNpZ25hdHVyZUxldmVsIiA6ICJPdmVybG9hZHMiLA0KICAgICAgICAgInR5cGUiIDogIkNxbFRvRWxtSW5mbyINCiAgICAgIH0sIHsNCiAgICAgICAgICJ0eXBlIiA6ICJBbm5vdGF0aW9uIiwNCiAgICAgICAgICJzIiA6IHsNCiAgICAgICAgICAgICJyIiA6ICIyMjIiLA0KICAgICAgICAgICAgInMiIDogWyB7DQogICAgICAgICAgICAgICAidmFsdWUiIDogWyAiIiwibGlicmFyeSBTY3JlZW5pbmdFbGlnaWJsZUV2ZW50cyB2ZXJzaW9uICcxLjAuMCciIF0NCiAgICAgICAgICAgIH0gXQ0KICAgICAgICAgfQ0KICAgICAgfSBdLA0KICAgICAgImlkZW50aWZpZXIiIDogew0KICAgICAgICAgImlkIiA6ICJTY3JlZW5pbmdFbGlnaWJsZUV2ZW50cyIsDQogICAgICAgICAic3lzdGVtIiA6ICJodHRwOi8vY2FuY2Vyc2NyZWVuaW5nY2RzLmdpdGh1Yi5pby9jcmNzbS1jZHMiLA0KICAgICAgICAgInZlcnNpb24iIDogIjEuMC4wIg0KICAgICAgfSwNCiAgICAgICJzY2hlbWFJZGVudGlmaWVyIiA6IHsNCiAgICAgICAgICJpZCIgOiAidXJuOmhsNy1vcmc6ZWxtIiwNCiAgICAgICAgICJ2ZXJzaW9uIiA6ICJyMSINCiAgICAgIH0sDQogICAgICAidXNpbmdzIiA6IHsNCiAgICAgICAgICJkZWYiIDogWyB7DQogICAgICAgICAgICAibG9jYWxJZCIgOiAiMSIsDQogICAgICAgICAgICAibG9jYWxJZGVudGlmaWVyIiA6ICJTeXN0ZW0iLA0KICAgICAgICAgICAgInVyaSIgOiAidXJuOmhsNy1vcmc6ZWxtLXR5cGVzOnIxIg0KICAgICAgICAgfSwgew0KICAgICAgICAgICAgImxvY2FsSWQiIDogIjIwNiIsDQogICAgICAgICAgICAibG9jYXRvciIgOiAiMzoxLTM6MjYiLA0KICAgICAgICAgICAgImxvY2FsSWRlbnRpZmllciIgOiAiRkhJUiIsDQogICAgICAgICAgICAidXJpIiA6ICJodHRwOi8vaGw3Lm9yZy9maGlyIiwNCiAgICAgICAgICAgICJ2ZXJzaW9uIiA6ICI0LjAuMSIsDQogICAgICAgICAgICAiYW5ub3RhdGlvbiIgOiBbIHsNCiAgICAgICAgICAgICAgICJ0eXBlIiA6ICJBbm5vdGF0aW9uIiwNCiAgICAgICAgICAgICAgICJzIiA6IHsNCiAgICAgICAgICAgICAgICAgICJyIiA6ICIyMDYiLA0KICAgICAgICAgICAgICAgICAgInMiIDogWyB7DQogICAgICAgICAgICAgICAgICAgICAidmFsdWUiIDogWyAiIiwidXNpbmcgIiBdDQogICAgICAgICAgICAgICAgICB9LCB7DQogICAgICAgICAgICAgICAgICAgICAicyIgOiBbIHsNCiAgICAgICAgICAgICAgICAgICAgICAgICJ2YWx1ZSIgOiBbICJGSElSIiBdDQogICAgICAgICAgICAgICAgICAgICB9IF0NCiAgICAgICAgICAgICAgICAgIH0sIHsNCiAgICAgICAgICAgICAgICAgICAgICJ2YWx1ZSIgOiBbICIgdmVyc2lvbiAnNC4wLjEnIiBdDQogICAgICAgICAgICAgICAgICB9IF0NCiAgICAgICAgICAgICAgIH0NCiAgICAgICAgICAgIH0gXQ0KICAgICAgICAgfSBdDQogICAgICB9LA0KICAgICAgImluY2x1ZGVzIiA6IHsNCiAgICAgICAgICJkZWYiIDogWyB7DQogICAgICAgICAgICAibG9jYWxJZCIgOiAiMjA3IiwNCiAgICAgICAgICAgICJsb2NhdG9yIiA6ICI0OjEtNDo1NSIsDQogICAgICAgICAgICAibG9jYWxJZGVudGlmaWVyIiA6ICJGSElSSGVscGVycyIsDQogICAgICAgICAgICAicGF0aCIgOiAiaHR0cDovL2NhbmNlcnNjcmVlbmluZ2Nkcy5naXRodWIuaW8vY3Jjc20tY2RzL0ZISVJIZWxwZXJzIiwNCiAgICAgICAgICAgICJ2ZXJzaW9uIiA6ICI0LjAuMSIsDQogICAgICAgICAgICAiYW5ub3RhdGlvbiIgOiBbIHsNCiAgICAgICAgICAgICAgICJ0eXBlIiA6ICJBbm5vdGF0aW9uIiwNCiAgICAgICAgICAgICAgICJzIiA6IHsNCiAgICAgICAgICAgICAgICAgICJyIiA6ICIyMDciLA0KICAgICAgICAgICAgICAgICAgInMiIDogWyB7DQogICAgICAgICAgICAgICAgICAgICAidmFsdWUiIDogWyAiIiwiaW5jbHVkZSAiIF0NCiAgICAgICAgICAgICAgICAgIH0sIHsNCiAgICAgICAgICAgICAgICAgICAgICJzIiA6IFsgew0KICAgICAgICAgICAgICAgICAgICAgICAgInZhbHVlIiA6IFsgIkZISVJIZWxwZXJzIiBdDQogICAgICAgICAgICAgICAgICAgICB9IF0NCiAgICAgICAgICAgICAgICAgIH0sIHsNCiAgICAgICAgICAgICAgICAgICAgICJ2YWx1ZSIgOiBbICIgIHZlcnNpb24gIiwiJzQuMC4xJyIsIiBjYWxsZWQgIiwiRkhJUkhlbHBlcnMiIF0NCiAgICAgICAgICAgICAgICAgIH0gXQ0KICAgICAgICAgICAgICAgfQ0KICAgICAgICAgICAgfSBdDQogICAgICAgICB9LCB7DQogICAgICAgICAgICAibG9jYWxJZCIgOiAiMjA4IiwNCiAgICAgICAgICAgICJsb2NhdG9yIiA6ICI2OjEtNjo1NiIsDQogICAgICAgICAgICAibG9jYWxJZGVudGlmaWVyIiA6ICJEYXRhRWxlbWVudHMiLA0KICAgICAgICAgICAgInBhdGgiIDogImh0dHA6Ly9jYW5jZXJzY3JlZW5pbmdjZHMuZ2l0aHViLmlvL2NyY3NtLWNkcy9EYXRhRWxlbWVudHMiLA0KICAgICAgICAgICAgInZlcnNpb24iIDogIjEuMC4wIiwNCiAgICAgICAgICAgICJhbm5vdGF0aW9uIiA6IFsgew0KICAgICAgICAgICAgICAgInR5cGUiIDogIkFubm90YXRpb24iLA0KICAgICAgICAgICAgICAgInMiIDogew0KICAgICAgICAgICAgICAgICAgInIiIDogIjIwOCIsDQogICAgICAgICAgICAgICAgICAicyIgOiBbIHsNCiAgICAgICAgICAgICAgICAgICAgICJ2YWx1ZSIgOiBbICIiLCJpbmNsdWRlICIgXQ0KICAgICAgICAgICAgICAgICAgfSwgew0KICAgICAgICAgICAgICAgICAgICAgInMiIDogWyB7DQogICAgICAgICAgICAgICAgICAgICAgICAidmFsdWUiIDogWyAiRGF0YUVsZW1lbnRzIiBdDQogICAgICAgICAgICAgICAgICAgICB9IF0NCiAgICAgICAgICAgICAgICAgIH0sIHsNCiAgICAgICAgICAgICAgICAgICAgICJ2YWx1ZSIgOiBbICIgdmVyc2lvbiAiLCInMS4wLjAnIiwiIGNhbGxlZCAiLCJEYXRhRWxlbWVudHMiIF0NCiAgICAgICAgICAgICAgICAgIH0gXQ0KICAgICAgICAgICAgICAgfQ0KICAgICAgICAgICAgfSBdDQogICAgICAgICB9IF0NCiAgICAgIH0sDQogICAgICAiY29udGV4dHMiIDogew0KICAgICAgICAgImRlZiIgOiBbIHsNCiAgICAgICAgICAgICJsb2NhbElkIiA6ICIyMTIiLA0KICAgICAgICAgICAgImxvY2F0b3IiIDogIjg6MS04OjE1IiwNCiAgICAgICAgICAgICJuYW1lIiA6ICJQYXRpZW50Ig0KICAgICAgICAgfSBdDQogICAgICB9LA0KICAgICAgInN0YXRlbWVudHMiIDogew0KICAgICAgICAgImRlZiIgOiBbIHsNCiAgICAgICAgICAgICJsb2NhbElkIiA6ICIyMTAiLA0KICAgICAgICAgICAgImxvY2F0b3IiIDogIjg6MS04OjE1IiwNCiAgICAgICAgICAgICJuYW1lIiA6ICJQYXRpZW50IiwNCiAgICAgICAgICAgICJjb250ZXh0IiA6ICJQYXRpZW50IiwNCiAgICAgICAgICAgICJleHByZXNzaW9uIiA6IHsNCiAgICAgICAgICAgICAgICJsb2NhbElkIiA6ICIyMTEiLA0KICAgICAgICAgICAgICAgInR5cGUiIDogIlNpbmdsZXRvbkZyb20iLA0KICAgICAgICAgICAgICAgInNpZ25hdHVyZSIgOiBbIF0sDQogICAgICAgICAgICAgICAib3BlcmFuZCIgOiB7DQogICAgICAgICAgICAgICAgICAibG9jYWxJZCIgOiAiMjA5IiwNCiAgICAgICAgICAgICAgICAgICJsb2NhdG9yIiA6ICI4OjEtODoxNSIsDQogICAgICAgICAgICAgICAgICAiZGF0YVR5cGUiIDogIntodHRwOi8vaGw3Lm9yZy9maGlyfVBhdGllbnQiLA0KICAgICAgICAgICAgICAgICAgInRlbXBsYXRlSWQiIDogImh0dHA6Ly9obDcub3JnL2ZoaXIvU3RydWN0dXJlRGVmaW5pdGlvbi9QYXRpZW50IiwNCiAgICAgICAgICAgICAgICAgICJ0eXBlIiA6ICJSZXRyaWV2ZSIsDQogICAgICAgICAgICAgICAgICAiaW5jbHVkZSIgOiBbIF0sDQogICAgICAgICAgICAgICAgICAiY29kZUZpbHRlciIgOiBbIF0sDQogICAgICAgICAgICAgICAgICAiZGF0ZUZpbHRlciIgOiBbIF0sDQogICAgICAgICAgICAgICAgICAib3RoZXJGaWx0ZXIiIDogWyBdDQogICAgICAgICAgICAgICB9DQogICAgICAgICAgICB9DQogICAgICAgICB9LCB7DQogICAgICAgICAgICAibG9jYWxJZCIgOiAiMjE0IiwNCiAgICAgICAgICAgICJsb2NhdG9yIiA6ICIxMDoxLTExOjM0IiwNCiAgICAgICAgICAgICJuYW1lIiA6ICJldmUtSHhUb3RhbENvbGVjdG9teSIsDQogICAgICAgICAgICAiY29udGV4dCIgOiAiUGF0aWVudCIsDQogICAgICAgICAgICAiYWNjZXNzTGV2ZWwiIDogIlB1YmxpYyIsDQogICAgICAgICAgICAiYW5ub3RhdGlvbiIgOiBbIHsNCiAgICAgICAgICAgICAgICJ0eXBlIiA6ICJBbm5vdGF0aW9uIiwNCiAgICAgICAgICAgICAgICJzIiA6IHsNCiAgICAgICAgICAgICAgICAgICJyIiA6ICIyMTQiLA0KICAgICAgICAgICAgICAgICAgInMiIDogWyB7DQogICAgICAgICAgICAgICAgICAgICAidmFsdWUiIDogWyAiIiwiZGVmaW5lICIsIlwiZXZlLUh4VG90YWxDb2xlY3RvbXlcIiIsIjpcbiAgIiBdDQogICAgICAgICAgICAgICAgICB9LCB7DQogICAgICAgICAgICAgICAgICAgICAiciIgOiAiMjE2IiwNCiAgICAgICAgICAgICAgICAgICAgICJzIiA6IFsgew0KICAgICAgICAgICAgICAgICAgICAgICAgInIiIDogIjIxNSIsDQogICAgICAgICAgICAgICAgICAgICAgICAicyIgOiBbIHsNCiAgICAgICAgICAgICAgICAgICAgICAgICAgICJ2YWx1ZSIgOiBbICJEYXRhRWxlbWVudHMiIF0NCiAgICAgICAgICAgICAgICAgICAgICAgIH0gXQ0KICAgICAgICAgICAgICAgICAgICAgfSwgew0KICAgICAgICAgICAgICAgICAgICAgICAgInZhbHVlIiA6IFsgIi4iIF0NCiAgICAgICAgICAgICAgICAgICAgIH0sIHsNCiAgICAgICAgICAgICAgICAgICAgICAgICJyIiA6ICIyMTYiLA0KICAgICAgICAgICAgICAgICAgICAgICAgInMiIDogWyB7DQogICAgICAgICAgICAgICAgICAgICAgICAgICAidmFsdWUiIDogWyAiXCJkZS1Ub3RhbENvbGVjdG9teVwiIiBdDQogICAgICAgICAgICAgICAgICAgICAgICB9IF0NCiAgICAgICAgICAgICAgICAgICAgIH0gXQ0KICAgICAgICAgICAgICAgICAgfSBdDQogICAgICAgICAgICAgICB9DQogICAgICAgICAgICB9IF0sDQogICAgICAgICAgICAiZXhwcmVzc2lvbiIgOiB7DQogICAgICAgICAgICAgICAibG9jYWxJZCIgOiAiMjE2IiwNCiAgICAgICAgICAgICAgICJsb2NhdG9yIiA6ICIxMTozLTExOjM0IiwNCiAgICAgICAgICAgICAgICJuYW1lIiA6ICJkZS1Ub3RhbENvbGVjdG9teSIsDQogICAgICAgICAgICAgICAibGlicmFyeU5hbWUiIDogIkRhdGFFbGVtZW50cyIsDQogICAgICAgICAgICAgICAidHlwZSIgOiAiRXhwcmVzc2lvblJlZiINCiAgICAgICAgICAgIH0NCiAgICAgICAgIH0sIHsNCiAgICAgICAgICAgICJsb2NhbElkIiA6ICIyMTgiLA0KICAgICAgICAgICAgImxvY2F0b3IiIDogIjEzOjEtMTQ6MzAiLA0KICAgICAgICAgICAgIm5hbWUiIDogImV2ZS1BY3RpdmVDUkMiLA0KICAgICAgICAgICAgImNvbnRleHQiIDogIlBhdGllbnQiLA0KICAgICAgICAgICAgImFjY2Vzc0xldmVsIiA6ICJQdWJsaWMiLA0KICAgICAgICAgICAgImFubm90YXRpb24iIDogWyB7DQogICAgICAgICAgICAgICAidHlwZSIgOiAiQW5ub3RhdGlvbiIsDQogICAgICAgICAgICAgICAicyIgOiB7DQogICAgICAgICAgICAgICAgICAiciIgOiAiMjE4IiwNCiAgICAgICAgICAgICAgICAgICJzIiA6IFsgew0KICAgICAgICAgICAgICAgICAgICAgInZhbHVlIiA6IFsgIiIsImRlZmluZSAiLCJcImV2ZS1BY3RpdmVDUkNcIiIsIjpcbiAgIiBdDQogICAgICAgICAgICAgICAgICB9LCB7DQogICAgICAgICAgICAgICAgICAgICAiciIgOiAiMjIwIiwNCiAgICAgICAgICAgICAgICAgICAgICJzIiA6IFsgew0KICAgICAgICAgICAgICAgICAgICAgICAgInIiIDogIjIxOSIsDQogICAgICAgICAgICAgICAgICAgICAgICAicyIgOiBbIHsNCiAgICAgICAgICAgICAgICAgICAgICAgICAgICJ2YWx1ZSIgOiBbICJEYXRhRWxlbWVudHMiIF0NCiAgICAgICAgICAgICAgICAgICAgICAgIH0gXQ0KICAgICAgICAgICAgICAgICAgICAgfSwgew0KICAgICAgICAgICAgICAgICAgICAgICAgInZhbHVlIiA6IFsgIi4iIF0NCiAgICAgICAgICAgICAgICAgICAgIH0sIHsNCiAgICAgICAgICAgICAgICAgICAgICAgICJyIiA6ICIyMjAiLA0KICAgICAgICAgICAgICAgICAgICAgICAgInMiIDogWyB7DQogICAgICAgICAgICAgICAgICAgICAgICAgICAidmFsdWUiIDogWyAiXCJkZS1DdXJyZW50Q1JDXCIiIF0NCiAgICAgICAgICAgICAgICAgICAgICAgIH0gXQ0KICAgICAgICAgICAgICAgICAgICAgfSBdDQogICAgICAgICAgICAgICAgICB9IF0NCiAgICAgICAgICAgICAgIH0NCiAgICAgICAgICAgIH0gXSwNCiAgICAgICAgICAgICJleHByZXNzaW9uIiA6IHsNCiAgICAgICAgICAgICAgICJsb2NhbElkIiA6ICIyMjAiLA0KICAgICAgICAgICAgICAgImxvY2F0b3IiIDogIjE0OjMtMTQ6MzAiLA0KICAgICAgICAgICAgICAgIm5hbWUiIDogImRlLUN1cnJlbnRDUkMiLA0KICAgICAgICAgICAgICAgImxpYnJhcnlOYW1lIiA6ICJEYXRhRWxlbWVudHMiLA0KICAgICAgICAgICAgICAgInR5cGUiIDogIkV4cHJlc3Npb25SZWYiDQogICAgICAgICAgICB9DQogICAgICAgICB9LCB7DQogICAgICAgICAgICAibG9jYWxJZCIgOiAiMjIyIiwNCiAgICAgICAgICAgICJsb2NhdG9yIiA6ICIxNjoxLTE3OjQzIiwNCiAgICAgICAgICAgICJuYW1lIiA6ICJldmUtU3ltcHRvbWF0aWMiLA0KICAgICAgICAgICAgImNvbnRleHQiIDogIlBhdGllbnQiLA0KICAgICAgICAgICAgImFjY2Vzc0xldmVsIiA6ICJQdWJsaWMiLA0KICAgICAgICAgICAgImFubm90YXRpb24iIDogWyB7DQogICAgICAgICAgICAgICAidHlwZSIgOiAiQW5ub3RhdGlvbiIsDQogICAgICAgICAgICAgICAicyIgOiB7DQogICAgICAgICAgICAgICAgICAiciIgOiAiMjIyIiwNCiAgICAgICAgICAgICAgICAgICJzIiA6IFsgew0KICAgICAgICAgICAgICAgICAgICAgInZhbHVlIiA6IFsgIiIsImRlZmluZSAiLCJcImV2ZS1TeW1wdG9tYXRpY1wiIiwiOlxuICAiIF0NCiAgICAgICAgICAgICAgICAgIH0sIHsNCiAgICAgICAgICAgICAgICAgICAgICJyIiA6ICIyMjQiLA0KICAgICAgICAgICAgICAgICAgICAgInMiIDogWyB7DQogICAgICAgICAgICAgICAgICAgICAgICAiciIgOiAiMjIzIiwNCiAgICAgICAgICAgICAgICAgICAgICAgICJzIiA6IFsgew0KICAgICAgICAgICAgICAgICAgICAgICAgICAgInZhbHVlIiA6IFsgIkRhdGFFbGVtZW50cyIgXQ0KICAgICAgICAgICAgICAgICAgICAgICAgfSBdDQogICAgICAgICAgICAgICAgICAgICB9LCB7DQogICAgICAgICAgICAgICAgICAgICAgICAidmFsdWUiIDogWyAiLiIgXQ0KICAgICAgICAgICAgICAgICAgICAgfSwgew0KICAgICAgICAgICAgICAgICAgICAgICAgInIiIDogIjIyNCIsDQogICAgICAgICAgICAgICAgICAgICAgICAicyIgOiBbIHsNCiAgICAgICAgICAgICAgICAgICAgICAgICAgICJ2YWx1ZSIgOiBbICJcImRlLUNvbG9yZWN0YWxTaWduc1N5bXB0b21zXCIiIF0NCiAgICAgICAgICAgICAgICAgICAgICAgIH0gXQ0KICAgICAgICAgICAgICAgICAgICAgfSBdDQogICAgICAgICAgICAgICAgICB9IF0NCiAgICAgICAgICAgICAgIH0NCiAgICAgICAgICAgIH0gXSwNCiAgICAgICAgICAgICJleHByZXNzaW9uIiA6IHsNCiAgICAgICAgICAgICAgICJsb2NhbElkIiA6ICIyMjQiLA0KICAgICAgICAgICAgICAgImxvY2F0b3IiIDogIjE3OjMtMTc6NDMiLA0KICAgICAgICAgICAgICAgIm5hbWUiIDogImRlLUNvbG9yZWN0YWxTaWduc1N5bXB0b21zIiwNCiAgICAgICAgICAgICAgICJsaWJyYXJ5TmFtZSIgOiAiRGF0YUVsZW1lbnRzIiwNCiAgICAgICAgICAgICAgICJ0eXBlIiA6ICJFeHByZXNzaW9uUmVmIg0KICAgICAgICAgICAgfQ0KICAgICAgICAgfSBdDQogICAgICB9DQogICB9DQp9"/>
+  </content>
+</Library>

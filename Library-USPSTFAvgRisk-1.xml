@@ -1,0 +1,410 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library xmlns="urn:hl7-org:elm:r1" xmlns:t="urn:hl7-org:elm-types:r1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:fhir="http://hl7.org/fhir" xmlns:qdm43="urn:healthit-gov:qdm:v4_3" xmlns:qdm53="urn:healthit-gov:qdm:v5_3" xmlns:a="urn:hl7-org:cql-annotations:r1" localId="0">
+   <annotation translatorVersion="3.11.0" translatorOptions="EnableAnnotations,EnableLocators,DisableListDemotion,DisableListPromotion" signatureLevel="Overloads" xsi:type="a:CqlToElmInfo"/>
+   <annotation xsi:type="a:Annotation">
+      <a:s r="225">
+         <a:s>library USPSTFAvgRisk version '1.0.0'</a:s>
+      </a:s>
+   </annotation>
+   <identifier id="USPSTFAvgRisk" system="http://cancerscreeningcds.github.io/crcsm-cds" version="1.0.0"/>
+   <schemaIdentifier id="urn:hl7-org:elm" version="r1"/>
+   <usings>
+      <def localId="1" localIdentifier="System" uri="urn:hl7-org:elm-types:r1"/>
+      <def localId="206" locator="3:1-3:26" localIdentifier="FHIR" uri="http://hl7.org/fhir" version="4.0.1">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="206">
+               <a:s>using </a:s>
+               <a:s>
+                  <a:s>FHIR</a:s>
+               </a:s>
+               <a:s> version '4.0.1'</a:s>
+            </a:s>
+         </annotation>
+      </def>
+   </usings>
+   <includes>
+      <def localId="207" locator="4:1-4:55" localIdentifier="FHIRHelpers" path="http://cancerscreeningcds.github.io/crcsm-cds/FHIRHelpers" version="4.0.1">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="207">
+               <a:s>include </a:s>
+               <a:s>
+                  <a:s>FHIRHelpers</a:s>
+               </a:s>
+               <a:s>  version '4.0.1' called FHIRHelpers</a:s>
+            </a:s>
+         </annotation>
+      </def>
+      <def localId="208" locator="6:1-6:57" localIdentifier="Events" path="http://cancerscreeningcds.github.io/crcsm-cds/USPSTFAvgRiskEvents" version="1.0.0">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="208">
+               <a:s>include </a:s>
+               <a:s>
+                  <a:s>USPSTFAvgRiskEvents</a:s>
+               </a:s>
+               <a:s> version '1.0.0' called Events</a:s>
+            </a:s>
+         </annotation>
+      </def>
+      <def localId="209" locator="7:1-7:59" localIdentifier="Actions" path="http://cancerscreeningcds.github.io/crcsm-cds/USPSTFAvgRiskActions" version="1.0.0">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="209">
+               <a:s>include </a:s>
+               <a:s>
+                  <a:s>USPSTFAvgRiskActions</a:s>
+               </a:s>
+               <a:s> version '1.0.0' called Actions</a:s>
+            </a:s>
+         </annotation>
+      </def>
+      <def localId="210" locator="8:1-8:56" localIdentifier="DataElements" path="http://cancerscreeningcds.github.io/crcsm-cds/DataElements" version="1.0.0">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="210">
+               <a:s>include </a:s>
+               <a:s>
+                  <a:s>DataElements</a:s>
+               </a:s>
+               <a:s> version '1.0.0' called DataElements</a:s>
+            </a:s>
+         </annotation>
+      </def>
+   </includes>
+   <contexts>
+      <def localId="214" locator="10:1-10:15" name="Patient"/>
+   </contexts>
+   <statements>
+      <def localId="212" locator="10:1-10:15" name="Patient" context="Patient">
+         <expression localId="213" xsi:type="SingletonFrom">
+            <operand localId="211" locator="10:1-10:15" dataType="fhir:Patient" templateId="http://hl7.org/fhir/StructureDefinition/Patient" xsi:type="Retrieve"/>
+         </expression>
+      </def>
+      <def localId="225" locator="21:1-23:73" name="HasPriorScreening" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="225">
+               <a:s>define HasPriorScreening:
+  </a:s>
+               <a:s r="226">
+                  <a:s>if </a:s>
+                  <a:s r="229">
+                     <a:s r="228">
+                        <a:s r="227">
+                           <a:s>Events</a:s>
+                        </a:s>
+                        <a:s>.</a:s>
+                        <a:s r="228">
+                           <a:s>&quot;eve-priorScreeningExists&quot;</a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s> is true</a:s>
+                  </a:s>
+                  <a:s>
+  then </a:s>
+                  <a:s r="231">
+                     <a:s r="230">
+                        <a:s>Actions</a:s>
+                     </a:s>
+                     <a:s>.</a:s>
+                     <a:s r="231">
+                        <a:s>&quot;act-determineDueDate&quot;</a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s> else </a:s>
+                  <a:s r="233">
+                     <a:s r="232">
+                        <a:s>Actions</a:s>
+                     </a:s>
+                     <a:s>.</a:s>
+                     <a:s r="233">
+                        <a:s>&quot;act-updateDueDateNow&quot;</a:s>
+                     </a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="226" locator="22:3-23:73" xsi:type="If">
+            <condition localId="229" locator="22:6-22:46" xsi:type="IsTrue">
+               <operand localId="228" locator="22:6-22:38" name="eve-priorScreeningExists" libraryName="Events" xsi:type="ExpressionRef"/>
+            </condition>
+            <then localId="231" locator="23:8-23:37" name="act-determineDueDate" libraryName="Actions" xsi:type="ExpressionRef"/>
+            <else localId="233" locator="23:44-23:73" name="act-updateDueDateNow" libraryName="Actions" xsi:type="ExpressionRef"/>
+         </expression>
+      </def>
+      <def localId="216" locator="12:1-19:17" name="flow-USPSTFAvgRisk" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="216">
+               <a:s>define &quot;flow-USPSTFAvgRisk&quot;:
+  </a:s>
+               <a:s r="317">
+                  <a:s r="217">
+                     <a:s>{
+    </a:s>
+                     <a:s r="218">
+                        <a:s>if </a:s>
+                        <a:s r="221">
+                           <a:s r="220">
+                              <a:s r="219">
+                                 <a:s>Events</a:s>
+                              </a:s>
+                              <a:s>.</a:s>
+                              <a:s r="220">
+                                 <a:s>&quot;eve-AgeOver45&quot;</a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s> is false</a:s>
+                        </a:s>
+                        <a:s>
+      then </a:s>
+                        <a:s r="223">
+                           <a:s r="222">
+                              <a:s>Actions</a:s>
+                           </a:s>
+                           <a:s>.</a:s>
+                           <a:s r="223">
+                              <a:s>&quot;act-RecommendStartScreeningAt45&quot;</a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s>
+    else 
+      </a:s>
+                        <a:s r="234">
+                           <a:s>HasPriorScreening</a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s>
+  }</a:s>
+                  </a:s>
+                  <a:s>   
+  except </a:s>
+                  <a:s r="315">
+                     <a:s r="316">{ null }</a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="317" locator="13:3-19:17" xsi:type="Except">
+            <operand localId="217" locator="13:3-18:3" xsi:type="List">
+               <element localId="218" locator="14:5-17:23" xsi:type="If">
+                  <condition localId="221" locator="14:8-14:38" xsi:type="IsFalse">
+                     <operand localId="220" locator="14:8-14:29" name="eve-AgeOver45" libraryName="Events" xsi:type="ExpressionRef"/>
+                  </condition>
+                  <then localId="235" xsi:type="As">
+                     <operand localId="223" locator="15:12-15:52" name="act-RecommendStartScreeningAt45" libraryName="Actions" xsi:type="ExpressionRef"/>
+                     <asTypeSpecifier localId="236" xsi:type="ChoiceTypeSpecifier">
+                        <choice localId="237" xsi:type="TupleTypeSpecifier">
+                           <element localId="238" name="code">
+                              <elementType localId="239" name="t:Code" xsi:type="NamedTypeSpecifier"/>
+                           </element>
+                           <element localId="240" name="reason">
+                              <elementType localId="241" name="t:Code" xsi:type="NamedTypeSpecifier"/>
+                           </element>
+                           <element localId="242" name="documentation">
+                              <elementType localId="243" xsi:type="TupleTypeSpecifier">
+                                 <element localId="244" name="label">
+                                    <elementType localId="245" name="t:String" xsi:type="NamedTypeSpecifier"/>
+                                 </element>
+                              </elementType>
+                           </element>
+                           <element localId="246" name="timingAge">
+                              <elementType localId="247" xsi:type="TupleTypeSpecifier">
+                                 <element localId="248" name="value">
+                                    <elementType localId="249" name="t:Decimal" xsi:type="NamedTypeSpecifier"/>
+                                 </element>
+                                 <element localId="250" name="code">
+                                    <elementType localId="251" name="t:String" xsi:type="NamedTypeSpecifier"/>
+                                 </element>
+                              </elementType>
+                           </element>
+                           <element localId="252" name="timingTiming">
+                              <elementType localId="253" xsi:type="TupleTypeSpecifier">
+                                 <element localId="254" name="event">
+                                    <elementType localId="255" name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                                 </element>
+                              </elementType>
+                           </element>
+                        </choice>
+                        <choice localId="256" xsi:type="TupleTypeSpecifier">
+                           <element localId="257" name="code">
+                              <elementType localId="258" name="t:Code" xsi:type="NamedTypeSpecifier"/>
+                           </element>
+                           <element localId="259" name="reason">
+                              <elementType localId="260" name="t:Code" xsi:type="NamedTypeSpecifier"/>
+                           </element>
+                           <element localId="261" name="documentation">
+                              <elementType localId="262" xsi:type="TupleTypeSpecifier">
+                                 <element localId="263" name="label">
+                                    <elementType localId="264" name="t:String" xsi:type="NamedTypeSpecifier"/>
+                                 </element>
+                              </elementType>
+                           </element>
+                           <element localId="265" name="timingAge">
+                              <elementType localId="266" xsi:type="TupleTypeSpecifier">
+                                 <element localId="267" name="value">
+                                    <elementType localId="268" name="t:Decimal" xsi:type="NamedTypeSpecifier"/>
+                                 </element>
+                                 <element localId="269" name="code">
+                                    <elementType localId="270" name="t:String" xsi:type="NamedTypeSpecifier"/>
+                                 </element>
+                              </elementType>
+                           </element>
+                           <element localId="271" name="timingTiming">
+                              <elementType localId="272" xsi:type="TupleTypeSpecifier">
+                                 <element localId="273" name="event">
+                                    <elementType localId="274" name="t:DateTime" xsi:type="NamedTypeSpecifier"/>
+                                 </element>
+                              </elementType>
+                           </element>
+                        </choice>
+                     </asTypeSpecifier>
+                  </then>
+                  <else localId="275" xsi:type="As">
+                     <operand localId="234" locator="17:7-17:23" name="HasPriorScreening" xsi:type="ExpressionRef"/>
+                     <asTypeSpecifier localId="276" xsi:type="ChoiceTypeSpecifier">
+                        <choice localId="277" xsi:type="TupleTypeSpecifier">
+                           <element localId="278" name="code">
+                              <elementType localId="279" name="t:Code" xsi:type="NamedTypeSpecifier"/>
+                           </element>
+                           <element localId="280" name="reason">
+                              <elementType localId="281" name="t:Code" xsi:type="NamedTypeSpecifier"/>
+                           </element>
+                           <element localId="282" name="documentation">
+                              <elementType localId="283" xsi:type="TupleTypeSpecifier">
+                                 <element localId="284" name="label">
+                                    <elementType localId="285" name="t:String" xsi:type="NamedTypeSpecifier"/>
+                                 </element>
+                              </elementType>
+                           </element>
+                           <element localId="286" name="timingAge">
+                              <elementType localId="287" xsi:type="TupleTypeSpecifier">
+                                 <element localId="288" name="value">
+                                    <elementType localId="289" name="t:Decimal" xsi:type="NamedTypeSpecifier"/>
+                                 </element>
+                                 <element localId="290" name="code">
+                                    <elementType localId="291" name="t:String" xsi:type="NamedTypeSpecifier"/>
+                                 </element>
+                              </elementType>
+                           </element>
+                           <element localId="292" name="timingTiming">
+                              <elementType localId="293" xsi:type="TupleTypeSpecifier">
+                                 <element localId="294" name="event">
+                                    <elementType localId="295" name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                                 </element>
+                              </elementType>
+                           </element>
+                        </choice>
+                        <choice localId="296" xsi:type="TupleTypeSpecifier">
+                           <element localId="297" name="code">
+                              <elementType localId="298" name="t:Code" xsi:type="NamedTypeSpecifier"/>
+                           </element>
+                           <element localId="299" name="reason">
+                              <elementType localId="300" name="t:Code" xsi:type="NamedTypeSpecifier"/>
+                           </element>
+                           <element localId="301" name="documentation">
+                              <elementType localId="302" xsi:type="TupleTypeSpecifier">
+                                 <element localId="303" name="label">
+                                    <elementType localId="304" name="t:String" xsi:type="NamedTypeSpecifier"/>
+                                 </element>
+                              </elementType>
+                           </element>
+                           <element localId="305" name="timingAge">
+                              <elementType localId="306" xsi:type="TupleTypeSpecifier">
+                                 <element localId="307" name="value">
+                                    <elementType localId="308" name="t:Decimal" xsi:type="NamedTypeSpecifier"/>
+                                 </element>
+                                 <element localId="309" name="code">
+                                    <elementType localId="310" name="t:String" xsi:type="NamedTypeSpecifier"/>
+                                 </element>
+                              </elementType>
+                           </element>
+                           <element localId="311" name="timingTiming">
+                              <elementType localId="312" xsi:type="TupleTypeSpecifier">
+                                 <element localId="313" name="event">
+                                    <elementType localId="314" name="t:DateTime" xsi:type="NamedTypeSpecifier"/>
+                                 </element>
+                              </elementType>
+                           </element>
+                        </choice>
+                     </asTypeSpecifier>
+                  </else>
+               </element>
+            </operand>
+            <operand localId="318" xsi:type="Query">
+               <source localId="319" alias="X">
+                  <expression localId="315" locator="19:10-19:17" xsi:type="List">
+                     <element localId="316" locator="19:12-19:15" xsi:type="Null"/>
+                  </expression>
+               </source>
+               <return localId="320" distinct="false">
+                  <expression localId="322" xsi:type="As">
+                     <operand localId="321" name="X" xsi:type="AliasRef"/>
+                     <asTypeSpecifier localId="323" xsi:type="ChoiceTypeSpecifier">
+                        <choice localId="324" xsi:type="TupleTypeSpecifier">
+                           <element localId="325" name="code">
+                              <elementType localId="326" name="t:Code" xsi:type="NamedTypeSpecifier"/>
+                           </element>
+                           <element localId="327" name="reason">
+                              <elementType localId="328" name="t:Code" xsi:type="NamedTypeSpecifier"/>
+                           </element>
+                           <element localId="329" name="documentation">
+                              <elementType localId="330" xsi:type="TupleTypeSpecifier">
+                                 <element localId="331" name="label">
+                                    <elementType localId="332" name="t:String" xsi:type="NamedTypeSpecifier"/>
+                                 </element>
+                              </elementType>
+                           </element>
+                           <element localId="333" name="timingAge">
+                              <elementType localId="334" xsi:type="TupleTypeSpecifier">
+                                 <element localId="335" name="value">
+                                    <elementType localId="336" name="t:Decimal" xsi:type="NamedTypeSpecifier"/>
+                                 </element>
+                                 <element localId="337" name="code">
+                                    <elementType localId="338" name="t:String" xsi:type="NamedTypeSpecifier"/>
+                                 </element>
+                              </elementType>
+                           </element>
+                           <element localId="339" name="timingTiming">
+                              <elementType localId="340" xsi:type="TupleTypeSpecifier">
+                                 <element localId="341" name="event">
+                                    <elementType localId="342" name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                                 </element>
+                              </elementType>
+                           </element>
+                        </choice>
+                        <choice localId="343" xsi:type="TupleTypeSpecifier">
+                           <element localId="344" name="code">
+                              <elementType localId="345" name="t:Code" xsi:type="NamedTypeSpecifier"/>
+                           </element>
+                           <element localId="346" name="reason">
+                              <elementType localId="347" name="t:Code" xsi:type="NamedTypeSpecifier"/>
+                           </element>
+                           <element localId="348" name="documentation">
+                              <elementType localId="349" xsi:type="TupleTypeSpecifier">
+                                 <element localId="350" name="label">
+                                    <elementType localId="351" name="t:String" xsi:type="NamedTypeSpecifier"/>
+                                 </element>
+                              </elementType>
+                           </element>
+                           <element localId="352" name="timingAge">
+                              <elementType localId="353" xsi:type="TupleTypeSpecifier">
+                                 <element localId="354" name="value">
+                                    <elementType localId="355" name="t:Decimal" xsi:type="NamedTypeSpecifier"/>
+                                 </element>
+                                 <element localId="356" name="code">
+                                    <elementType localId="357" name="t:String" xsi:type="NamedTypeSpecifier"/>
+                                 </element>
+                              </elementType>
+                           </element>
+                           <element localId="358" name="timingTiming">
+                              <elementType localId="359" xsi:type="TupleTypeSpecifier">
+                                 <element localId="360" name="event">
+                                    <elementType localId="361" name="t:DateTime" xsi:type="NamedTypeSpecifier"/>
+                                 </element>
+                              </elementType>
+                           </element>
+                        </choice>
+                     </asTypeSpecifier>
+                  </expression>
+               </return>
+            </operand>
+         </expression>
+      </def>
+   </statements>
+</library>

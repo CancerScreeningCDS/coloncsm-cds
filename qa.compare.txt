@@ -1,0 +1,926 @@
+crcsmcds : Validation Results
+=========================================
+
+err = 431, warn = 134, info = 70
+$--
+Generated $--. FHIR version $-- for cancerscreeningcds.fhir.us.crcsm-cds#$-- (canonical = http://cancerscreeningcds.github.io/crcsm-cds)
+ Build Errors : 79 / 89 / 0
+ /github/workspace/fsh-generated/resources/ActivityDefinition-CommunicateEligible : 0 / 0 / 4
+ /github/workspace/fsh-generated/resources/ActivityDefinition-CommunicateNotEligible : 0 / 0 / 4
+ /github/workspace/fsh-generated/resources/ActivityDefinition-CommunicateRecommendationStopScreening : 0 / 0 / 4
+ /github/workspace/fsh-generated/resources/ActivityDefinition-CommunicateSDMContinueScreening : 0 / 0 / 4
+ /github/workspace/fsh-generated/resources/ActivityDefinition-ScreeningEligibleQuestionnaireTask : 0 / 0 / 5
+ /github/workspace/fsh-generated/resources/CodeSystem-c-rads-2005-code-system : 0 / 2 / 2
+ /github/workspace/fsh-generated/resources/CodeSystem-c-rads-2023-code-system : 0 / 2 / 2
+ /github/workspace/fsh-generated/resources/CodeSystem-fam-hx-crc-questionnaire : 0 / 2 / 2
+ /github/workspace/fsh-generated/resources/CodeSystem-plan-definition-action-code-system : 0 / 1 / 2
+ /github/workspace/fsh-generated/resources/CodeSystem-plan-definition-action-reason-code-system : 0 / 1 / 2
+ /github/workspace/fsh-generated/resources/CodeSystem-screening-observation-code-system : 0 / 1 / 2
+ /github/workspace/fsh-generated/resources/ImplementationGuide-cancerscreeningcds.fhir.us.crcsm-cds : 9 / 1 / 1
+ /github/workspace/fsh-generated/resources/Measure-ScreeningDueMeasure : 4 / 0 / 1
+ /github/workspace/fsh-generated/resources/Measure-ScreeningIncompleteMeasure : 4 / 0 / 1
+ /github/workspace/fsh-generated/resources/PlanDefinition-PrimaryScreeningDecision : 1 / 0 / 3
+ /github/workspace/fsh-generated/resources/PlanDefinition-flow-AverageRisk : 1 / 1 / 3
+ /github/workspace/fsh-generated/resources/PlanDefinition-flow-DecisionToScreen : 1 / 1 / 3
+ /github/workspace/fsh-generated/resources/PlanDefinition-flow-IncreasedRiskExclusions : 1 / 1 / 3
+ /github/workspace/fsh-generated/resources/PlanDefinition-flow-ScreeningEligible : 1 / 1 / 5
+ /github/workspace/fsh-generated/resources/Questionnaire-ScreeningEligibleQuestionnaire : 1 / 0 / 4
+ /github/workspace/fsh-generated/resources/ValueSet-plan-definition-action-codes : 0 / 0 / 1
+ /github/workspace/fsh-generated/resources/ValueSet-plan-definition-action-reason-codes : 0 / 0 / 1
+ /github/workspace/input/examples/DecisionToScreen_v1.0.0/bundles/eve-Age86AndOlder_no_eve-AgeOver76_no_eve-LifeExp10_no_eve-riskFactors_no_act-AvgRiskEligible : 2 / 0 / 2
+ /github/workspace/input/examples/DecisionToScreen_v1.0.0/bundles/eve-Age86AndOlder_no_eve-AgeOver76_no_eve-LifeExp10_yes_act-sdmcontinuelifexp__eve-riskFactors_no_act-AvgRiskEligible : 5 / 2 / 4
+ /github/workspace/input/examples/DecisionToScreen_v1.0.0/bundles/eve-Age86AndOlder_no_eve-AgeOver76_yes_act-SelectivelyOfferScreening__eve-LifeExp10_no_eve-riskFactors_no_act-AvgRiskEligible : 2 / 0 / 2
+ /github/workspace/input/examples/DecisionToScreen_v1.0.0/bundles/eve-Age86AndOlder_no_eve-AgeOver76_yes_act-SelectivelyOfferScreening__eve-LifeExp10_yes_act-sdmcontinuelifexp__eve-riskFactors_no_act-AvgRiskEligible : 5 / 2 / 4
+ /github/workspace/input/examples/DecisionToScreen_v1.0.0/bundles/eve-Age86AndOlder_yes_act-HarmsLikelyOutweighBenefits : 2 / 0 / 2
+ /github/workspace/input/examples/FollowUp_v1.0.0/bundles/eve-lastTestColonoscopy_no_eve-lastTestStool_no_eve-lastTestFlexSig_no_eve-lastTestCTC_no_end-1 : 2 / 0 / 2
+ /github/workspace/input/examples/FollowUp_v1.0.0/bundles/eve-lastTestColonoscopy_no_eve-lastTestStool_no_eve-lastTestFlexSig_no_eve-lastTestCTC_yes_eve-inconclusiveCTColonography_no_eve-abnormalCTColonography_no_act-continueRoutineScreeningDirectViz : 5 / 0 / 3
+ /github/workspace/input/examples/FollowUp_v1.0.0/bundles/eve-lastTestColonoscopy_no_eve-lastTestStool_no_eve-lastTestFlexSig_no_eve-lastTestCTC_yes_eve-inconclusiveCTColonography_no_eve-abnormalCTColonography_yes_act-FollowUpColonoscopy : 6 / 0 / 4
+ /github/workspace/input/examples/FollowUp_v1.0.0/bundles/eve-lastTestColonoscopy_no_eve-lastTestStool_no_eve-lastTestFlexSig_no_eve-lastTestCTC_yes_eve-inconclusiveCTColonography_yes_act-repeatScreening : 5 / 0 / 4
+ /github/workspace/input/examples/FollowUp_v1.0.0/bundles/eve-lastTestColonoscopy_no_eve-lastTestStool_no_eve-lastTestFlexSig_yes_eve-abnormalFlexSig_no_act-continueRoutineScreeningDirectViz : 5 / 0 / 3
+ /github/workspace/input/examples/FollowUp_v1.0.0/bundles/eve-lastTestColonoscopy_no_eve-lastTestStool_no_eve-lastTestFlexSig_yes_eve-abnormalFlexSig_yes_act-FollowUpColonoscopy : 5 / 0 / 3
+ /github/workspace/input/examples/FollowUp_v1.0.0/bundles/eve-lastTestColonoscopy_no_eve-lastTestStool_yes_eve-inconclusiveStoolTest_no_eve-abnormalStoolTest_no_act-continueRoutineScreening : 8 / 0 / 4
+ /github/workspace/input/examples/FollowUp_v1.0.0/bundles/eve-lastTestColonoscopy_no_eve-lastTestStool_yes_eve-inconclusiveStoolTest_no_eve-abnormalStoolTest_yes_act-FollowUpColonoscopy : 5 / 0 / 3
+ /github/workspace/input/examples/FollowUp_v1.0.0/bundles/eve-lastTestColonoscopy_no_eve-lastTestStool_yes_eve-inconclusiveStoolTest_yes_act-repeatScreening : 5 / 0 / 3
+ /github/workspace/input/examples/FollowUp_v1.0.0/bundles/eve-lastTestColonoscopy_yes_end-1 : 8 / 0 / 4
+ /github/workspace/input/examples/IncreasedRiskExclusions_v1.0.0/bundles/eve-HereditarySyndrome_no_eve-IBD_no_eve-HxCRC_no_eve-FamilyHx_no_eve-HxPolyps_no_act-AvgRiskScreeningEligible : 2 / 0 / 2
+ /github/workspace/input/examples/IncreasedRiskExclusions_v1.0.0/bundles/eve-HereditarySyndrome_no_eve-IBD_no_eve-HxCRC_no_eve-FamilyHx_no_eve-HxPolyps_yes_act-HxPolyps : 5 / 0 / 3
+ /github/workspace/input/examples/IncreasedRiskExclusions_v1.0.0/bundles/eve-HereditarySyndrome_no_eve-IBD_no_eve-HxCRC_no_eve-FamilyHx_yes_act-FamilyHxCRC : 5 / 0 / 3
+ /github/workspace/input/examples/IncreasedRiskExclusions_v1.0.0/bundles/eve-HereditarySyndrome_no_eve-IBD_no_eve-HxCRC_yes_act-HxCRC : 5 / 0 / 3
+ /github/workspace/input/examples/IncreasedRiskExclusions_v1.0.0/bundles/eve-HereditarySyndrome_no_eve-IBD_yes_act-IBD : 5 / 0 / 3
+ /github/workspace/input/examples/IncreasedRiskExclusions_v1.0.0/bundles/eve-HereditarySyndrome_yes_act-CRCHereditarySyndrome : 5 / 0 / 3
+ /github/workspace/input/examples/ScreeningDue_v1.0.0/bundles/eve-nextdueexists_no_act-determinedue : 10 / 0 / 4
+ /github/workspace/input/examples/ScreeningDue_v1.0.0/bundles/eve-nextdueexists_yes_eve-DetermineIfDueForScreening_due_act-orderTest : 12 / 0 / 4
+ /github/workspace/input/examples/ScreeningDue_v1.0.0/bundles/eve-nextdueexists_yes_eve-DetermineIfDueForScreening_notdue_end-1 : 12 / 0 / 4
+ /github/workspace/input/examples/ScreeningDue_v1.0.0/bundles/eve-nextdueexists_yes_eve-DetermineIfDueForScreening_overdue_act-patientOutreach_act-orderTest : 11 / 0 / 4
+ /github/workspace/input/examples/ScreeningEligible_v1.0.0/bundles/eve-HxTotalColectomy_no_eve-ActiveCRC_no_eve-Symptomatic_no_act-ScreeningEligible : 2 / 0 / 2
+ /github/workspace/input/examples/ScreeningEligible_v1.0.0/bundles/eve-HxTotalColectomy_no_eve-ActiveCRC_no_eve-Symptomatic_yes_act-Diagnostic : 5 / 2 / 4
+ /github/workspace/input/examples/ScreeningEligible_v1.0.0/bundles/eve-HxTotalColectomy_no_eve-ActiveCRC_yes_end-1 : 5 / 0 / 3
+ /github/workspace/input/examples/ScreeningEligible_v1.0.0/bundles/eve-HxTotalColectomy_yes_end-1 : 5 / 0 / 3
+ /github/workspace/input/examples/ScreeningEligible_v1.0.0/bundles/inc-AgeAtLeast18_MostRecentAgeValue_yes : 8 / 4 / 4
+ /github/workspace/input/examples/ScreeningEligible_v1.0.0/bundles/inc-AgeAtLeast18_error : 2 / 0 / 2
+ /github/workspace/input/examples/ScreeningEligible_v1.0.0/bundles/inc-AgeAtLeast18_no : 2 / 0 / 2
+ /github/workspace/input/examples/ScreeningEligible_v1.0.0/bundles/inc-AgeAtLeast18_yes : 2 / 0 / 2
+ /github/workspace/input/examples/ScreeningIncomplete_v1.0.0/bundles/eve-pendingCTC_act-testpending : 4 / 0 / 3
+ /github/workspace/input/examples/ScreeningIncomplete_v1.0.0/bundles/eve-pendingColonoscopy_act-testpending : 4 / 0 / 3
+ /github/workspace/input/examples/ScreeningIncomplete_v1.0.0/bundles/eve-pendingFlexSig_act-testpending : 4 / 0 / 3
+ /github/workspace/input/examples/ScreeningIncomplete_v1.0.0/bundles/eve-pendinggFOBT_act-testpending : 4 / 0 / 3
+ /github/workspace/input/examples/ScreeningIncomplete_v1.0.0/bundles/eve-pendingsDNAFIT_act-testpending : 4 / 0 / 3
+ /github/workspace/input/examples/USPSTFAvgRisk_v1.0.0/bundles/eve-AgeOver45_no_act-RecommendStartScreeningAt45 : 2 / 0 / 2
+ /github/workspace/input/examples/USPSTFAvgRisk_v1.0.0/bundles/eve-AgeOver45_yes_eve-priorScreeningExists_no_act-updateDueDateNow : 2 / 0 / 2
+ /github/workspace/input/examples/USPSTFAvgRisk_v1.0.0/bundles/eve-AgeOver45_yes_eve-priorScreeningExists_yes_act-determineDueDate : 8 / 0 / 4
+ /github/workspace/input/examples/apply/DecisionToScreen_eve-Age86AndOlder_no_eve-AgeOver76_no_eve-LifeExp10_no_eve-riskFactors_no_act-AvgRiskEligible : 4 / 0 / 4
+ /github/workspace/input/examples/apply/DecisionToScreen_eve-Age86AndOlder_no_eve-AgeOver76_no_eve-LifeExp10_yes_act-sdmcontinuelifexp__eve-riskFactors_no_act-AvgRiskEligible : 4 / 0 / 4
+ /github/workspace/input/examples/apply/DecisionToScreen_eve-Age86AndOlder_no_eve-AgeOver76_yes_act-SelectivelyOfferScreening__eve-LifeExp10_no_eve-riskFactors_no_act-AvgRiskEligible : 4 / 0 / 4
+ /github/workspace/input/examples/apply/DecisionToScreen_eve-Age86AndOlder_no_eve-AgeOver76_yes_act-SelectivelyOfferScreening__eve-LifeExp10_yes_act-sdmcontinuelifexp__eve-riskFactors_no_act-AvgRiskEligible : 4 / 0 / 4
+ /github/workspace/input/examples/apply/DecisionToScreen_eve-Age86AndOlder_yes_act-HarmsLikelyOutweighBenefits : 4 / 0 / 4
+ /github/workspace/input/examples/apply/IncreasedRiskExclusions_eve-HereditarySyndrome_no_eve-IBD_no_eve-HxCRC_no_eve-FamilyHx_no_eve-HxPolyps_no_act-AvgRiskScreeningEligible : 4 / 0 / 4
+ /github/workspace/input/examples/apply/IncreasedRiskExclusions_eve-HereditarySyndrome_no_eve-IBD_no_eve-HxCRC_no_eve-FamilyHx_no_eve-HxPolyps_yes_act-HxPolyps : 4 / 0 / 4
+ /github/workspace/input/examples/apply/IncreasedRiskExclusions_eve-HereditarySyndrome_no_eve-IBD_no_eve-HxCRC_no_eve-FamilyHx_yes_act-FamilyHxCRC : 4 / 0 / 4
+ /github/workspace/input/examples/apply/IncreasedRiskExclusions_eve-HereditarySyndrome_no_eve-IBD_no_eve-HxCRC_yes_act-HxCRC : 4 / 0 / 4
+ /github/workspace/input/examples/apply/IncreasedRiskExclusions_eve-HereditarySyndrome_no_eve-IBD_yes_act-IBD : 4 / 0 / 4
+ /github/workspace/input/examples/apply/IncreasedRiskExclusions_eve-HereditarySyndrome_yes_act-CRCHereditarySyndrome : 4 / 0 / 4
+ /github/workspace/input/examples/apply/ScreeningEligible_eve-HxTotalColectomy_no_eve-ActiveCRC_no_eve-Symptomatic_no_act-ScreeningEligible : 4 / 0 / 4
+ /github/workspace/input/examples/apply/ScreeningEligible_eve-HxTotalColectomy_no_eve-ActiveCRC_no_eve-Symptomatic_yes_act-Diagnostic : 4 / 0 / 4
+ /github/workspace/input/examples/apply/ScreeningEligible_eve-HxTotalColectomy_no_eve-ActiveCRC_yes_end-1 : 4 / 0 / 4
+ /github/workspace/input/examples/apply/ScreeningEligible_eve-HxTotalColectomy_yes_end-1 : 4 / 0 / 4
+ /github/workspace/input/examples/apply/ScreeningEligible_inc-AgeAtLeast18_MostRecentAgeValue_yes : 4 / 0 / 4
+ /github/workspace/input/examples/apply/ScreeningEligible_inc-AgeAtLeast18_error : 4 / 0 / 4
+ /github/workspace/input/examples/apply/ScreeningEligible_inc-AgeAtLeast18_no : 4 / 0 / 4
+ /github/workspace/input/examples/apply/ScreeningEligible_inc-AgeAtLeast18_yes : 4 / 0 / 4
+ /github/workspace/input/resources/CDSConnectCommonsforFHIRv401 : 3 / 0 / 2
+ /github/workspace/input/resources/CRCSMCommonFunctions : 4 / 1 / 2
+ /github/workspace/input/resources/CSMCommonFunctions : 3 / 0 / 2
+ /github/workspace/input/resources/DataElements : 4 / 5 / 5
+ /github/workspace/input/resources/DecisionToScreen : 3 / 0 / 2
+ /github/workspace/input/resources/DecisionToScreenActions : 3 / 0 / 2
+ /github/workspace/input/resources/DecisionToScreenEvents : 3 / 0 / 3
+ /github/workspace/input/resources/DetermineNextDueDate : 3 / 0 / 2
+ /github/workspace/input/resources/DetermineNextDueDateActions : 3 / 0 / 2
+ /github/workspace/input/resources/DetermineNextDueDateEvents : 3 / 0 / 2
+ /github/workspace/input/resources/FHIRHelpers : 6 / 0 / 1
+ /github/workspace/input/resources/FollowUp : 3 / 0 / 2
+ /github/workspace/input/resources/FollowUpActions : 3 / 0 / 2
+ /github/workspace/input/resources/FollowUpEvents : 3 / 0 / 2
+ /github/workspace/input/resources/IncreasedRiskExclusions : 4 / 0 / 3
+ /github/workspace/input/resources/IncreasedRiskExclusionsActions : 3 / 0 / 2
+ /github/workspace/input/resources/IncreasedRiskExclusionsEvents : 4 / 0 / 3
+ /github/workspace/input/resources/PertinentHistory : 3 / 5 / 4
+ /github/workspace/input/resources/ScreeningDue : 3 / 3 / 2
+ /github/workspace/input/resources/ScreeningDueActions : 3 / 0 / 2
+ /github/workspace/input/resources/ScreeningDueEvents : 4 / 2 / 2
+ /github/workspace/input/resources/ScreeningEligible : 3 / 1 / 2
+ /github/workspace/input/resources/ScreeningEligibleActions : 3 / 0 / 2
+ /github/workspace/input/resources/ScreeningEligibleEvents : 3 / 0 / 3
+ /github/workspace/input/resources/ScreeningIncomplete : 3 / 2 / 2
+ /github/workspace/input/resources/ScreeningIncompleteEvents : 3 / 2 / 2
+ /github/workspace/input/resources/Terminology : 3 / 0 / 2
+ /github/workspace/input/resources/USPSTFAvgRisk : 3 / 0 / 2
+ /github/workspace/input/resources/USPSTFAvgRiskActions : 3 / 0 / 2
+ /github/workspace/input/resources/USPSTFAvgRiskEvents : 3 / 0 / 2
+</table>
+== n/a ==
+ERROR: /github/workspace/input/cql/FollowUp.cql: CQL source was not associated with a library resource in the IG.
+ERROR: /github/workspace/input/cql/USPSTFAvgRisk.cql: CQL source was not associated with a library resource in the IG.
+ERROR: /github/workspace/input/cql/DecisionToScreen.cql: CQL source was not associated with a library resource in the IG.
+ERROR: /github/workspace/input/cql/DetermineNextDueDateEvents.cql: CQL source was not associated with a library resource in the IG.
+ERROR: /github/workspace/input/cql/ScreeningDue.cql: CQL source was not associated with a library resource in the IG.
+ERROR: /github/workspace/input/cql/CDSConnectCommonsforFHIRv401.cql: CQL source was not associated with a library resource in the IG.
+ERROR: /github/workspace/input/cql/DataElements.cql: CQL source was not associated with a library resource in the IG.
+ERROR: /github/workspace/input/cql/FHIRHelpers-4.0.1.cql: CQL source was not associated with a library resource in the IG.
+ERROR: /github/workspace/input/cql/DetermineNextDueDateActions.cql: CQL source was not associated with a library resource in the IG.
+ERROR: /github/workspace/input/cql/DecisionToScreenEvents.cql: CQL source was not associated with a library resource in the IG.
+ERROR: /github/workspace/input/cql/ScreeningEligible.cql: CQL source was not associated with a library resource in the IG.
+ERROR: /github/workspace/input/cql/Terminology.cql: CQL source was not associated with a library resource in the IG.
+ERROR: /github/workspace/input/cql/ScreeningDueEvents.cql: CQL source was not associated with a library resource in the IG.
+ERROR: /github/workspace/input/cql/CSMCommonFunctions.cql: CQL source was not associated with a library resource in the IG.
+ERROR: /github/workspace/input/cql/ScreeningIncompleteEvents.cql: CQL source was not associated with a library resource in the IG.
+ERROR: /github/workspace/input/cql/IncreasedRiskExclusionsActions.cql: CQL source was not associated with a library resource in the IG.
+ERROR: /github/workspace/input/cql/IncreasedRiskExclusionsEvents.cql: CQL source was not associated with a library resource in the IG.
+ERROR: /github/workspace/input/cql/PertinentHistory.cql: CQL source was not associated with a library resource in the IG.
+ERROR: /github/workspace/input/cql/USPSTFAvgRiskEvents.cql: CQL source was not associated with a library resource in the IG.
+ERROR: /github/workspace/input/cql/DecisionToScreenActions.cql: CQL source was not associated with a library resource in the IG.
+ERROR: /github/workspace/input/cql/ScreeningIncomplete.cql: CQL source was not associated with a library resource in the IG.
+ERROR: /github/workspace/input/cql/FollowUpEvents.cql: CQL source was not associated with a library resource in the IG.
+ERROR: /github/workspace/input/cql/ScreeningEligibleEvents.cql: CQL source was not associated with a library resource in the IG.
+ERROR: /github/workspace/input/cql/IncreasedRiskExclusions.cql: CQL source was not associated with a library resource in the IG.
+ERROR: /github/workspace/input/cql/CRCSMCommonFunctions.cql: CQL source was not associated with a library resource in the IG.
+ERROR: /github/workspace/input/cql/DetermineNextDueDate.cql: CQL source was not associated with a library resource in the IG.
+ERROR: /github/workspace/input/cql/USPSTFAvgRiskActions.cql: CQL source was not associated with a library resource in the IG.
+ERROR: /github/workspace/input/cql/ScreeningEligibleActions.cql: CQL source was not associated with a library resource in the IG.
+ERROR: /github/workspace/input/cql/FollowUpActions.cql: CQL source was not associated with a library resource in the IG.
+WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource Library/ScreeningEligible.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
+WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource Library/ScreeningEligibleActions.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
+WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource Library/ScreeningEligibleEvents.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
+WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource Library/DecisionToScreen.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
+WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource Library/DecisionToScreenActions.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
+WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource Library/DecisionToScreenEvents.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
+WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource Library/IncreasedRiskExclusions.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
+WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource Library/IncreasedRiskExclusionsActions.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
+WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource Library/IncreasedRiskExclusionsEvents.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
+WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource Library/USPSTFAvgRisk.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
+WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource Library/USPSTFAvgRiskActions.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
+WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource Library/USPSTFAvgRiskEvents.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
+WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource Library/ScreeningDueActions.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
+WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource Library/CDSConnectCommonsforFHIRv401.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
+WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource Library/CRCSMCommonFunctions.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
+WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource Library/CSMCommonFunctions.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
+WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource Library/DataElements.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
+WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource Library/DetermineNextDueDate.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
+WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource Library/DetermineNextDueDateActions.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
+WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource Library/DetermineNextDueDateEvents.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
+WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource Library/FHIRHelpers.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
+WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource Library/PertinentHistory.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
+WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource Library/Terminology.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
+WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource Questionnaire/ScreeningEligibleQuestionnaire.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
+WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource Bundle/DecisionToScreen_eve-Age86AndOlder_no_eve-AgeOver76_no_eve-LifeExp10_no_eve-riskFactors_no_act-AvgRiskEligible.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
+WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource Bundle/DecisionToScreen_eve-Age86AndOlder_no_eve-AgeOver76_no_eve-LifeExp10_yes_act-sdmcontinuelifexp__eve-riskFactors_no_act-AvgRiskEligible.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
+WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource Bundle/DecisionToScreen_eve-Age86AndOlder_no_eve-AgeOver76_yes_act-SelectivelyOfferScreening__eve-LifeExp10_no_eve-riskFactors_no_act-AvgRiskEligible.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
+WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource Bundle/DecisionToScreen_eve-Age86AndOlder_no_eve-AgeOver76_yes_act-SelectivelyOfferScreening__eve-LifeExp10_yes_act-sdmcontinuelifexp__eve-riskFactors_no_act-AvgRiskEligible.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
+WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource Bundle/DecisionToScreen_eve-Age86AndOlder_yes_act-HarmsLikelyOutweighBenefits.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
+WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource Bundle/IncreasedRiskExclusions_eve-HereditarySyndrome_no_eve-IBD_no_eve-HxCRC_no_eve-FamilyHx_no_eve-HxPolyps_no_act-AvgRiskScreeningEligible.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
+WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource Bundle/IncreasedRiskExclusions_eve-HereditarySyndrome_no_eve-IBD_no_eve-HxCRC_no_eve-FamilyHx_no_eve-HxPolyps_yes_act-HxPolyps.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
+WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource Bundle/IncreasedRiskExclusions_eve-HereditarySyndrome_no_eve-IBD_no_eve-HxCRC_no_eve-FamilyHx_yes_act-FamilyHxCRC.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
+WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource Bundle/IncreasedRiskExclusions_eve-HereditarySyndrome_no_eve-IBD_no_eve-HxCRC_yes_act-HxCRC.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
+WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource Bundle/IncreasedRiskExclusions_eve-HereditarySyndrome_no_eve-IBD_yes_act-IBD.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
+WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource Bundle/IncreasedRiskExclusions_eve-HereditarySyndrome_yes_act-CRCHereditarySyndrome.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
+WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource Bundle/ScreeningEligible_eve-HxTotalColectomy_no_eve-ActiveCRC_no_eve-Symptomatic_no_act-ScreeningEligible.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
+WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource Bundle/ScreeningEligible_eve-HxTotalColectomy_no_eve-ActiveCRC_no_eve-Symptomatic_yes_act-Diagnostic.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
+WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource Bundle/ScreeningEligible_eve-HxTotalColectomy_no_eve-ActiveCRC_yes_end-1.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
+WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource Bundle/ScreeningEligible_eve-HxTotalColectomy_yes_end-1.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
+WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource Bundle/ScreeningEligible_inc-AgeAtLeast18_MostRecentAgeValue_yes.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
+WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource Bundle/ScreeningEligible_inc-AgeAtLeast18_error.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
+WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource Bundle/ScreeningEligible_inc-AgeAtLeast18_no.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
+WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource Bundle/ScreeningEligible_inc-AgeAtLeast18_yes.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
+WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource Bundle/eve-Age86AndOlder_no_eve-AgeOver76_no_eve-LifeExp10_no_eve-riskFactors_no_act-AvgRiskEligible.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
+WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource Bundle/eve-Age86AndOlder_no_eve-AgeOver76_no_eve-LifeExp10_yes_act-sdmcontinuelifexp__eve-riskFactors_no_act-AvgRiskEligible.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
+WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource Bundle/eve-Age86AndOlder_no_eve-AgeOver76_yes_act-SelectivelyOfferScreening__eve-LifeExp10_no_eve-riskFactors_no_act-AvgRiskEligible.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
+WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource Bundle/eve-Age86AndOlder_no_eve-AgeOver76_yes_act-SelectivelyOfferScreening__eve-LifeExp10_yes_act-sdmcontinuelifexp__eve-riskFactors_no_act-AvgRiskEligible.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
+WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource Bundle/eve-Age86AndOlder_yes_act-HarmsLikelyOutweighBenefits.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
+WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource Bundle/eve-AgeOver45_no_act-RecommendStartScreeningAt45.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
+WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource Bundle/eve-AgeOver45_yes_eve-priorScreeningExists_no_act-updateDueDateNow.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
+WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource Bundle/eve-AgeOver45_yes_eve-priorScreeningExists_yes_act-determineDueDate.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
+WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource Bundle/eve-HereditarySyndrome_no_eve-IBD_no_eve-HxCRC_no_eve-FamilyHx_no_eve-HxPolyps_no_act-AvgRiskScreeningEligible.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
+WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource Bundle/eve-HereditarySyndrome_no_eve-IBD_no_eve-HxCRC_no_eve-FamilyHx_no_eve-HxPolyps_yes_act-HxPolyps.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
+WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource Bundle/eve-HereditarySyndrome_no_eve-IBD_no_eve-HxCRC_no_eve-FamilyHx_yes_act-FamilyHxCRC.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
+WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource Bundle/eve-HereditarySyndrome_no_eve-IBD_no_eve-HxCRC_yes_act-HxCRC.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
+WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource Bundle/eve-HereditarySyndrome_no_eve-IBD_yes_act-IBD.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
+WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource Bundle/eve-HereditarySyndrome_yes_act-CRCHereditarySyndrome.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
+WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource Bundle/eve-HxTotalColectomy_no_eve-ActiveCRC_no_eve-Symptomatic_no_act-ScreeningEligible.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
+WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource Bundle/eve-HxTotalColectomy_no_eve-ActiveCRC_no_eve-Symptomatic_yes_act-Diagnostic.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
+WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource Bundle/eve-HxTotalColectomy_no_eve-ActiveCRC_yes_end-1.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
+WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource Bundle/eve-HxTotalColectomy_yes_end-1.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
+WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource Bundle/eve-lastTestColonoscopy_no_eve-lastTestStool_no_eve-lastTestFlexSig_no_eve-lastTestCTC_no_end-1.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
+WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource Bundle/eve-lastTestColonoscopy_no_eve-lastTestStool_no_eve-lastTestFlexSig_no_eve-lastTestCTC_yes_eve-inconclusiveCTColonography_no_eve-abnormalCTColonography_no_act-continueRoutineScreeningDirectViz.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
+WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource Bundle/eve-lastTestColonoscopy_no_eve-lastTestStool_no_eve-lastTestFlexSig_no_eve-lastTestCTC_yes_eve-inconclusiveCTColonography_no_eve-abnormalCTColonography_yes_act-FollowUpColonoscopy.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
+WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource Bundle/eve-lastTestColonoscopy_no_eve-lastTestStool_no_eve-lastTestFlexSig_no_eve-lastTestCTC_yes_eve-inconclusiveCTColonography_yes_act-repeatScreening.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
+WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource Bundle/eve-lastTestColonoscopy_no_eve-lastTestStool_no_eve-lastTestFlexSig_yes_eve-abnormalFlexSig_no_act-continueRoutineScreeningDirectViz.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
+WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource Bundle/eve-lastTestColonoscopy_no_eve-lastTestStool_no_eve-lastTestFlexSig_yes_eve-abnormalFlexSig_yes_act-FollowUpColonoscopy.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
+WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource Bundle/eve-lastTestColonoscopy_no_eve-lastTestStool_yes_eve-inconclusiveStoolTest_no_eve-abnormalStoolTest_no_act-continueRoutineScreening.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
+WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource Bundle/eve-lastTestColonoscopy_no_eve-lastTestStool_yes_eve-inconclusiveStoolTest_no_eve-abnormalStoolTest_yes_act-FollowUpColonoscopy.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
+WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource Bundle/eve-lastTestColonoscopy_no_eve-lastTestStool_yes_eve-inconclusiveStoolTest_yes_act-repeatScreening.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
+WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource Bundle/eve-lastTestColonoscopy_yes_end-1.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
+WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource Bundle/eve-nextdueexists_no_act-determinedue.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
+WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource Bundle/eve-nextdueexists_yes_eve-DetermineIfDueForScreening_due_act-orderTest.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
+WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource Bundle/eve-nextdueexists_yes_eve-DetermineIfDueForScreening_notdue_end-1.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
+WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource Bundle/eve-nextdueexists_yes_eve-DetermineIfDueForScreening_overdue_act-patientOutreach_act-orderTest.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
+WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource Bundle/eve-pendingCTC_act-testpending.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
+WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource Bundle/eve-pendingColonoscopy_act-testpending.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
+WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource Bundle/eve-pendingFlexSig_act-testpending.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
+WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource Bundle/eve-pendinggFOBT_act-testpending.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
+WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource Bundle/eve-pendingsDNAFIT_act-testpending.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
+WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource Bundle/inc-AgeAtLeast18_MostRecentAgeValue_yes.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
+WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource Bundle/inc-AgeAtLeast18_error.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
+WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource Bundle/inc-AgeAtLeast18_no.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
+WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource Bundle/inc-AgeAtLeast18_yes.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
+ERROR: /github/workspace/output/4_examples.html#/html/body/div/div/div/div/div/table/tbody/tr/td/a at Line 229, column 12: The link 'Bundle-eve-Age86AndOlder_no_eve-AgeOver76_yes_act-SelectivelyOfferScreening__eve-LifeExp10_no_eve-riskFactors_yes_act-incRiskEligible.html' for "eve-Age86AndOlder_no_eve-AgeOver76_yes_act-SelectivelyOfferScreening__eve-LifeExp10_no_eve-riskFactors_yes_act-incRiskEligible" cannot be resolved
+ERROR: /github/workspace/output/4_examples.html#/html/body/div/div/div/div/div/table/tbody/tr/td/a at Line 232, column 12: The link 'Bundle-eve-Age86AndOlder_no_eve-AgeOver76_yes_act-SelectivelyOfferScreening__eve-LifeExp10_yes_act-sdmcontinuelifexp__eve-riskFactors_yes_act-incRiskEligible.html' for "eve-Age86AndOlder_no_eve-AgeOver76_yes_act-SelectivelyOfferScreening__eve-LifeExp10_yes_act-sdmcontinuelifexp__eve-riskFactors_yes_act-incRiskEligible" cannot be resolved
+ERROR: /github/workspace/output/4_examples.html#/html/body/div/div/div/div/div/table/tbody/tr/td/a at Line 235, column 12: The link 'Bundle-eve-Age86AndOlder_no_eve-AgeOver76_no_eve-LifeExp10_no_eve-riskFactors_yes_act-incRiskEligible.html' for "eve-Age86AndOlder_no_eve-AgeOver76_no_eve-LifeExp10_no_eve-riskFactors_yes_act-incRiskEligible" cannot be resolved
+ERROR: /github/workspace/output/4_examples.html#/html/body/div/div/div/div/div/table/tbody/tr/td/a at Line 238, column 12: The link 'Bundle-eve-Age86AndOlder_no_eve-AgeOver76_no_eve-LifeExp10_yes_act-sdmcontinuelifexp__eve-riskFactors_yes_act-incRiskEligible.html' for "eve-Age86AndOlder_no_eve-AgeOver76_no_eve-LifeExp10_yes_act-sdmcontinuelifexp__eve-riskFactors_yes_act-incRiskEligible" cannot be resolved
+ERROR: /github/workspace/output/Bundle-DecisionToScreen_eve-Age86AndOlder_no_eve-AgeOver76_no_eve-LifeExp10_no_eve-riskFactors_no_act-AvgRiskEligible.html#/html/body/div/div/div/div/div/div/blockquote/p/a at Line 194, column 1276: The link 'Patient/08425f2c-541e-4ad4-8db1-2563b4110ae6' for "Joanne Smith" cannot be resolved
+ERROR: /github/workspace/output/Bundle-DecisionToScreen_eve-Age86AndOlder_no_eve-AgeOver76_no_eve-LifeExp10_no_eve-riskFactors_no_act-AvgRiskEligible.html#/html/body/div/div/div/div/div/div/blockquote/p/a at Line 194, column 2292: The link 'Patient/08425f2c-541e-4ad4-8db1-2563b4110ae6' for "Joanne Smith" cannot be resolved
+ERROR: /github/workspace/output/Bundle-DecisionToScreen_eve-Age86AndOlder_no_eve-AgeOver76_no_eve-LifeExp10_yes_act-sdmcontinuelifexp__eve-riskFactors_no_act-AvgRiskEligible.html#/html/body/div/div/div/div/div/div/blockquote/p/a at Line 194, column 1396: The link 'Patient/1c39e9c0-2ab4-4925-8368-0af023fd7ecc' for "Joanne Smith" cannot be resolved
+ERROR: /github/workspace/output/Bundle-DecisionToScreen_eve-Age86AndOlder_no_eve-AgeOver76_no_eve-LifeExp10_yes_act-sdmcontinuelifexp__eve-riskFactors_no_act-AvgRiskEligible.html#/html/body/div/div/div/div/div/div/blockquote/p/a at Line 194, column 2436: The link 'Patient/1c39e9c0-2ab4-4925-8368-0af023fd7ecc' for "Joanne Smith" cannot be resolved
+ERROR: /github/workspace/output/Bundle-DecisionToScreen_eve-Age86AndOlder_no_eve-AgeOver76_yes_act-SelectivelyOfferScreening__eve-LifeExp10_no_eve-riskFactors_no_act-AvgRiskEligible.html#/html/body/div/div/div/div/div/div/blockquote/p/a at Line 194, column 1436: The link 'Patient/73599a30-8577-4d57-82be-020072f15068' for "Joanne Smith" cannot be resolved
+ERROR: /github/workspace/output/Bundle-DecisionToScreen_eve-Age86AndOlder_no_eve-AgeOver76_yes_act-SelectivelyOfferScreening__eve-LifeExp10_no_eve-riskFactors_no_act-AvgRiskEligible.html#/html/body/div/div/div/div/div/div/blockquote/p/a at Line 194, column 2484: The link 'Patient/73599a30-8577-4d57-82be-020072f15068' for "Joanne Smith" cannot be resolved
+ERROR: /github/workspace/output/Bundle-DecisionToScreen_eve-Age86AndOlder_no_eve-AgeOver76_yes_act-SelectivelyOfferScreening__eve-LifeExp10_yes_act-sdmcontinuelifexp__eve-riskFactors_no_act-AvgRiskEligible.html#/html/body/div/div/div/div/div/div/blockquote/p/a at Line 194, column 1556: The link 'Patient/2ce2835c-ed05-444e-b829-b2bcfdd0d901' for "Joanne Smith" cannot be resolved
+ERROR: /github/workspace/output/Bundle-DecisionToScreen_eve-Age86AndOlder_no_eve-AgeOver76_yes_act-SelectivelyOfferScreening__eve-LifeExp10_yes_act-sdmcontinuelifexp__eve-riskFactors_no_act-AvgRiskEligible.html#/html/body/div/div/div/div/div/div/blockquote/p/a at Line 194, column 2628: The link 'Patient/2ce2835c-ed05-444e-b829-b2bcfdd0d901' for "Joanne Smith" cannot be resolved
+ERROR: /github/workspace/output/Bundle-DecisionToScreen_eve-Age86AndOlder_yes_act-HarmsLikelyOutweighBenefits.html#/html/body/div/div/div/div/div/div/blockquote/p/a at Line 194, column 1076: The link 'Patient/5979cce6-375e-4a89-8f13-6a703f635f8c' for "Joanne Smith" cannot be resolved
+ERROR: /github/workspace/output/Bundle-DecisionToScreen_eve-Age86AndOlder_yes_act-HarmsLikelyOutweighBenefits.html#/html/body/div/div/div/div/div/div/blockquote/p/a at Line 194, column 2061: The link 'Patient/5979cce6-375e-4a89-8f13-6a703f635f8c' for "Joanne Smith" cannot be resolved
+ERROR: /github/workspace/output/Bundle-IncreasedRiskExclusions_eve-HereditarySyndrome_no_eve-IBD_no_eve-HxCRC_no_eve-FamilyHx_no_eve-HxPolyps_no_act-AvgRiskScreeningEligible.html#/html/body/div/div/div/div/div/div/blockquote/p/a at Line 194, column 1418: The link 'Patient/2c5ab896-3093-4a4d-88af-974e72bbc223' for "Joanne Smith" cannot be resolved
+ERROR: /github/workspace/output/Bundle-IncreasedRiskExclusions_eve-HereditarySyndrome_no_eve-IBD_no_eve-HxCRC_no_eve-FamilyHx_no_eve-HxPolyps_no_act-AvgRiskScreeningEligible.html#/html/body/div/div/div/div/div/div/blockquote/p/a at Line 194, column 2481: The link 'Patient/2c5ab896-3093-4a4d-88af-974e72bbc223' for "Joanne Smith" cannot be resolved
+ERROR: /github/workspace/output/Bundle-IncreasedRiskExclusions_eve-HereditarySyndrome_no_eve-IBD_no_eve-HxCRC_no_eve-FamilyHx_no_eve-HxPolyps_yes_act-HxPolyps.html#/html/body/div/div/div/div/div/div/blockquote/p/a at Line 194, column 1343: The link 'Patient/79e8bd4c-dae8-4f7f-bc63-d0fa56d5529e' for "Joanne Smith" cannot be resolved
+ERROR: /github/workspace/output/Bundle-IncreasedRiskExclusions_eve-HereditarySyndrome_no_eve-IBD_no_eve-HxCRC_no_eve-FamilyHx_no_eve-HxPolyps_yes_act-HxPolyps.html#/html/body/div/div/div/div/div/div/blockquote/p/a at Line 194, column 2391: The link 'Patient/79e8bd4c-dae8-4f7f-bc63-d0fa56d5529e' for "Joanne Smith" cannot be resolved
+ERROR: /github/workspace/output/Bundle-IncreasedRiskExclusions_eve-HereditarySyndrome_no_eve-IBD_no_eve-HxCRC_no_eve-FamilyHx_yes_act-FamilyHxCRC.html#/html/body/div/div/div/div/div/div/blockquote/p/a at Line 194, column 1278: The link 'Patient/628d0e51-c46e-44a4-a30e-4934d7180592' for "Joanne Smith" cannot be resolved
+ERROR: /github/workspace/output/Bundle-IncreasedRiskExclusions_eve-HereditarySyndrome_no_eve-IBD_no_eve-HxCRC_no_eve-FamilyHx_yes_act-FamilyHxCRC.html#/html/body/div/div/div/div/div/div/blockquote/p/a at Line 194, column 2313: The link 'Patient/628d0e51-c46e-44a4-a30e-4934d7180592' for "Joanne Smith" cannot be resolved
+ERROR: /github/workspace/output/Bundle-IncreasedRiskExclusions_eve-HereditarySyndrome_no_eve-IBD_no_eve-HxCRC_yes_act-HxCRC.html#/html/body/div/div/div/div/div/div/blockquote/p/a at Line 194, column 1168: The link 'Patient/bd811e5e-4565-4e62-b13e-adac2035f730' for "Joanne Smith" cannot be resolved
+ERROR: /github/workspace/output/Bundle-IncreasedRiskExclusions_eve-HereditarySyndrome_no_eve-IBD_no_eve-HxCRC_yes_act-HxCRC.html#/html/body/div/div/div/div/div/div/blockquote/p/a at Line 194, column 2181: The link 'Patient/bd811e5e-4565-4e62-b13e-adac2035f730' for "Joanne Smith" cannot be resolved
+ERROR: /github/workspace/output/Bundle-IncreasedRiskExclusions_eve-HereditarySyndrome_no_eve-IBD_yes_act-IBD.html#/html/body/div/div/div/div/div/div/blockquote/p/a at Line 194, column 1093: The link 'Patient/7ee9387b-7168-47bd-bb6d-a3d177b90adb' for "Joanne Smith" cannot be resolved
+ERROR: /github/workspace/output/Bundle-IncreasedRiskExclusions_eve-HereditarySyndrome_no_eve-IBD_yes_act-IBD.html#/html/body/div/div/div/div/div/div/blockquote/p/a at Line 194, column 2091: The link 'Patient/7ee9387b-7168-47bd-bb6d-a3d177b90adb' for "Joanne Smith" cannot be resolved
+ERROR: /github/workspace/output/Bundle-IncreasedRiskExclusions_eve-HereditarySyndrome_yes_act-CRCHereditarySyndrome.html#/html/body/div/div/div/div/div/div/blockquote/p/a at Line 194, column 1128: The link 'Patient/564f7adb-3a87-46b9-9ad6-90944a8598a6' for "Joanne Smith" cannot be resolved
+ERROR: /github/workspace/output/Bundle-IncreasedRiskExclusions_eve-HereditarySyndrome_yes_act-CRCHereditarySyndrome.html#/html/body/div/div/div/div/div/div/blockquote/p/a at Line 194, column 2133: The link 'Patient/564f7adb-3a87-46b9-9ad6-90944a8598a6' for "Joanne Smith" cannot be resolved
+ERROR: /github/workspace/output/Bundle-ScreeningEligible_eve-HxTotalColectomy_no_eve-ActiveCRC_no_eve-Symptomatic_no_act-ScreeningEligible.html#/html/body/div/div/div/div/div/div/blockquote/p/a at Line 194, column 1230: The link 'Patient/9c4d9605-066a-4537-b148-8b9cd5fce8ac' for "Joanne Smith" cannot be resolved
+ERROR: /github/workspace/output/Bundle-ScreeningEligible_eve-HxTotalColectomy_no_eve-ActiveCRC_no_eve-Symptomatic_no_act-ScreeningEligible.html#/html/body/div/div/div/div/div/div/blockquote/p/a at Line 194, column 2245: The link 'Patient/9c4d9605-066a-4537-b148-8b9cd5fce8ac' for "Joanne Smith" cannot be resolved
+ERROR: /github/workspace/output/Bundle-ScreeningEligible_eve-HxTotalColectomy_no_eve-ActiveCRC_no_eve-Symptomatic_yes_act-Diagnostic.html#/html/body/div/div/div/div/div/div/blockquote/p/a at Line 194, column 1200: The link 'Patient/65f0da53-7625-4ac9-8ae4-08cefe0fa16a' for "Joanne Smith" cannot be resolved
+ERROR: /github/workspace/output/Bundle-ScreeningEligible_eve-HxTotalColectomy_no_eve-ActiveCRC_no_eve-Symptomatic_yes_act-Diagnostic.html#/html/body/div/div/div/div/div/div/blockquote/p/a at Line 194, column 2209: The link 'Patient/65f0da53-7625-4ac9-8ae4-08cefe0fa16a' for "Joanne Smith" cannot be resolved
+ERROR: /github/workspace/output/Bundle-ScreeningEligible_eve-HxTotalColectomy_no_eve-ActiveCRC_yes_end-1.html#/html/body/div/div/div/div/div/div/blockquote/p/a at Line 194, column 1060: The link 'Patient/f6e11b4a-0e24-4ba9-8a44-3388ee8b45c4' for "Joanne Smith" cannot be resolved
+ERROR: /github/workspace/output/Bundle-ScreeningEligible_eve-HxTotalColectomy_no_eve-ActiveCRC_yes_end-1.html#/html/body/div/div/div/div/div/div/blockquote/p/a at Line 194, column 2041: The link 'Patient/f6e11b4a-0e24-4ba9-8a44-3388ee8b45c4' for "Joanne Smith" cannot be resolved
+ERROR: /github/workspace/output/Bundle-ScreeningEligible_eve-HxTotalColectomy_yes_end-1.html#/html/body/div/div/div/div/div/div/blockquote/p/a at Line 194, column 975: The link 'Patient/aa2f0f55-8811-4511-bd42-bcf2f50a6ff3' for "Joanne Smith" cannot be resolved
+ERROR: /github/workspace/output/Bundle-ScreeningEligible_eve-HxTotalColectomy_yes_end-1.html#/html/body/div/div/div/div/div/div/blockquote/p/a at Line 194, column 1939: The link 'Patient/aa2f0f55-8811-4511-bd42-bcf2f50a6ff3' for "Joanne Smith" cannot be resolved
+ERROR: /github/workspace/output/Bundle-ScreeningEligible_inc-AgeAtLeast18_MostRecentAgeValue_yes.html#/html/body/div/div/div/div/div/div/blockquote/p/a at Line 194, column 1020: The link 'Patient/f1216d2f-ac29-42ea-a443-87e736d6b365' for "Joanne Smith" cannot be resolved
+ERROR: /github/workspace/output/Bundle-ScreeningEligible_inc-AgeAtLeast18_MostRecentAgeValue_yes.html#/html/body/div/div/div/div/div/div/blockquote/p/a at Line 194, column 1993: The link 'Patient/f1216d2f-ac29-42ea-a443-87e736d6b365' for "Joanne Smith" cannot be resolved
+ERROR: /github/workspace/output/Bundle-ScreeningEligible_inc-AgeAtLeast18_error.html#/html/body/div/div/div/div/div/div/blockquote/p/a at Line 194, column 935: The link 'Patient/f6e866d7-4180-487f-b243-5bacef35460c' for "Joanne Smith" cannot be resolved
+ERROR: /github/workspace/output/Bundle-ScreeningEligible_inc-AgeAtLeast18_error.html#/html/body/div/div/div/div/div/div/blockquote/p/a at Line 194, column 1891: The link 'Patient/f6e866d7-4180-487f-b243-5bacef35460c' for "Joanne Smith" cannot be resolved
+ERROR: /github/workspace/output/Bundle-ScreeningEligible_inc-AgeAtLeast18_no.html#/html/body/div/div/div/div/div/div/blockquote/p/a at Line 194, column 920: The link 'Patient/642dae9d-8399-42b5-b619-18b0431a0817' for "Joanne Smith" cannot be resolved
+ERROR: /github/workspace/output/Bundle-ScreeningEligible_inc-AgeAtLeast18_no.html#/html/body/div/div/div/div/div/div/blockquote/p/a at Line 194, column 1873: The link 'Patient/642dae9d-8399-42b5-b619-18b0431a0817' for "Joanne Smith" cannot be resolved
+ERROR: /github/workspace/output/Bundle-ScreeningEligible_inc-AgeAtLeast18_yes.html#/html/body/div/div/div/div/div/div/blockquote/p/a at Line 194, column 925: The link 'Patient/13145d6a-85a1-4ee5-9ae2-5238c0c1b7b8' for "Joanne Smith" cannot be resolved
+ERROR: /github/workspace/output/Bundle-ScreeningEligible_inc-AgeAtLeast18_yes.html#/html/body/div/div/div/div/div/div/blockquote/p/a at Line 194, column 1879: The link 'Patient/13145d6a-85a1-4ee5-9ae2-5238c0c1b7b8' for "Joanne Smith" cannot be resolved
+ERROR: /github/workspace/output/Measure-ScreeningDueMeasure.html#/html/body/div/div/div/div/div/div/table/tbody/tr/td/a at Line 433, column 41: The link '#screeningdue-initial-population' for "Initial Population" cannot be resolved (valid targets: [segment-header, publish-box, bottom, segment-post-footer, ig-status, top, root, stripe, segment-footer, segment-navbar, segment-content, segment-breadcrumb, measure-screening-due-measure
+-experimental-])
+ERROR: /github/workspace/output/Measure-ScreeningDueMeasure.html#/html/body/div/div/div/div/div/div/table/tbody/tr/td/a at Line 455, column 41: The link '#screeningdue-numerator' for "Numerator" cannot be resolved (valid targets: [segment-header, publish-box, bottom, segment-post-footer, ig-status, top, root, stripe, segment-footer, segment-navbar, segment-content, segment-breadcrumb, measure-screening-due-measure
+-experimental-])
+ERROR: /github/workspace/output/Measure-ScreeningDueMeasure.html#/html/body/div/div/div/div/div/div/table/tbody/tr/td/a at Line 477, column 41: The link '#screeningdue-denominator' for "Denominator" cannot be resolved (valid targets: [segment-header, publish-box, bottom, segment-post-footer, ig-status, top, root, stripe, segment-footer, segment-navbar, segment-content, segment-breadcrumb, measure-screening-due-measure
+-experimental-])
+ERROR: /github/workspace/output/Measure-ScreeningDueMeasure.html#/html/body/div/div/div/div/div/div/table/tbody/tr/td/a at Line 499, column 41: The link '#screeningdue-denominator-exclusion' for "Denominator Exclusion" cannot be resolved (valid targets: [segment-header, publish-box, bottom, segment-post-footer, ig-status, top, root, stripe, segment-footer, segment-navbar, segment-content, segment-breadcrumb, measure-screening-due-measure
+-experimental-])
+ERROR: /github/workspace/output/Measure-ScreeningIncompleteMeasure.html#/html/body/div/div/div/div/div/div/table/tbody/tr/td/a at Line 433, column 41: The link '#screeningdue-initial-population' for "Initial Population" cannot be resolved (valid targets: [segment-header, publish-box, bottom, segment-post-footer, measure-screening-incomplete-measure
+-experimental-, ig-status, top, root, stripe, segment-footer, segment-navbar, segment-content, segment-breadcrumb])
+ERROR: /github/workspace/output/Measure-ScreeningIncompleteMeasure.html#/html/body/div/div/div/div/div/div/table/tbody/tr/td/a at Line 455, column 41: The link '#screeningdue-numerator' for "Numerator" cannot be resolved (valid targets: [segment-header, publish-box, bottom, segment-post-footer, measure-screening-incomplete-measure
+-experimental-, ig-status, top, root, stripe, segment-footer, segment-navbar, segment-content, segment-breadcrumb])
+ERROR: /github/workspace/output/Measure-ScreeningIncompleteMeasure.html#/html/body/div/div/div/div/div/div/table/tbody/tr/td/a at Line 477, column 41: The link '#screeningdue-denominator' for "Denominator" cannot be resolved (valid targets: [segment-header, publish-box, bottom, segment-post-footer, measure-screening-incomplete-measure
+-experimental-, ig-status, top, root, stripe, segment-footer, segment-navbar, segment-content, segment-breadcrumb])
+ERROR: /github/workspace/output/Measure-ScreeningIncompleteMeasure.html#/html/body/div/div/div/div/div/div/table/tbody/tr/td/a at Line 499, column 41: The link '#screeningdue-denominator-exclusion' for "Denominator Exclusion" cannot be resolved (valid targets: [segment-header, publish-box, bottom, segment-post-footer, measure-screening-incomplete-measure
+-experimental-, ig-status, top, root, stripe, segment-footer, segment-navbar, segment-content, segment-breadcrumb])
+WARNING: 1: The HTML fragment 'ip-statements.xhtml' is not included anywhere in the produced implementation guide
+WARNING: 2: An HTML fragment from the set [cross-version-analysis.xhtml, cross-version-analysis-inline.xhtml] is not included anywhere in the produced implementation guide
+WARNING: 3: An HTML fragment from the set [dependency-table.xhtml, dependency-table-short.xhtml, dependency-table-nontech.xhtml] is not included anywhere in the produced implementation guide
+WARNING: 4: The HTML fragment 'globals-table.xhtml' is not included anywhere in the produced implementation guide
+WARNING: IG: The IG is not for the international realm, and it uses SNOMED CT, so it should fix the SCT edition in the expansion parameters
+== fsh-generated/resources/ActivityDefinition-CommunicateEligible.json ==
+INFORMATION: ActivityDefinition/CommunicateEligible: ActivityDefinition.extension[0].value.ofType(code): Reference to draft CodeSystem http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-knowledge-capability|1.0.0
+INFORMATION: ActivityDefinition/CommunicateEligible: ActivityDefinition.extension[1].value.ofType(code): Reference to draft CodeSystem http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-knowledge-representation-level|1.0.0
+INFORMATION: ActivityDefinition/CommunicateEligible: ActivityDefinition.code: Reference to experimental CodeSystem http://cancerscreeningcds.github.io/crcsm-cds/CodeSystem/plan-definition-action-code-system|0.1.0
+== fsh-generated/resources/ActivityDefinition-CommunicateNotEligible.json ==
+INFORMATION: ActivityDefinition/CommunicateNotEligible: ActivityDefinition.extension[0].value.ofType(code): Reference to draft CodeSystem http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-knowledge-capability|1.0.0
+INFORMATION: ActivityDefinition/CommunicateNotEligible: ActivityDefinition.extension[1].value.ofType(code): Reference to draft CodeSystem http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-knowledge-representation-level|1.0.0
+INFORMATION: ActivityDefinition/CommunicateNotEligible: ActivityDefinition.code: Reference to experimental CodeSystem http://cancerscreeningcds.github.io/crcsm-cds/CodeSystem/plan-definition-action-code-system|0.1.0
+== fsh-generated/resources/ActivityDefinition-CommunicateRecommendationStopScreening.json ==
+INFORMATION: ActivityDefinition/CommunicateRecommendationStopScreening: ActivityDefinition.extension[0].value.ofType(code): Reference to draft CodeSystem http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-knowledge-capability|1.0.0
+INFORMATION: ActivityDefinition/CommunicateRecommendationStopScreening: ActivityDefinition.extension[1].value.ofType(code): Reference to draft CodeSystem http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-knowledge-representation-level|1.0.0
+INFORMATION: ActivityDefinition/CommunicateRecommendationStopScreening: ActivityDefinition.code: Reference to experimental CodeSystem http://cancerscreeningcds.github.io/crcsm-cds/CodeSystem/plan-definition-action-code-system|0.1.0
+== fsh-generated/resources/ActivityDefinition-CommunicateSDMContinueScreening.json ==
+INFORMATION: ActivityDefinition/CommunicateSDMContinueScreening: ActivityDefinition.extension[0].value.ofType(code): Reference to draft CodeSystem http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-knowledge-capability|1.0.0
+INFORMATION: ActivityDefinition/CommunicateSDMContinueScreening: ActivityDefinition.extension[1].value.ofType(code): Reference to draft CodeSystem http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-knowledge-representation-level|1.0.0
+INFORMATION: ActivityDefinition/CommunicateSDMContinueScreening: ActivityDefinition.code: Reference to experimental CodeSystem http://cancerscreeningcds.github.io/crcsm-cds/CodeSystem/plan-definition-action-code-system|0.1.0
+== fsh-generated/resources/ActivityDefinition-ScreeningEligibleQuestionnaireTask.json ==
+INFORMATION: ActivityDefinition/ScreeningEligibleQuestionnaireTask: ActivityDefinition.extension[2]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-computableactivity|1.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
+INFORMATION: ActivityDefinition/ScreeningEligibleQuestionnaireTask: ActivityDefinition.extension[0].value.ofType(code): Reference to draft CodeSystem http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-knowledge-capability|1.0.0
+INFORMATION: ActivityDefinition/ScreeningEligibleQuestionnaireTask: ActivityDefinition.extension[1].value.ofType(code): Reference to draft CodeSystem http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-knowledge-representation-level|1.0.0
+INFORMATION: ActivityDefinition/ScreeningEligibleQuestionnaireTask: ActivityDefinition.code: Reference to draft CodeSystem http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type|1.0.0
+== fsh-generated/resources/CodeSystem-c-rads-2005-code-system.json ==
+INFORMATION: CodeSystem/c-rads-2005-code-system: CodeSystem: CodeSystems SHOULD have a stated value for the caseSensitive element so that users know the status and meaning of the code system clearly
+WARNING: CodeSystem/c-rads-2005-code-system: CodeSystem: Published code systems SHOULD conform to the ShareableCodeSystem profile, which says that the element CodeSystem.experimental is mandatory, but it is not present
+WARNING: CodeSystem/c-rads-2005-code-system: CodeSystem: Published code systems SHOULD conform to the ShareableCodeSystem profile, which says that the element CodeSystem.caseSensitive is mandatory, but it is not present
+== fsh-generated/resources/CodeSystem-c-rads-2023-code-system.json ==
+INFORMATION: CodeSystem/c-rads-2023-code-system: CodeSystem: CodeSystems SHOULD have a stated value for the caseSensitive element so that users know the status and meaning of the code system clearly
+WARNING: CodeSystem/c-rads-2023-code-system: CodeSystem: Published code systems SHOULD conform to the ShareableCodeSystem profile, which says that the element CodeSystem.experimental is mandatory, but it is not present
+WARNING: CodeSystem/c-rads-2023-code-system: CodeSystem: Published code systems SHOULD conform to the ShareableCodeSystem profile, which says that the element CodeSystem.caseSensitive is mandatory, but it is not present
+== fsh-generated/resources/CodeSystem-fam-hx-crc-questionnaire.json ==
+INFORMATION: CodeSystem/fam-hx-crc-questionnaire: CodeSystem: CodeSystems SHOULD have a stated value for the caseSensitive element so that users know the status and meaning of the code system clearly
+WARNING: CodeSystem/fam-hx-crc-questionnaire: CodeSystem: Published code systems SHOULD conform to the ShareableCodeSystem profile, which says that the element CodeSystem.experimental is mandatory, but it is not present
+WARNING: CodeSystem/fam-hx-crc-questionnaire: CodeSystem: Published code systems SHOULD conform to the ShareableCodeSystem profile, which says that the element CodeSystem.caseSensitive is mandatory, but it is not present
+== fsh-generated/resources/CodeSystem-plan-definition-action-code-system.json ==
+INFORMATION: CodeSystem/plan-definition-action-code-system: CodeSystem: CodeSystems SHOULD have a stated value for the caseSensitive element so that users know the status and meaning of the code system clearly
+WARNING: CodeSystem/plan-definition-action-code-system: CodeSystem: Published code systems SHOULD conform to the ShareableCodeSystem profile, which says that the element CodeSystem.caseSensitive is mandatory, but it is not present
+== fsh-generated/resources/CodeSystem-plan-definition-action-reason-code-system.json ==
+INFORMATION: CodeSystem/plan-definition-action-reason-code-system: CodeSystem: CodeSystems SHOULD have a stated value for the caseSensitive element so that users know the status and meaning of the code system clearly
+WARNING: CodeSystem/plan-definition-action-reason-code-system: CodeSystem: Published code systems SHOULD conform to the ShareableCodeSystem profile, which says that the element CodeSystem.caseSensitive is mandatory, but it is not present
+== fsh-generated/resources/CodeSystem-screening-observation-code-system.json ==
+INFORMATION: CodeSystem/screening-observation-code-system: CodeSystem: CodeSystems SHOULD have a stated value for the caseSensitive element so that users know the status and meaning of the code system clearly
+WARNING: CodeSystem/screening-observation-code-system: CodeSystem: Published code systems SHOULD conform to the ShareableCodeSystem profile, which says that the element CodeSystem.caseSensitive is mandatory, but it is not present
+== fsh-generated/resources/ImplementationGuide-cancerscreeningcds.fhir.us.crcsm-cds.json ==
+ERROR: ImplementationGuide/cancerscreeningcds.fhir.us.crcsm-cds: ImplementationGuide.definition.resource[62].groupingId: id value 'Follow-up after Non-colonoscopy' is not valid
+ERROR: ImplementationGuide/cancerscreeningcds.fhir.us.crcsm-cds: ImplementationGuide.definition.resource[63].groupingId: id value 'Follow-up after Non-colonoscopy' is not valid
+ERROR: ImplementationGuide/cancerscreeningcds.fhir.us.crcsm-cds: ImplementationGuide.definition.resource[64].groupingId: id value 'Follow-up after Non-colonoscopy' is not valid
+ERROR: ImplementationGuide/cancerscreeningcds.fhir.us.crcsm-cds: ImplementationGuide.definition.resource[69].groupingId: id value 'Risk Factors' is not valid
+ERROR: ImplementationGuide/cancerscreeningcds.fhir.us.crcsm-cds: ImplementationGuide.definition.resource[70].groupingId: id value 'Risk Factors' is not valid
+ERROR: ImplementationGuide/cancerscreeningcds.fhir.us.crcsm-cds: ImplementationGuide.definition.resource[71].groupingId: id value 'Risk Factors' is not valid
+ERROR: ImplementationGuide/cancerscreeningcds.fhir.us.crcsm-cds: ImplementationGuide.definition.resource[72].groupingId: id value 'Risk Factors' is not valid
+ERROR: ImplementationGuide/cancerscreeningcds.fhir.us.crcsm-cds: ImplementationGuide.definition.resource[105].groupingId: id value 'Screening Incomplete' is not valid
+ERROR: ImplementationGuide/cancerscreeningcds.fhir.us.crcsm-cds: ImplementationGuide.definition.resource[106].groupingId: id value 'Screening Incomplete' is not valid
+WARNING: ImplementationGuide/cancerscreeningcds.fhir.us.crcsm-cds: ImplementationGuide: Constraint failed: ig-0: 'Name should be usable as an identifier for the module by machine processing applications such as code generation'
+== fsh-generated/resources/Measure-ScreeningDueMeasure.json ==
+ERROR: Measure/ScreeningDueMeasure: Measure.text.div: Hyperlink '#screeningdue-initial-population' at 'div/table/tbody/tr/td/a' for 'Initial Population' does not resolve
+ERROR: Measure/ScreeningDueMeasure: Measure.text.div: Hyperlink '#screeningdue-numerator' at 'div/table/tbody/tr/td/a' for 'Numerator' does not resolve
+ERROR: Measure/ScreeningDueMeasure: Measure.text.div: Hyperlink '#screeningdue-denominator' at 'div/table/tbody/tr/td/a' for 'Denominator' does not resolve
+ERROR: Measure/ScreeningDueMeasure: Measure.text.div: Hyperlink '#screeningdue-denominator-exclusion' at 'div/table/tbody/tr/td/a' for 'Denominator Exclusion' does not resolve
+== fsh-generated/resources/Measure-ScreeningIncompleteMeasure.json ==
+ERROR: Measure/ScreeningIncompleteMeasure: Measure.text.div: Hyperlink '#screeningdue-initial-population' at 'div/table/tbody/tr/td/a' for 'Initial Population' does not resolve
+ERROR: Measure/ScreeningIncompleteMeasure: Measure.text.div: Hyperlink '#screeningdue-numerator' at 'div/table/tbody/tr/td/a' for 'Numerator' does not resolve
+ERROR: Measure/ScreeningIncompleteMeasure: Measure.text.div: Hyperlink '#screeningdue-denominator' at 'div/table/tbody/tr/td/a' for 'Denominator' does not resolve
+ERROR: Measure/ScreeningIncompleteMeasure: Measure.text.div: Hyperlink '#screeningdue-denominator-exclusion' at 'div/table/tbody/tr/td/a' for 'Denominator Exclusion' does not resolve
+== fsh-generated/resources/PlanDefinition-PrimaryScreeningDecision.json ==
+INFORMATION: PlanDefinition/PrimaryScreeningDecision: PlanDefinition.extension[0].value.ofType(code): Reference to draft CodeSystem http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-knowledge-capability|1.0.0
+INFORMATION: PlanDefinition/PrimaryScreeningDecision: PlanDefinition.extension[1].value.ofType(code): Reference to draft CodeSystem http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-knowledge-representation-level|1.0.0
+ERROR: PlanDefinition/PrimaryScreeningDecision: PlanDefinition.library[0]: Canonical URLs must be absolute URLs if they are not fragment references (Library/PrimaryScreeningDecision|1.0.0)
+== fsh-generated/resources/PlanDefinition-flow-AverageRisk.json ==
+INFORMATION: PlanDefinition/flow-AverageRisk: PlanDefinition.extension[0].value.ofType(code): Reference to draft CodeSystem http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-knowledge-capability|1.0.0
+INFORMATION: PlanDefinition/flow-AverageRisk: PlanDefinition.extension[1].value.ofType(code): Reference to draft CodeSystem http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-knowledge-representation-level|1.0.0
+ERROR: PlanDefinition/flow-AverageRisk: PlanDefinition.library[0]: Canonical URLs must be absolute URLs if they are not fragment references (Library/AverageRisk|1.0.0)
+WARNING: PlanDefinition/flow-AverageRisk: PlanDefinition: Constraint failed: pdf-0: 'Name should be usable as an identifier for the module by machine processing applications such as code generation' (defined in http://hl7.org/fhir/StructureDefinition/PlanDefinition)
+== fsh-generated/resources/PlanDefinition-flow-DecisionToScreen.json ==
+INFORMATION: PlanDefinition/flow-DecisionToScreen: PlanDefinition.extension[0].value.ofType(code): Reference to draft CodeSystem http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-knowledge-capability|1.0.0
+INFORMATION: PlanDefinition/flow-DecisionToScreen: PlanDefinition.extension[1].value.ofType(code): Reference to draft CodeSystem http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-knowledge-representation-level|1.0.0
+ERROR: PlanDefinition/flow-DecisionToScreen: PlanDefinition.library[0]: Canonical URLs must be absolute URLs if they are not fragment references (Library/DecisionToScreen|1.0.0)
+WARNING: PlanDefinition/flow-DecisionToScreen: PlanDefinition: Constraint failed: pdf-0: 'Name should be usable as an identifier for the module by machine processing applications such as code generation' (defined in http://hl7.org/fhir/StructureDefinition/PlanDefinition)
+== fsh-generated/resources/PlanDefinition-flow-IncreasedRiskExclusions.json ==
+INFORMATION: PlanDefinition/flow-IncreasedRiskExclusions: PlanDefinition.extension[0].value.ofType(code): Reference to draft CodeSystem http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-knowledge-capability|1.0.0
+INFORMATION: PlanDefinition/flow-IncreasedRiskExclusions: PlanDefinition.extension[1].value.ofType(code): Reference to draft CodeSystem http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-knowledge-representation-level|1.0.0
+ERROR: PlanDefinition/flow-IncreasedRiskExclusions: PlanDefinition.library[0]: Canonical URLs must be absolute URLs if they are not fragment references (Library/IncreasedRiskExclusions|1.0.0)
+WARNING: PlanDefinition/flow-IncreasedRiskExclusions: PlanDefinition: Constraint failed: pdf-0: 'Name should be usable as an identifier for the module by machine processing applications such as code generation' (defined in http://hl7.org/fhir/StructureDefinition/PlanDefinition)
+== fsh-generated/resources/PlanDefinition-flow-ScreeningEligible.json ==
+INFORMATION: PlanDefinition/flow-ScreeningEligible: PlanDefinition.extension[0].value.ofType(code): Reference to draft CodeSystem http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-knowledge-capability|1.0.0
+INFORMATION: PlanDefinition/flow-ScreeningEligible: PlanDefinition.extension[1].value.ofType(code): Reference to draft CodeSystem http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-knowledge-representation-level|1.0.0
+ERROR: PlanDefinition/flow-ScreeningEligible: PlanDefinition.library[0]: Canonical URLs must be absolute URLs if they are not fragment references (Library/ScreeningEligible|1.0.0)
+INFORMATION: PlanDefinition/flow-ScreeningEligible: PlanDefinition.action[0].code[0]: Reference to experimental CodeSystem http://cancerscreeningcds.github.io/crcsm-cds/CodeSystem/plan-definition-action-code-system|0.1.0
+INFORMATION: PlanDefinition/flow-ScreeningEligible: PlanDefinition.action[1].code[0]: Reference to experimental CodeSystem http://cancerscreeningcds.github.io/crcsm-cds/CodeSystem/plan-definition-action-code-system|0.1.0
+WARNING: PlanDefinition/flow-ScreeningEligible: PlanDefinition: Constraint failed: pdf-0: 'Name should be usable as an identifier for the module by machine processing applications such as code generation' (defined in http://hl7.org/fhir/StructureDefinition/PlanDefinition)
+== fsh-generated/resources/Questionnaire-ScreeningEligibleQuestionnaire.json ==
+INFORMATION: Questionnaire/ScreeningEligibleQuestionnaire: Questionnaire.item[0].extension[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire|2.7.0 (this may not be a problem, but you should check that it's not intended to match a slice)
+ERROR: Questionnaire/ScreeningEligibleQuestionnaire: Questionnaire.item[0].extension[0].value.ofType(Coding).code: Unknown code '[a]' in the CodeSystem 'http://unitsofmeasure.org' version '2.2'
+INFORMATION: Questionnaire/ScreeningEligibleQuestionnaire: Questionnaire.item[0].extension[0].value.ofType(Coding).code: Error processing Unit: '[a]': The unit "[a]" is unknown at character 1
+INFORMATION: Questionnaire/ScreeningEligibleQuestionnaire: Questionnaire.item[1].code[0]: Reference to experimental CodeSystem http://cancerscreeningcds.github.io/crcsm-cds/CodeSystem/screening-observation-code-system|0.1.0
+== fsh-generated/resources/ValueSet-plan-definition-action-codes.json ==
+== fsh-generated/resources/ValueSet-plan-definition-action-reason-codes.json ==
+== input/examples/DecisionToScreen_v1.0.0/bundles/eve-Age86AndOlder_no_eve-AgeOver76_no_eve-LifeExp10_no_eve-riskFactors_no_act-AvgRiskEligible.json ==
+ERROR: Bundle/eve-Age86AndOlder_no_eve-AgeOver76_no_eve-LifeExp10_no_eve-riskFactors_no_act-AvgRiskEligible: Bundle.id: Invalid Resource id: Too long (93 chars)
+ERROR: Bundle/eve-Age86AndOlder_no_eve-AgeOver76_no_eve-LifeExp10_no_eve-riskFactors_no_act-AvgRiskEligible: Bundle.entry[0]: Except for transactions and batches, each entry in a Bundle must have a fullUrl which is the identity of the resource in the entry
+== input/examples/DecisionToScreen_v1.0.0/bundles/eve-Age86AndOlder_no_eve-AgeOver76_no_eve-LifeExp10_yes_act-sdmcontinuelifexp__eve-riskFactors_no_act-AvgRiskEligible.json ==
+ERROR: Bundle/eve-Age86AndOlder_no_eve-AgeOver76_no_eve-LifeExp10_yes_act-sdmcontinuelifexp__eve-riskFactors_no_act-AvgRiskEligible: Bundle.id: Invalid Resource id: Too long (117 chars)
+WARNING: Bundle/eve-Age86AndOlder_no_eve-AgeOver76_no_eve-LifeExp10_yes_act-sdmcontinuelifexp__eve-riskFactors_no_act-AvgRiskEligible: Bundle.entry[1].resource/*Observation/c4c0336d-cb06-42c5-b015-ea5fed91105a*/: Best Practice Recommendation: In general, all observations should have a performer
+INFORMATION: Bundle/eve-Age86AndOlder_no_eve-AgeOver76_no_eve-LifeExp10_yes_act-sdmcontinuelifexp__eve-riskFactors_no_act-AvgRiskEligible: Bundle.entry[1].resource/*Observation/c4c0336d-cb06-42c5-b015-ea5fed91105a*/.code: Reference to experimental CodeSystem http://cancerscreeningcds.github.io/crcsm-cds/CodeSystem/screening-observation-code-system|0.1.0
+ERROR: Bundle/eve-Age86AndOlder_no_eve-AgeOver76_no_eve-LifeExp10_yes_act-sdmcontinuelifexp__eve-riskFactors_no_act-AvgRiskEligible: Bundle.entry[1]: Bundle entry missing fullUrl
+ERROR: Bundle/eve-Age86AndOlder_no_eve-AgeOver76_no_eve-LifeExp10_yes_act-sdmcontinuelifexp__eve-riskFactors_no_act-AvgRiskEligible: Bundle.entry[1].resource/*Observation/c4c0336d-cb06-42c5-b015-ea5fed91105a*/.subject: Relative Reference appears inside Bundle whose entry is missing a fullUrl
+ERROR: Bundle/eve-Age86AndOlder_no_eve-AgeOver76_no_eve-LifeExp10_yes_act-sdmcontinuelifexp__eve-riskFactors_no_act-AvgRiskEligible: Bundle.entry[0]: Except for transactions and batches, each entry in a Bundle must have a fullUrl which is the identity of the resource in the entry
+ERROR: Bundle/eve-Age86AndOlder_no_eve-AgeOver76_no_eve-LifeExp10_yes_act-sdmcontinuelifexp__eve-riskFactors_no_act-AvgRiskEligible: Bundle.entry[1]: Except for transactions and batches, each entry in a Bundle must have a fullUrl which is the identity of the resource in the entry
+WARNING: Bundle/eve-Age86AndOlder_no_eve-AgeOver76_no_eve-LifeExp10_yes_act-sdmcontinuelifexp__eve-riskFactors_no_act-AvgRiskEligible: Bundle.entry[1].resource: Best Practice Recommendation: In general, all observations should have a performer
+== input/examples/DecisionToScreen_v1.0.0/bundles/eve-Age86AndOlder_no_eve-AgeOver76_yes_act-SelectivelyOfferScreening__eve-LifeExp10_no_eve-riskFactors_no_act-AvgRiskEligible.json ==
+ERROR: Bundle/eve-Age86AndOlder_no_eve-AgeOver76_yes_act-SelectivelyOfferScreening__eve-LifeExp10_no_eve-riskFactors_no_act-AvgRiskEligible: Bundle.id: Invalid Resource id: Too long (125 chars)
+ERROR: Bundle/eve-Age86AndOlder_no_eve-AgeOver76_yes_act-SelectivelyOfferScreening__eve-LifeExp10_no_eve-riskFactors_no_act-AvgRiskEligible: Bundle.entry[0]: Except for transactions and batches, each entry in a Bundle must have a fullUrl which is the identity of the resource in the entry
+== input/examples/DecisionToScreen_v1.0.0/bundles/eve-Age86AndOlder_no_eve-AgeOver76_yes_act-SelectivelyOfferScreening__eve-LifeExp10_yes_act-sdmcontinuelifexp__eve-riskFactors_no_act-AvgRiskEligible.json ==
+ERROR: Bundle/eve-Age86AndOlder_no_eve-AgeOver76_yes_act-SelectivelyOfferScreening__eve-LifeExp10_yes_act-sdmcontinuelifexp__eve-riskFactors_no_act-AvgRiskEligible: Bundle.id: Invalid Resource id: Too long (149 chars)
+WARNING: Bundle/eve-Age86AndOlder_no_eve-AgeOver76_yes_act-SelectivelyOfferScreening__eve-LifeExp10_yes_act-sdmcontinuelifexp__eve-riskFactors_no_act-AvgRiskEligible: Bundle.entry[1].resource/*Observation/d641ddc4-2485-46c6-af9f-a67c81219968*/: Best Practice Recommendation: In general, all observations should have a performer
+INFORMATION: Bundle/eve-Age86AndOlder_no_eve-AgeOver76_yes_act-SelectivelyOfferScreening__eve-LifeExp10_yes_act-sdmcontinuelifexp__eve-riskFactors_no_act-AvgRiskEligible: Bundle.entry[1].resource/*Observation/d641ddc4-2485-46c6-af9f-a67c81219968*/.code: Reference to experimental CodeSystem http://cancerscreeningcds.github.io/crcsm-cds/CodeSystem/screening-observation-code-system|0.1.0
+ERROR: Bundle/eve-Age86AndOlder_no_eve-AgeOver76_yes_act-SelectivelyOfferScreening__eve-LifeExp10_yes_act-sdmcontinuelifexp__eve-riskFactors_no_act-AvgRiskEligible: Bundle.entry[1]: Bundle entry missing fullUrl
+ERROR: Bundle/eve-Age86AndOlder_no_eve-AgeOver76_yes_act-SelectivelyOfferScreening__eve-LifeExp10_yes_act-sdmcontinuelifexp__eve-riskFactors_no_act-AvgRiskEligible: Bundle.entry[1].resource/*Observation/d641ddc4-2485-46c6-af9f-a67c81219968*/.subject: Relative Reference appears inside Bundle whose entry is missing a fullUrl
+ERROR: Bundle/eve-Age86AndOlder_no_eve-AgeOver76_yes_act-SelectivelyOfferScreening__eve-LifeExp10_yes_act-sdmcontinuelifexp__eve-riskFactors_no_act-AvgRiskEligible: Bundle.entry[0]: Except for transactions and batches, each entry in a Bundle must have a fullUrl which is the identity of the resource in the entry
+ERROR: Bundle/eve-Age86AndOlder_no_eve-AgeOver76_yes_act-SelectivelyOfferScreening__eve-LifeExp10_yes_act-sdmcontinuelifexp__eve-riskFactors_no_act-AvgRiskEligible: Bundle.entry[1]: Except for transactions and batches, each entry in a Bundle must have a fullUrl which is the identity of the resource in the entry
+WARNING: Bundle/eve-Age86AndOlder_no_eve-AgeOver76_yes_act-SelectivelyOfferScreening__eve-LifeExp10_yes_act-sdmcontinuelifexp__eve-riskFactors_no_act-AvgRiskEligible: Bundle.entry[1].resource: Best Practice Recommendation: In general, all observations should have a performer
+== input/examples/DecisionToScreen_v1.0.0/bundles/eve-Age86AndOlder_yes_act-HarmsLikelyOutweighBenefits.json ==
+ERROR: Bundle/eve-Age86AndOlder_yes_act-HarmsLikelyOutweighBenefits: Bundle.id: Invalid Resource id: Invalid Characters ('eve-Age86AndOlder_yes_act-HarmsLikelyOutweighBenefits')
+ERROR: Bundle/eve-Age86AndOlder_yes_act-HarmsLikelyOutweighBenefits: Bundle.entry[0]: Except for transactions and batches, each entry in a Bundle must have a fullUrl which is the identity of the resource in the entry
+== input/examples/FollowUp_v1.0.0/bundles/eve-lastTestColonoscopy_no_eve-lastTestStool_no_eve-lastTestFlexSig_no_eve-lastTestCTC_no_end-1.json ==
+ERROR: Bundle/eve-lastTestColonoscopy_no_eve-lastTestStool_no_eve-lastTestFlexSig_no_eve-lastTestCTC_no_end-1: Bundle.id: Invalid Resource id: Too long (95 chars)
+ERROR: Bundle/eve-lastTestColonoscopy_no_eve-lastTestStool_no_eve-lastTestFlexSig_no_eve-lastTestCTC_no_end-1: Bundle.entry[0]: Except for transactions and batches, each entry in a Bundle must have a fullUrl which is the identity of the resource in the entry
+== input/examples/FollowUp_v1.0.0/bundles/eve-lastTestColonoscopy_no_eve-lastTestStool_no_eve-lastTestFlexSig_no_eve-lastTestCTC_yes_eve-inconclusiveCTColonography_no_eve-abnormalCTColonography_no_act-continueRoutineScreeningDirectViz.json ==
+ERROR: Bundle/eve-lastTestColonoscopy_no_eve-lastTestStool_no_eve-lastTestFlexSig_no_eve-lastTestCTC_yes_eve-inconclusiveCTColonography_no_eve-abnormalCTColonography_no_act-continueRoutineScreeningDirectViz: Bundle.id: Invalid Resource id: Too long (192 chars)
+ERROR: Bundle/eve-lastTestColonoscopy_no_eve-lastTestStool_no_eve-lastTestFlexSig_no_eve-lastTestCTC_yes_eve-inconclusiveCTColonography_no_eve-abnormalCTColonography_no_act-continueRoutineScreeningDirectViz: Bundle.entry[1]: Bundle entry missing fullUrl
+ERROR: Bundle/eve-lastTestColonoscopy_no_eve-lastTestStool_no_eve-lastTestFlexSig_no_eve-lastTestCTC_yes_eve-inconclusiveCTColonography_no_eve-abnormalCTColonography_no_act-continueRoutineScreeningDirectViz: Bundle.entry[1].resource/*DiagnosticReport/colonography-report-neg*/.subject: Relative Reference appears inside Bundle whose entry is missing a fullUrl
+ERROR: Bundle/eve-lastTestColonoscopy_no_eve-lastTestStool_no_eve-lastTestFlexSig_no_eve-lastTestCTC_yes_eve-inconclusiveCTColonography_no_eve-abnormalCTColonography_no_act-continueRoutineScreeningDirectViz: Bundle.entry[0]: Except for transactions and batches, each entry in a Bundle must have a fullUrl which is the identity of the resource in the entry
+ERROR: Bundle/eve-lastTestColonoscopy_no_eve-lastTestStool_no_eve-lastTestFlexSig_no_eve-lastTestCTC_yes_eve-inconclusiveCTColonography_no_eve-abnormalCTColonography_no_act-continueRoutineScreeningDirectViz: Bundle.entry[1]: Except for transactions and batches, each entry in a Bundle must have a fullUrl which is the identity of the resource in the entry
+== input/examples/FollowUp_v1.0.0/bundles/eve-lastTestColonoscopy_no_eve-lastTestStool_no_eve-lastTestFlexSig_no_eve-lastTestCTC_yes_eve-inconclusiveCTColonography_no_eve-abnormalCTColonography_yes_act-FollowUpColonoscopy.json ==
+ERROR: Bundle/eve-lastTestColonoscopy_no_eve-lastTestStool_no_eve-lastTestFlexSig_no_eve-lastTestCTC_yes_eve-inconclusiveCTColonography_no_eve-abnormalCTColonography_yes_act-FollowUpColonoscopy: Bundle.id: Invalid Resource id: Too long (179 chars)
+ERROR: Bundle/eve-lastTestColonoscopy_no_eve-lastTestStool_no_eve-lastTestFlexSig_no_eve-lastTestCTC_yes_eve-inconclusiveCTColonography_no_eve-abnormalCTColonography_yes_act-FollowUpColonoscopy: Bundle.entry[1]: Bundle entry missing fullUrl
+ERROR: Bundle/eve-lastTestColonoscopy_no_eve-lastTestStool_no_eve-lastTestFlexSig_no_eve-lastTestCTC_yes_eve-inconclusiveCTColonography_no_eve-abnormalCTColonography_yes_act-FollowUpColonoscopy: Bundle.entry[1].resource/*DiagnosticReport/colonography-report-c2a*/.subject: Relative Reference appears inside Bundle whose entry is missing a fullUrl
+INFORMATION: Bundle/eve-lastTestColonoscopy_no_eve-lastTestStool_no_eve-lastTestFlexSig_no_eve-lastTestCTC_yes_eve-inconclusiveCTColonography_no_eve-abnormalCTColonography_yes_act-FollowUpColonoscopy: Bundle.entry[1].resource/*DiagnosticReport/colonography-report-c2a*/.conclusionCode[0]: Reference to retired CodeSystem http://cancerscreeningcds.github.io/crcsm-cds/CodeSystem/c-rads-2023-code-system|0.1.0
+ERROR: Bundle/eve-lastTestColonoscopy_no_eve-lastTestStool_no_eve-lastTestFlexSig_no_eve-lastTestCTC_yes_eve-inconclusiveCTColonography_no_eve-abnormalCTColonography_yes_act-FollowUpColonoscopy: Bundle.entry[1].resource/*DiagnosticReport/colonography-report-c2a*/.conclusionCode[0].coding[0].code: Unknown code 'C2a' in the CodeSystem 'http://cancerscreeningcds.github.io/crcsm-cds/CodeSystem/c-rads-2023-code-system' version '0.1.0'
+ERROR: Bundle/eve-lastTestColonoscopy_no_eve-lastTestStool_no_eve-lastTestFlexSig_no_eve-lastTestCTC_yes_eve-inconclusiveCTColonography_no_eve-abnormalCTColonography_yes_act-FollowUpColonoscopy: Bundle.entry[0]: Except for transactions and batches, each entry in a Bundle must have a fullUrl which is the identity of the resource in the entry
+ERROR: Bundle/eve-lastTestColonoscopy_no_eve-lastTestStool_no_eve-lastTestFlexSig_no_eve-lastTestCTC_yes_eve-inconclusiveCTColonography_no_eve-abnormalCTColonography_yes_act-FollowUpColonoscopy: Bundle.entry[1]: Except for transactions and batches, each entry in a Bundle must have a fullUrl which is the identity of the resource in the entry
+== input/examples/FollowUp_v1.0.0/bundles/eve-lastTestColonoscopy_no_eve-lastTestStool_no_eve-lastTestFlexSig_no_eve-lastTestCTC_yes_eve-inconclusiveCTColonography_yes_act-repeatScreening.json ==
+ERROR: Bundle/eve-lastTestColonoscopy_no_eve-lastTestStool_no_eve-lastTestFlexSig_no_eve-lastTestCTC_yes_eve-inconclusiveCTColonography_yes_act-repeatScreening: Bundle.id: Invalid Resource id: Too long (145 chars)
+ERROR: Bundle/eve-lastTestColonoscopy_no_eve-lastTestStool_no_eve-lastTestFlexSig_no_eve-lastTestCTC_yes_eve-inconclusiveCTColonography_yes_act-repeatScreening: Bundle.entry[1]: Bundle entry missing fullUrl
+ERROR: Bundle/eve-lastTestColonoscopy_no_eve-lastTestStool_no_eve-lastTestFlexSig_no_eve-lastTestCTC_yes_eve-inconclusiveCTColonography_yes_act-repeatScreening: Bundle.entry[1].resource/*DiagnosticReport/colonography-report-c0*/.subject: Relative Reference appears inside Bundle whose entry is missing a fullUrl
+INFORMATION: Bundle/eve-lastTestColonoscopy_no_eve-lastTestStool_no_eve-lastTestFlexSig_no_eve-lastTestCTC_yes_eve-inconclusiveCTColonography_yes_act-repeatScreening: Bundle.entry[1].resource/*DiagnosticReport/colonography-report-c0*/.conclusionCode[0]: Reference to retired CodeSystem http://cancerscreeningcds.github.io/crcsm-cds/CodeSystem/c-rads-2023-code-system|0.1.0
+ERROR: Bundle/eve-lastTestColonoscopy_no_eve-lastTestStool_no_eve-lastTestFlexSig_no_eve-lastTestCTC_yes_eve-inconclusiveCTColonography_yes_act-repeatScreening: Bundle.entry[0]: Except for transactions and batches, each entry in a Bundle must have a fullUrl which is the identity of the resource in the entry
+ERROR: Bundle/eve-lastTestColonoscopy_no_eve-lastTestStool_no_eve-lastTestFlexSig_no_eve-lastTestCTC_yes_eve-inconclusiveCTColonography_yes_act-repeatScreening: Bundle.entry[1]: Except for transactions and batches, each entry in a Bundle must have a fullUrl which is the identity of the resource in the entry
+== input/examples/FollowUp_v1.0.0/bundles/eve-lastTestColonoscopy_no_eve-lastTestStool_no_eve-lastTestFlexSig_yes_eve-abnormalFlexSig_no_act-continueRoutineScreeningDirectViz.json ==
+ERROR: Bundle/eve-lastTestColonoscopy_no_eve-lastTestStool_no_eve-lastTestFlexSig_yes_eve-abnormalFlexSig_no_act-continueRoutineScreeningDirectViz: Bundle.id: Invalid Resource id: Too long (132 chars)
+ERROR: Bundle/eve-lastTestColonoscopy_no_eve-lastTestStool_no_eve-lastTestFlexSig_yes_eve-abnormalFlexSig_no_act-continueRoutineScreeningDirectViz: Bundle.entry[1]: Bundle entry missing fullUrl
+ERROR: Bundle/eve-lastTestColonoscopy_no_eve-lastTestStool_no_eve-lastTestFlexSig_yes_eve-abnormalFlexSig_no_act-continueRoutineScreeningDirectViz: Bundle.entry[1].resource/*DiagnosticReport/flex-sig-report-neg*/.subject: Relative Reference appears inside Bundle whose entry is missing a fullUrl
+ERROR: Bundle/eve-lastTestColonoscopy_no_eve-lastTestStool_no_eve-lastTestFlexSig_yes_eve-abnormalFlexSig_no_act-continueRoutineScreeningDirectViz: Bundle.entry[0]: Except for transactions and batches, each entry in a Bundle must have a fullUrl which is the identity of the resource in the entry
+ERROR: Bundle/eve-lastTestColonoscopy_no_eve-lastTestStool_no_eve-lastTestFlexSig_yes_eve-abnormalFlexSig_no_act-continueRoutineScreeningDirectViz: Bundle.entry[1]: Except for transactions and batches, each entry in a Bundle must have a fullUrl which is the identity of the resource in the entry
+== input/examples/FollowUp_v1.0.0/bundles/eve-lastTestColonoscopy_no_eve-lastTestStool_no_eve-lastTestFlexSig_yes_eve-abnormalFlexSig_yes_act-FollowUpColonoscopy.json ==
+ERROR: Bundle/eve-lastTestColonoscopy_no_eve-lastTestStool_no_eve-lastTestFlexSig_yes_eve-abnormalFlexSig_yes_act-FollowUpColonoscopy: Bundle.id: Invalid Resource id: Too long (119 chars)
+ERROR: Bundle/eve-lastTestColonoscopy_no_eve-lastTestStool_no_eve-lastTestFlexSig_yes_eve-abnormalFlexSig_yes_act-FollowUpColonoscopy: Bundle.entry[1]: Bundle entry missing fullUrl
+ERROR: Bundle/eve-lastTestColonoscopy_no_eve-lastTestStool_no_eve-lastTestFlexSig_yes_eve-abnormalFlexSig_yes_act-FollowUpColonoscopy: Bundle.entry[1].resource/*DiagnosticReport/flexsig-report-precancerous-polyp*/.subject: Relative Reference appears inside Bundle whose entry is missing a fullUrl
+ERROR: Bundle/eve-lastTestColonoscopy_no_eve-lastTestStool_no_eve-lastTestFlexSig_yes_eve-abnormalFlexSig_yes_act-FollowUpColonoscopy: Bundle.entry[0]: Except for transactions and batches, each entry in a Bundle must have a fullUrl which is the identity of the resource in the entry
+ERROR: Bundle/eve-lastTestColonoscopy_no_eve-lastTestStool_no_eve-lastTestFlexSig_yes_eve-abnormalFlexSig_yes_act-FollowUpColonoscopy: Bundle.entry[1]: Except for transactions and batches, each entry in a Bundle must have a fullUrl which is the identity of the resource in the entry
+== input/examples/FollowUp_v1.0.0/bundles/eve-lastTestColonoscopy_no_eve-lastTestStool_yes_eve-inconclusiveStoolTest_no_eve-abnormalStoolTest_no_act-continueRoutineScreening.json ==
+ERROR: Bundle/eve-lastTestColonoscopy_no_eve-lastTestStool_yes_eve-inconclusiveStoolTest_no_eve-abnormalStoolTest_no_act-continueRoutineScreening: Bundle.id: Invalid Resource id: Too long (131 chars)
+ERROR: Bundle/eve-lastTestColonoscopy_no_eve-lastTestStool_yes_eve-inconclusiveStoolTest_no_eve-abnormalStoolTest_no_act-continueRoutineScreening: Bundle.entry[1]: Bundle entry missing fullUrl
+ERROR: Bundle/eve-lastTestColonoscopy_no_eve-lastTestStool_yes_eve-inconclusiveStoolTest_no_eve-abnormalStoolTest_no_act-continueRoutineScreening: Bundle.entry[1].resource/*DiagnosticReport/fobt-report-neg*/.subject: Relative Reference appears inside Bundle whose entry is missing a fullUrl
+ERROR: Bundle/eve-lastTestColonoscopy_no_eve-lastTestStool_yes_eve-inconclusiveStoolTest_no_eve-abnormalStoolTest_no_act-continueRoutineScreening: Bundle.entry[2]: Bundle entry missing fullUrl
+ERROR: Bundle/eve-lastTestColonoscopy_no_eve-lastTestStool_yes_eve-inconclusiveStoolTest_no_eve-abnormalStoolTest_no_act-continueRoutineScreening: Bundle.entry[2].resource/*DiagnosticReport/flex-sig-report-neg*/.subject: Relative Reference appears inside Bundle whose entry is missing a fullUrl
+ERROR: Bundle/eve-lastTestColonoscopy_no_eve-lastTestStool_yes_eve-inconclusiveStoolTest_no_eve-abnormalStoolTest_no_act-continueRoutineScreening: Bundle.entry[0]: Except for transactions and batches, each entry in a Bundle must have a fullUrl which is the identity of the resource in the entry
+ERROR: Bundle/eve-lastTestColonoscopy_no_eve-lastTestStool_yes_eve-inconclusiveStoolTest_no_eve-abnormalStoolTest_no_act-continueRoutineScreening: Bundle.entry[1]: Except for transactions and batches, each entry in a Bundle must have a fullUrl which is the identity of the resource in the entry
+ERROR: Bundle/eve-lastTestColonoscopy_no_eve-lastTestStool_yes_eve-inconclusiveStoolTest_no_eve-abnormalStoolTest_no_act-continueRoutineScreening: Bundle.entry[2]: Except for transactions and batches, each entry in a Bundle must have a fullUrl which is the identity of the resource in the entry
+== input/examples/FollowUp_v1.0.0/bundles/eve-lastTestColonoscopy_no_eve-lastTestStool_yes_eve-inconclusiveStoolTest_no_eve-abnormalStoolTest_yes_act-FollowUpColonoscopy.json ==
+ERROR: Bundle/eve-lastTestColonoscopy_no_eve-lastTestStool_yes_eve-inconclusiveStoolTest_no_eve-abnormalStoolTest_yes_act-FollowUpColonoscopy: Bundle.id: Invalid Resource id: Too long (127 chars)
+ERROR: Bundle/eve-lastTestColonoscopy_no_eve-lastTestStool_yes_eve-inconclusiveStoolTest_no_eve-abnormalStoolTest_yes_act-FollowUpColonoscopy: Bundle.entry[1]: Bundle entry missing fullUrl
+ERROR: Bundle/eve-lastTestColonoscopy_no_eve-lastTestStool_yes_eve-inconclusiveStoolTest_no_eve-abnormalStoolTest_yes_act-FollowUpColonoscopy: Bundle.entry[1].resource/*DiagnosticReport/stool-dna-fit-report-final*/.subject: Relative Reference appears inside Bundle whose entry is missing a fullUrl
+ERROR: Bundle/eve-lastTestColonoscopy_no_eve-lastTestStool_yes_eve-inconclusiveStoolTest_no_eve-abnormalStoolTest_yes_act-FollowUpColonoscopy: Bundle.entry[0]: Except for transactions and batches, each entry in a Bundle must have a fullUrl which is the identity of the resource in the entry
+ERROR: Bundle/eve-lastTestColonoscopy_no_eve-lastTestStool_yes_eve-inconclusiveStoolTest_no_eve-abnormalStoolTest_yes_act-FollowUpColonoscopy: Bundle.entry[1]: Except for transactions and batches, each entry in a Bundle must have a fullUrl which is the identity of the resource in the entry
+== input/examples/FollowUp_v1.0.0/bundles/eve-lastTestColonoscopy_no_eve-lastTestStool_yes_eve-inconclusiveStoolTest_yes_act-repeatScreening.json ==
+ERROR: Bundle/eve-lastTestColonoscopy_no_eve-lastTestStool_yes_eve-inconclusiveStoolTest_yes_act-repeatScreening: Bundle.id: Invalid Resource id: Too long (98 chars)
+ERROR: Bundle/eve-lastTestColonoscopy_no_eve-lastTestStool_yes_eve-inconclusiveStoolTest_yes_act-repeatScreening: Bundle.entry[1]: Bundle entry missing fullUrl
+ERROR: Bundle/eve-lastTestColonoscopy_no_eve-lastTestStool_yes_eve-inconclusiveStoolTest_yes_act-repeatScreening: Bundle.entry[1].resource/*DiagnosticReport/fobt-report-inconclusive*/.subject: Relative Reference appears inside Bundle whose entry is missing a fullUrl
+ERROR: Bundle/eve-lastTestColonoscopy_no_eve-lastTestStool_yes_eve-inconclusiveStoolTest_yes_act-repeatScreening: Bundle.entry[0]: Except for transactions and batches, each entry in a Bundle must have a fullUrl which is the identity of the resource in the entry
+ERROR: Bundle/eve-lastTestColonoscopy_no_eve-lastTestStool_yes_eve-inconclusiveStoolTest_yes_act-repeatScreening: Bundle.entry[1]: Except for transactions and batches, each entry in a Bundle must have a fullUrl which is the identity of the resource in the entry
+== input/examples/FollowUp_v1.0.0/bundles/eve-lastTestColonoscopy_yes_end-1.json ==
+ERROR: Bundle/eve-lastTestColonoscopy_yes_end-1: Bundle.id: Invalid Resource id: Invalid Characters ('eve-lastTestColonoscopy_yes_end-1')
+ERROR: Bundle/eve-lastTestColonoscopy_yes_end-1: Bundle.entry[1]: Bundle entry missing fullUrl
+ERROR: Bundle/eve-lastTestColonoscopy_yes_end-1: Bundle.entry[1].resource/*DiagnosticReport/colonoscopy-report-neg*/.subject: Relative Reference appears inside Bundle whose entry is missing a fullUrl
+ERROR: Bundle/eve-lastTestColonoscopy_yes_end-1: Bundle.entry[2]: Bundle entry missing fullUrl
+ERROR: Bundle/eve-lastTestColonoscopy_yes_end-1: Bundle.entry[2].resource/*DiagnosticReport/FOBT-report-neg*/.subject: Relative Reference appears inside Bundle whose entry is missing a fullUrl
+ERROR: Bundle/eve-lastTestColonoscopy_yes_end-1: Bundle.entry[0]: Except for transactions and batches, each entry in a Bundle must have a fullUrl which is the identity of the resource in the entry
+ERROR: Bundle/eve-lastTestColonoscopy_yes_end-1: Bundle.entry[1]: Except for transactions and batches, each entry in a Bundle must have a fullUrl which is the identity of the resource in the entry
+ERROR: Bundle/eve-lastTestColonoscopy_yes_end-1: Bundle.entry[2]: Except for transactions and batches, each entry in a Bundle must have a fullUrl which is the identity of the resource in the entry
+== input/examples/IncreasedRiskExclusions_v1.0.0/bundles/eve-HereditarySyndrome_no_eve-IBD_no_eve-HxCRC_no_eve-FamilyHx_no_eve-HxPolyps_no_act-AvgRiskScreeningEligible.json ==
+ERROR: Bundle/eve-HereditarySyndrome_no_eve-IBD_no_eve-HxCRC_no_eve-FamilyHx_no_eve-HxPolyps_no_act-AvgRiskScreeningEligible: Bundle.id: Invalid Resource id: Too long (110 chars)
+ERROR: Bundle/eve-HereditarySyndrome_no_eve-IBD_no_eve-HxCRC_no_eve-FamilyHx_no_eve-HxPolyps_no_act-AvgRiskScreeningEligible: Bundle.entry[0]: Except for transactions and batches, each entry in a Bundle must have a fullUrl which is the identity of the resource in the entry
+== input/examples/IncreasedRiskExclusions_v1.0.0/bundles/eve-HereditarySyndrome_no_eve-IBD_no_eve-HxCRC_no_eve-FamilyHx_no_eve-HxPolyps_yes_act-HxPolyps.json ==
+ERROR: Bundle/eve-HereditarySyndrome_no_eve-IBD_no_eve-HxCRC_no_eve-FamilyHx_no_eve-HxPolyps_yes_act-HxPolyps: Bundle.id: Invalid Resource id: Too long (95 chars)
+ERROR: Bundle/eve-HereditarySyndrome_no_eve-IBD_no_eve-HxCRC_no_eve-FamilyHx_no_eve-HxPolyps_yes_act-HxPolyps: Bundle.entry[1]: Bundle entry missing fullUrl
+ERROR: Bundle/eve-HereditarySyndrome_no_eve-IBD_no_eve-HxCRC_no_eve-FamilyHx_no_eve-HxPolyps_yes_act-HxPolyps: Bundle.entry[1].resource/*DiagnosticReport/colonoscopy-report-precancerous-polyp*/.subject: Relative Reference appears inside Bundle whose entry is missing a fullUrl
+ERROR: Bundle/eve-HereditarySyndrome_no_eve-IBD_no_eve-HxCRC_no_eve-FamilyHx_no_eve-HxPolyps_yes_act-HxPolyps: Bundle.entry[0]: Except for transactions and batches, each entry in a Bundle must have a fullUrl which is the identity of the resource in the entry
+ERROR: Bundle/eve-HereditarySyndrome_no_eve-IBD_no_eve-HxCRC_no_eve-FamilyHx_no_eve-HxPolyps_yes_act-HxPolyps: Bundle.entry[1]: Except for transactions and batches, each entry in a Bundle must have a fullUrl which is the identity of the resource in the entry
+== input/examples/IncreasedRiskExclusions_v1.0.0/bundles/eve-HereditarySyndrome_no_eve-IBD_no_eve-HxCRC_no_eve-FamilyHx_yes_act-FamilyHxCRC.json ==
+ERROR: Bundle/eve-HereditarySyndrome_no_eve-IBD_no_eve-HxCRC_no_eve-FamilyHx_yes_act-FamilyHxCRC: Bundle.id: Invalid Resource id: Too long (82 chars)
+ERROR: Bundle/eve-HereditarySyndrome_no_eve-IBD_no_eve-HxCRC_no_eve-FamilyHx_yes_act-FamilyHxCRC: Bundle.entry[1]: Bundle entry missing fullUrl
+ERROR: Bundle/eve-HereditarySyndrome_no_eve-IBD_no_eve-HxCRC_no_eve-FamilyHx_yes_act-FamilyHxCRC: Bundle.entry[1].resource/*Condition/colorectal-cancer*/.subject: Relative Reference appears inside Bundle whose entry is missing a fullUrl
+ERROR: Bundle/eve-HereditarySyndrome_no_eve-IBD_no_eve-HxCRC_no_eve-FamilyHx_yes_act-FamilyHxCRC: Bundle.entry[0]: Except for transactions and batches, each entry in a Bundle must have a fullUrl which is the identity of the resource in the entry
+ERROR: Bundle/eve-HereditarySyndrome_no_eve-IBD_no_eve-HxCRC_no_eve-FamilyHx_yes_act-FamilyHxCRC: Bundle.entry[1]: Except for transactions and batches, each entry in a Bundle must have a fullUrl which is the identity of the resource in the entry
+== input/examples/IncreasedRiskExclusions_v1.0.0/bundles/eve-HereditarySyndrome_no_eve-IBD_no_eve-HxCRC_yes_act-HxCRC.json ==
+ERROR: Bundle/eve-HereditarySyndrome_no_eve-IBD_no_eve-HxCRC_yes_act-HxCRC: Bundle.id: Invalid Resource id: Invalid Characters ('eve-HereditarySyndrome_no_eve-IBD_no_eve-HxCRC_yes_act-HxCRC')
+ERROR: Bundle/eve-HereditarySyndrome_no_eve-IBD_no_eve-HxCRC_yes_act-HxCRC: Bundle.entry[1]: Bundle entry missing fullUrl
+ERROR: Bundle/eve-HereditarySyndrome_no_eve-IBD_no_eve-HxCRC_yes_act-HxCRC: Bundle.entry[1].resource/*Condition/colorectal-cancer-inactive*/.subject: Relative Reference appears inside Bundle whose entry is missing a fullUrl
+ERROR: Bundle/eve-HereditarySyndrome_no_eve-IBD_no_eve-HxCRC_yes_act-HxCRC: Bundle.entry[0]: Except for transactions and batches, each entry in a Bundle must have a fullUrl which is the identity of the resource in the entry
+ERROR: Bundle/eve-HereditarySyndrome_no_eve-IBD_no_eve-HxCRC_yes_act-HxCRC: Bundle.entry[1]: Except for transactions and batches, each entry in a Bundle must have a fullUrl which is the identity of the resource in the entry
+== input/examples/IncreasedRiskExclusions_v1.0.0/bundles/eve-HereditarySyndrome_no_eve-IBD_yes_act-IBD.json ==
+ERROR: Bundle/eve-HereditarySyndrome_no_eve-IBD_yes_act-IBD: Bundle.id: Invalid Resource id: Invalid Characters ('eve-HereditarySyndrome_no_eve-IBD_yes_act-IBD')
+ERROR: Bundle/eve-HereditarySyndrome_no_eve-IBD_yes_act-IBD: Bundle.entry[1]: Bundle entry missing fullUrl
+ERROR: Bundle/eve-HereditarySyndrome_no_eve-IBD_yes_act-IBD: Bundle.entry[1].resource/*Condition/ulcerative-colitis-remission*/.subject: Relative Reference appears inside Bundle whose entry is missing a fullUrl
+ERROR: Bundle/eve-HereditarySyndrome_no_eve-IBD_yes_act-IBD: Bundle.entry[0]: Except for transactions and batches, each entry in a Bundle must have a fullUrl which is the identity of the resource in the entry
+ERROR: Bundle/eve-HereditarySyndrome_no_eve-IBD_yes_act-IBD: Bundle.entry[1]: Except for transactions and batches, each entry in a Bundle must have a fullUrl which is the identity of the resource in the entry
+== input/examples/IncreasedRiskExclusions_v1.0.0/bundles/eve-HereditarySyndrome_yes_act-CRCHereditarySyndrome.json ==
+ERROR: Bundle/eve-HereditarySyndrome_yes_act-CRCHereditarySyndrome: Bundle.id: Invalid Resource id: Invalid Characters ('eve-HereditarySyndrome_yes_act-CRCHereditarySyndrome')
+ERROR: Bundle/eve-HereditarySyndrome_yes_act-CRCHereditarySyndrome: Bundle.entry[1]: Bundle entry missing fullUrl
+ERROR: Bundle/eve-HereditarySyndrome_yes_act-CRCHereditarySyndrome: Bundle.entry[1].resource/*Condition/lynch-syndrome-active*/.subject: Relative Reference appears inside Bundle whose entry is missing a fullUrl
+ERROR: Bundle/eve-HereditarySyndrome_yes_act-CRCHereditarySyndrome: Bundle.entry[0]: Except for transactions and batches, each entry in a Bundle must have a fullUrl which is the identity of the resource in the entry
+ERROR: Bundle/eve-HereditarySyndrome_yes_act-CRCHereditarySyndrome: Bundle.entry[1]: Except for transactions and batches, each entry in a Bundle must have a fullUrl which is the identity of the resource in the entry
+== input/examples/ScreeningDue_v1.0.0/bundles/eve-nextdueexists_no_act-determinedue.json ==
+ERROR: Bundle/eve-nextdueexists_no_act-determinedue: Bundle.id: Invalid Resource id: Invalid Characters ('eve-nextdueexists_no_act-determinedue')
+ERROR: Bundle/eve-nextdueexists_no_act-determinedue: Bundle.entry[1].resource/*CarePlan/bdca3e69-a092-481c-892c-f7aa07d17bbb*/: CarePlan.intent: minimum required = 1, but only found 0 (from http://hl7.org/fhir/StructureDefinition/CarePlan|4.0.1)
+ERROR: Bundle/eve-nextdueexists_no_act-determinedue: Bundle.entry[1]: Bundle entry missing fullUrl
+ERROR: Bundle/eve-nextdueexists_no_act-determinedue: Bundle.entry[1].resource/*CarePlan/bdca3e69-a092-481c-892c-f7aa07d17bbb*/.subject: Relative Reference appears inside Bundle whose entry is missing a fullUrl
+ERROR: Bundle/eve-nextdueexists_no_act-determinedue: Bundle.entry[1].resource/*CarePlan/bdca3e69-a092-481c-892c-f7aa07d17bbb*/.activity[0].reference: Relative Reference appears inside Bundle whose entry is missing a fullUrl
+ERROR: Bundle/eve-nextdueexists_no_act-determinedue: Bundle.entry[2]: Bundle entry missing fullUrl
+ERROR: Bundle/eve-nextdueexists_no_act-determinedue: Bundle.entry[2].resource/*RequestGroup/RequestGroup-1*/.subject: Relative Reference appears inside Bundle whose entry is missing a fullUrl
+ERROR: Bundle/eve-nextdueexists_no_act-determinedue: Bundle.entry[0]: Except for transactions and batches, each entry in a Bundle must have a fullUrl which is the identity of the resource in the entry
+ERROR: Bundle/eve-nextdueexists_no_act-determinedue: Bundle.entry[1]: Except for transactions and batches, each entry in a Bundle must have a fullUrl which is the identity of the resource in the entry
+ERROR: Bundle/eve-nextdueexists_no_act-determinedue: Bundle.entry[2]: Except for transactions and batches, each entry in a Bundle must have a fullUrl which is the identity of the resource in the entry
+== input/examples/ScreeningDue_v1.0.0/bundles/eve-nextdueexists_yes_eve-DetermineIfDueForScreening_due_act-orderTest.json ==
+ERROR: Bundle/eve-nextdueexists_yes_eve-DetermineIfDueForScreening_due_act-orderTest: Bundle.id: Invalid Resource id: Too long (70 chars)
+ERROR: Bundle/eve-nextdueexists_yes_eve-DetermineIfDueForScreening_due_act-orderTest: Bundle.entry[1].resource/*CarePlan/a600d670-4b7c-476b-8ce3-ff37638e187b*/: CarePlan.intent: minimum required = 1, but only found 0 (from http://hl7.org/fhir/StructureDefinition/CarePlan|4.0.1)
+ERROR: Bundle/eve-nextdueexists_yes_eve-DetermineIfDueForScreening_due_act-orderTest: Bundle.entry[1]: Bundle entry missing fullUrl
+ERROR: Bundle/eve-nextdueexists_yes_eve-DetermineIfDueForScreening_due_act-orderTest: Bundle.entry[1].resource/*CarePlan/a600d670-4b7c-476b-8ce3-ff37638e187b*/.subject: Relative Reference appears inside Bundle whose entry is missing a fullUrl
+ERROR: Bundle/eve-nextdueexists_yes_eve-DetermineIfDueForScreening_due_act-orderTest: Bundle.entry[1].resource/*CarePlan/a600d670-4b7c-476b-8ce3-ff37638e187b*/.activity[0].reference: Relative Reference appears inside Bundle whose entry is missing a fullUrl
+ERROR: Bundle/eve-nextdueexists_yes_eve-DetermineIfDueForScreening_due_act-orderTest: Bundle.entry[2]: Bundle entry missing fullUrl
+ERROR: Bundle/eve-nextdueexists_yes_eve-DetermineIfDueForScreening_due_act-orderTest: Bundle.entry[2].resource/*RequestGroup/RequestGroup-1*/.subject: Relative Reference appears inside Bundle whose entry is missing a fullUrl
+ERROR: Bundle/eve-nextdueexists_yes_eve-DetermineIfDueForScreening_due_act-orderTest: Bundle.entry[2].resource/*RequestGroup/RequestGroup-1*/.action[0]: Constraint failed: rqg-1: 'Must have resource or action but not both'
+ERROR: Bundle/eve-nextdueexists_yes_eve-DetermineIfDueForScreening_due_act-orderTest: Bundle.entry[2].resource/*RequestGroup/RequestGroup-1*/.action[0].code[0].coding[0].display: Wrong Display Name 'Hemoglobin.gastrointestinal [Presence] in Stool by Immunologic method' for http://loinc.org#29771-3. Valid display is one of 4 choices: 'Hemoglobin.gastrointestinal.lower [Presence] in Stool by Immunoassay' (en-US), 'Hemoglobin.gastrointestinal.lower [Presence] in Stool by Immunoassay' (en-US), 'Hemoccult Stl Ql IA' (en-US) or 'Lower GI Hemoglobin, Stool' (en-US) (for the language(s) 'en-US')
+ERROR: Bundle/eve-nextdueexists_yes_eve-DetermineIfDueForScreening_due_act-orderTest: Bundle.entry[0]: Except for transactions and batches, each entry in a Bundle must have a fullUrl which is the identity of the resource in the entry
+ERROR: Bundle/eve-nextdueexists_yes_eve-DetermineIfDueForScreening_due_act-orderTest: Bundle.entry[1]: Except for transactions and batches, each entry in a Bundle must have a fullUrl which is the identity of the resource in the entry
+ERROR: Bundle/eve-nextdueexists_yes_eve-DetermineIfDueForScreening_due_act-orderTest: Bundle.entry[2]: Except for transactions and batches, each entry in a Bundle must have a fullUrl which is the identity of the resource in the entry
+== input/examples/ScreeningDue_v1.0.0/bundles/eve-nextdueexists_yes_eve-DetermineIfDueForScreening_notdue_end-1.json ==
+ERROR: Bundle/eve-nextdueexists_yes_eve-DetermineIfDueForScreening_notdue_end-1: Bundle.id: Invalid Resource id: Too long (65 chars)
+ERROR: Bundle/eve-nextdueexists_yes_eve-DetermineIfDueForScreening_notdue_end-1: Bundle.entry[1].resource/*CarePlan/5d26ed42-cea5-4c53-bee1-e5e9234d077b*/: CarePlan.intent: minimum required = 1, but only found 0 (from http://hl7.org/fhir/StructureDefinition/CarePlan|4.0.1)
+ERROR: Bundle/eve-nextdueexists_yes_eve-DetermineIfDueForScreening_notdue_end-1: Bundle.entry[1]: Bundle entry missing fullUrl
+ERROR: Bundle/eve-nextdueexists_yes_eve-DetermineIfDueForScreening_notdue_end-1: Bundle.entry[1].resource/*CarePlan/5d26ed42-cea5-4c53-bee1-e5e9234d077b*/.subject: Relative Reference appears inside Bundle whose entry is missing a fullUrl
+ERROR: Bundle/eve-nextdueexists_yes_eve-DetermineIfDueForScreening_notdue_end-1: Bundle.entry[1].resource/*CarePlan/5d26ed42-cea5-4c53-bee1-e5e9234d077b*/.activity[0].reference: Relative Reference appears inside Bundle whose entry is missing a fullUrl
+ERROR: Bundle/eve-nextdueexists_yes_eve-DetermineIfDueForScreening_notdue_end-1: Bundle.entry[2]: Bundle entry missing fullUrl
+ERROR: Bundle/eve-nextdueexists_yes_eve-DetermineIfDueForScreening_notdue_end-1: Bundle.entry[2].resource/*RequestGroup/RequestGroup-1*/.subject: Relative Reference appears inside Bundle whose entry is missing a fullUrl
+ERROR: Bundle/eve-nextdueexists_yes_eve-DetermineIfDueForScreening_notdue_end-1: Bundle.entry[2].resource/*RequestGroup/RequestGroup-1*/.action[0]: Constraint failed: rqg-1: 'Must have resource or action but not both'
+ERROR: Bundle/eve-nextdueexists_yes_eve-DetermineIfDueForScreening_notdue_end-1: Bundle.entry[2].resource/*RequestGroup/RequestGroup-1*/.action[0].code[0].coding[0].display: Wrong Display Name 'Hemoglobin.gastrointestinal [Presence] in Stool by Immunologic method' for http://loinc.org#29771-3. Valid display is one of 4 choices: 'Hemoglobin.gastrointestinal.lower [Presence] in Stool by Immunoassay' (en-US), 'Hemoglobin.gastrointestinal.lower [Presence] in Stool by Immunoassay' (en-US), 'Hemoccult Stl Ql IA' (en-US) or 'Lower GI Hemoglobin, Stool' (en-US) (for the language(s) 'en-US')
+ERROR: Bundle/eve-nextdueexists_yes_eve-DetermineIfDueForScreening_notdue_end-1: Bundle.entry[0]: Except for transactions and batches, each entry in a Bundle must have a fullUrl which is the identity of the resource in the entry
+ERROR: Bundle/eve-nextdueexists_yes_eve-DetermineIfDueForScreening_notdue_end-1: Bundle.entry[1]: Except for transactions and batches, each entry in a Bundle must have a fullUrl which is the identity of the resource in the entry
+ERROR: Bundle/eve-nextdueexists_yes_eve-DetermineIfDueForScreening_notdue_end-1: Bundle.entry[2]: Except for transactions and batches, each entry in a Bundle must have a fullUrl which is the identity of the resource in the entry
+== input/examples/ScreeningDue_v1.0.0/bundles/eve-nextdueexists_yes_eve-DetermineIfDueForScreening_overdue_act-patientOutreach_act-orderTest.json ==
+ERROR: Bundle/eve-nextdueexists_yes_eve-DetermineIfDueForScreening_overdue_act-patientOutreach_act-orderTest: Bundle.id: Invalid Resource id: Too long (94 chars)
+ERROR: Bundle/eve-nextdueexists_yes_eve-DetermineIfDueForScreening_overdue_act-patientOutreach_act-orderTest: Bundle.entry[1].resource/*CarePlan/7bc679d0-9279-4732-99dc-6105eeef7d58*/: CarePlan.intent: minimum required = 1, but only found 0 (from http://hl7.org/fhir/StructureDefinition/CarePlan|4.0.1)
+ERROR: Bundle/eve-nextdueexists_yes_eve-DetermineIfDueForScreening_overdue_act-patientOutreach_act-orderTest: Bundle.entry[1]: Bundle entry missing fullUrl
+ERROR: Bundle/eve-nextdueexists_yes_eve-DetermineIfDueForScreening_overdue_act-patientOutreach_act-orderTest: Bundle.entry[1].resource/*CarePlan/7bc679d0-9279-4732-99dc-6105eeef7d58*/.subject: Relative Reference appears inside Bundle whose entry is missing a fullUrl
+ERROR: Bundle/eve-nextdueexists_yes_eve-DetermineIfDueForScreening_overdue_act-patientOutreach_act-orderTest: Bundle.entry[1].resource/*CarePlan/7bc679d0-9279-4732-99dc-6105eeef7d58*/.activity[0].reference: Relative Reference appears inside Bundle whose entry is missing a fullUrl
+ERROR: Bundle/eve-nextdueexists_yes_eve-DetermineIfDueForScreening_overdue_act-patientOutreach_act-orderTest: Bundle.entry[2]: Bundle entry missing fullUrl
+ERROR: Bundle/eve-nextdueexists_yes_eve-DetermineIfDueForScreening_overdue_act-patientOutreach_act-orderTest: Bundle.entry[2].resource/*RequestGroup/RequestGroup-1*/.subject: Relative Reference appears inside Bundle whose entry is missing a fullUrl
+ERROR: Bundle/eve-nextdueexists_yes_eve-DetermineIfDueForScreening_overdue_act-patientOutreach_act-orderTest: Bundle.entry[2].resource/*RequestGroup/RequestGroup-1*/.action[0]: Constraint failed: rqg-1: 'Must have resource or action but not both'
+ERROR: Bundle/eve-nextdueexists_yes_eve-DetermineIfDueForScreening_overdue_act-patientOutreach_act-orderTest: Bundle.entry[0]: Except for transactions and batches, each entry in a Bundle must have a fullUrl which is the identity of the resource in the entry
+ERROR: Bundle/eve-nextdueexists_yes_eve-DetermineIfDueForScreening_overdue_act-patientOutreach_act-orderTest: Bundle.entry[1]: Except for transactions and batches, each entry in a Bundle must have a fullUrl which is the identity of the resource in the entry
+ERROR: Bundle/eve-nextdueexists_yes_eve-DetermineIfDueForScreening_overdue_act-patientOutreach_act-orderTest: Bundle.entry[2]: Except for transactions and batches, each entry in a Bundle must have a fullUrl which is the identity of the resource in the entry
+== input/examples/ScreeningEligible_v1.0.0/bundles/eve-HxTotalColectomy_no_eve-ActiveCRC_no_eve-Symptomatic_no_act-ScreeningEligible.json ==
+ERROR: Bundle/eve-HxTotalColectomy_no_eve-ActiveCRC_no_eve-Symptomatic_no_act-ScreeningEligible: Bundle.id: Invalid Resource id: Too long (81 chars)
+ERROR: Bundle/eve-HxTotalColectomy_no_eve-ActiveCRC_no_eve-Symptomatic_no_act-ScreeningEligible: Bundle.entry[0]: Except for transactions and batches, each entry in a Bundle must have a fullUrl which is the identity of the resource in the entry
+== input/examples/ScreeningEligible_v1.0.0/bundles/eve-HxTotalColectomy_no_eve-ActiveCRC_no_eve-Symptomatic_yes_act-Diagnostic.json ==
+ERROR: Bundle/eve-HxTotalColectomy_no_eve-ActiveCRC_no_eve-Symptomatic_yes_act-Diagnostic: Bundle.id: Invalid Resource id: Too long (75 chars)
+WARNING: Bundle/eve-HxTotalColectomy_no_eve-ActiveCRC_no_eve-Symptomatic_yes_act-Diagnostic: Bundle.entry[1].resource/*Observation/eec0dc88-9560-4ac0-887d-77bd09754f9e*/: Best Practice Recommendation: In general, all observations should have a performer
+INFORMATION: Bundle/eve-HxTotalColectomy_no_eve-ActiveCRC_no_eve-Symptomatic_yes_act-Diagnostic: Bundle.entry[1].resource/*Observation/eec0dc88-9560-4ac0-887d-77bd09754f9e*/.code: Reference to experimental CodeSystem http://cancerscreeningcds.github.io/crcsm-cds/CodeSystem/screening-observation-code-system|0.1.0
+ERROR: Bundle/eve-HxTotalColectomy_no_eve-ActiveCRC_no_eve-Symptomatic_yes_act-Diagnostic: Bundle.entry[1]: Bundle entry missing fullUrl
+ERROR: Bundle/eve-HxTotalColectomy_no_eve-ActiveCRC_no_eve-Symptomatic_yes_act-Diagnostic: Bundle.entry[1].resource/*Observation/eec0dc88-9560-4ac0-887d-77bd09754f9e*/.subject: Relative Reference appears inside Bundle whose entry is missing a fullUrl
+ERROR: Bundle/eve-HxTotalColectomy_no_eve-ActiveCRC_no_eve-Symptomatic_yes_act-Diagnostic: Bundle.entry[0]: Except for transactions and batches, each entry in a Bundle must have a fullUrl which is the identity of the resource in the entry
+ERROR: Bundle/eve-HxTotalColectomy_no_eve-ActiveCRC_no_eve-Symptomatic_yes_act-Diagnostic: Bundle.entry[1]: Except for transactions and batches, each entry in a Bundle must have a fullUrl which is the identity of the resource in the entry
+WARNING: Bundle/eve-HxTotalColectomy_no_eve-ActiveCRC_no_eve-Symptomatic_yes_act-Diagnostic: Bundle.entry[1].resource: Best Practice Recommendation: In general, all observations should have a performer
+== input/examples/ScreeningEligible_v1.0.0/bundles/eve-HxTotalColectomy_no_eve-ActiveCRC_yes_end-1.json ==
+ERROR: Bundle/eve-HxTotalColectomy_no_eve-ActiveCRC_yes_end-1: Bundle.id: Invalid Resource id: Invalid Characters ('eve-HxTotalColectomy_no_eve-ActiveCRC_yes_end-1')
+ERROR: Bundle/eve-HxTotalColectomy_no_eve-ActiveCRC_yes_end-1: Bundle.entry[1]: Bundle entry missing fullUrl
+ERROR: Bundle/eve-HxTotalColectomy_no_eve-ActiveCRC_yes_end-1: Bundle.entry[1].resource/*Condition/colorectal-cancer*/.subject: Relative Reference appears inside Bundle whose entry is missing a fullUrl
+ERROR: Bundle/eve-HxTotalColectomy_no_eve-ActiveCRC_yes_end-1: Bundle.entry[0]: Except for transactions and batches, each entry in a Bundle must have a fullUrl which is the identity of the resource in the entry
+ERROR: Bundle/eve-HxTotalColectomy_no_eve-ActiveCRC_yes_end-1: Bundle.entry[1]: Except for transactions and batches, each entry in a Bundle must have a fullUrl which is the identity of the resource in the entry
+== input/examples/ScreeningEligible_v1.0.0/bundles/eve-HxTotalColectomy_yes_end-1.json ==
+ERROR: Bundle/eve-HxTotalColectomy_yes_end-1: Bundle.id: Invalid Resource id: Invalid Characters ('eve-HxTotalColectomy_yes_end-1')
+ERROR: Bundle/eve-HxTotalColectomy_yes_end-1: Bundle.entry[1]: Bundle entry missing fullUrl
+ERROR: Bundle/eve-HxTotalColectomy_yes_end-1: Bundle.entry[1].resource/*Procedure/total-colectomy-procedure*/.subject: Relative Reference appears inside Bundle whose entry is missing a fullUrl
+ERROR: Bundle/eve-HxTotalColectomy_yes_end-1: Bundle.entry[0]: Except for transactions and batches, each entry in a Bundle must have a fullUrl which is the identity of the resource in the entry
+ERROR: Bundle/eve-HxTotalColectomy_yes_end-1: Bundle.entry[1]: Except for transactions and batches, each entry in a Bundle must have a fullUrl which is the identity of the resource in the entry
+== input/examples/ScreeningEligible_v1.0.0/bundles/inc-AgeAtLeast18_MostRecentAgeValue_yes.json ==
+ERROR: Bundle/inc-AgeAtLeast18_MostRecentAgeValue_yes: Bundle.id: Invalid Resource id: Invalid Characters ('inc-AgeAtLeast18_MostRecentAgeValue_yes')
+WARNING: Bundle/inc-AgeAtLeast18_MostRecentAgeValue_yes: Bundle.entry[1].resource/*Observation/0f56a4c9-1a47-4ac1-bb7b-6f1525e61a9b*/: Best Practice Recommendation: In general, all observations should have a performer
+ERROR: Bundle/inc-AgeAtLeast18_MostRecentAgeValue_yes: Bundle.entry[1]: Bundle entry missing fullUrl
+ERROR: Bundle/inc-AgeAtLeast18_MostRecentAgeValue_yes: Bundle.entry[1].resource/*Observation/0f56a4c9-1a47-4ac1-bb7b-6f1525e61a9b*/.subject: Relative Reference appears inside Bundle whose entry is missing a fullUrl
+WARNING: Bundle/inc-AgeAtLeast18_MostRecentAgeValue_yes: Bundle.entry[2].resource/*Observation/d91a24c1-e47f-42ac-8dc7-01c7426b829b*/: Best Practice Recommendation: In general, all observations should have a performer
+ERROR: Bundle/inc-AgeAtLeast18_MostRecentAgeValue_yes: Bundle.entry[2]: Bundle entry missing fullUrl
+ERROR: Bundle/inc-AgeAtLeast18_MostRecentAgeValue_yes: Bundle.entry[2].resource/*Observation/d91a24c1-e47f-42ac-8dc7-01c7426b829b*/.subject: Relative Reference appears inside Bundle whose entry is missing a fullUrl
+ERROR: Bundle/inc-AgeAtLeast18_MostRecentAgeValue_yes: Bundle.entry[0]: Except for transactions and batches, each entry in a Bundle must have a fullUrl which is the identity of the resource in the entry
+ERROR: Bundle/inc-AgeAtLeast18_MostRecentAgeValue_yes: Bundle.entry[1]: Except for transactions and batches, each entry in a Bundle must have a fullUrl which is the identity of the resource in the entry
+WARNING: Bundle/inc-AgeAtLeast18_MostRecentAgeValue_yes: Bundle.entry[1].resource: Best Practice Recommendation: In general, all observations should have a performer
+ERROR: Bundle/inc-AgeAtLeast18_MostRecentAgeValue_yes: Bundle.entry[2]: Except for transactions and batches, each entry in a Bundle must have a fullUrl which is the identity of the resource in the entry
+WARNING: Bundle/inc-AgeAtLeast18_MostRecentAgeValue_yes: Bundle.entry[2].resource: Best Practice Recommendation: In general, all observations should have a performer
+== input/examples/ScreeningEligible_v1.0.0/bundles/inc-AgeAtLeast18_error.json ==
+ERROR: Bundle/inc-AgeAtLeast18_error: Bundle.id: Invalid Resource id: Invalid Characters ('inc-AgeAtLeast18_error')
+ERROR: Bundle/inc-AgeAtLeast18_error: Bundle.entry[0]: Except for transactions and batches, each entry in a Bundle must have a fullUrl which is the identity of the resource in the entry
+== input/examples/ScreeningEligible_v1.0.0/bundles/inc-AgeAtLeast18_no.json ==
+ERROR: Bundle/inc-AgeAtLeast18_no: Bundle.id: Invalid Resource id: Invalid Characters ('inc-AgeAtLeast18_no')
+ERROR: Bundle/inc-AgeAtLeast18_no: Bundle.entry[0]: Except for transactions and batches, each entry in a Bundle must have a fullUrl which is the identity of the resource in the entry
+== input/examples/ScreeningEligible_v1.0.0/bundles/inc-AgeAtLeast18_yes.json ==
+ERROR: Bundle/inc-AgeAtLeast18_yes: Bundle.id: Invalid Resource id: Invalid Characters ('inc-AgeAtLeast18_yes')
+ERROR: Bundle/inc-AgeAtLeast18_yes: Bundle.entry[0]: Except for transactions and batches, each entry in a Bundle must have a fullUrl which is the identity of the resource in the entry
+== input/examples/ScreeningIncomplete_v1.0.0/bundles/eve-pendingCTC_act-testpending.json ==
+ERROR: Bundle/eve-pendingCTC_act-testpending: Bundle.id: Invalid Resource id: Invalid Characters ('eve-pendingCTC_act-testpending')
+ERROR: Bundle/eve-pendingCTC_act-testpending: Bundle.entry[1].resource/*ServiceRequest/eb9230fe-571d-4d0a-a9e7-019d0254c3ae*/: ServiceRequest.subject: minimum required = 1, but only found 0 (from http://hl7.org/fhir/StructureDefinition/ServiceRequest|4.0.1)
+ERROR: Bundle/eve-pendingCTC_act-testpending: Bundle.entry[0]: Except for transactions and batches, each entry in a Bundle must have a fullUrl which is the identity of the resource in the entry
+ERROR: Bundle/eve-pendingCTC_act-testpending: Bundle.entry[1]: Except for transactions and batches, each entry in a Bundle must have a fullUrl which is the identity of the resource in the entry
+== input/examples/ScreeningIncomplete_v1.0.0/bundles/eve-pendingColonoscopy_act-testpending.json ==
+ERROR: Bundle/eve-pendingColonoscopy_act-testpending: Bundle.id: Invalid Resource id: Invalid Characters ('eve-pendingColonoscopy_act-testpending')
+ERROR: Bundle/eve-pendingColonoscopy_act-testpending: Bundle.entry[1].resource/*ServiceRequest/295a37a9-3ef9-4235-b97d-47b366ce1b30*/: ServiceRequest.subject: minimum required = 1, but only found 0 (from http://hl7.org/fhir/StructureDefinition/ServiceRequest|4.0.1)
+ERROR: Bundle/eve-pendingColonoscopy_act-testpending: Bundle.entry[0]: Except for transactions and batches, each entry in a Bundle must have a fullUrl which is the identity of the resource in the entry
+ERROR: Bundle/eve-pendingColonoscopy_act-testpending: Bundle.entry[1]: Except for transactions and batches, each entry in a Bundle must have a fullUrl which is the identity of the resource in the entry
+== input/examples/ScreeningIncomplete_v1.0.0/bundles/eve-pendingFlexSig_act-testpending.json ==
+ERROR: Bundle/eve-pendingFlexSig_act-testpending: Bundle.id: Invalid Resource id: Invalid Characters ('eve-pendingFlexSig_act-testpending')
+ERROR: Bundle/eve-pendingFlexSig_act-testpending: Bundle.entry[1].resource/*ServiceRequest/91f76728-70b8-4b03-81c4-a4fa22cd5f0b*/: ServiceRequest.subject: minimum required = 1, but only found 0 (from http://hl7.org/fhir/StructureDefinition/ServiceRequest|4.0.1)
+ERROR: Bundle/eve-pendingFlexSig_act-testpending: Bundle.entry[0]: Except for transactions and batches, each entry in a Bundle must have a fullUrl which is the identity of the resource in the entry
+ERROR: Bundle/eve-pendingFlexSig_act-testpending: Bundle.entry[1]: Except for transactions and batches, each entry in a Bundle must have a fullUrl which is the identity of the resource in the entry
+== input/examples/ScreeningIncomplete_v1.0.0/bundles/eve-pendinggFOBT_act-testpending.json ==
+ERROR: Bundle/eve-pendinggFOBT_act-testpending: Bundle.id: Invalid Resource id: Invalid Characters ('eve-pendinggFOBT_act-testpending')
+ERROR: Bundle/eve-pendinggFOBT_act-testpending: Bundle.entry[1].resource/*ServiceRequest/6d31324f-bcd1-4258-a685-9aec43e8614a*/: ServiceRequest.subject: minimum required = 1, but only found 0 (from http://hl7.org/fhir/StructureDefinition/ServiceRequest|4.0.1)
+ERROR: Bundle/eve-pendinggFOBT_act-testpending: Bundle.entry[0]: Except for transactions and batches, each entry in a Bundle must have a fullUrl which is the identity of the resource in the entry
+ERROR: Bundle/eve-pendinggFOBT_act-testpending: Bundle.entry[1]: Except for transactions and batches, each entry in a Bundle must have a fullUrl which is the identity of the resource in the entry
+== input/examples/ScreeningIncomplete_v1.0.0/bundles/eve-pendingsDNAFIT_act-testpending.json ==
+ERROR: Bundle/eve-pendingsDNAFIT_act-testpending: Bundle.id: Invalid Resource id: Invalid Characters ('eve-pendingsDNAFIT_act-testpending')
+ERROR: Bundle/eve-pendingsDNAFIT_act-testpending: Bundle.entry[1].resource/*ServiceRequest/28f72d90-b089-49f8-880d-b4874f146b49*/: ServiceRequest.subject: minimum required = 1, but only found 0 (from http://hl7.org/fhir/StructureDefinition/ServiceRequest|4.0.1)
+ERROR: Bundle/eve-pendingsDNAFIT_act-testpending: Bundle.entry[0]: Except for transactions and batches, each entry in a Bundle must have a fullUrl which is the identity of the resource in the entry
+ERROR: Bundle/eve-pendingsDNAFIT_act-testpending: Bundle.entry[1]: Except for transactions and batches, each entry in a Bundle must have a fullUrl which is the identity of the resource in the entry
+== input/examples/USPSTFAvgRisk_v1.0.0/bundles/eve-AgeOver45_no_act-RecommendStartScreeningAt45.json ==
+ERROR: Bundle/eve-AgeOver45_no_act-RecommendStartScreeningAt45: Bundle.id: Invalid Resource id: Invalid Characters ('eve-AgeOver45_no_act-RecommendStartScreeningAt45')
+ERROR: Bundle/eve-AgeOver45_no_act-RecommendStartScreeningAt45: Bundle.entry[0]: Except for transactions and batches, each entry in a Bundle must have a fullUrl which is the identity of the resource in the entry
+== input/examples/USPSTFAvgRisk_v1.0.0/bundles/eve-AgeOver45_yes_eve-priorScreeningExists_no_act-updateDueDateNow.json ==
+ERROR: Bundle/eve-AgeOver45_yes_eve-priorScreeningExists_no_act-updateDueDateNow: Bundle.id: Invalid Resource id: Too long (66 chars)
+ERROR: Bundle/eve-AgeOver45_yes_eve-priorScreeningExists_no_act-updateDueDateNow: Bundle.entry[0]: Except for transactions and batches, each entry in a Bundle must have a fullUrl which is the identity of the resource in the entry
+== input/examples/USPSTFAvgRisk_v1.0.0/bundles/eve-AgeOver45_yes_eve-priorScreeningExists_yes_act-determineDueDate.json ==
+ERROR: Bundle/eve-AgeOver45_yes_eve-priorScreeningExists_yes_act-determineDueDate: Bundle.id: Invalid Resource id: Too long (67 chars)
+ERROR: Bundle/eve-AgeOver45_yes_eve-priorScreeningExists_yes_act-determineDueDate: Bundle.entry[1]: Bundle entry missing fullUrl
+ERROR: Bundle/eve-AgeOver45_yes_eve-priorScreeningExists_yes_act-determineDueDate: Bundle.entry[1].resource/*DiagnosticReport/colonoscopy-report-neg*/.subject: Relative Reference appears inside Bundle whose entry is missing a fullUrl
+ERROR: Bundle/eve-AgeOver45_yes_eve-priorScreeningExists_yes_act-determineDueDate: Bundle.entry[2]: Bundle entry missing fullUrl
+ERROR: Bundle/eve-AgeOver45_yes_eve-priorScreeningExists_yes_act-determineDueDate: Bundle.entry[2].resource/*DiagnosticReport/FOBT-report-neg*/.subject: Relative Reference appears inside Bundle whose entry is missing a fullUrl
+ERROR: Bundle/eve-AgeOver45_yes_eve-priorScreeningExists_yes_act-determineDueDate: Bundle.entry[0]: Except for transactions and batches, each entry in a Bundle must have a fullUrl which is the identity of the resource in the entry
+ERROR: Bundle/eve-AgeOver45_yes_eve-priorScreeningExists_yes_act-determineDueDate: Bundle.entry[1]: Except for transactions and batches, each entry in a Bundle must have a fullUrl which is the identity of the resource in the entry
+ERROR: Bundle/eve-AgeOver45_yes_eve-priorScreeningExists_yes_act-determineDueDate: Bundle.entry[2]: Except for transactions and batches, each entry in a Bundle must have a fullUrl which is the identity of the resource in the entry
+== input/examples/apply/DecisionToScreen_eve-Age86AndOlder_no_eve-AgeOver76_no_eve-LifeExp10_no_eve-riskFactors_no_act-AvgRiskEligible.json ==
+ERROR: Bundle.entry[1].resource.action: Array cannot be empty - the property should not be present if it has no values
+ERROR: Bundle/DecisionToScreen_eve-Age86AndOlder_no_eve-AgeOver76_no_eve-LifeExp10_no_eve-riskFactors_no_act-AvgRiskEligible: Bundle.id: Invalid Resource id: Too long (110 chars)
+ERROR: Bundle/DecisionToScreen_eve-Age86AndOlder_no_eve-AgeOver76_no_eve-LifeExp10_no_eve-riskFactors_no_act-AvgRiskEligible: Bundle.entry[0].resource/*CarePlan/1*/.subject: Unable to resolve resource with reference 'Patient/08425f2c-541e-4ad4-8db1-2563b4110ae6'
+INFORMATION: Bundle/DecisionToScreen_eve-Age86AndOlder_no_eve-AgeOver76_no_eve-LifeExp10_no_eve-riskFactors_no_act-AvgRiskEligible: Bundle.entry[0].resource/*CarePlan/1*/.activity[0].reference: Details for RequestGroup/2 matching against profile http://hl7.org/fhir/StructureDefinition/RequestGroup|4.0.1
+ERROR: Bundle/DecisionToScreen_eve-Age86AndOlder_no_eve-AgeOver76_no_eve-LifeExp10_no_eve-riskFactors_no_act-AvgRiskEligible: Bundle.entry[1].resource/*RequestGroup/2*/.subject: Unable to resolve resource with reference 'Patient/08425f2c-541e-4ad4-8db1-2563b4110ae6'
+== input/examples/apply/DecisionToScreen_eve-Age86AndOlder_no_eve-AgeOver76_no_eve-LifeExp10_yes_act-sdmcontinuelifexp__eve-riskFactors_no_act-AvgRiskEligible.json ==
+ERROR: Bundle.entry[1].resource.action: Array cannot be empty - the property should not be present if it has no values
+ERROR: Bundle/DecisionToScreen_eve-Age86AndOlder_no_eve-AgeOver76_no_eve-LifeExp10_yes_act-sdmcontinuelifexp__eve-riskFactors_no_act-AvgRiskEligible: Bundle.id: Invalid Resource id: Too long (134 chars)
+ERROR: Bundle/DecisionToScreen_eve-Age86AndOlder_no_eve-AgeOver76_no_eve-LifeExp10_yes_act-sdmcontinuelifexp__eve-riskFactors_no_act-AvgRiskEligible: Bundle.entry[0].resource/*CarePlan/3*/.subject: Unable to resolve resource with reference 'Patient/1c39e9c0-2ab4-4925-8368-0af023fd7ecc'
+INFORMATION: Bundle/DecisionToScreen_eve-Age86AndOlder_no_eve-AgeOver76_no_eve-LifeExp10_yes_act-sdmcontinuelifexp__eve-riskFactors_no_act-AvgRiskEligible: Bundle.entry[0].resource/*CarePlan/3*/.activity[0].reference: Details for RequestGroup/4 matching against profile http://hl7.org/fhir/StructureDefinition/RequestGroup|4.0.1
+ERROR: Bundle/DecisionToScreen_eve-Age86AndOlder_no_eve-AgeOver76_no_eve-LifeExp10_yes_act-sdmcontinuelifexp__eve-riskFactors_no_act-AvgRiskEligible: Bundle.entry[1].resource/*RequestGroup/4*/.subject: Unable to resolve resource with reference 'Patient/1c39e9c0-2ab4-4925-8368-0af023fd7ecc'
+== input/examples/apply/DecisionToScreen_eve-Age86AndOlder_no_eve-AgeOver76_yes_act-SelectivelyOfferScreening__eve-LifeExp10_no_eve-riskFactors_no_act-AvgRiskEligible.json ==
+ERROR: Bundle.entry[1].resource.action: Array cannot be empty - the property should not be present if it has no values
+ERROR: Bundle/DecisionToScreen_eve-Age86AndOlder_no_eve-AgeOver76_yes_act-SelectivelyOfferScreening__eve-LifeExp10_no_eve-riskFactors_no_act-AvgRiskEligible: Bundle.id: Invalid Resource id: Too long (142 chars)
+ERROR: Bundle/DecisionToScreen_eve-Age86AndOlder_no_eve-AgeOver76_yes_act-SelectivelyOfferScreening__eve-LifeExp10_no_eve-riskFactors_no_act-AvgRiskEligible: Bundle.entry[0].resource/*CarePlan/5*/.subject: Unable to resolve resource with reference 'Patient/73599a30-8577-4d57-82be-020072f15068'
+INFORMATION: Bundle/DecisionToScreen_eve-Age86AndOlder_no_eve-AgeOver76_yes_act-SelectivelyOfferScreening__eve-LifeExp10_no_eve-riskFactors_no_act-AvgRiskEligible: Bundle.entry[0].resource/*CarePlan/5*/.activity[0].reference: Details for RequestGroup/6 matching against profile http://hl7.org/fhir/StructureDefinition/RequestGroup|4.0.1
+ERROR: Bundle/DecisionToScreen_eve-Age86AndOlder_no_eve-AgeOver76_yes_act-SelectivelyOfferScreening__eve-LifeExp10_no_eve-riskFactors_no_act-AvgRiskEligible: Bundle.entry[1].resource/*RequestGroup/6*/.subject: Unable to resolve resource with reference 'Patient/73599a30-8577-4d57-82be-020072f15068'
+== input/examples/apply/DecisionToScreen_eve-Age86AndOlder_no_eve-AgeOver76_yes_act-SelectivelyOfferScreening__eve-LifeExp10_yes_act-sdmcontinuelifexp__eve-riskFactors_no_act-AvgRiskEligible.json ==
+ERROR: Bundle.entry[1].resource.action: Array cannot be empty - the property should not be present if it has no values
+ERROR: Bundle/DecisionToScreen_eve-Age86AndOlder_no_eve-AgeOver76_yes_act-SelectivelyOfferScreening__eve-LifeExp10_yes_act-sdmcontinuelifexp__eve-riskFactors_no_act-AvgRiskEligible: Bundle.id: Invalid Resource id: Too long (166 chars)
+ERROR: Bundle/DecisionToScreen_eve-Age86AndOlder_no_eve-AgeOver76_yes_act-SelectivelyOfferScreening__eve-LifeExp10_yes_act-sdmcontinuelifexp__eve-riskFactors_no_act-AvgRiskEligible: Bundle.entry[0].resource/*CarePlan/7*/.subject: Unable to resolve resource with reference 'Patient/2ce2835c-ed05-444e-b829-b2bcfdd0d901'
+INFORMATION: Bundle/DecisionToScreen_eve-Age86AndOlder_no_eve-AgeOver76_yes_act-SelectivelyOfferScreening__eve-LifeExp10_yes_act-sdmcontinuelifexp__eve-riskFactors_no_act-AvgRiskEligible: Bundle.entry[0].resource/*CarePlan/7*/.activity[0].reference: Details for RequestGroup/8 matching against profile http://hl7.org/fhir/StructureDefinition/RequestGroup|4.0.1
+ERROR: Bundle/DecisionToScreen_eve-Age86AndOlder_no_eve-AgeOver76_yes_act-SelectivelyOfferScreening__eve-LifeExp10_yes_act-sdmcontinuelifexp__eve-riskFactors_no_act-AvgRiskEligible: Bundle.entry[1].resource/*RequestGroup/8*/.subject: Unable to resolve resource with reference 'Patient/2ce2835c-ed05-444e-b829-b2bcfdd0d901'
+== input/examples/apply/DecisionToScreen_eve-Age86AndOlder_yes_act-HarmsLikelyOutweighBenefits.json ==
+ERROR: Bundle.entry[1].resource.action: Array cannot be empty - the property should not be present if it has no values
+ERROR: Bundle/DecisionToScreen_eve-Age86AndOlder_yes_act-HarmsLikelyOutweighBenefits: Bundle.id: Invalid Resource id: Too long (70 chars)
+ERROR: Bundle/DecisionToScreen_eve-Age86AndOlder_yes_act-HarmsLikelyOutweighBenefits: Bundle.entry[0].resource/*CarePlan/9*/.subject: Unable to resolve resource with reference 'Patient/5979cce6-375e-4a89-8f13-6a703f635f8c'
+INFORMATION: Bundle/DecisionToScreen_eve-Age86AndOlder_yes_act-HarmsLikelyOutweighBenefits: Bundle.entry[0].resource/*CarePlan/9*/.activity[0].reference: Details for RequestGroup/10 matching against profile http://hl7.org/fhir/StructureDefinition/RequestGroup|4.0.1
+ERROR: Bundle/DecisionToScreen_eve-Age86AndOlder_yes_act-HarmsLikelyOutweighBenefits: Bundle.entry[1].resource/*RequestGroup/10*/.subject: Unable to resolve resource with reference 'Patient/5979cce6-375e-4a89-8f13-6a703f635f8c'
+== input/examples/apply/IncreasedRiskExclusions_eve-HereditarySyndrome_no_eve-IBD_no_eve-HxCRC_no_eve-FamilyHx_no_eve-HxPolyps_no_act-AvgRiskScreeningEligible.json ==
+ERROR: Bundle.entry[1].resource.action: Array cannot be empty - the property should not be present if it has no values
+ERROR: Bundle/IncreasedRiskExclusions_eve-HereditarySyndrome_no_eve-IBD_no_eve-HxCRC_no_eve-FamilyHx_no_eve-HxPolyps_no_act-AvgRiskScreeningEligible: Bundle.id: Invalid Resource id: Too long (134 chars)
+ERROR: Bundle/IncreasedRiskExclusions_eve-HereditarySyndrome_no_eve-IBD_no_eve-HxCRC_no_eve-FamilyHx_no_eve-HxPolyps_no_act-AvgRiskScreeningEligible: Bundle.entry[0].resource/*CarePlan/11*/.subject: Unable to resolve resource with reference 'Patient/2c5ab896-3093-4a4d-88af-974e72bbc223'
+INFORMATION: Bundle/IncreasedRiskExclusions_eve-HereditarySyndrome_no_eve-IBD_no_eve-HxCRC_no_eve-FamilyHx_no_eve-HxPolyps_no_act-AvgRiskScreeningEligible: Bundle.entry[0].resource/*CarePlan/11*/.activity[0].reference: Details for RequestGroup/12 matching against profile http://hl7.org/fhir/StructureDefinition/RequestGroup|4.0.1
+ERROR: Bundle/IncreasedRiskExclusions_eve-HereditarySyndrome_no_eve-IBD_no_eve-HxCRC_no_eve-FamilyHx_no_eve-HxPolyps_no_act-AvgRiskScreeningEligible: Bundle.entry[1].resource/*RequestGroup/12*/.subject: Unable to resolve resource with reference 'Patient/2c5ab896-3093-4a4d-88af-974e72bbc223'
+== input/examples/apply/IncreasedRiskExclusions_eve-HereditarySyndrome_no_eve-IBD_no_eve-HxCRC_no_eve-FamilyHx_no_eve-HxPolyps_yes_act-HxPolyps.json ==
+ERROR: Bundle.entry[1].resource.action: Array cannot be empty - the property should not be present if it has no values
+ERROR: Bundle/IncreasedRiskExclusions_eve-HereditarySyndrome_no_eve-IBD_no_eve-HxCRC_no_eve-FamilyHx_no_eve-HxPolyps_yes_act-HxPolyps: Bundle.id: Invalid Resource id: Too long (119 chars)
+ERROR: Bundle/IncreasedRiskExclusions_eve-HereditarySyndrome_no_eve-IBD_no_eve-HxCRC_no_eve-FamilyHx_no_eve-HxPolyps_yes_act-HxPolyps: Bundle.entry[0].resource/*CarePlan/13*/.subject: Unable to resolve resource with reference 'Patient/79e8bd4c-dae8-4f7f-bc63-d0fa56d5529e'
+INFORMATION: Bundle/IncreasedRiskExclusions_eve-HereditarySyndrome_no_eve-IBD_no_eve-HxCRC_no_eve-FamilyHx_no_eve-HxPolyps_yes_act-HxPolyps: Bundle.entry[0].resource/*CarePlan/13*/.activity[0].reference: Details for RequestGroup/14 matching against profile http://hl7.org/fhir/StructureDefinition/RequestGroup|4.0.1
+ERROR: Bundle/IncreasedRiskExclusions_eve-HereditarySyndrome_no_eve-IBD_no_eve-HxCRC_no_eve-FamilyHx_no_eve-HxPolyps_yes_act-HxPolyps: Bundle.entry[1].resource/*RequestGroup/14*/.subject: Unable to resolve resource with reference 'Patient/79e8bd4c-dae8-4f7f-bc63-d0fa56d5529e'
+== input/examples/apply/IncreasedRiskExclusions_eve-HereditarySyndrome_no_eve-IBD_no_eve-HxCRC_no_eve-FamilyHx_yes_act-FamilyHxCRC.json ==
+ERROR: Bundle.entry[1].resource.action: Array cannot be empty - the property should not be present if it has no values
+ERROR: Bundle/IncreasedRiskExclusions_eve-HereditarySyndrome_no_eve-IBD_no_eve-HxCRC_no_eve-FamilyHx_yes_act-FamilyHxCRC: Bundle.id: Invalid Resource id: Too long (106 chars)
+ERROR: Bundle/IncreasedRiskExclusions_eve-HereditarySyndrome_no_eve-IBD_no_eve-HxCRC_no_eve-FamilyHx_yes_act-FamilyHxCRC: Bundle.entry[0].resource/*CarePlan/15*/.subject: Unable to resolve resource with reference 'Patient/628d0e51-c46e-44a4-a30e-4934d7180592'
+INFORMATION: Bundle/IncreasedRiskExclusions_eve-HereditarySyndrome_no_eve-IBD_no_eve-HxCRC_no_eve-FamilyHx_yes_act-FamilyHxCRC: Bundle.entry[0].resource/*CarePlan/15*/.activity[0].reference: Details for RequestGroup/16 matching against profile http://hl7.org/fhir/StructureDefinition/RequestGroup|4.0.1
+ERROR: Bundle/IncreasedRiskExclusions_eve-HereditarySyndrome_no_eve-IBD_no_eve-HxCRC_no_eve-FamilyHx_yes_act-FamilyHxCRC: Bundle.entry[1].resource/*RequestGroup/16*/.subject: Unable to resolve resource with reference 'Patient/628d0e51-c46e-44a4-a30e-4934d7180592'
+== input/examples/apply/IncreasedRiskExclusions_eve-HereditarySyndrome_no_eve-IBD_no_eve-HxCRC_yes_act-HxCRC.json ==
+ERROR: Bundle.entry[1].resource.action: Array cannot be empty - the property should not be present if it has no values
+ERROR: Bundle/IncreasedRiskExclusions_eve-HereditarySyndrome_no_eve-IBD_no_eve-HxCRC_yes_act-HxCRC: Bundle.id: Invalid Resource id: Too long (84 chars)
+ERROR: Bundle/IncreasedRiskExclusions_eve-HereditarySyndrome_no_eve-IBD_no_eve-HxCRC_yes_act-HxCRC: Bundle.entry[0].resource/*CarePlan/17*/.subject: Unable to resolve resource with reference 'Patient/bd811e5e-4565-4e62-b13e-adac2035f730'
+INFORMATION: Bundle/IncreasedRiskExclusions_eve-HereditarySyndrome_no_eve-IBD_no_eve-HxCRC_yes_act-HxCRC: Bundle.entry[0].resource/*CarePlan/17*/.activity[0].reference: Details for RequestGroup/18 matching against profile http://hl7.org/fhir/StructureDefinition/RequestGroup|4.0.1
+ERROR: Bundle/IncreasedRiskExclusions_eve-HereditarySyndrome_no_eve-IBD_no_eve-HxCRC_yes_act-HxCRC: Bundle.entry[1].resource/*RequestGroup/18*/.subject: Unable to resolve resource with reference 'Patient/bd811e5e-4565-4e62-b13e-adac2035f730'
+== input/examples/apply/IncreasedRiskExclusions_eve-HereditarySyndrome_no_eve-IBD_yes_act-IBD.json ==
+ERROR: Bundle.entry[1].resource.action: Array cannot be empty - the property should not be present if it has no values
+ERROR: Bundle/IncreasedRiskExclusions_eve-HereditarySyndrome_no_eve-IBD_yes_act-IBD: Bundle.id: Invalid Resource id: Too long (69 chars)
+ERROR: Bundle/IncreasedRiskExclusions_eve-HereditarySyndrome_no_eve-IBD_yes_act-IBD: Bundle.entry[0].resource/*CarePlan/19*/.subject: Unable to resolve resource with reference 'Patient/7ee9387b-7168-47bd-bb6d-a3d177b90adb'
+INFORMATION: Bundle/IncreasedRiskExclusions_eve-HereditarySyndrome_no_eve-IBD_yes_act-IBD: Bundle.entry[0].resource/*CarePlan/19*/.activity[0].reference: Details for RequestGroup/20 matching against profile http://hl7.org/fhir/StructureDefinition/RequestGroup|4.0.1
+ERROR: Bundle/IncreasedRiskExclusions_eve-HereditarySyndrome_no_eve-IBD_yes_act-IBD: Bundle.entry[1].resource/*RequestGroup/20*/.subject: Unable to resolve resource with reference 'Patient/7ee9387b-7168-47bd-bb6d-a3d177b90adb'
+== input/examples/apply/IncreasedRiskExclusions_eve-HereditarySyndrome_yes_act-CRCHereditarySyndrome.json ==
+ERROR: Bundle.entry[1].resource.action: Array cannot be empty - the property should not be present if it has no values
+ERROR: Bundle/IncreasedRiskExclusions_eve-HereditarySyndrome_yes_act-CRCHereditarySyndrome: Bundle.id: Invalid Resource id: Too long (76 chars)
+ERROR: Bundle/IncreasedRiskExclusions_eve-HereditarySyndrome_yes_act-CRCHereditarySyndrome: Bundle.entry[0].resource/*CarePlan/21*/.subject: Unable to resolve resource with reference 'Patient/564f7adb-3a87-46b9-9ad6-90944a8598a6'
+INFORMATION: Bundle/IncreasedRiskExclusions_eve-HereditarySyndrome_yes_act-CRCHereditarySyndrome: Bundle.entry[0].resource/*CarePlan/21*/.activity[0].reference: Details for RequestGroup/22 matching against profile http://hl7.org/fhir/StructureDefinition/RequestGroup|4.0.1
+ERROR: Bundle/IncreasedRiskExclusions_eve-HereditarySyndrome_yes_act-CRCHereditarySyndrome: Bundle.entry[1].resource/*RequestGroup/22*/.subject: Unable to resolve resource with reference 'Patient/564f7adb-3a87-46b9-9ad6-90944a8598a6'
+== input/examples/apply/ScreeningEligible_eve-HxTotalColectomy_no_eve-ActiveCRC_no_eve-Symptomatic_no_act-ScreeningEligible.json ==
+ERROR: Bundle.entry[1].resource.action: Array cannot be empty - the property should not be present if it has no values
+ERROR: Bundle/ScreeningEligible_eve-HxTotalColectomy_no_eve-ActiveCRC_no_eve-Symptomatic_no_act-ScreeningEligible: Bundle.id: Invalid Resource id: Too long (99 chars)
+ERROR: Bundle/ScreeningEligible_eve-HxTotalColectomy_no_eve-ActiveCRC_no_eve-Symptomatic_no_act-ScreeningEligible: Bundle.entry[0].resource/*CarePlan/23*/.subject: Unable to resolve resource with reference 'Patient/9c4d9605-066a-4537-b148-8b9cd5fce8ac'
+INFORMATION: Bundle/ScreeningEligible_eve-HxTotalColectomy_no_eve-ActiveCRC_no_eve-Symptomatic_no_act-ScreeningEligible: Bundle.entry[0].resource/*CarePlan/23*/.activity[0].reference: Details for RequestGroup/24 matching against profile http://hl7.org/fhir/StructureDefinition/RequestGroup|4.0.1
+ERROR: Bundle/ScreeningEligible_eve-HxTotalColectomy_no_eve-ActiveCRC_no_eve-Symptomatic_no_act-ScreeningEligible: Bundle.entry[1].resource/*RequestGroup/24*/.subject: Unable to resolve resource with reference 'Patient/9c4d9605-066a-4537-b148-8b9cd5fce8ac'
+== input/examples/apply/ScreeningEligible_eve-HxTotalColectomy_no_eve-ActiveCRC_no_eve-Symptomatic_yes_act-Diagnostic.json ==
+ERROR: Bundle.entry[1].resource.action: Array cannot be empty - the property should not be present if it has no values
+ERROR: Bundle/ScreeningEligible_eve-HxTotalColectomy_no_eve-ActiveCRC_no_eve-Symptomatic_yes_act-Diagnostic: Bundle.id: Invalid Resource id: Too long (93 chars)
+ERROR: Bundle/ScreeningEligible_eve-HxTotalColectomy_no_eve-ActiveCRC_no_eve-Symptomatic_yes_act-Diagnostic: Bundle.entry[0].resource/*CarePlan/25*/.subject: Unable to resolve resource with reference 'Patient/65f0da53-7625-4ac9-8ae4-08cefe0fa16a'
+INFORMATION: Bundle/ScreeningEligible_eve-HxTotalColectomy_no_eve-ActiveCRC_no_eve-Symptomatic_yes_act-Diagnostic: Bundle.entry[0].resource/*CarePlan/25*/.activity[0].reference: Details for RequestGroup/26 matching against profile http://hl7.org/fhir/StructureDefinition/RequestGroup|4.0.1
+ERROR: Bundle/ScreeningEligible_eve-HxTotalColectomy_no_eve-ActiveCRC_no_eve-Symptomatic_yes_act-Diagnostic: Bundle.entry[1].resource/*RequestGroup/26*/.subject: Unable to resolve resource with reference 'Patient/65f0da53-7625-4ac9-8ae4-08cefe0fa16a'
+== input/examples/apply/ScreeningEligible_eve-HxTotalColectomy_no_eve-ActiveCRC_yes_end-1.json ==
+ERROR: Bundle.entry[1].resource.action: Array cannot be empty - the property should not be present if it has no values
+ERROR: Bundle/ScreeningEligible_eve-HxTotalColectomy_no_eve-ActiveCRC_yes_end-1: Bundle.id: Invalid Resource id: Too long (65 chars)
+ERROR: Bundle/ScreeningEligible_eve-HxTotalColectomy_no_eve-ActiveCRC_yes_end-1: Bundle.entry[0].resource/*CarePlan/27*/.subject: Unable to resolve resource with reference 'Patient/f6e11b4a-0e24-4ba9-8a44-3388ee8b45c4'
+INFORMATION: Bundle/ScreeningEligible_eve-HxTotalColectomy_no_eve-ActiveCRC_yes_end-1: Bundle.entry[0].resource/*CarePlan/27*/.activity[0].reference: Details for RequestGroup/28 matching against profile http://hl7.org/fhir/StructureDefinition/RequestGroup|4.0.1
+ERROR: Bundle/ScreeningEligible_eve-HxTotalColectomy_no_eve-ActiveCRC_yes_end-1: Bundle.entry[1].resource/*RequestGroup/28*/.subject: Unable to resolve resource with reference 'Patient/f6e11b4a-0e24-4ba9-8a44-3388ee8b45c4'
+== input/examples/apply/ScreeningEligible_eve-HxTotalColectomy_yes_end-1.json ==
+ERROR: Bundle.entry[1].resource.action: Array cannot be empty - the property should not be present if it has no values
+ERROR: Bundle/ScreeningEligible_eve-HxTotalColectomy_yes_end-1: Bundle.id: Invalid Resource id: Invalid Characters ('ScreeningEligible_eve-HxTotalColectomy_yes_end-1')
+ERROR: Bundle/ScreeningEligible_eve-HxTotalColectomy_yes_end-1: Bundle.entry[0].resource/*CarePlan/29*/.subject: Unable to resolve resource with reference 'Patient/aa2f0f55-8811-4511-bd42-bcf2f50a6ff3'
+INFORMATION: Bundle/ScreeningEligible_eve-HxTotalColectomy_yes_end-1: Bundle.entry[0].resource/*CarePlan/29*/.activity[0].reference: Details for RequestGroup/30 matching against profile http://hl7.org/fhir/StructureDefinition/RequestGroup|4.0.1
+ERROR: Bundle/ScreeningEligible_eve-HxTotalColectomy_yes_end-1: Bundle.entry[1].resource/*RequestGroup/30*/.subject: Unable to resolve resource with reference 'Patient/aa2f0f55-8811-4511-bd42-bcf2f50a6ff3'
+== input/examples/apply/ScreeningEligible_inc-AgeAtLeast18_MostRecentAgeValue_yes.json ==
+ERROR: Bundle.entry[1].resource.action: Array cannot be empty - the property should not be present if it has no values
+ERROR: Bundle/ScreeningEligible_inc-AgeAtLeast18_MostRecentAgeValue_yes: Bundle.id: Invalid Resource id: Invalid Characters ('ScreeningEligible_inc-AgeAtLeast18_MostRecentAgeValue_yes')
+ERROR: Bundle/ScreeningEligible_inc-AgeAtLeast18_MostRecentAgeValue_yes: Bundle.entry[0].resource/*CarePlan/33*/.subject: Unable to resolve resource with reference 'Patient/f1216d2f-ac29-42ea-a443-87e736d6b365'
+INFORMATION: Bundle/ScreeningEligible_inc-AgeAtLeast18_MostRecentAgeValue_yes: Bundle.entry[0].resource/*CarePlan/33*/.activity[0].reference: Details for RequestGroup/34 matching against profile http://hl7.org/fhir/StructureDefinition/RequestGroup|4.0.1
+ERROR: Bundle/ScreeningEligible_inc-AgeAtLeast18_MostRecentAgeValue_yes: Bundle.entry[1].resource/*RequestGroup/34*/.subject: Unable to resolve resource with reference 'Patient/f1216d2f-ac29-42ea-a443-87e736d6b365'
+== input/examples/apply/ScreeningEligible_inc-AgeAtLeast18_error.json ==
+ERROR: Bundle.entry[1].resource.action: Array cannot be empty - the property should not be present if it has no values
+ERROR: Bundle/ScreeningEligible_inc-AgeAtLeast18_error: Bundle.id: Invalid Resource id: Invalid Characters ('ScreeningEligible_inc-AgeAtLeast18_error')
+ERROR: Bundle/ScreeningEligible_inc-AgeAtLeast18_error: Bundle.entry[0].resource/*CarePlan/31*/.subject: Unable to resolve resource with reference 'Patient/f6e866d7-4180-487f-b243-5bacef35460c'
+INFORMATION: Bundle/ScreeningEligible_inc-AgeAtLeast18_error: Bundle.entry[0].resource/*CarePlan/31*/.activity[0].reference: Details for RequestGroup/32 matching against profile http://hl7.org/fhir/StructureDefinition/RequestGroup|4.0.1
+ERROR: Bundle/ScreeningEligible_inc-AgeAtLeast18_error: Bundle.entry[1].resource/*RequestGroup/32*/.subject: Unable to resolve resource with reference 'Patient/f6e866d7-4180-487f-b243-5bacef35460c'
+== input/examples/apply/ScreeningEligible_inc-AgeAtLeast18_no.json ==
+ERROR: Bundle.entry[1].resource.action: Array cannot be empty - the property should not be present if it has no values
+ERROR: Bundle/ScreeningEligible_inc-AgeAtLeast18_no: Bundle.id: Invalid Resource id: Invalid Characters ('ScreeningEligible_inc-AgeAtLeast18_no')
+ERROR: Bundle/ScreeningEligible_inc-AgeAtLeast18_no: Bundle.entry[0].resource/*CarePlan/35*/.subject: Unable to resolve resource with reference 'Patient/642dae9d-8399-42b5-b619-18b0431a0817'
+INFORMATION: Bundle/ScreeningEligible_inc-AgeAtLeast18_no: Bundle.entry[0].resource/*CarePlan/35*/.activity[0].reference: Details for RequestGroup/36 matching against profile http://hl7.org/fhir/StructureDefinition/RequestGroup|4.0.1
+ERROR: Bundle/ScreeningEligible_inc-AgeAtLeast18_no: Bundle.entry[1].resource/*RequestGroup/36*/.subject: Unable to resolve resource with reference 'Patient/642dae9d-8399-42b5-b619-18b0431a0817'
+== input/examples/apply/ScreeningEligible_inc-AgeAtLeast18_yes.json ==
+ERROR: Bundle.entry[1].resource.action: Array cannot be empty - the property should not be present if it has no values
+ERROR: Bundle/ScreeningEligible_inc-AgeAtLeast18_yes: Bundle.id: Invalid Resource id: Invalid Characters ('ScreeningEligible_inc-AgeAtLeast18_yes')
+ERROR: Bundle/ScreeningEligible_inc-AgeAtLeast18_yes: Bundle.entry[0].resource/*CarePlan/37*/.subject: Unable to resolve resource with reference 'Patient/13145d6a-85a1-4ee5-9ae2-5238c0c1b7b8'
+INFORMATION: Bundle/ScreeningEligible_inc-AgeAtLeast18_yes: Bundle.entry[0].resource/*CarePlan/37*/.activity[0].reference: Details for RequestGroup/38 matching against profile http://hl7.org/fhir/StructureDefinition/RequestGroup|4.0.1
+ERROR: Bundle/ScreeningEligible_inc-AgeAtLeast18_yes: Bundle.entry[1].resource/*RequestGroup/38*/.subject: Unable to resolve resource with reference 'Patient/13145d6a-85a1-4ee5-9ae2-5238c0c1b7b8'
+== input/resources/CDSConnectCommonsforFHIRv401.json ==
+ERROR: Library/CDSConnectCommonsforFHIRv401: Library.extension[1]: The extension http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-softwaresystem could not be found so is not allowed here
+ERROR: Library/CDSConnectCommonsforFHIRv401: Library.extension[1].url: URL value 'http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-softwaresystem' does not resolve
+ERROR: Library/CDSConnectCommonsforFHIRv401: Library.extension[1].value.ofType(Reference): Unable to resolve resource with reference 'Device/cqf-tooling'
+== input/resources/CRCSMCommonFunctions.json ==
+ERROR: Library/CRCSMCommonFunctions: Library.extension[1]: The extension http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-softwaresystem could not be found so is not allowed here
+ERROR: Library/CRCSMCommonFunctions: Library.extension[1].url: URL value 'http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-softwaresystem' does not resolve
+ERROR: Library/CRCSMCommonFunctions: Library.extension[1].value.ofType(Reference): Unable to resolve resource with reference 'Device/cqf-tooling'
+ERROR: Library/CRCSMCommonFunctions: Library.relatedArtifact[5].resource: Canonical URL 'http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type-cs' does not resolve
+WARNING: Library/CRCSMCommonFunctions: Library.dataRequirement[5].codeFilter[1].code[0]: A code with no system has no defined meaning, and it cannot be validated. A system should be provided
+== input/resources/CSMCommonFunctions.json ==
+ERROR: Library/CSMCommonFunctions: Library.extension[1]: The extension http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-softwaresystem could not be found so is not allowed here
+ERROR: Library/CSMCommonFunctions: Library.extension[1].url: URL value 'http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-softwaresystem' does not resolve
+ERROR: Library/CSMCommonFunctions: Library.extension[1].value.ofType(Reference): Unable to resolve resource with reference 'Device/cqf-tooling'
+== input/resources/DataElements.json ==
+ERROR: Library/DataElements: Library.extension[1]: The extension http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-softwaresystem could not be found so is not allowed here
+ERROR: Library/DataElements: Library.extension[1].url: URL value 'http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-softwaresystem' does not resolve
+ERROR: Library/DataElements: Library.extension[1].value.ofType(Reference): Unable to resolve resource with reference 'Device/cqf-tooling'
+WARNING: Library/DataElements: Library.dataRequirement[2].codeFilter[0].code[0]: A code with no system has no defined meaning, and it cannot be validated. A system should be provided
+WARNING: Library/DataElements: Library.dataRequirement[3].codeFilter[0].code[0]: A code with no system has no defined meaning, and it cannot be validated. A system should be provided
+INFORMATION: Library/DataElements: Library.dataRequirement[24].codeFilter[0].code[0]: Reference to experimental CodeSystem http://cancerscreeningcds.github.io/crcsm-cds/CodeSystem/screening-observation-code-system|0.1.0
+INFORMATION: Library/DataElements: Library.dataRequirement[25].codeFilter[0].code[0]: Reference to experimental CodeSystem http://cancerscreeningcds.github.io/crcsm-cds/CodeSystem/screening-observation-code-system|0.1.0
+INFORMATION: Library/DataElements: Library.dataRequirement[26].codeFilter[0].code[0]: Reference to experimental CodeSystem http://cancerscreeningcds.github.io/crcsm-cds/CodeSystem/screening-observation-code-system|0.1.0
+ERROR: Library/DataElements: Library.dataRequirement[26].codeFilter[0].code[0].code: Unknown code 'RelativeHereditarySyndrome' in the CodeSystem 'http://cancerscreeningcds.github.io/crcsm-cds/CodeSystem/screening-observation-code-system' version '0.1.0'
+WARNING: Library/DataElements: Library.dataRequirement[35].codeFilter[1].code[0]: A code with no system has no defined meaning, and it cannot be validated. A system should be provided
+WARNING: Library/DataElements: Library.dataRequirement[35].codeFilter[2].code[0]: A code with no system has no defined meaning, and it cannot be validated. A system should be provided
+WARNING: Library/DataElements: Library.dataRequirement[36].codeFilter[1].code[0]: A code with no system has no defined meaning, and it cannot be validated. A system should be provided
+== input/resources/DecisionToScreen.json ==
+ERROR: Library/DecisionToScreen: Library.extension[1]: The extension http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-softwaresystem could not be found so is not allowed here
+ERROR: Library/DecisionToScreen: Library.extension[1].url: URL value 'http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-softwaresystem' does not resolve
+ERROR: Library/DecisionToScreen: Library.extension[1].value.ofType(Reference): Unable to resolve resource with reference 'Device/cqf-tooling'
+== input/resources/DecisionToScreenActions.json ==
+ERROR: Library/DecisionToScreenActions: Library.extension[1]: The extension http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-softwaresystem could not be found so is not allowed here
+ERROR: Library/DecisionToScreenActions: Library.extension[1].url: URL value 'http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-softwaresystem' does not resolve
+ERROR: Library/DecisionToScreenActions: Library.extension[1].value.ofType(Reference): Unable to resolve resource with reference 'Device/cqf-tooling'
+== input/resources/DecisionToScreenEvents.json ==
+ERROR: Library/DecisionToScreenEvents: Library.extension[1]: The extension http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-softwaresystem could not be found so is not allowed here
+ERROR: Library/DecisionToScreenEvents: Library.extension[1].url: URL value 'http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-softwaresystem' does not resolve
+ERROR: Library/DecisionToScreenEvents: Library.extension[1].value.ofType(Reference): Unable to resolve resource with reference 'Device/cqf-tooling'
+INFORMATION: Library/DecisionToScreenEvents: Library.dataRequirement[1].codeFilter[0].code[0]: Reference to experimental CodeSystem http://cancerscreeningcds.github.io/crcsm-cds/CodeSystem/screening-observation-code-system|0.1.0
+== input/resources/DetermineNextDueDate.json ==
+ERROR: Library/DetermineNextDueDate: Library.extension[1]: The extension http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-softwaresystem could not be found so is not allowed here
+ERROR: Library/DetermineNextDueDate: Library.extension[1].url: URL value 'http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-softwaresystem' does not resolve
+ERROR: Library/DetermineNextDueDate: Library.extension[1].value.ofType(Reference): Unable to resolve resource with reference 'Device/cqf-tooling'
+== input/resources/DetermineNextDueDateActions.json ==
+ERROR: Library/DetermineNextDueDateActions: Library.extension[1]: The extension http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-softwaresystem could not be found so is not allowed here
+ERROR: Library/DetermineNextDueDateActions: Library.extension[1].url: URL value 'http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-softwaresystem' does not resolve
+ERROR: Library/DetermineNextDueDateActions: Library.extension[1].value.ofType(Reference): Unable to resolve resource with reference 'Device/cqf-tooling'
+== input/resources/DetermineNextDueDateEvents.json ==
+ERROR: Library/DetermineNextDueDateEvents: Library.extension[1]: The extension http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-softwaresystem could not be found so is not allowed here
+ERROR: Library/DetermineNextDueDateEvents: Library.extension[1].url: URL value 'http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-softwaresystem' does not resolve
+ERROR: Library/DetermineNextDueDateEvents: Library.extension[1].value.ofType(Reference): Unable to resolve resource with reference 'Device/cqf-tooling'
+== input/resources/FHIRHelpers.json ==
+ERROR: Library.where(url = 'http://hl7.org/fhir/Library/FHIRHelpers'): Conformance resource /github/workspace/input/resources/FHIRHelpers.json - the canonical URL (http://cancerscreeningcds.github.io/crcsm-cds/Library/FHIRHelpers) does not match the URL (http://hl7.org/fhir/Library/FHIRHelpers)
+ERROR: Library/FHIRHelpers: Library.extension[0]: The extension http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-softwaresystem could not be found so is not allowed here
+ERROR: Library/FHIRHelpers: Library.extension[0].url: URL value 'http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-softwaresystem' does not resolve
+ERROR: Library/FHIRHelpers: Library.extension[0].value.ofType(Reference): Unable to resolve resource with reference 'Device/cqf-tooling'
+ERROR: Library/FHIRHelpers: Library: When HL7 is publishing a resource, the owning committee must be stated using the http://hl7.org/fhir/StructureDefinition/structuredefinition-wg extension
+ERROR: /github/workspace/input/resources/FHIRHelpers: URL Mismatch http://cancerscreeningcds.github.io/crcsm-cds/Library/FHIRHelpers vs http://hl7.org/fhir/Library/FHIRHelpers
+== input/resources/FollowUp.json ==
+ERROR: Library/FollowUp: Library.extension[1]: The extension http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-softwaresystem could not be found so is not allowed here
+ERROR: Library/FollowUp: Library.extension[1].url: URL value 'http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-softwaresystem' does not resolve
+ERROR: Library/FollowUp: Library.extension[1].value.ofType(Reference): Unable to resolve resource with reference 'Device/cqf-tooling'
+== input/resources/FollowUpActions.json ==
+ERROR: Library/FollowUpActions: Library.extension[1]: The extension http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-softwaresystem could not be found so is not allowed here
+ERROR: Library/FollowUpActions: Library.extension[1].url: URL value 'http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-softwaresystem' does not resolve
+ERROR: Library/FollowUpActions: Library.extension[1].value.ofType(Reference): Unable to resolve resource with reference 'Device/cqf-tooling'
+== input/resources/FollowUpEvents.json ==
+ERROR: Library/FollowUpEvents: Library.extension[1]: The extension http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-softwaresystem could not be found so is not allowed here
+ERROR: Library/FollowUpEvents: Library.extension[1].url: URL value 'http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-softwaresystem' does not resolve
+ERROR: Library/FollowUpEvents: Library.extension[1].value.ofType(Reference): Unable to resolve resource with reference 'Device/cqf-tooling'
+== input/resources/IncreasedRiskExclusions.json ==
+ERROR: Library/IncreasedRiskExclusions: Library.extension[1]: The extension http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-softwaresystem could not be found so is not allowed here
+ERROR: Library/IncreasedRiskExclusions: Library.extension[1].url: URL value 'http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-softwaresystem' does not resolve
+ERROR: Library/IncreasedRiskExclusions: Library.extension[1].value.ofType(Reference): Unable to resolve resource with reference 'Device/cqf-tooling'
+INFORMATION: Library/IncreasedRiskExclusions: Library.dataRequirement[15].codeFilter[0].code[0]: Reference to experimental CodeSystem http://cancerscreeningcds.github.io/crcsm-cds/CodeSystem/screening-observation-code-system|0.1.0
+ERROR: Library/IncreasedRiskExclusions: Library.dataRequirement[15].codeFilter[0].code[0].code: Unknown code 'RelativeHereditarySyndrome' in the CodeSystem 'http://cancerscreeningcds.github.io/crcsm-cds/CodeSystem/screening-observation-code-system' version '0.1.0'
+== input/resources/IncreasedRiskExclusionsActions.json ==
+ERROR: Library/IncreasedRiskExclusionsActions: Library.extension[1]: The extension http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-softwaresystem could not be found so is not allowed here
+ERROR: Library/IncreasedRiskExclusionsActions: Library.extension[1].url: URL value 'http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-softwaresystem' does not resolve
+ERROR: Library/IncreasedRiskExclusionsActions: Library.extension[1].value.ofType(Reference): Unable to resolve resource with reference 'Device/cqf-tooling'
+== input/resources/IncreasedRiskExclusionsEvents.json ==
+ERROR: Library/IncreasedRiskExclusionsEvents: Library.extension[1]: The extension http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-softwaresystem could not be found so is not allowed here
+ERROR: Library/IncreasedRiskExclusionsEvents: Library.extension[1].url: URL value 'http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-softwaresystem' does not resolve
+ERROR: Library/IncreasedRiskExclusionsEvents: Library.extension[1].value.ofType(Reference): Unable to resolve resource with reference 'Device/cqf-tooling'
+INFORMATION: Library/IncreasedRiskExclusionsEvents: Library.dataRequirement[15].codeFilter[0].code[0]: Reference to experimental CodeSystem http://cancerscreeningcds.github.io/crcsm-cds/CodeSystem/screening-observation-code-system|0.1.0
+ERROR: Library/IncreasedRiskExclusionsEvents: Library.dataRequirement[15].codeFilter[0].code[0].code: Unknown code 'RelativeHereditarySyndrome' in the CodeSystem 'http://cancerscreeningcds.github.io/crcsm-cds/CodeSystem/screening-observation-code-system' version '0.1.0'
+== input/resources/PertinentHistory.json ==
+ERROR: Library/PertinentHistory: Library.extension[1]: The extension http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-softwaresystem could not be found so is not allowed here
+ERROR: Library/PertinentHistory: Library.extension[1].url: URL value 'http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-softwaresystem' does not resolve
+ERROR: Library/PertinentHistory: Library.extension[1].value.ofType(Reference): Unable to resolve resource with reference 'Device/cqf-tooling'
+WARNING: Library/PertinentHistory: Library.dataRequirement[0].codeFilter[0].code[0]: A code with no system has no defined meaning, and it cannot be validated. A system should be provided
+WARNING: Library/PertinentHistory: Library.dataRequirement[1].codeFilter[0].code[0]: A code with no system has no defined meaning, and it cannot be validated. A system should be provided
+INFORMATION: Library/PertinentHistory: Library.dataRequirement[17].codeFilter[0].code[0]: Reference to experimental CodeSystem http://cancerscreeningcds.github.io/crcsm-cds/CodeSystem/screening-observation-code-system|0.1.0
+INFORMATION: Library/PertinentHistory: Library.dataRequirement[18].codeFilter[0].code[0]: Reference to experimental CodeSystem http://cancerscreeningcds.github.io/crcsm-cds/CodeSystem/screening-observation-code-system|0.1.0
+WARNING: Library/PertinentHistory: Library.dataRequirement[26].codeFilter[0].code[0]: A code with no system has no defined meaning, and it cannot be validated. A system should be provided
+WARNING: Library/PertinentHistory: Library.dataRequirement[27].codeFilter[0].code[0]: A code with no system has no defined meaning, and it cannot be validated. A system should be provided
+WARNING: Library/PertinentHistory: Library.dataRequirement[29].codeFilter[1].code[0]: A code with no system has no defined meaning, and it cannot be validated. A system should be provided
+== input/resources/ScreeningDue.json ==
+ERROR: Library/ScreeningDue: Library.extension[1]: The extension http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-softwaresystem could not be found so is not allowed here
+ERROR: Library/ScreeningDue: Library.extension[1].url: URL value 'http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-softwaresystem' does not resolve
+ERROR: Library/ScreeningDue: Library.extension[1].value.ofType(Reference): Unable to resolve resource with reference 'Device/cqf-tooling'
+WARNING: Library/ScreeningDue: Library.dataRequirement[1].codeFilter[0].code[0]: A code with no system has no defined meaning, and it cannot be validated. A system should be provided
+WARNING: Library/ScreeningDue: Library.dataRequirement[2].codeFilter[0].code[0]: A code with no system has no defined meaning, and it cannot be validated. A system should be provided
+WARNING: Library/ScreeningDue: Library.dataRequirement[4].codeFilter[1].code[0]: A code with no system has no defined meaning, and it cannot be validated. A system should be provided
+== input/resources/ScreeningDueActions.json ==
+ERROR: Library/ScreeningDueActions: Library.extension[1]: The extension http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-softwaresystem could not be found so is not allowed here
+ERROR: Library/ScreeningDueActions: Library.extension[1].url: URL value 'http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-softwaresystem' does not resolve
+ERROR: Library/ScreeningDueActions: Library.extension[1].value.ofType(Reference): Unable to resolve resource with reference 'Device/cqf-tooling'
+== input/resources/ScreeningDueEvents.json ==
+ERROR: Library/ScreeningDueEvents: Library.extension[1]: The extension http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-softwaresystem could not be found so is not allowed here
+ERROR: Library/ScreeningDueEvents: Library.extension[1].url: URL value 'http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-softwaresystem' does not resolve
+ERROR: Library/ScreeningDueEvents: Library.extension[1].value.ofType(Reference): Unable to resolve resource with reference 'Device/cqf-tooling'
+ERROR: Library/ScreeningDueEvents: Library.parameter[3]: ParameterDefinition.type: minimum required = 1, but only found 0 (from http://hl7.org/fhir/StructureDefinition/ParameterDefinition|4.0.1)
+WARNING: Library/ScreeningDueEvents: Library.dataRequirement[1].codeFilter[0].code[0]: A code with no system has no defined meaning, and it cannot be validated. A system should be provided
+WARNING: Library/ScreeningDueEvents: Library.dataRequirement[2].codeFilter[0].code[0]: A code with no system has no defined meaning, and it cannot be validated. A system should be provided
+== input/resources/ScreeningEligible.json ==
+ERROR: Library/ScreeningEligible: Library.extension[1]: The extension http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-softwaresystem could not be found so is not allowed here
+ERROR: Library/ScreeningEligible: Library.extension[1].url: URL value 'http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-softwaresystem' does not resolve
+ERROR: Library/ScreeningEligible: Library.extension[1].value.ofType(Reference): Unable to resolve resource with reference 'Device/cqf-tooling'
+WARNING: Library/ScreeningEligible: Library.dataRequirement[1].codeFilter[1].code[0]: A code with no system has no defined meaning, and it cannot be validated. A system should be provided
+== input/resources/ScreeningEligibleActions.json ==
+ERROR: Library/ScreeningEligibleActions: Library.extension[1]: The extension http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-softwaresystem could not be found so is not allowed here
+ERROR: Library/ScreeningEligibleActions: Library.extension[1].url: URL value 'http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-softwaresystem' does not resolve
+ERROR: Library/ScreeningEligibleActions: Library.extension[1].value.ofType(Reference): Unable to resolve resource with reference 'Device/cqf-tooling'
+== input/resources/ScreeningEligibleEvents.json ==
+ERROR: Library/ScreeningEligibleEvents: Library.extension[1]: The extension http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-softwaresystem could not be found so is not allowed here
+ERROR: Library/ScreeningEligibleEvents: Library.extension[1].url: URL value 'http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-softwaresystem' does not resolve
+ERROR: Library/ScreeningEligibleEvents: Library.extension[1].value.ofType(Reference): Unable to resolve resource with reference 'Device/cqf-tooling'
+INFORMATION: Library/ScreeningEligibleEvents: Library.dataRequirement[6].codeFilter[0].code[0]: Reference to experimental CodeSystem http://cancerscreeningcds.github.io/crcsm-cds/CodeSystem/screening-observation-code-system|0.1.0
+== input/resources/ScreeningIncomplete.json ==
+ERROR: Library/ScreeningIncomplete: Library.extension[1]: The extension http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-softwaresystem could not be found so is not allowed here
+ERROR: Library/ScreeningIncomplete: Library.extension[1].url: URL value 'http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-softwaresystem' does not resolve
+ERROR: Library/ScreeningIncomplete: Library.extension[1].value.ofType(Reference): Unable to resolve resource with reference 'Device/cqf-tooling'
+WARNING: Library/ScreeningIncomplete: Library.dataRequirement[2].codeFilter[1].code[0]: A code with no system has no defined meaning, and it cannot be validated. A system should be provided
+WARNING: Library/ScreeningIncomplete: Library.dataRequirement[3].codeFilter[1].code[0]: A code with no system has no defined meaning, and it cannot be validated. A system should be provided
+== input/resources/ScreeningIncompleteEvents.json ==
+ERROR: Library/ScreeningIncompleteEvents: Library.extension[1]: The extension http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-softwaresystem could not be found so is not allowed here
+ERROR: Library/ScreeningIncompleteEvents: Library.extension[1].url: URL value 'http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-softwaresystem' does not resolve
+ERROR: Library/ScreeningIncompleteEvents: Library.extension[1].value.ofType(Reference): Unable to resolve resource with reference 'Device/cqf-tooling'
+WARNING: Library/ScreeningIncompleteEvents: Library.dataRequirement[2].codeFilter[1].code[0]: A code with no system has no defined meaning, and it cannot be validated. A system should be provided
+WARNING: Library/ScreeningIncompleteEvents: Library.dataRequirement[3].codeFilter[1].code[0]: A code with no system has no defined meaning, and it cannot be validated. A system should be provided
+== input/resources/Terminology.json ==
+ERROR: Library/Terminology: Library.extension[1]: The extension http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-softwaresystem could not be found so is not allowed here
+ERROR: Library/Terminology: Library.extension[1].url: URL value 'http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-softwaresystem' does not resolve
+ERROR: Library/Terminology: Library.extension[1].value.ofType(Reference): Unable to resolve resource with reference 'Device/cqf-tooling'
+== input/resources/USPSTFAvgRisk.json ==
+ERROR: Library/USPSTFAvgRisk: Library.extension[1]: The extension http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-softwaresystem could not be found so is not allowed here
+ERROR: Library/USPSTFAvgRisk: Library.extension[1].url: URL value 'http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-softwaresystem' does not resolve
+ERROR: Library/USPSTFAvgRisk: Library.extension[1].value.ofType(Reference): Unable to resolve resource with reference 'Device/cqf-tooling'
+== input/resources/USPSTFAvgRiskActions.json ==
+ERROR: Library/USPSTFAvgRiskActions: Library.extension[1]: The extension http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-softwaresystem could not be found so is not allowed here
+ERROR: Library/USPSTFAvgRiskActions: Library.extension[1].url: URL value 'http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-softwaresystem' does not resolve
+ERROR: Library/USPSTFAvgRiskActions: Library.extension[1].value.ofType(Reference): Unable to resolve resource with reference 'Device/cqf-tooling'
+== input/resources/USPSTFAvgRiskEvents.json ==
+ERROR: Library/USPSTFAvgRiskEvents: Library.extension[1]: The extension http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-softwaresystem could not be found so is not allowed here
+ERROR: Library/USPSTFAvgRiskEvents: Library.extension[1].url: URL value 'http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-softwaresystem' does not resolve
+ERROR: Library/USPSTFAvgRiskEvents: Library.extension[1].value.ofType(Reference): Unable to resolve resource with reference 'Device/cqf-tooling'

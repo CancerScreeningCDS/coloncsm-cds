@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library xmlns="urn:hl7-org:elm:r1" xmlns:t="urn:hl7-org:elm-types:r1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:fhir="http://hl7.org/fhir" xmlns:qdm43="urn:healthit-gov:qdm:v4_3" xmlns:qdm53="urn:healthit-gov:qdm:v5_3" xmlns:a="urn:hl7-org:cql-annotations:r1" localId="0">
+   <annotation translatorVersion="3.11.0" translatorOptions="EnableAnnotations,EnableLocators,DisableListDemotion,DisableListPromotion" signatureLevel="Overloads" xsi:type="a:CqlToElmInfo"/>
+   <annotation xsi:type="a:Annotation">
+      <a:s r="254">
+         <a:s>library FollowUpActions version '1.0.0'</a:s>
+      </a:s>
+   </annotation>
+   <identifier id="FollowUpActions" system="http://cancerscreeningcds.github.io/crcsm-cds" version="1.0.0"/>
+   <schemaIdentifier id="urn:hl7-org:elm" version="r1"/>
+   <usings>
+      <def localId="1" localIdentifier="System" uri="urn:hl7-org:elm-types:r1"/>
+      <def localId="206" locator="3:1-3:26" localIdentifier="FHIR" uri="http://hl7.org/fhir" version="4.0.1">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="206">
+               <a:s>using </a:s>
+               <a:s>
+                  <a:s>FHIR</a:s>
+               </a:s>
+               <a:s> version '4.0.1'</a:s>
+            </a:s>
+         </annotation>
+      </def>
+   </usings>
+   <includes>
+      <def localId="207" locator="4:1-4:55" localIdentifier="FHIRHelpers" path="http://cancerscreeningcds.github.io/crcsm-cds/FHIRHelpers" version="4.0.1">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="207">
+               <a:s>include </a:s>
+               <a:s>
+                  <a:s>FHIRHelpers</a:s>
+               </a:s>
+               <a:s>  version '4.0.1' called FHIRHelpers</a:s>
+            </a:s>
+         </annotation>
+      </def>
+      <def localId="208" locator="5:1-5:56" localIdentifier="DataElements" path="http://cancerscreeningcds.github.io/crcsm-cds/DataElements" version="1.0.0">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="208">
+               <a:s>include </a:s>
+               <a:s>
+                  <a:s>DataElements</a:s>
+               </a:s>
+               <a:s> version '1.0.0' called DataElements</a:s>
+            </a:s>
+         </annotation>
+      </def>
+      <def localId="209" locator="6:1-6:72" localIdentifier="CRCSMCommonFunctions" path="http://cancerscreeningcds.github.io/crcsm-cds/CRCSMCommonFunctions" version="1.0.0">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="209">
+               <a:s>include </a:s>
+               <a:s>
+                  <a:s>CRCSMCommonFunctions</a:s>
+               </a:s>
+               <a:s> version '1.0.0' called CRCSMCommonFunctions</a:s>
+            </a:s>
+         </annotation>
+      </def>
+   </includes>
+   <codeSystems>
+      <def localId="210" locator="8:1-8:115" name="ActCode" id="http://cancerscreeningcds.github.io/crcsm-cds/CodeSystem/plan-definition-action-code-system" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="210">
+               <a:s>codesystem &quot;ActCode&quot;: 'http://cancerscreeningcds.github.io/crcsm-cds/CodeSystem/plan-definition-action-code-system'</a:s>
+            </a:s>
+         </annotation>
+      </def>
+      <def localId="211" locator="9:1-9:125" name="ReasonCode" id="http://cancerscreeningcds.github.io/crcsm-cds/CodeSystem/plan-definition-action-reason-code-system" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="211">
+               <a:s>codesystem &quot;ReasonCode&quot;: 'http://cancerscreeningcds.github.io/crcsm-cds/CodeSystem/plan-definition-action-reason-code-system'</a:s>
+            </a:s>
+         </annotation>
+      </def>
+   </codeSystems>
+   <codes>
+      <def localId="212" locator="12:1-12:113" name="Continue routine screening" id="continueroutinescreening" display="Continue routine screening" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="212">
+               <a:s>// Act Codes
+code &quot;Continue routine screening&quot;: 'continueroutinescreening' from </a:s>
+               <a:s r="213">
+                  <a:s>&quot;ActCode&quot;</a:s>
+               </a:s>
+               <a:s> display 'Continue routine screening'</a:s>
+            </a:s>
+         </annotation>
+         <codeSystem localId="213" locator="12:68-12:76" name="ActCode"/>
+      </def>
+      <def localId="214" locator="13:1-13:170" name="Continue routine screening if high-quality test" id="continueroutinescreeninghighqualitytest" display="Continue routine screening if high-quality test" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="214">
+               <a:s>code &quot;Continue routine screening if high-quality test&quot;: 'continueroutinescreeninghighqualitytest' from </a:s>
+               <a:s r="215">
+                  <a:s>&quot;ActCode&quot;</a:s>
+               </a:s>
+               <a:s> display 'Continue routine screening if high-quality test'</a:s>
+            </a:s>
+         </annotation>
+         <codeSystem localId="215" locator="13:104-13:112" name="ActCode"/>
+      </def>
+      <def localId="216" locator="14:1-14:84" name="Repeat screening" id="repeatscreening" display="Repeat screening" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="216">
+               <a:s>code &quot;Repeat screening&quot;: 'repeatscreening' from </a:s>
+               <a:s r="217">
+                  <a:s>&quot;ActCode&quot;</a:s>
+               </a:s>
+               <a:s> display 'Repeat screening'</a:s>
+            </a:s>
+         </annotation>
+         <codeSystem localId="217" locator="14:49-14:57" name="ActCode"/>
+      </def>
+      <def localId="218" locator="15:1-15:115" name="Order follow-up colonoscopy" id="orderfollowupcolonoscopy" display="Order follow-up colonoscopy" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="218">
+               <a:s>code &quot;Order follow-up colonoscopy&quot;: 'orderfollowupcolonoscopy' from </a:s>
+               <a:s r="219">
+                  <a:s>&quot;ActCode&quot;</a:s>
+               </a:s>
+               <a:s> display 'Order follow-up colonoscopy'</a:s>
+            </a:s>
+         </annotation>
+         <codeSystem localId="219" locator="15:69-15:77" name="ActCode"/>
+      </def>
+      <def localId="220" locator="18:1-18:127" name="Screening negative" id="negativescreening" display="Non-colonoscopy colorectal cancer screening negative" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="220">
+               <a:s>// Reason Codes
+code &quot;Screening negative&quot;: 'negativescreening' from </a:s>
+               <a:s r="221">
+                  <a:s>&quot;ReasonCode&quot;</a:s>
+               </a:s>
+               <a:s> display 'Non-colonoscopy colorectal cancer screening negative'</a:s>
+            </a:s>
+         </annotation>
+         <codeSystem localId="221" locator="18:53-18:64" name="ReasonCode"/>
+      </def>
+      <def localId="222" locator="19:1-19:139" name="Inconclusive non-colonoscopy test result" id="inconclusivescreening" display="Inconclusive non-colonoscopy screening" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="222">
+               <a:s>code &quot;Inconclusive non-colonoscopy test result&quot;: 'inconclusivescreening' from </a:s>
+               <a:s r="223">
+                  <a:s>&quot;ReasonCode&quot;</a:s>
+               </a:s>
+               <a:s> display 'Inconclusive non-colonoscopy screening'</a:s>
+            </a:s>
+         </annotation>
+         <codeSystem localId="223" locator="19:79-19:90" name="ReasonCode"/>
+      </def>
+      <def localId="224" locator="20:1-20:151" name="Positive or abnormal noncolonoscopy test" id="positiveabnormalscreening" display="Positive or abnormal non-colonoscopy screening" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="224">
+               <a:s>code &quot;Positive or abnormal noncolonoscopy test&quot;: 'positiveabnormalscreening' from </a:s>
+               <a:s r="225">
+                  <a:s>&quot;ReasonCode&quot;</a:s>
+               </a:s>
+               <a:s> display 'Positive or abnormal non-colonoscopy screening'</a:s>
+            </a:s>
+         </annotation>
+         <codeSystem localId="225" locator="20:83-20:94" name="ReasonCode"/>
+      </def>
+      <def localId="226" locator="21:1-21:192" name="Negative or normal non-colonoscopy test with high-quality exam" id="negativehighqualityscreening" display="Negative or normal non-colonoscopy test with high-quality exam" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="226">
+               <a:s>code &quot;Negative or normal non-colonoscopy test with high-quality exam&quot;: 'negativehighqualityscreening' from </a:s>
+               <a:s r="227">
+                  <a:s>&quot;ReasonCode&quot;</a:s>
+               </a:s>
+               <a:s> display 'Negative or normal non-colonoscopy test with high-quality exam'</a:s>
+            </a:s>
+         </annotation>
+         <codeSystem localId="227" locator="21:108-21:119" name="ReasonCode"/>
+      </def>
+   </codes>
+   <contexts>
+      <def localId="231" locator="23:1-23:15" name="Patient"/>
+   </contexts>
+   <statements>
+      <def localId="229" locator="23:1-23:15" name="Patient" context="Patient">
+         <expression localId="230" xsi:type="SingletonFrom">
+            <operand localId="228" locator="23:1-23:15" dataType="fhir:Patient" templateId="http://hl7.org/fhir/StructureDefinition/Patient" xsi:type="Retrieve"/>
+         </expression>
+      </def>
+      <def localId="233" locator="25:1-31:3" name="act-continueRoutineScreening" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="233">
+               <a:s>define &quot;act-continueRoutineScreening&quot;:
+  //TODO: Add calculated next due date. Determine if need to check for average risk.
+  </a:s>
+               <a:s r="234">
+                  <a:s>{
+		</a:s>
+                  <a:s>
+                     <a:s>code: </a:s>
+                     <a:s r="235">
+                        <a:s>&quot;Continue routine screening&quot;</a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s>,
+    </a:s>
+                  <a:s>
+                     <a:s>reason: </a:s>
+                     <a:s r="236">
+                        <a:s>&quot;Screening negative&quot;</a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s>,
+    </a:s>
+                  <a:s>
+                     <a:s>documentation: </a:s>
+                     <a:s r="238">
+                        <a:s r="237">
+                           <a:s>CRCSMCommonFunctions</a:s>
+                        </a:s>
+                        <a:s>.</a:s>
+                        <a:s r="238">
+                           <a:s>SourceDocumentationUSPSTF</a:s>
+                        </a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s>
+  }</a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="234" locator="27:3-31:3" xsi:type="Tuple">
+            <element name="code">
+               <value localId="235" locator="28:9-28:36" name="Continue routine screening" xsi:type="CodeRef"/>
+            </element>
+            <element name="reason">
+               <value localId="236" locator="29:13-29:32" name="Screening negative" xsi:type="CodeRef"/>
+            </element>
+            <element name="documentation">
+               <value localId="238" locator="30:20-30:65" name="SourceDocumentationUSPSTF" libraryName="CRCSMCommonFunctions" xsi:type="ExpressionRef"/>
+            </element>
+         </expression>
+      </def>
+      <def localId="240" locator="33:1-38:3" name="act-repeatScreening" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="240">
+               <a:s>define &quot;act-repeatScreening&quot;:
+  </a:s>
+               <a:s r="241">
+                  <a:s>{
+    </a:s>
+                  <a:s>
+                     <a:s>code: </a:s>
+                     <a:s r="242">
+                        <a:s>&quot;Repeat screening&quot;</a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s>,
+    </a:s>
+                  <a:s>
+                     <a:s>reason: </a:s>
+                     <a:s r="243">
+                        <a:s>&quot;Inconclusive non-colonoscopy test result&quot;</a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s>,
+    </a:s>
+                  <a:s>
+                     <a:s>documentation: </a:s>
+                     <a:s r="245">
+                        <a:s r="244">
+                           <a:s>CRCSMCommonFunctions</a:s>
+                        </a:s>
+                        <a:s>.</a:s>
+                        <a:s r="245">
+                           <a:s>SourceDocumentationOther</a:s>
+                        </a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s>
+  }</a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="241" locator="34:3-38:3" xsi:type="Tuple">
+            <element name="code">
+               <value localId="242" locator="35:11-35:28" name="Repeat screening" xsi:type="CodeRef"/>
+            </element>
+            <element name="reason">
+               <value localId="243" locator="36:13-36:54" name="Inconclusive non-colonoscopy test result" xsi:type="CodeRef"/>
+            </element>
+            <element name="documentation">
+               <value localId="245" locator="37:20-37:64" name="SourceDocumentationOther" libraryName="CRCSMCommonFunctions" xsi:type="ExpressionRef"/>
+            </element>
+         </expression>
+      </def>
+      <def localId="247" locator="40:1-46:3" name="act-continueRoutineScreeningDirectViz" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="247">
+               <a:s>define &quot;act-continueRoutineScreeningDirectViz&quot;:
+  //TODO: Add calculated next due date. Determine if need to check for average risk.
+  </a:s>
+               <a:s r="248">
+                  <a:s>{
+    </a:s>
+                  <a:s>
+                     <a:s>code: </a:s>
+                     <a:s r="249">
+                        <a:s>&quot;Continue routine screening if high-quality test&quot;</a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s>,
+    </a:s>
+                  <a:s>
+                     <a:s>reason: </a:s>
+                     <a:s r="250">
+                        <a:s>&quot;Negative or normal non-colonoscopy test with high-quality exam&quot;</a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s>,
+    </a:s>
+                  <a:s>
+                     <a:s>documentation: </a:s>
+                     <a:s r="252">
+                        <a:s r="251">
+                           <a:s>CRCSMCommonFunctions</a:s>
+                        </a:s>
+                        <a:s>.</a:s>
+                        <a:s r="252">
+                           <a:s>SourceDocumentationUSPSTF</a:s>
+                        </a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s>
+  }</a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="248" locator="42:3-46:3" xsi:type="Tuple">
+            <element name="code">
+               <value localId="249" locator="43:11-43:59" name="Continue routine screening if high-quality test" xsi:type="CodeRef"/>
+            </element>
+            <element name="reason">
+               <value localId="250" locator="44:13-44:76" name="Negative or normal non-colonoscopy test with high-quality exam" xsi:type="CodeRef"/>
+            </element>
+            <element name="documentation">
+               <value localId="252" locator="45:20-45:65" name="SourceDocumentationUSPSTF" libraryName="CRCSMCommonFunctions" xsi:type="ExpressionRef"/>
+            </element>
+         </expression>
+      </def>
+      <def localId="254" locator="49:1-54:3" name="act-FollowUpColonoscopy" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="254">
+               <a:s>//todo: this should use SetRecommendation
+define &quot;act-FollowUpColonoscopy&quot;:
+  </a:s>
+               <a:s r="255">
+                  <a:s>{
+		</a:s>
+                  <a:s>
+                     <a:s>code: </a:s>
+                     <a:s r="256">
+                        <a:s>&quot;Order follow-up colonoscopy&quot;</a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s>,
+    </a:s>
+                  <a:s>
+                     <a:s>reason: </a:s>
+                     <a:s r="257">
+                        <a:s>&quot;Positive or abnormal noncolonoscopy test&quot;</a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s>,
+    </a:s>
+                  <a:s>
+                     <a:s>documentation: </a:s>
+                     <a:s r="259">
+                        <a:s r="258">
+                           <a:s>CRCSMCommonFunctions</a:s>
+                        </a:s>
+                        <a:s>.</a:s>
+                        <a:s r="259">
+                           <a:s>SourceDocumentationUSPSTF</a:s>
+                        </a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s>
+  }</a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="255" locator="50:3-54:3" xsi:type="Tuple">
+            <element name="code">
+               <value localId="256" locator="51:9-51:37" name="Order follow-up colonoscopy" xsi:type="CodeRef"/>
+            </element>
+            <element name="reason">
+               <value localId="257" locator="52:13-52:54" name="Positive or abnormal noncolonoscopy test" xsi:type="CodeRef"/>
+            </element>
+            <element name="documentation">
+               <value localId="259" locator="53:20-53:65" name="SourceDocumentationUSPSTF" libraryName="CRCSMCommonFunctions" xsi:type="ExpressionRef"/>
+            </element>
+         </expression>
+      </def>
+   </statements>
+</library>
